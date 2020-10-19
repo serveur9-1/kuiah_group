@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUserStadesTable extends Migration
+class CreateUserCountriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CreateUserStadesTable extends Migration
      */
     public function up()
     {
-        Schema::create('user_stades', function (Blueprint $table) {
+        Schema::create('country_user', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id')->index();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            
-            $table->unsignedBigInteger('stade_id')->index();
-            $table->foreign('stade_id')->references('id')->on('stades')->onDelete('cascade');
+
+            $table->unsignedBigInteger('country_id')->index();
+            $table->foreign('country_id')->references('id')->on('countries')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -31,6 +31,6 @@ class CreateUserStadesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_stades');
+        Schema::dropIfExists('country_user');
     }
 }

@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class user_stade extends Model
+class Staff extends Model
 {
     //
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDomainesTable extends Migration
+class CreateMediasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreateDomainesTable extends Migration
      */
     public function up()
     {
-        Schema::create('domains', function (Blueprint $table) {
+        Schema::create('medias', function (Blueprint $table) {
+
             $table->id();
-            $table->string('name_fr');
-            $table->string('name_en');
-            $table->string('img');
-            $table->timestamps();
+            $table->string("name");
+
         });
     }
 
@@ -29,6 +28,6 @@ class CreateDomainesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('domains');
+        Schema::dropIfExists('medias');
     }
 }

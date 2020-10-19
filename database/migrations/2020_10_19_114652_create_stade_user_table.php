@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUserCategoriesTable extends Migration
+class CreateUserStadesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CreateUserCategoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('user_categories', function (Blueprint $table) {
+        Schema::create('stade_user', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id')->index();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            
-            $table->unsignedBigInteger('domaine_id')->index();
-            $table->foreign('domaine_id')->references('id')->on('domaines')->onDelete('cascade');
+
+            $table->unsignedBigInteger('stade_id')->index();
+            $table->foreign('stade_id')->references('id')->on('stades')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -31,6 +31,6 @@ class CreateUserCategoriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_categories');
+        Schema::dropIfExists('stade_user');
     }
 }

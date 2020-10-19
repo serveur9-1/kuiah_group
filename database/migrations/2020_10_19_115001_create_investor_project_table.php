@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFinancialDatasTable extends Migration
+class CreateInvestorProjectTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateFinancialDatasTable extends Migration
      */
     public function up()
     {
-        Schema::create('financial_datas', function (Blueprint $table) {
+        Schema::create('investor_project', function (Blueprint $table) {
             $table->id();
-            $table->string('year');
-            $table->string('turnover');
-            $table->string('profit');
+            $table->unsignedBigInteger('investor_id')->index();
+            $table->foreign('investor_id')->references('id')->on('investors')->onDelete('cascade');
+
             $table->unsignedBigInteger('project_id')->index();
             $table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade');
             $table->timestamps();
@@ -31,6 +31,6 @@ class CreateFinancialDatasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('financial_datas');
+        Schema::dropIfExists('investor_project');
     }
 }

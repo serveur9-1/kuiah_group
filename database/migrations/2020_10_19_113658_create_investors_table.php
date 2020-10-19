@@ -15,26 +15,27 @@ class CreateInvestorsTable extends Migration
     {
         Schema::create('investors', function (Blueprint $table) {
             $table->id();
-            $table->boolean('receive_mail')->nullable()->default(1);
-            $table->boolean('is_deleted');
+            $table->boolean("is_investor");
+            $table->boolean('receive_mail')->nullable()->default(true);
+            $table->boolean('is_deleted')->nullable();
             $table->string('country');
             $table->string('city');
             $table->string('f_number')->nullable();
             $table->string('p_number')->nullable();
-            $table->string('birthday')->nullable();
             $table->string('linkedin')->nullable();
             $table->string('twitter')->nullable();
             $table->string('facebook')->nullable();
-            $table->string('identity')->nullable();
-            $table->string('description');
+            $table->text('biography');
             $table->string('website')->nullable();
             $table->string('company_name')->nullable();
-            $table->string('post')->nullable();
-            $table->string('domain')->nullable();
-            $table->string('min');
-            $table->string('max');
+            $table->string('role')->nullable();
+            $table->text('domain')->nullable();
+            $table->integer('min');
+            $table->integer('max');
+
             $table->unsignedBigInteger('user_id')->index();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+
             $table->timestamps();
         });
     }

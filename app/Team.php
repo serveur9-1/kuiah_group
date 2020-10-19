@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class investor extends Model
+class Team extends Model
 {
     //
 }

@@ -21,11 +21,11 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
-            $table->boolean('is_investor');
-            $table->boolean('is_new')->nullable()->default(0);
-            $table->boolean('is_active')->nullable()->default(0);
+            $table->boolean('is_investor')->default(1);
+            $table->boolean('is_actived')->nullable()->default(0);
+            $table->boolean('is_archived')->nullable()->default(0);
             $table->string('profil')->nullable();
-            $table->timestamps(); 
+            $table->timestamps();
         });
     }
 
