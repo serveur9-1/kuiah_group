@@ -13,7 +13,7 @@ class CreateProjectsTable extends Migration
      */
     public function up()
     {
-        Schema::create('Projects', function (Blueprint $table) {
+        Schema::create('projects', function (Blueprint $table) {
             $table->id();
             $table->string('title');
             $table->string('website')->nullable();
@@ -43,8 +43,8 @@ class CreateProjectsTable extends Migration
             $table->unsignedBigInteger('country_id')->index();
             $table->foreign('country_id')->references('id')->on('countries')->onDelete('cascade');
 
-            $table->unsignedBigInteger('domaine_id')->index();
-            $table->foreign('domaine_id')->references('id')->on('domaines')->onDelete('cascade');
+            $table->unsignedBigInteger('domain_id')->index();
+            $table->foreign('domain_id')->references('id')->on('domains')->onDelete('cascade');
 
             $table->unsignedBigInteger('stade_id')->index();
             $table->foreign('stade_id')->references('id')->on('stades')->onDelete('cascade');
@@ -59,6 +59,6 @@ class CreateProjectsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Projects');
+        Schema::dropIfExists('projects');
     }
 }

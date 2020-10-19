@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMembersProjectsTable extends Migration
+class CreateTeamsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -22,8 +22,8 @@ class CreateMembersProjectsTable extends Migration
             $table->string('link_facebook')->nullable();
             $table->string('role');
             $table->text('biography');
-            $table->unsignedBigInteger('article_id')->index();
-            $table->foreign('article_id')->references('id')->on('articles')->onDelete('cascade');
+            $table->unsignedBigInteger('project_id')->index();
+            $table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -35,6 +35,6 @@ class CreateMembersProjectsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('members_projects');
+        Schema::dropIfExists('teams');
     }
 }

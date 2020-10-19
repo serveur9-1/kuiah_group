@@ -20,7 +20,7 @@ class CreateRealEstatesTable extends Migration
             $table->longText("description");
             $table->integer("price")->default(0);
 
-            $table->unsignedBigInteger('country_id')->index();
+            $table->unsignedBigInteger('country_id')->unsigned()->index();
             $table->foreign('country_id')->references('id')->on('countries')->onDelete('cascade');
 
             $table->string("location")->nullable();

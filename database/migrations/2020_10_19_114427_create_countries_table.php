@@ -17,7 +17,7 @@ class CreateCountriesTable extends Migration
             $table->id();
             $table->string('name_en');
             $table->string('name_fr');
-            $table->boolean('is_active')->nullable()->default(1);
+            $table->boolean('is_actived')->nullable()->default(1);
             $table->timestamps();
         });
     }

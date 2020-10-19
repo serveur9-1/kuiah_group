@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateOtherDocsTable extends Migration
+class CreateProjectTagTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,14 @@ class CreateOtherDocsTable extends Migration
      */
     public function up()
     {
-        Schema::create('Other_docs', function (Blueprint $table) {
+        Schema::create('project_tag', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
+            $table->unsignedBigInteger('tag_id')->index();
+            $table->foreign('tag_id')->references('id')->on('tags')->onDelete('cascade');
 
             $table->unsignedBigInteger('project_id')->index();
-            $table->foreign('project_id')->references('id')->on('project')->onDelete('cascade');
-
+            $table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade');
+            $table->timestamps();
         });
     }
 
@@ -30,6 +31,6 @@ class CreateOtherDocsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Other_docs');
+        Schema::dropIfExists('project_tag');
     }
 }
