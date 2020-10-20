@@ -19,7 +19,11 @@ use Illuminate\Support\Facades\Route;
 });*/
 
 Route::group(['prefix' => 'v1'], function () {
+
     Route::get("/test", function () {
-        return "ok";
+        return "Work good !!!";
     });
+
+    Route::resource('countries', \v1\CountryController::class);
+
 });
