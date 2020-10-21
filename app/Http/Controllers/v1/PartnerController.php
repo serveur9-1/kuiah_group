@@ -4,13 +4,16 @@ namespace App\Http\Controllers\v1;
 
 use App\Http\Controllers\Controller;
 use App\Partner;
+use App\Shared\SaveFiles;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class PartnerController extends Controller
 {
-    public function __construct(Partner $instance)
+    public function __construct(Partner $instance, SaveFiles $__save)
     {
         $this->instance = $instance;
+        $this->__save = $__save;
     }
 
     public function index (Request $r)
@@ -20,19 +23,33 @@ class PartnerController extends Controller
 
     public function store(Request $request)
     {
-        /*Validation
-        */
-        $this->validate($request,[
-            'name' => 'required|unique:partners',
-            'img' => 'required',
-        ]);
 
-        $new = $this->instance->newQuery()->create([
-            "name" => $request->get("name"),
-            "img" => $request->get("img"),
-        ]);
+        $validator = Validator::make($request->all(),
+            [
+                'name' => 'required|unique:partners',
+                'img' => 'required|mimes:png,jpg,jpeg|max:2048',
+            ]
+        );
 
-        return response()->json($new, 200);
+        if ($validator->fails()) {
+            return response()->json(['error'=>$validator->errors()], 401);
+        }
+
+        if ($files = $request->file('img')) {
+
+            $data = $this->__save->save(true,"partners", "img", $request);
+            $new = $this->instance->newQuery()->create([
+                "name" => $request->get("name"),
+                "img" => $data[1],
+            ]);
+
+            return response()->json([
+                "success" => true,
+                "message" => "File successfully uploaded",
+                "img" => asset($data[0])
+            ]);
+
+        }
     }
 
     public function update($id, Request $request)

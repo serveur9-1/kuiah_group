@@ -6,6 +6,7 @@ use App\Domain;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\DomainResource;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class DomainController extends Controller
 {
@@ -26,12 +27,19 @@ class DomainController extends Controller
     {
         /*Validation
         */
-        $this->validate($request,[
-            'name_fr' => 'required|unique:domains',
-            'name_en' => 'required|unique:domains',
-            "img" => 'required',
-            "industry_id" => 'required',
-        ]);
+
+        $validator = Validator::make($request->all(),
+            [
+                'name_fr' => 'required|unique:domains',
+                'name_en' => 'required|unique:domains',
+                "img" => 'required',
+                "industry_id" => 'required',
+            ]
+        );
+
+        if ($validator->fails()) {
+            return response()->json(['error'=>$validator->errors()], 401);
+        }
 
         $new = $this->instance->newQuery()->create([
             "name_fr" => $request->get("name_fr"),

@@ -6,6 +6,7 @@ use App\Country;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\CountryResource;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class CountryController extends Controller
 {
@@ -30,10 +31,17 @@ class CountryController extends Controller
     {
         /*Validation
         */
-        $this->validate($request,[
-            'name_fr' => 'required|unique:countries',
-            'name_en' => 'required|unique:countries',
-        ]);
+
+        $validator = Validator::make($request->all(),
+            [
+                'name_fr' => 'required|unique:countries',
+                'name_en' => 'required|unique:countries',
+            ]
+        );
+
+        if ($validator->fails()) {
+            return response()->json(['error'=>$validator->errors()], 401);
+        }
 
         $new = $this->instance->newQuery()->create([
             "name_fr" => $request->get("name_fr"),

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\IndustryResource;
 use App\Industry;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class IndustryController extends Controller
 {
@@ -30,10 +31,17 @@ class IndustryController extends Controller
     {
         /*Validation
         */
-        $this->validate($request,[
-            'name_fr' => 'required|unique:industries',
-            'name_en' => 'required|unique:industries',
-        ]);
+
+        $validator = Validator::make($request->all(),
+            [
+                'name_fr' => 'required|unique:industries',
+                'name_en' => 'required|unique:industries'
+            ]
+        );
+
+        if ($validator->fails()) {
+            return response()->json(['error'=>$validator->errors()], 401);
+        }
 
         $new = $this->instance->newQuery()->create([
             "name_fr" => $request->get("name_fr"),
