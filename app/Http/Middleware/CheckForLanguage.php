@@ -18,14 +18,14 @@ class CheckForLanguage
     {
         if($request->has('lang') && $request->filled('lang')) {
 
-            if($request->get('lang') == "fr" || $request->get('lang') == "en") {
-                $request->request->add(["lang" => $request->get('lang')]);
-            } else {
-                $request->request->add(['lang' => 'fr']);
+            if($request->get('lang') == "fr") {
+                $request->request->add(["is_fr" => true]);
+            } elseif ($request->get('lang') == "en") {
+                $request->request->add(['is_fr' => false]);
             }
 
         } else {
-            $request->request->add(['lang' => 'fr']);
+            $request->request->add(['is_fr' => 'fr']);
         }
 
         return $next($request);

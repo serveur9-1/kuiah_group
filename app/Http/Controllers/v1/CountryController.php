@@ -9,14 +9,21 @@ use Illuminate\Http\Request;
 
 class CountryController extends Controller
 {
-    public function __construct(Country $country)
+    public function __construct(Country $instance)
     {
-        $this->country = $country;
+        $this->instance = $instance;
     }
 
     public function index (Request $r)
     {
-        return CountryResource::collection($this->country->newQuery()->get());
+        return response()->json(
+            CountryResource::collection($this->instance->newQuery()->get()),
+            200
+        );
+
+        /*#Tu peux utiliser ça si necessaire
+         *
+         * return $this->instance->newQuery()->get();*/
     }
 
     public function store(Request $request)
@@ -28,7 +35,7 @@ class CountryController extends Controller
             'name_en' => 'required|unique:countries',
         ]);
 
-        $new = $this->country->newQuery()->create([
+        $new = $this->instance->newQuery()->create([
             "name_fr" => $request->get("name_fr"),
             "name_en" => $request->get("name_en")
         ]);
@@ -38,7 +45,7 @@ class CountryController extends Controller
 
     public function update($id, Request $request)
     {
-        $old = $this->country->newQuery()->findOrFail($id);
+        $old = $this->instance->newQuery()->findOrFail($id);
 
         $old->name_fr = $request->get("name_fr");
         $old->name_en = $request->get("name_en");
@@ -49,8 +56,8 @@ class CountryController extends Controller
 
     public function destroy($id)
     {
-        $selected = $this->country->newQuery()->findOrFail($id);
+        $selected = $this->instance->newQuery()->findOrFail($id);
         $selected->delete();
-        return response()->json($selected,200);
+        return response()->json(null,200);
     }
 }
