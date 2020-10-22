@@ -5,6 +5,7 @@ namespace App\Http\Controllers\v1;
 use App\Country;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\CountryResource;
+use App\Mail\WelcomeToYou;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 

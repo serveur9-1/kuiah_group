@@ -41,6 +41,7 @@ return [
             'encryption' => env('MAIL_ENCRYPTION', 'tls'),
             'username' => env('MAIL_USERNAME'),
             'password' => env('MAIL_PASSWORD'),
+            'from' => ['address' => env('MAIL_FROM_NOREPLY_ADDRESS', 'noreply@fortifietoi.ci'), 'name' => env('MAIL_FROM_NAME','Kuiah Fiance')],
             'timeout' => null,
             'auth_mode' => null,
         ],
