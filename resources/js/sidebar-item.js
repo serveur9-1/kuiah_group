@@ -4,7 +4,7 @@ const items = [
         "section_items": [
             {
                 "item_parent": "Level 1",
-                "item_parent_path": "/dashboard",
+                "path": "/dashboard",
                 "child": [
                     {
                         "title": "level 2",
@@ -14,7 +14,7 @@ const items = [
             },
             {
                 "item_parent": "Level 1",
-                "item_parent_path": "/dashboard",
+                "path": "/dashboard",
                 "child": []
             },
         ]
@@ -24,26 +24,26 @@ const items = [
         "section_items": [
             {
                 "item_parent": "Level 1",
-                "item_parent_path": "/dashboard",
+                "path": "/account",
                 "child": [
                     {
                         "title": "level 2",
-                        "path": "/dashboard"
+                        "path": "/account"
                     },
                 ]
             },
             {
                 "item_parent": "Level 1",
-                "item_parent_path": "/dashboard",
+                "path": "/account",
                 "child": []
             },
             {
                 "item_parent": "Level",
-                "item_parent_path": "/dashboard",
+                "path": "/account",
                 "child": [
                     {
                         "title": "level 2",
-                        "path": "/dashboard"
+                        "path": "/account"
                     },
                 ]
             },

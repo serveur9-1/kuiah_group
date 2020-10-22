@@ -8,15 +8,19 @@
 
                 <ul v-for="(item, index) in navItem" :data-submenu-title="item.section_name">
                     <li :class="{'active':index==0}" v-for="lv1 in item.section_items" v-if="lv1.child.length > 0">
-                        <a href="dashboard.html">{{ lv1.item_parent }}</a>
+                        <a href="#">{{ lv1.item_parent }}</a>
                         <ul>
                             <li v-for="lv2 in lv1.child">
-                                <a href="dashboard-manage-jobs.html">{{ lv2.title }}</a>
+                                <router-link :to="lv2.path">
+                                    {{ lv2.title }}
+                                </router-link>
                             </li>
                         </ul>
                     </li>
                     <li v-else>
-                        <a href="dashboard-messages.html">{{ lv1.item_parent }}</a>
+                        <router-link :to="lv1.path">
+                            {{ lv1.item_parent }}
+                        </router-link>
                     </li>
                 </ul>
             </div>

@@ -5,13 +5,21 @@
                 <div class="sixteen columns">
                     <!-- Logo -->
                     <div id="logo">
-                        <h1><a href="index.html"><img src="images/logo.png" alt="Work Scout" /></a></h1>
+                        <h1>
+                            <router-link to="/dashboard">
+                                <img src="images/logo.png" alt="Work Scout" />
+                            </router-link>
+                        </h1>
                     </div>
                     <!-- Menu -->
                     <nav id="navigation" class="menu">
                         <ul class="responsive float-right">
-                            <li><a href="dashboard.html"><i class="fa fa-cog"></i> Dashboard</a></li>
-                            <li><a href="index.html"><i class="fa fa-lock"></i> Log Out</a></li>
+                            <li>
+                                <router-link to="/account">
+                                    <i class="fa fa-user"></i> Mon compte
+                                </router-link>
+                            </li>
+                            <li><a href="index.html"><i class="fa fa-sign-out"></i> Se deconnecter</a></li>
                         </ul>
                     </nav>
 
