@@ -23,11 +23,10 @@ class PartnerController extends Controller
 
     public function store(Request $request)
     {
-
         $validator = Validator::make($request->all(),
             [
                 'name' => 'required|unique:partners',
-                'img' => 'required|mimes:png,jpg,jpeg|max:2048',
+                'img' => 'required|max:2048',
             ]
         );
 
@@ -38,15 +37,17 @@ class PartnerController extends Controller
         if ($files = $request->file('img')) {
 
             $data = $this->__save->save(true,"partners", "img", $request);
+
+            // $data[0] return 1st item of array which verify if there are many files (true if an array)
             $new = $this->instance->newQuery()->create([
                 "name" => $request->get("name"),
-                "img" => $data[1],
+                "img" => $data[2],
             ]);
 
             return response()->json([
                 "success" => true,
                 "message" => "File successfully uploaded",
-                "img" => asset($data[0])
+                "img" => asset($data[1])
             ]);
 
         }

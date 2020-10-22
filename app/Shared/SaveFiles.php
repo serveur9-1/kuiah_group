@@ -11,7 +11,7 @@ class SaveFiles
 {
 
     /*
-     *
+     *mimes:png,jpg,jpeg|
      * mimes types:
      *  doc,
      *  docx,
@@ -35,19 +35,39 @@ class SaveFiles
         if($request->hasfile($attr))
         {
             $response = [];
+            array_push($response, is_array($request->file($attr)));
 
-            $file_mime = $request->file($attr)->getClientMimeType();
-            $ext = explode("/", $file_mime)[1];
-            $filename = "kuiahfinance_".explode(".",$request->file($attr)->getClientOriginalName())[0];
-            $is_public? $saveDir="public/" : $path="private/";
+            if(is_array($request->file($attr))) {
+                foreach ($request->file($attr) as $file) {
 
-            $path = $request->file($attr)->storeAs(
-                $saveDir.$dir,
-                $filename.".".$ext
-            );
+                    $file_mime = $file->getClientMimeType();
+                    $ext = explode("/", $file_mime)[1];
+                    $filename = "kuiahfinance_".explode(".",$file->getClientOriginalName())[0];
+                    $is_public? $saveDir="public/" : $path="private/";
 
-            array_push($response, $path);
-            array_push($response, $filename.".".$ext);
+                    $path = $file->storeAs(
+                        $saveDir.$dir,
+                        $filename.".".$ext
+                    );
+
+                    array_push($response, $filename.".".$ext);
+                }
+
+            } else {
+
+                $file_mime = $request->file($attr)->getClientMimeType();
+                $ext = explode("/", $file_mime)[1];
+                $filename = "kuiahfinance_".explode(".",$request->file($attr)->getClientOriginalName())[0];
+                $is_public? $saveDir="public/" : $path="private/";
+
+                $path = $request->file($attr)->storeAs(
+                    $saveDir.$dir,
+                    $filename.".".$ext
+                );
+
+                array_push($response, $path);
+                array_push($response, $filename.".".$ext);
+            }
 
             return $response;
         }
