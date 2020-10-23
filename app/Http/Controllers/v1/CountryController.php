@@ -52,6 +52,15 @@ class CountryController extends Controller
         return response()->json($new, 200);
     }
 
+    public function show($id)
+    {
+        $selected = $this->instance->newQuery()->find($id);
+
+        return response()->json($selected,200);
+        
+    }
+
+
     public function update($id, Request $request)
     {
         $old = $this->instance->newQuery()->findOrFail($id);
