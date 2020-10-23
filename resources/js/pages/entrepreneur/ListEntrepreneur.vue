@@ -35,7 +35,9 @@
                                     <td>Grand-lahou</td>
                                     <td>+225 48 99 01 50</td>
 									<td class="action">
-										<a href="#"><i class="fa  fa-eye"></i>Voir</a>
+									    <router-link to="/account">
+                                           <i class="fa  fa-eye"></i>Voir
+                                        </router-link>
 										<a href="#" class="delete"><i class="fa fa-remove"></i>Supprimer</a>
 									</td>
 								</tr>

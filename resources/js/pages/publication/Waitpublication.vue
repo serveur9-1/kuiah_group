@@ -34,7 +34,9 @@
 									</td>
 									<td class="centered">1,000 - 2,000$</td>
 									<td class="action">
-										<a href="#"><i class="fa  fa-eye"></i>Voir</a>
+										<router-link to="/publication/waiting/View">
+                                           <i class="fa  fa-eye"></i>Voir
+                                        </router-link>
 										<a href="#" class="delete"><i class="fa fa-remove"></i>Supprimer</a>
 									</td>
 								</tr>
@@ -49,7 +51,9 @@
 								   </td>
 								   <td class="centered">1,000 - 2,000$</td>
 									<td class="action">
-										<a href="#"><i class="fa  fa-eye"></i>Voir</a>
+										<router-link to="/publication/waiting/View">
+                                           <i class="fa  fa-eye"></i>Voir
+                                        </router-link>
 										<a href="#" class="delete"><i class="fa fa-remove"></i>Supprimer</a>
 									</td>
 								</tr>	

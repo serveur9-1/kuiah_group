@@ -62,11 +62,11 @@ const items = [
                 "child": [
                     {
                         "title": "Liste des industries",
-                        "path": "/industrie/list"
+                        "path": "/industry/list"
                     },
                     {
                         "title": "Ajouter une industrie",
-                        "path": "/industrie/add"
+                        "path": "/industry/add"
                     },
                 ]
             },
@@ -76,11 +76,11 @@ const items = [
                 "child": [
                     {
                         "title": "Liste des domaines",
-                        "path": "/domaine/list"
+                        "path": "/domain/list"
                     },
                     {
                         "title": "Ajouter un domaine",
-                        "path": "/domaine/add"
+                        "path": "/domain/add"
                     },
                 ]
             },
@@ -122,7 +122,7 @@ const items = [
                     },
                     {
                         "title": "Ajouter un partenaire",
-                        "path": "/partener/add"
+                        "path": "/partner/add"
                     },
                 ]
             },

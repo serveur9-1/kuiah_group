@@ -9,7 +9,7 @@
 			<!-- Table-->
 			<div class="col-lg-12 col-md-12">
 				<div class="notification notice">
-					liste des investisseurs.
+					Your resume can be viewed, edited or removed below.
 				</div>
 				<div class="dashboard-list-box margin-top-30">
 					<div class="dashboard-list-box-content">
@@ -19,39 +19,33 @@
 
 								<tr>
 									
-									<th style="width: 10%;">Nom</th>
-									<th style="width: 20%;"> Prénom</th>
-									<th style="width: 20%;">Email</th>
-                                    <th style="width: 15%;">Ville</th>
-                                    <th style="width: 25%;">Numéro</th>
-									<th style="width: 10%;">Actions</th>
+									<th>Nom du niveau</th>
+									<th> Date de l'ajout</th>
+									<th>Actions</th>
 								</tr>
 
 								<!-- Item #1 -->
 								<tr>
-									<td>Doumbia</td>
-									<td>Aboudramane</td>
-									<td class="centered">Aboudramanedoumbia7@gmail.com</td>
-                                    <td>Grand-lahou</td>
-                                    <td>+225 48 99 01 50</td>
+									<td>Front End Web Developer</td>
+									<td>23-09-2020</td>
 									<td class="action">
-										<a href="#"><i class="fa  fa-eye"></i>Voir</a>
+										<router-link to="/publication/View">
+                                           <i class="fa  fa-eye"></i>Voir
+                                        </router-link>
 										<a href="#" class="delete"><i class="fa fa-remove"></i>Supprimer</a>
 									</td>
 								</tr>
 
 								<!-- Item #1 -->
 								<tr>
-									<td>Doumbia</td>
-									<td>Aboudramane</td>
-									<td class="centered">Aboudramanedoumbia7@gmail.com</td>
-                                    <td>Grand-lahou</td>
-                                    <td>+225 48 99 01 50</td>
+									
+									<td>Front End Web Developer</td>
+									<td>23-09-2020</td>
 									<td class="action">
 										<a href="#"><i class="fa  fa-eye"></i>Voir</a>
 										<a href="#" class="delete"><i class="fa fa-remove"></i>Supprimer</a>
 									</td>
-								</tr>
+								</tr>	
 
 							</table>
 					</div>
