@@ -1,6 +1,5 @@
 <template>
     <div id="wrapper">
-
         <NavbarComponent/>
 
         <div id="dashboard">
