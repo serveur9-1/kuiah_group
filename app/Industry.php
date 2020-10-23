@@ -10,4 +10,9 @@ class Industry extends Model
         "name_fr",
         "name_en",
     ];
+
+    public function toDomains()
+    {
+        return $this->hasMany('App\Domain');
+    }
 }

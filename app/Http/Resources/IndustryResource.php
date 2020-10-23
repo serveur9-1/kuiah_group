@@ -3,6 +3,7 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
+use App\Http\Resources\DomainResource;
 
 class IndustryResource extends JsonResource
 {
@@ -21,6 +22,7 @@ class IndustryResource extends JsonResource
             'name_en' => $this->name_en,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
+            'domains' => DomainResource::collection($this->toDomains)
         ];
     }
 }
