@@ -2807,10 +2807,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Dashboard",
@@ -3000,6 +2996,125 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/investor/DetailInvestor.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/investor/DetailInvestor.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _components_layouts_TitlebarComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../components/layouts/TitlebarComponent */ "./resources/js/components/layouts/TitlebarComponent.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "Dashboard",
+  components: {
+    TitlebarComponent: _components_layouts_TitlebarComponent__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  data: function data() {
+    return {
+      message: "Mounted"
+    };
+  },
+  mounted: function mounted() {
+    this.onMounted();
+  },
+  methods: {
+    onMounted: function onMounted() {
+      console.log(this.message);
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/investor/ListInvestor.vue?vue&type=script&lang=js&":
 /*!***************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/investor/ListInvestor.vue?vue&type=script&lang=js& ***!
@@ -3010,6 +3125,10 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_layouts_TitlebarComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../components/layouts/TitlebarComponent */ "./resources/js/components/layouts/TitlebarComponent.vue");
+//
+//
+//
+//
 //
 //
 //
@@ -3751,6 +3870,91 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Dashboard",
@@ -3784,6 +3988,91 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_layouts_TitlebarComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../components/layouts/TitlebarComponent */ "./resources/js/components/layouts/TitlebarComponent.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -4029,6 +4318,101 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "Dashboard",
+  components: {
+    TitlebarComponent: _components_layouts_TitlebarComponent__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  data: function data() {
+    return {
+      message: "Mounted"
+    };
+  },
+  mounted: function mounted() {
+    this.onMounted();
+  },
+  methods: {
+    onMounted: function onMounted() {
+      console.log(this.message);
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/realstates/ListRealstates.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/realstates/ListRealstates.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _components_layouts_TitlebarComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../components/layouts/TitlebarComponent */ "./resources/js/components/layouts/TitlebarComponent.vue");
 //
 //
 //
@@ -41426,9 +41810,7 @@ var render = function() {
               )
             ])
           ])
-        ]),
-        _vm._v(" "),
-        _vm._m(3)
+        ])
       ])
     ],
     1
@@ -41489,16 +41871,6 @@ var staticRenderFns = [
           _c("i", { staticClass: "fa fa-remove" }),
           _vm._v("Supprimer")
         ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-12" }, [
-      _c("div", { staticClass: "copyrights" }, [
-        _vm._v("© 2019 WorkScout. All Rights Reserved.")
       ])
     ])
   }
@@ -41702,10 +42074,10 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/investor/ListInvestor.vue?vue&type=template&id=7fd5ef74&scoped=true&":
-/*!*******************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/investor/ListInvestor.vue?vue&type=template&id=7fd5ef74&scoped=true& ***!
-  \*******************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/investor/DetailInvestor.vue?vue&type=template&id=d3294db2&scoped=true&":
+/*!*********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/investor/DetailInvestor.vue?vue&type=template&id=d3294db2&scoped=true& ***!
+  \*********************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -41730,97 +42102,281 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-lg-12 col-md-12" }, [
-        _c("div", { staticClass: "notification notice" }, [
-          _vm._v("\n\t\t\t\t\tliste des investisseurs.\n\t\t\t\t")
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "dashboard-list-box margin-top-30" }, [
-          _c("div", { staticClass: "dashboard-list-box-content" }, [
-            _c(
-              "table",
-              { staticClass: "manage-table resumes responsive-table" },
-              [
-                _c("tr", [
-                  _c("th", { staticStyle: { width: "10%" } }, [_vm._v("Nom")]),
-                  _vm._v(" "),
-                  _c("th", { staticStyle: { width: "20%" } }, [
-                    _vm._v(" Prénom")
+      _c("div", { staticClass: "col-lg-6 col-md-12" }, [
+        _c("div", { staticClass: "dashboard-list-box margin-top-0" }, [
+          _c("h4", { staticClass: "gray" }, [_vm._v("Investisseur")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "dashboard-list-box-static" }, [
+            _c("div", { staticClass: "edit-profile-photo" }, [
+              _c("img", {
+                attrs: {
+                  src:
+                    "http://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&s=300",
+                  alt: ""
+                }
+              }),
+              _vm._v(" "),
+              _c("div", { staticClass: "change-photo-btn" }, [
+                _c("div", { staticClass: "photoUpload" }, [
+                  _c("span", [
+                    _c("i", { staticClass: "fa fa-upload" }),
+                    _vm._v(" Upload Photo")
                   ]),
                   _vm._v(" "),
-                  _c("th", { staticStyle: { width: "20%" } }, [
-                    _vm._v("Email")
-                  ]),
-                  _vm._v(" "),
-                  _c("th", { staticStyle: { width: "15%" } }, [
-                    _vm._v("Ville")
-                  ]),
-                  _vm._v(" "),
-                  _c("th", { staticStyle: { width: "25%" } }, [
-                    _vm._v("Numéro")
-                  ]),
-                  _vm._v(" "),
-                  _c("th", { staticStyle: { width: "10%" } }, [
-                    _vm._v("Actions")
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("tr", [
-                  _c("td", [_vm._v("Doumbia")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("Aboudramane")]),
-                  _vm._v(" "),
-                  _c("td", { staticClass: "centered" }, [
-                    _vm._v("Aboudramanedoumbia7@gmail.com")
-                  ]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("Grand-lahou")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("+225 48 99 01 50")]),
-                  _vm._v(" "),
-                  _c("td", { staticClass: "action" }, [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _c("i", { staticClass: "fa  fa-eye" }),
-                      _vm._v("Voir")
-                    ]),
-                    _vm._v(" "),
-                    _c("a", { staticClass: "delete", attrs: { href: "#" } }, [
-                      _c("i", { staticClass: "fa fa-remove" }),
-                      _vm._v("Supprimer")
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("tr", [
-                  _c("td", [_vm._v("Doumbia")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("Aboudramane")]),
-                  _vm._v(" "),
-                  _c("td", { staticClass: "centered" }, [
-                    _vm._v("Aboudramanedoumbia7@gmail.com")
-                  ]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("Grand-lahou")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("+225 48 99 01 50")]),
-                  _vm._v(" "),
-                  _c("td", { staticClass: "action" }, [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _c("i", { staticClass: "fa  fa-eye" }),
-                      _vm._v("Voir")
-                    ]),
-                    _vm._v(" "),
-                    _c("a", { staticClass: "delete", attrs: { href: "#" } }, [
-                      _c("i", { staticClass: "fa fa-remove" }),
-                      _vm._v("Supprimer")
-                    ])
-                  ])
+                  _c("input", {
+                    staticClass: "upload",
+                    attrs: { type: "file" }
+                  })
                 ])
-              ]
-            )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "my-profile" }, [
+              _c("label", [_vm._v("Nom")]),
+              _vm._v(" "),
+              _c("input", { attrs: { type: "text" } }),
+              _vm._v(" "),
+              _c("label", [_vm._v("Prénom")]),
+              _vm._v(" "),
+              _c("input", { attrs: { type: "text" } }),
+              _vm._v(" "),
+              _c("label", [_vm._v("Phone")]),
+              _vm._v(" "),
+              _c("input", { attrs: { value: "(123) 123-456", type: "text" } }),
+              _vm._v(" "),
+              _c("label", [_vm._v("Email")]),
+              _vm._v(" "),
+              _c("input", {
+                attrs: { value: "tom@example.com", type: "text" }
+              }),
+              _vm._v(" "),
+              _c("label", [_vm._v("Notes")]),
+              _vm._v(" "),
+              _c(
+                "textarea",
+                {
+                  attrs: { name: "notes", id: "notes", cols: "30", rows: "10" }
+                },
+                [
+                  _vm._v(
+                    "Maecenas quis consequat libero, a feugiat eros. Nunc ut lacinia tortor morbi ultricies laoreet ullamcorper phasellus semper"
+                  )
+                ]
+              ),
+              _vm._v(" "),
+              _c("label", [
+                _c("i", { staticClass: "fa fa-twitter" }),
+                _vm._v(" Twitter")
+              ]),
+              _vm._v(" "),
+              _c("input", {
+                attrs: { placeholder: "https://www.twitter.com/", type: "text" }
+              }),
+              _vm._v(" "),
+              _c("label", [
+                _c("i", { staticClass: "fa fa-facebook-square" }),
+                _vm._v(" Facebook")
+              ]),
+              _vm._v(" "),
+              _c("input", {
+                attrs: {
+                  placeholder: "https://www.facebook.com/",
+                  type: "text"
+                }
+              }),
+              _vm._v(" "),
+              _c("label", [
+                _c("i", { staticClass: "fa fa-google-plus" }),
+                _vm._v(" Google+")
+              ]),
+              _vm._v(" "),
+              _c("input", {
+                attrs: { placeholder: "https://www.google.com/", type: "text" }
+              })
+            ]),
+            _vm._v(" "),
+            _c("button", { staticClass: "button margin-top-15" }, [
+              _vm._v("Save Changes")
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-lg-6 col-md-12" }, [
+        _c("div", { staticClass: "dashboard-list-box margin-top-0" }, [
+          _c("h4", { staticClass: "gray" }, [_vm._v("Change Password")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "dashboard-list-box-static" }, [
+            _c("div", { staticClass: "my-profile" }, [
+              _c("label", { staticClass: "margin-top-0" }, [
+                _vm._v("Current Password")
+              ]),
+              _vm._v(" "),
+              _c("input", { attrs: { type: "password" } }),
+              _vm._v(" "),
+              _c("label", [_vm._v("New Password")]),
+              _vm._v(" "),
+              _c("input", { attrs: { type: "password" } }),
+              _vm._v(" "),
+              _c("label", [_vm._v("Confirm New Password")]),
+              _vm._v(" "),
+              _c("input", { attrs: { type: "password" } }),
+              _vm._v(" "),
+              _c("button", { staticClass: "button margin-top-15" }, [
+                _vm._v("Change Password")
+              ])
+            ])
           ])
         ])
       ])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/investor/ListInvestor.vue?vue&type=template&id=7fd5ef74&scoped=true&":
+/*!*******************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/investor/ListInvestor.vue?vue&type=template&id=7fd5ef74&scoped=true& ***!
+  \*******************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "dashboard-content" },
+    [
+      _c("TitlebarComponent"),
+      _vm._v(" "),
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-lg-12 col-md-12" }, [
+          _c("div", { staticClass: "notification notice" }, [
+            _vm._v("\n\t\t\t\t\tliste des investisseurs.\n\t\t\t\t")
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "dashboard-list-box margin-top-30" }, [
+            _c("div", { staticClass: "dashboard-list-box-content" }, [
+              _c(
+                "table",
+                { staticClass: "manage-table resumes responsive-table" },
+                [
+                  _vm._m(0),
+                  _vm._v(" "),
+                  _c("tr", [
+                    _c("td", [_vm._v("Doumbia")]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v("Aboudramane")]),
+                    _vm._v(" "),
+                    _c("td", { staticClass: "centered" }, [
+                      _vm._v("Aboudramanedoumbia7@gmail.com")
+                    ]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v("Grand-lahou")]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v("+225 48 99 01 50")]),
+                    _vm._v(" "),
+                    _c(
+                      "td",
+                      { staticClass: "action" },
+                      [
+                        _c("router-link", { attrs: { to: "/investor/View" } }, [
+                          _c("i", { staticClass: "fa  fa-eye" }),
+                          _vm._v(
+                            "Voir\n                                        "
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _vm._m(1)
+                      ],
+                      1
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("tr", [
+                    _c("td", [_vm._v("Doumbia")]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v("Aboudramane")]),
+                    _vm._v(" "),
+                    _c("td", { staticClass: "centered" }, [
+                      _vm._v("Aboudramanedoumbia7@gmail.com")
+                    ]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v("Grand-lahou")]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v("+225 48 99 01 50")]),
+                    _vm._v(" "),
+                    _c(
+                      "td",
+                      { staticClass: "action" },
+                      [
+                        _c("router-link", { attrs: { to: "/investor/View" } }, [
+                          _c("i", { staticClass: "fa  fa-eye" }),
+                          _vm._v(
+                            "Voir\n                                        "
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _vm._m(2)
+                      ],
+                      1
+                    )
+                  ])
+                ]
+              )
+            ])
+          ])
+        ])
+      ])
+    ],
+    1
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [
+      _c("th", { staticStyle: { width: "10%" } }, [_vm._v("Nom")]),
+      _vm._v(" "),
+      _c("th", { staticStyle: { width: "20%" } }, [_vm._v(" Prénom")]),
+      _vm._v(" "),
+      _c("th", { staticStyle: { width: "20%" } }, [_vm._v("Email")]),
+      _vm._v(" "),
+      _c("th", { staticStyle: { width: "15%" } }, [_vm._v("Ville")]),
+      _vm._v(" "),
+      _c("th", { staticStyle: { width: "25%" } }, [_vm._v("Numéro")]),
+      _vm._v(" "),
+      _c("th", { staticStyle: { width: "10%" } }, [_vm._v("Actions")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { staticClass: "delete", attrs: { href: "#" } }, [
+      _c("i", { staticClass: "fa fa-remove" }),
+      _vm._v("Supprimer")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { staticClass: "delete", attrs: { href: "#" } }, [
+      _c("i", { staticClass: "fa fa-remove" }),
+      _vm._v("Supprimer")
     ])
   }
 ]
@@ -42387,46 +42943,7 @@ var render = function() {
   return _c(
     "div",
     { staticClass: "dashboard-content" },
-    [
-      _c("TitlebarComponent"),
-      _vm._v(" "),
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-lg-12 col-md-12" }, [
-          _vm._m(0),
-          _vm._v(" "),
-          _vm._m(1),
-          _vm._v(" "),
-          _vm._m(2),
-          _vm._v(" "),
-          _c("div", { staticClass: "dashboard-list-box margin-top-30" }, [
-            _c("h4", [_vm._v("Equipe")]),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "dashboard-list-box-content" },
-              [
-                _c("center", [
-                  _c(
-                    "a",
-                    {
-                      staticClass: "button margin-top-30",
-                      attrs: { href: "#" }
-                    },
-                    [
-                      _vm._v("Voir les membre de l'équipe "),
-                      _c("i", { staticClass: "fa fa-arrow-circle-right" })
-                    ]
-                  )
-                ])
-              ],
-              1
-            )
-          ]),
-          _vm._v(" "),
-          _vm._m(3)
-        ])
-      ])
-    ],
+    [_c("TitlebarComponent"), _vm._v(" "), _vm._m(0)],
     1
   )
 }
@@ -42435,386 +42952,625 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "dashboard-list-box margin-top-0" }, [
-      _c("h4", [_vm._v("La société")]),
-      _vm._v(" "),
-      _c("div", { staticClass: "dashboard-list-box-content" }, [
-        _c("div", { staticClass: "submit-page" }, [
-          _c("div", { staticClass: "form" }, [
-            _c("h5", [_vm._v("Intitulé du projet")]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "search-field",
-              attrs: {
-                type: "text",
-                placeholder: "mail@example.com",
-                value: ""
-              }
-            })
-          ]),
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-lg-12 col-md-12" }, [
+        _c("div", { staticClass: "dashboard-list-box margin-top-0" }, [
+          _c("h4", [_vm._v("La société")]),
           _vm._v(" "),
-          _c("div", { staticClass: "form" }, [
-            _c("h5", [_vm._v("Site web")]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "search-field",
-              attrs: { type: "text", placeholder: "", value: "" }
-            })
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form" }, [
-            _c("h5", [_vm._v("Nom de l'entreprise")]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "search-field",
-              attrs: { type: "text", placeholder: "", value: "" }
-            })
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form" }, [
-            _c("h5", [_vm._v("Localisation de l'entreprise")]),
-            _vm._v(" "),
-            _c(
-              "select",
-              {
-                staticClass: "chosen-select-no-single",
-                attrs: { "data-placeholder": "Full-Time" }
-              },
-              [
-                _c("option", { attrs: { value: "1" } }, [_vm._v("Full-Time")]),
+          _c("div", { staticClass: "dashboard-list-box-content" }, [
+            _c("div", { staticClass: "submit-page" }, [
+              _c("div", { staticClass: "form" }, [
+                _c("h5", [_vm._v("Intitulé du projet")]),
                 _vm._v(" "),
-                _c("option", { attrs: { value: "2" } }, [_vm._v("Part-Time")]),
+                _c("input", {
+                  staticClass: "search-field",
+                  attrs: {
+                    type: "text",
+                    placeholder: "mail@example.com",
+                    value: ""
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form" }, [
+                _c("h5", [_vm._v("Site web")]),
                 _vm._v(" "),
-                _c("option", { attrs: { value: "2" } }, [_vm._v("Internship")]),
+                _c("input", {
+                  staticClass: "search-field",
+                  attrs: { type: "text", placeholder: "", value: "" }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form" }, [
+                _c("h5", [_vm._v("Nom de l'entreprise")]),
                 _vm._v(" "),
-                _c("option", { attrs: { value: "2" } }, [_vm._v("Freelance")])
-              ]
-            )
-          ]),
+                _c("input", {
+                  staticClass: "search-field",
+                  attrs: { type: "text", placeholder: "", value: "" }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form" }, [
+                _c("h5", [_vm._v("Localisation de l'entreprise")]),
+                _vm._v(" "),
+                _c(
+                  "select",
+                  {
+                    staticClass: "chosen-select-no-single",
+                    attrs: { "data-placeholder": "Full-Time" }
+                  },
+                  [
+                    _c("option", { attrs: { value: "1" } }, [
+                      _vm._v("Full-Time")
+                    ]),
+                    _vm._v(" "),
+                    _c("option", { attrs: { value: "2" } }, [
+                      _vm._v("Part-Time")
+                    ]),
+                    _vm._v(" "),
+                    _c("option", { attrs: { value: "2" } }, [
+                      _vm._v("Internship")
+                    ]),
+                    _vm._v(" "),
+                    _c("option", { attrs: { value: "2" } }, [
+                      _vm._v("Freelance")
+                    ])
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form" }, [
+                _c("h5", [_vm._v("Numéro de téléphone")]),
+                _vm._v(" "),
+                _c("input", {
+                  staticClass: "search-field",
+                  attrs: { type: "text", placeholder: "", value: "" }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form" }, [
+                _c("div", { staticClass: "select" }, [
+                  _c("h5", [_vm._v("Industrie")]),
+                  _vm._v(" "),
+                  _c(
+                    "select",
+                    {
+                      staticClass: "chosen-select",
+                      attrs: {
+                        "data-placeholder": "Choose Categories",
+                        multiple: ""
+                      }
+                    },
+                    [
+                      _c("option", { attrs: { value: "1" } }, [
+                        _vm._v("Web Developers")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "2" } }, [
+                        _vm._v("Mobile Developers")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "3" } }, [
+                        _vm._v("Designers & Creatives")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "4" } }, [
+                        _vm._v("Writers")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "5" } }, [
+                        _vm._v("Virtual Assistants")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "6" } }, [
+                        _vm._v("Customer Service Agents")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "7" } }, [
+                        _vm._v("Sales & Marketing Experts")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "8" } }, [
+                        _vm._v("Accountants & Consultants")
+                      ])
+                    ]
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form" }, [
+                _c("div", { staticClass: "select" }, [
+                  _c("h5", [_vm._v("Domaine")]),
+                  _vm._v(" "),
+                  _c(
+                    "select",
+                    {
+                      staticClass: "chosen-select",
+                      attrs: {
+                        "data-placeholder": "Choose Categories",
+                        multiple: ""
+                      }
+                    },
+                    [
+                      _c("option", { attrs: { value: "1" } }, [
+                        _vm._v("Web Developers")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "2" } }, [
+                        _vm._v("Mobile Developers")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "3" } }, [
+                        _vm._v("Designers & Creatives")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "4" } }, [
+                        _vm._v("Writers")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "5" } }, [
+                        _vm._v("Virtual Assistants")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "6" } }, [
+                        _vm._v("Customer Service Agents")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "7" } }, [
+                        _vm._v("Sales & Marketing Experts")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "8" } }, [
+                        _vm._v("Accountants & Consultants")
+                      ])
+                    ]
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form" }, [
+                _c("h5", [_vm._v("Rôle de l'investisseur")]),
+                _vm._v(" "),
+                _c(
+                  "select",
+                  {
+                    staticClass: "chosen-select-no-single",
+                    attrs: { "data-placeholder": "Full-Time" }
+                  },
+                  [
+                    _c("option", { attrs: { value: "1" } }, [
+                      _vm._v("Full-Time")
+                    ]),
+                    _vm._v(" "),
+                    _c("option", { attrs: { value: "2" } }, [
+                      _vm._v("Part-Time")
+                    ]),
+                    _vm._v(" "),
+                    _c("option", { attrs: { value: "2" } }, [
+                      _vm._v("Internship")
+                    ]),
+                    _vm._v(" "),
+                    _c("option", { attrs: { value: "2" } }, [
+                      _vm._v("Freelance")
+                    ])
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form" }, [
+                _c("h5", [_vm._v("Stade de développement")]),
+                _vm._v(" "),
+                _c(
+                  "select",
+                  {
+                    staticClass: "chosen-select-no-single",
+                    attrs: { "data-placeholder": "Full-Time" }
+                  },
+                  [
+                    _c("option", { attrs: { value: "1" } }, [
+                      _vm._v("Full-Time")
+                    ]),
+                    _vm._v(" "),
+                    _c("option", { attrs: { value: "2" } }, [
+                      _vm._v("Part-Time")
+                    ]),
+                    _vm._v(" "),
+                    _c("option", { attrs: { value: "2" } }, [
+                      _vm._v("Internship")
+                    ]),
+                    _vm._v(" "),
+                    _c("option", { attrs: { value: "2" } }, [
+                      _vm._v("Freelance")
+                    ])
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form" }, [
+                _c("h5", [_vm._v("Logo "), _c("span", [_vm._v("(optional)")])]),
+                _vm._v(" "),
+                _c("label", { staticClass: "upload-btn" }, [
+                  _c("input", { attrs: { type: "file", multiple: "" } }),
+                  _vm._v(" "),
+                  _c("i", { staticClass: "fa fa-upload" }),
+                  _vm._v(" Browse\n\t\t\t\t\t\t\t")
+                ]),
+                _vm._v(" "),
+                _c("span", { staticClass: "fake-input" }, [
+                  _vm._v("No file selected")
+                ])
+              ])
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "dashboard-list-box margin-top-30" }, [
+          _c("h4", [_vm._v("Présentation de l'offre")]),
           _vm._v(" "),
-          _c("div", { staticClass: "form" }, [
-            _c("h5", [_vm._v("Numéro de téléphone")]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "search-field",
-              attrs: { type: "text", placeholder: "", value: "" }
-            })
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form" }, [
-            _c("div", { staticClass: "select" }, [
-              _c("h5", [_vm._v("Industrie")]),
+          _c("div", { staticClass: "dashboard-list-box-content" }, [
+            _c("div", { staticClass: "submit-page" }, [
+              _c(
+                "div",
+                { staticClass: "form", staticStyle: { width: "100%" } },
+                [
+                  _c("h5", [_vm._v("Description")]),
+                  _vm._v(" "),
+                  _c("textarea", {
+                    attrs: {
+                      name: "summary",
+                      cols: "20",
+                      rows: "1",
+                      id: "summary",
+                      spellcheck: "true"
+                    }
+                  })
+                ]
+              ),
               _vm._v(" "),
               _c(
-                "select",
-                {
-                  staticClass: "chosen-select",
-                  attrs: {
-                    "data-placeholder": "Choose Categories",
-                    multiple: ""
-                  }
-                },
+                "div",
+                { staticClass: "form", staticStyle: { width: "100%" } },
                 [
-                  _c("option", { attrs: { value: "1" } }, [
-                    _vm._v("Web Developers")
-                  ]),
+                  _c("h5", [_vm._v("Le marché")]),
                   _vm._v(" "),
-                  _c("option", { attrs: { value: "2" } }, [
-                    _vm._v("Mobile Developers")
-                  ]),
+                  _c("textarea", {
+                    attrs: {
+                      name: "summary",
+                      cols: "20",
+                      rows: "3",
+                      id: "summary",
+                      spellcheck: "true"
+                    }
+                  })
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "form", staticStyle: { width: "100%" } },
+                [
+                  _c("h5", [_vm._v("Progrès")]),
                   _vm._v(" "),
-                  _c("option", { attrs: { value: "3" } }, [
-                    _vm._v("Designers & Creatives")
-                  ]),
+                  _c("textarea", {
+                    attrs: {
+                      name: "summary",
+                      cols: "20",
+                      rows: "3",
+                      id: "summary",
+                      spellcheck: "true"
+                    }
+                  })
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "form", staticStyle: { width: "100%" } },
+                [
+                  _c("h5", [_vm._v("Objectif")]),
                   _vm._v(" "),
-                  _c("option", { attrs: { value: "4" } }, [_vm._v("Writers")]),
-                  _vm._v(" "),
-                  _c("option", { attrs: { value: "5" } }, [
-                    _vm._v("Virtual Assistants")
-                  ]),
-                  _vm._v(" "),
-                  _c("option", { attrs: { value: "6" } }, [
-                    _vm._v("Customer Service Agents")
-                  ]),
-                  _vm._v(" "),
-                  _c("option", { attrs: { value: "7" } }, [
-                    _vm._v("Sales & Marketing Experts")
-                  ]),
-                  _vm._v(" "),
-                  _c("option", { attrs: { value: "8" } }, [
-                    _vm._v("Accountants & Consultants")
-                  ])
+                  _c("textarea", {
+                    attrs: {
+                      name: "summary",
+                      cols: "60",
+                      rows: "3",
+                      id: "summary",
+                      spellcheck: "true"
+                    }
+                  })
                 ]
               )
             ])
-          ]),
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "dashboard-list-box margin-top-30" }, [
+          _c("h4", [_vm._v("Documents")]),
           _vm._v(" "),
-          _c("div", { staticClass: "form" }, [
-            _c("div", { staticClass: "select" }, [
-              _c("h5", [_vm._v("Domaine")]),
+          _c("div", { staticClass: "dashboard-list-box-content" }, [
+            _c("div", { staticClass: "submit-page" }, [
+              _c("div", { staticClass: "form" }, [
+                _c("h5", [
+                  _vm._v("Business plan"),
+                  _c("span", [_vm._v("(optional)")])
+                ]),
+                _vm._v(" "),
+                _c("label", { staticClass: "upload-btn" }, [
+                  _c("input", { attrs: { type: "file", multiple: "" } }),
+                  _vm._v(" "),
+                  _c("i", { staticClass: "fa fa-upload" }),
+                  _vm._v(" Télécharger\n\t\t\t\t\t\t\t")
+                ]),
+                _vm._v(" "),
+                _c("span", { staticClass: "fake-input" }, [
+                  _vm._v("No file selected")
+                ])
+              ]),
               _vm._v(" "),
-              _c(
-                "select",
-                {
-                  staticClass: "chosen-select",
-                  attrs: {
-                    "data-placeholder": "Choose Categories",
-                    multiple: ""
-                  }
-                },
-                [
-                  _c("option", { attrs: { value: "1" } }, [
-                    _vm._v("Web Developers")
-                  ]),
+              _c("div", { staticClass: "form" }, [
+                _c("h5", [
+                  _vm._v("Données financières"),
+                  _c("span", [_vm._v("(optional)")])
+                ]),
+                _vm._v(" "),
+                _c("label", { staticClass: "upload-btn" }, [
+                  _c("input", { attrs: { type: "file", multiple: "" } }),
                   _vm._v(" "),
-                  _c("option", { attrs: { value: "2" } }, [
-                    _vm._v("Mobile Developers")
-                  ]),
+                  _c("i", { staticClass: "fa fa-upload" }),
+                  _vm._v("Télécharger\n\t\t\t\t\t\t\t")
+                ]),
+                _vm._v(" "),
+                _c("span", { staticClass: "fake-input" }, [
+                  _vm._v("No file selected")
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form" }, [
+                _c("h5", [
+                  _vm._v("Sommaire exécutif"),
+                  _c("span", [_vm._v("(optional)")])
+                ]),
+                _vm._v(" "),
+                _c("label", { staticClass: "upload-btn" }, [
+                  _c("input", { attrs: { type: "file", multiple: "" } }),
                   _vm._v(" "),
-                  _c("option", { attrs: { value: "3" } }, [
-                    _vm._v("Designers & Creatives")
-                  ]),
+                  _c("i", { staticClass: "fa fa-upload" }),
+                  _vm._v("Télécharger\n\t\t\t\t\t\t\t")
+                ]),
+                _vm._v(" "),
+                _c("span", { staticClass: "fake-input" }, [
+                  _vm._v("No file selected")
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form" }, [
+                _c("h5", [
+                  _vm._v("Diaporama"),
+                  _c("span", [_vm._v("(optional)")])
+                ]),
+                _vm._v(" "),
+                _c("label", { staticClass: "upload-btn" }, [
+                  _c("input", { attrs: { type: "file", multiple: "" } }),
                   _vm._v(" "),
-                  _c("option", { attrs: { value: "4" } }, [_vm._v("Writers")]),
-                  _vm._v(" "),
-                  _c("option", { attrs: { value: "5" } }, [
-                    _vm._v("Virtual Assistants")
-                  ]),
-                  _vm._v(" "),
-                  _c("option", { attrs: { value: "6" } }, [
-                    _vm._v("Customer Service Agents")
-                  ]),
-                  _vm._v(" "),
-                  _c("option", { attrs: { value: "7" } }, [
-                    _vm._v("Sales & Marketing Experts")
-                  ]),
-                  _vm._v(" "),
-                  _c("option", { attrs: { value: "8" } }, [
-                    _vm._v("Accountants & Consultants")
+                  _c("i", { staticClass: "fa fa-upload" }),
+                  _vm._v(" Télécharger\n\t\t\t\t\t\t\t")
+                ]),
+                _vm._v(" "),
+                _c("span", { staticClass: "fake-input" }, [
+                  _vm._v("No file selected")
+                ])
+              ])
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "dashboard-list-box margin-top-30" }, [
+          _c("h4", [_vm._v("Equipe")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "dashboard-list-box-content" }, [
+            _c("div", { staticClass: "padding-right" }, [
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col-md-6" }, [
+                  _c("ul", { staticClass: "resumes-list alternative" }, [
+                    _c("li", [
+                      _c("a", { attrs: { href: "resume-page.html" } }, [
+                        _c("img", {
+                          attrs: {
+                            src: "images/resumes-list-avatar-01.png",
+                            alt: ""
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "resumes-list-content" }, [
+                          _c("h4", [
+                            _vm._v("John Doe "),
+                            _c("span", [_vm._v("UX/UI Graphic Designer")])
+                          ]),
+                          _vm._v(" "),
+                          _c("span", [
+                            _c("i", { staticClass: "fa fa-map-marker" }),
+                            _vm._v(" Melbourne")
+                          ]),
+                          _vm._v(" "),
+                          _c("span", [
+                            _c("i", { staticClass: "fa fa-money" }),
+                            _vm._v(" $100 / hour")
+                          ]),
+                          _vm._v(" "),
+                          _c("p", [
+                            _vm._v(
+                              "Over 8000 hours on oDesk (only Drupal related). Highly motivated, goal-oriented, hands-on senior software engineer with extensive technical skills and over 15 years of experience in software development"
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "skills" }, [
+                            _c("span", [_vm._v("JavaScript")]),
+                            _vm._v(" "),
+                            _c("span", [_vm._v("PHP")]),
+                            _vm._v(" "),
+                            _c("span", [_vm._v("WordPress")])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "clearfix" })
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "clearfix" })
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("a", { attrs: { href: "resume-page.html" } }, [
+                        _c("img", {
+                          attrs: {
+                            src: "images/avatar-placeholder.png",
+                            alt: ""
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "resumes-list-content" }, [
+                          _c("h4", [
+                            _vm._v("Tom Smith "),
+                            _c("span", [_vm._v("iOS Mobile Developer")])
+                          ]),
+                          _vm._v(" "),
+                          _c("span", [
+                            _c("i", { staticClass: "fa fa-map-marker" }),
+                            _vm._v(" Sydney")
+                          ]),
+                          _vm._v(" "),
+                          _c("span", [
+                            _c("i", { staticClass: "fa fa-money" }),
+                            _vm._v(" $35 / hour")
+                          ]),
+                          _vm._v(" "),
+                          _c("p", [
+                            _vm._v(
+                              "Over 8000 hours on oDesk (only Drupal related). Highly motivated, goal-oriented, hands-on senior software engineer with extensive technical skills and over 15 years of experience in software development"
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "skills" }, [
+                            _c("span", [_vm._v("iOS Development")]),
+                            _vm._v(" "),
+                            _c("span", [_vm._v("iOS App Development")]),
+                            _vm._v(" "),
+                            _c("span", [_vm._v("Objective-C")])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "clearfix" })
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "clearfix" })
+                    ])
                   ])
-                ]
-              )
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form" }, [
-            _c("h5", [_vm._v("Rôle de l'investisseur")]),
-            _vm._v(" "),
-            _c(
-              "select",
-              {
-                staticClass: "chosen-select-no-single",
-                attrs: { "data-placeholder": "Full-Time" }
-              },
-              [
-                _c("option", { attrs: { value: "1" } }, [_vm._v("Full-Time")]),
+                ]),
                 _vm._v(" "),
-                _c("option", { attrs: { value: "2" } }, [_vm._v("Part-Time")]),
-                _vm._v(" "),
-                _c("option", { attrs: { value: "2" } }, [_vm._v("Internship")]),
-                _vm._v(" "),
-                _c("option", { attrs: { value: "2" } }, [_vm._v("Freelance")])
-              ]
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form" }, [
-            _c("h5", [_vm._v("Stade de développement")]),
-            _vm._v(" "),
-            _c(
-              "select",
-              {
-                staticClass: "chosen-select-no-single",
-                attrs: { "data-placeholder": "Full-Time" }
-              },
-              [
-                _c("option", { attrs: { value: "1" } }, [_vm._v("Full-Time")]),
-                _vm._v(" "),
-                _c("option", { attrs: { value: "2" } }, [_vm._v("Part-Time")]),
-                _vm._v(" "),
-                _c("option", { attrs: { value: "2" } }, [_vm._v("Internship")]),
-                _vm._v(" "),
-                _c("option", { attrs: { value: "2" } }, [_vm._v("Freelance")])
-              ]
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form" }, [
-            _c("h5", [_vm._v("Logo "), _c("span", [_vm._v("(optional)")])]),
-            _vm._v(" "),
-            _c("label", { staticClass: "upload-btn" }, [
-              _c("input", { attrs: { type: "file", multiple: "" } }),
-              _vm._v(" "),
-              _c("i", { staticClass: "fa fa-upload" }),
-              _vm._v(" Browse\n\t\t\t\t\t\t\t")
-            ]),
-            _vm._v(" "),
-            _c("span", { staticClass: "fake-input" }, [
-              _vm._v("No file selected")
+                _c("div", { staticClass: "col-md-6" }, [
+                  _c("ul", { staticClass: "resumes-list alternative" }, [
+                    _c("li", [
+                      _c("a", { attrs: { href: "resume-page.html" } }, [
+                        _c("img", {
+                          attrs: {
+                            src: "images/resumes-list-avatar-01.png",
+                            alt: ""
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "resumes-list-content" }, [
+                          _c("h4", [
+                            _vm._v("John Doe "),
+                            _c("span", [_vm._v("UX/UI Graphic Designer")])
+                          ]),
+                          _vm._v(" "),
+                          _c("span", [
+                            _c("i", { staticClass: "fa fa-map-marker" }),
+                            _vm._v(" Melbourne")
+                          ]),
+                          _vm._v(" "),
+                          _c("span", [
+                            _c("i", { staticClass: "fa fa-money" }),
+                            _vm._v(" $100 / hour")
+                          ]),
+                          _vm._v(" "),
+                          _c("p", [
+                            _vm._v(
+                              "Over 8000 hours on oDesk (only Drupal related). Highly motivated, goal-oriented, hands-on senior software engineer with extensive technical skills and over 15 years of experience in software development"
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "skills" }, [
+                            _c("span", [_vm._v("JavaScript")]),
+                            _vm._v(" "),
+                            _c("span", [_vm._v("PHP")]),
+                            _vm._v(" "),
+                            _c("span", [_vm._v("WordPress")])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "clearfix" })
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "clearfix" })
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("a", { attrs: { href: "resume-page.html" } }, [
+                        _c("img", {
+                          attrs: {
+                            src: "images/avatar-placeholder.png",
+                            alt: ""
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "resumes-list-content" }, [
+                          _c("h4", [
+                            _vm._v("Tom Smith "),
+                            _c("span", [_vm._v("iOS Mobile Developer")])
+                          ]),
+                          _vm._v(" "),
+                          _c("span", [
+                            _c("i", { staticClass: "fa fa-map-marker" }),
+                            _vm._v(" Sydney")
+                          ]),
+                          _vm._v(" "),
+                          _c("span", [
+                            _c("i", { staticClass: "fa fa-money" }),
+                            _vm._v(" $35 / hour")
+                          ]),
+                          _vm._v(" "),
+                          _c("p", [
+                            _vm._v(
+                              "Over 8000 hours on oDesk (only Drupal related). Highly motivated, goal-oriented, hands-on senior software engineer with extensive technical skills and over 15 years of experience in software development"
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "skills" }, [
+                            _c("span", [_vm._v("iOS Development")]),
+                            _vm._v(" "),
+                            _c("span", [_vm._v("iOS App Development")]),
+                            _vm._v(" "),
+                            _c("span", [_vm._v("Objective-C")])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "clearfix" })
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "clearfix" })
+                    ])
+                  ])
+                ])
+              ])
             ])
           ])
+        ]),
+        _vm._v(" "),
+        _c("a", { staticClass: "button margin-top-30", attrs: { href: "#" } }, [
+          _vm._v("Publier")
         ])
       ])
     ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "dashboard-list-box margin-top-30" }, [
-      _c("h4", [_vm._v("Présentation de l'offre")]),
-      _vm._v(" "),
-      _c("div", { staticClass: "dashboard-list-box-content" }, [
-        _c("div", { staticClass: "submit-page" }, [
-          _c("div", { staticClass: "form", staticStyle: { width: "100%" } }, [
-            _c("h5", [_vm._v("Description")]),
-            _vm._v(" "),
-            _c("textarea", {
-              attrs: {
-                name: "summary",
-                cols: "20",
-                rows: "1",
-                id: "summary",
-                spellcheck: "true"
-              }
-            })
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form", staticStyle: { width: "100%" } }, [
-            _c("h5", [_vm._v("Le marché")]),
-            _vm._v(" "),
-            _c("textarea", {
-              attrs: {
-                name: "summary",
-                cols: "20",
-                rows: "3",
-                id: "summary",
-                spellcheck: "true"
-              }
-            })
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form", staticStyle: { width: "100%" } }, [
-            _c("h5", [_vm._v("Progrès")]),
-            _vm._v(" "),
-            _c("textarea", {
-              attrs: {
-                name: "summary",
-                cols: "20",
-                rows: "3",
-                id: "summary",
-                spellcheck: "true"
-              }
-            })
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form", staticStyle: { width: "100%" } }, [
-            _c("h5", [_vm._v("Objectif")]),
-            _vm._v(" "),
-            _c("textarea", {
-              attrs: {
-                name: "summary",
-                cols: "60",
-                rows: "3",
-                id: "summary",
-                spellcheck: "true"
-              }
-            })
-          ])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "dashboard-list-box margin-top-30" }, [
-      _c("h4", [_vm._v("Documents")]),
-      _vm._v(" "),
-      _c("div", { staticClass: "dashboard-list-box-content" }, [
-        _c("div", { staticClass: "submit-page" }, [
-          _c("div", { staticClass: "form" }, [
-            _c("h5", [
-              _vm._v("Business plan"),
-              _c("span", [_vm._v("(optional)")])
-            ]),
-            _vm._v(" "),
-            _c("label", { staticClass: "upload-btn" }, [
-              _c("input", { attrs: { type: "file", multiple: "" } }),
-              _vm._v(" "),
-              _c("i", { staticClass: "fa fa-upload" }),
-              _vm._v(" Télécharger\n\t\t\t\t\t\t\t")
-            ]),
-            _vm._v(" "),
-            _c("span", { staticClass: "fake-input" }, [
-              _vm._v("No file selected")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form" }, [
-            _c("h5", [
-              _vm._v("Données financières"),
-              _c("span", [_vm._v("(optional)")])
-            ]),
-            _vm._v(" "),
-            _c("label", { staticClass: "upload-btn" }, [
-              _c("input", { attrs: { type: "file", multiple: "" } }),
-              _vm._v(" "),
-              _c("i", { staticClass: "fa fa-upload" }),
-              _vm._v("Télécharger\n\t\t\t\t\t\t\t")
-            ]),
-            _vm._v(" "),
-            _c("span", { staticClass: "fake-input" }, [
-              _vm._v("No file selected")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form" }, [
-            _c("h5", [
-              _vm._v("Sommaire exécutif"),
-              _c("span", [_vm._v("(optional)")])
-            ]),
-            _vm._v(" "),
-            _c("label", { staticClass: "upload-btn" }, [
-              _c("input", { attrs: { type: "file", multiple: "" } }),
-              _vm._v(" "),
-              _c("i", { staticClass: "fa fa-upload" }),
-              _vm._v("Télécharger\n\t\t\t\t\t\t\t")
-            ]),
-            _vm._v(" "),
-            _c("span", { staticClass: "fake-input" }, [
-              _vm._v("No file selected")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form" }, [
-            _c("h5", [_vm._v("Diaporama"), _c("span", [_vm._v("(optional)")])]),
-            _vm._v(" "),
-            _c("label", { staticClass: "upload-btn" }, [
-              _c("input", { attrs: { type: "file", multiple: "" } }),
-              _vm._v(" "),
-              _c("i", { staticClass: "fa fa-upload" }),
-              _vm._v(" Télécharger\n\t\t\t\t\t\t\t")
-            ]),
-            _vm._v(" "),
-            _c("span", { staticClass: "fake-input" }, [
-              _vm._v("No file selected")
-            ])
-          ])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "a",
-      { staticClass: "button margin-top-30", attrs: { href: "#" } },
-      [_vm._v("Publier"), _c("i", { staticClass: "fa fa-arrow-circle-right" })]
-    )
   }
 ]
 render._withStripped = true
@@ -42841,44 +43597,7 @@ var render = function() {
   return _c(
     "div",
     { staticClass: "dashboard-content" },
-    [
-      _c("TitlebarComponent"),
-      _vm._v(" "),
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-lg-12 col-md-12" }, [
-          _vm._m(0),
-          _vm._v(" "),
-          _vm._m(1),
-          _vm._v(" "),
-          _vm._m(2),
-          _vm._v(" "),
-          _c("div", { staticClass: "dashboard-list-box margin-top-30" }, [
-            _c("h4", [_vm._v("Equipe")]),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "dashboard-list-box-content" },
-              [
-                _c("center", [
-                  _c(
-                    "a",
-                    {
-                      staticClass: "button margin-top-30",
-                      attrs: { href: "#" }
-                    },
-                    [
-                      _vm._v("Voir les membre de l'équipe "),
-                      _c("i", { staticClass: "fa fa-arrow-circle-right" })
-                    ]
-                  )
-                ])
-              ],
-              1
-            )
-          ])
-        ])
-      ])
-    ],
+    [_c("TitlebarComponent"), _vm._v(" "), _vm._m(0)],
     1
   )
 }
@@ -42887,371 +43606,616 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "dashboard-list-box margin-top-0" }, [
-      _c("h4", [_vm._v("La société")]),
-      _vm._v(" "),
-      _c("div", { staticClass: "dashboard-list-box-content" }, [
-        _c("div", { staticClass: "submit-page" }, [
-          _c("div", { staticClass: "form" }, [
-            _c("h5", [_vm._v("Intitulé du projet")]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "search-field",
-              attrs: {
-                type: "text",
-                placeholder: "mail@example.com",
-                value: ""
-              }
-            })
-          ]),
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-lg-12 col-md-12" }, [
+        _c("div", { staticClass: "dashboard-list-box margin-top-0" }, [
+          _c("h4", [_vm._v("La société")]),
           _vm._v(" "),
-          _c("div", { staticClass: "form" }, [
-            _c("h5", [_vm._v("Site web")]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "search-field",
-              attrs: { type: "text", placeholder: "", value: "" }
-            })
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form" }, [
-            _c("h5", [_vm._v("Nom de l'entreprise")]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "search-field",
-              attrs: { type: "text", placeholder: "", value: "" }
-            })
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form" }, [
-            _c("h5", [_vm._v("Localisation de l'entreprise")]),
-            _vm._v(" "),
-            _c(
-              "select",
-              {
-                staticClass: "chosen-select-no-single",
-                attrs: { "data-placeholder": "Full-Time" }
-              },
-              [
-                _c("option", { attrs: { value: "1" } }, [_vm._v("Full-Time")]),
+          _c("div", { staticClass: "dashboard-list-box-content" }, [
+            _c("div", { staticClass: "submit-page" }, [
+              _c("div", { staticClass: "form" }, [
+                _c("h5", [_vm._v("Intitulé du projet")]),
                 _vm._v(" "),
-                _c("option", { attrs: { value: "2" } }, [_vm._v("Part-Time")]),
+                _c("input", {
+                  staticClass: "search-field",
+                  attrs: {
+                    type: "text",
+                    placeholder: "mail@example.com",
+                    value: ""
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form" }, [
+                _c("h5", [_vm._v("Site web")]),
                 _vm._v(" "),
-                _c("option", { attrs: { value: "2" } }, [_vm._v("Internship")]),
+                _c("input", {
+                  staticClass: "search-field",
+                  attrs: { type: "text", placeholder: "", value: "" }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form" }, [
+                _c("h5", [_vm._v("Nom de l'entreprise")]),
                 _vm._v(" "),
-                _c("option", { attrs: { value: "2" } }, [_vm._v("Freelance")])
-              ]
-            )
-          ]),
+                _c("input", {
+                  staticClass: "search-field",
+                  attrs: { type: "text", placeholder: "", value: "" }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form" }, [
+                _c("h5", [_vm._v("Localisation de l'entreprise")]),
+                _vm._v(" "),
+                _c(
+                  "select",
+                  {
+                    staticClass: "chosen-select-no-single",
+                    attrs: { "data-placeholder": "Full-Time" }
+                  },
+                  [
+                    _c("option", { attrs: { value: "1" } }, [
+                      _vm._v("Full-Time")
+                    ]),
+                    _vm._v(" "),
+                    _c("option", { attrs: { value: "2" } }, [
+                      _vm._v("Part-Time")
+                    ]),
+                    _vm._v(" "),
+                    _c("option", { attrs: { value: "2" } }, [
+                      _vm._v("Internship")
+                    ]),
+                    _vm._v(" "),
+                    _c("option", { attrs: { value: "2" } }, [
+                      _vm._v("Freelance")
+                    ])
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form" }, [
+                _c("h5", [_vm._v("Numéro de téléphone")]),
+                _vm._v(" "),
+                _c("input", {
+                  staticClass: "search-field",
+                  attrs: { type: "text", placeholder: "", value: "" }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form" }, [
+                _c("div", { staticClass: "select" }, [
+                  _c("h5", [_vm._v("Industrie")]),
+                  _vm._v(" "),
+                  _c(
+                    "select",
+                    {
+                      staticClass: "chosen-select",
+                      attrs: {
+                        "data-placeholder": "Choose Categories",
+                        multiple: ""
+                      }
+                    },
+                    [
+                      _c("option", { attrs: { value: "1" } }, [
+                        _vm._v("Web Developers")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "2" } }, [
+                        _vm._v("Mobile Developers")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "3" } }, [
+                        _vm._v("Designers & Creatives")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "4" } }, [
+                        _vm._v("Writers")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "5" } }, [
+                        _vm._v("Virtual Assistants")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "6" } }, [
+                        _vm._v("Customer Service Agents")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "7" } }, [
+                        _vm._v("Sales & Marketing Experts")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "8" } }, [
+                        _vm._v("Accountants & Consultants")
+                      ])
+                    ]
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form" }, [
+                _c("div", { staticClass: "select" }, [
+                  _c("h5", [_vm._v("Domaine")]),
+                  _vm._v(" "),
+                  _c(
+                    "select",
+                    {
+                      staticClass: "chosen-select",
+                      attrs: {
+                        "data-placeholder": "Choose Categories",
+                        multiple: ""
+                      }
+                    },
+                    [
+                      _c("option", { attrs: { value: "1" } }, [
+                        _vm._v("Web Developers")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "2" } }, [
+                        _vm._v("Mobile Developers")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "3" } }, [
+                        _vm._v("Designers & Creatives")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "4" } }, [
+                        _vm._v("Writers")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "5" } }, [
+                        _vm._v("Virtual Assistants")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "6" } }, [
+                        _vm._v("Customer Service Agents")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "7" } }, [
+                        _vm._v("Sales & Marketing Experts")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "8" } }, [
+                        _vm._v("Accountants & Consultants")
+                      ])
+                    ]
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form" }, [
+                _c("h5", [_vm._v("Rôle de l'investisseur")]),
+                _vm._v(" "),
+                _c(
+                  "select",
+                  {
+                    staticClass: "chosen-select-no-single",
+                    attrs: { "data-placeholder": "Full-Time" }
+                  },
+                  [
+                    _c("option", { attrs: { value: "1" } }, [
+                      _vm._v("Full-Time")
+                    ]),
+                    _vm._v(" "),
+                    _c("option", { attrs: { value: "2" } }, [
+                      _vm._v("Part-Time")
+                    ]),
+                    _vm._v(" "),
+                    _c("option", { attrs: { value: "2" } }, [
+                      _vm._v("Internship")
+                    ]),
+                    _vm._v(" "),
+                    _c("option", { attrs: { value: "2" } }, [
+                      _vm._v("Freelance")
+                    ])
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form" }, [
+                _c("h5", [_vm._v("Stade de développement")]),
+                _vm._v(" "),
+                _c(
+                  "select",
+                  {
+                    staticClass: "chosen-select-no-single",
+                    attrs: { "data-placeholder": "Full-Time" }
+                  },
+                  [
+                    _c("option", { attrs: { value: "1" } }, [
+                      _vm._v("Full-Time")
+                    ]),
+                    _vm._v(" "),
+                    _c("option", { attrs: { value: "2" } }, [
+                      _vm._v("Part-Time")
+                    ]),
+                    _vm._v(" "),
+                    _c("option", { attrs: { value: "2" } }, [
+                      _vm._v("Internship")
+                    ]),
+                    _vm._v(" "),
+                    _c("option", { attrs: { value: "2" } }, [
+                      _vm._v("Freelance")
+                    ])
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form" }, [
+                _c("h5", [_vm._v("Logo "), _c("span", [_vm._v("(optional)")])]),
+                _vm._v(" "),
+                _c("label", { staticClass: "upload-btn" }, [
+                  _c("input", { attrs: { type: "file", multiple: "" } }),
+                  _vm._v(" "),
+                  _c("i", { staticClass: "fa fa-upload" }),
+                  _vm._v(" Browse\n\t\t\t\t\t\t\t")
+                ]),
+                _vm._v(" "),
+                _c("span", { staticClass: "fake-input" }, [
+                  _vm._v("No file selected")
+                ])
+              ])
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "dashboard-list-box margin-top-30" }, [
+          _c("h4", [_vm._v("Présentation de l'offre")]),
           _vm._v(" "),
-          _c("div", { staticClass: "form" }, [
-            _c("h5", [_vm._v("Numéro de téléphone")]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "search-field",
-              attrs: { type: "text", placeholder: "", value: "" }
-            })
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form" }, [
-            _c("div", { staticClass: "select" }, [
-              _c("h5", [_vm._v("Industrie")]),
+          _c("div", { staticClass: "dashboard-list-box-content" }, [
+            _c("div", { staticClass: "submit-page" }, [
+              _c(
+                "div",
+                { staticClass: "form", staticStyle: { width: "100%" } },
+                [
+                  _c("h5", [_vm._v("Description")]),
+                  _vm._v(" "),
+                  _c("textarea", {
+                    attrs: {
+                      name: "summary",
+                      cols: "20",
+                      rows: "1",
+                      id: "summary",
+                      spellcheck: "true"
+                    }
+                  })
+                ]
+              ),
               _vm._v(" "),
               _c(
-                "select",
-                {
-                  staticClass: "chosen-select",
-                  attrs: {
-                    "data-placeholder": "Choose Categories",
-                    multiple: ""
-                  }
-                },
+                "div",
+                { staticClass: "form", staticStyle: { width: "100%" } },
                 [
-                  _c("option", { attrs: { value: "1" } }, [
-                    _vm._v("Web Developers")
-                  ]),
+                  _c("h5", [_vm._v("Le marché")]),
                   _vm._v(" "),
-                  _c("option", { attrs: { value: "2" } }, [
-                    _vm._v("Mobile Developers")
-                  ]),
+                  _c("textarea", {
+                    attrs: {
+                      name: "summary",
+                      cols: "20",
+                      rows: "3",
+                      id: "summary",
+                      spellcheck: "true"
+                    }
+                  })
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "form", staticStyle: { width: "100%" } },
+                [
+                  _c("h5", [_vm._v("Progrès")]),
                   _vm._v(" "),
-                  _c("option", { attrs: { value: "3" } }, [
-                    _vm._v("Designers & Creatives")
-                  ]),
+                  _c("textarea", {
+                    attrs: {
+                      name: "summary",
+                      cols: "20",
+                      rows: "3",
+                      id: "summary",
+                      spellcheck: "true"
+                    }
+                  })
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "form", staticStyle: { width: "100%" } },
+                [
+                  _c("h5", [_vm._v("Objectif")]),
                   _vm._v(" "),
-                  _c("option", { attrs: { value: "4" } }, [_vm._v("Writers")]),
-                  _vm._v(" "),
-                  _c("option", { attrs: { value: "5" } }, [
-                    _vm._v("Virtual Assistants")
-                  ]),
-                  _vm._v(" "),
-                  _c("option", { attrs: { value: "6" } }, [
-                    _vm._v("Customer Service Agents")
-                  ]),
-                  _vm._v(" "),
-                  _c("option", { attrs: { value: "7" } }, [
-                    _vm._v("Sales & Marketing Experts")
-                  ]),
-                  _vm._v(" "),
-                  _c("option", { attrs: { value: "8" } }, [
-                    _vm._v("Accountants & Consultants")
-                  ])
+                  _c("textarea", {
+                    attrs: {
+                      name: "summary",
+                      cols: "60",
+                      rows: "3",
+                      id: "summary",
+                      spellcheck: "true"
+                    }
+                  })
                 ]
               )
             ])
-          ]),
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "dashboard-list-box margin-top-30" }, [
+          _c("h4", [_vm._v("Documents")]),
           _vm._v(" "),
-          _c("div", { staticClass: "form" }, [
-            _c("div", { staticClass: "select" }, [
-              _c("h5", [_vm._v("Domaine")]),
+          _c("div", { staticClass: "dashboard-list-box-content" }, [
+            _c("div", { staticClass: "submit-page" }, [
+              _c("div", { staticClass: "form" }, [
+                _c("h5", [
+                  _vm._v("Business plan"),
+                  _c("span", [_vm._v("(optional)")])
+                ]),
+                _vm._v(" "),
+                _c("label", { staticClass: "upload-btn" }, [
+                  _c("input", { attrs: { type: "file", multiple: "" } }),
+                  _vm._v(" "),
+                  _c("i", { staticClass: "fa fa-upload" }),
+                  _vm._v(" Télécharger\n\t\t\t\t\t\t\t")
+                ]),
+                _vm._v(" "),
+                _c("span", { staticClass: "fake-input" }, [
+                  _vm._v("No file selected")
+                ])
+              ]),
               _vm._v(" "),
-              _c(
-                "select",
-                {
-                  staticClass: "chosen-select",
-                  attrs: {
-                    "data-placeholder": "Choose Categories",
-                    multiple: ""
-                  }
-                },
-                [
-                  _c("option", { attrs: { value: "1" } }, [
-                    _vm._v("Web Developers")
-                  ]),
+              _c("div", { staticClass: "form" }, [
+                _c("h5", [
+                  _vm._v("Données financières"),
+                  _c("span", [_vm._v("(optional)")])
+                ]),
+                _vm._v(" "),
+                _c("label", { staticClass: "upload-btn" }, [
+                  _c("input", { attrs: { type: "file", multiple: "" } }),
                   _vm._v(" "),
-                  _c("option", { attrs: { value: "2" } }, [
-                    _vm._v("Mobile Developers")
-                  ]),
+                  _c("i", { staticClass: "fa fa-upload" }),
+                  _vm._v("Télécharger\n\t\t\t\t\t\t\t")
+                ]),
+                _vm._v(" "),
+                _c("span", { staticClass: "fake-input" }, [
+                  _vm._v("No file selected")
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form" }, [
+                _c("h5", [
+                  _vm._v("Sommaire exécutif"),
+                  _c("span", [_vm._v("(optional)")])
+                ]),
+                _vm._v(" "),
+                _c("label", { staticClass: "upload-btn" }, [
+                  _c("input", { attrs: { type: "file", multiple: "" } }),
                   _vm._v(" "),
-                  _c("option", { attrs: { value: "3" } }, [
-                    _vm._v("Designers & Creatives")
-                  ]),
+                  _c("i", { staticClass: "fa fa-upload" }),
+                  _vm._v("Télécharger\n\t\t\t\t\t\t\t")
+                ]),
+                _vm._v(" "),
+                _c("span", { staticClass: "fake-input" }, [
+                  _vm._v("No file selected")
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form" }, [
+                _c("h5", [
+                  _vm._v("Diaporama"),
+                  _c("span", [_vm._v("(optional)")])
+                ]),
+                _vm._v(" "),
+                _c("label", { staticClass: "upload-btn" }, [
+                  _c("input", { attrs: { type: "file", multiple: "" } }),
                   _vm._v(" "),
-                  _c("option", { attrs: { value: "4" } }, [_vm._v("Writers")]),
-                  _vm._v(" "),
-                  _c("option", { attrs: { value: "5" } }, [
-                    _vm._v("Virtual Assistants")
-                  ]),
-                  _vm._v(" "),
-                  _c("option", { attrs: { value: "6" } }, [
-                    _vm._v("Customer Service Agents")
-                  ]),
-                  _vm._v(" "),
-                  _c("option", { attrs: { value: "7" } }, [
-                    _vm._v("Sales & Marketing Experts")
-                  ]),
-                  _vm._v(" "),
-                  _c("option", { attrs: { value: "8" } }, [
-                    _vm._v("Accountants & Consultants")
+                  _c("i", { staticClass: "fa fa-upload" }),
+                  _vm._v(" Télécharger\n\t\t\t\t\t\t\t")
+                ]),
+                _vm._v(" "),
+                _c("span", { staticClass: "fake-input" }, [
+                  _vm._v("No file selected")
+                ])
+              ])
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "dashboard-list-box margin-top-30" }, [
+          _c("h4", [_vm._v("Equipe")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "dashboard-list-box-content" }, [
+            _c("div", { staticClass: "padding-right" }, [
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col-md-6" }, [
+                  _c("ul", { staticClass: "resumes-list alternative" }, [
+                    _c("li", [
+                      _c("a", { attrs: { href: "resume-page.html" } }, [
+                        _c("img", {
+                          attrs: {
+                            src: "images/resumes-list-avatar-01.png",
+                            alt: ""
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "resumes-list-content" }, [
+                          _c("h4", [
+                            _vm._v("John Doe "),
+                            _c("span", [_vm._v("UX/UI Graphic Designer")])
+                          ]),
+                          _vm._v(" "),
+                          _c("span", [
+                            _c("i", { staticClass: "fa fa-map-marker" }),
+                            _vm._v(" Melbourne")
+                          ]),
+                          _vm._v(" "),
+                          _c("span", [
+                            _c("i", { staticClass: "fa fa-money" }),
+                            _vm._v(" $100 / hour")
+                          ]),
+                          _vm._v(" "),
+                          _c("p", [
+                            _vm._v(
+                              "Over 8000 hours on oDesk (only Drupal related). Highly motivated, goal-oriented, hands-on senior software engineer with extensive technical skills and over 15 years of experience in software development"
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "skills" }, [
+                            _c("span", [_vm._v("JavaScript")]),
+                            _vm._v(" "),
+                            _c("span", [_vm._v("PHP")]),
+                            _vm._v(" "),
+                            _c("span", [_vm._v("WordPress")])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "clearfix" })
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "clearfix" })
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("a", { attrs: { href: "resume-page.html" } }, [
+                        _c("img", {
+                          attrs: {
+                            src: "images/avatar-placeholder.png",
+                            alt: ""
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "resumes-list-content" }, [
+                          _c("h4", [
+                            _vm._v("Tom Smith "),
+                            _c("span", [_vm._v("iOS Mobile Developer")])
+                          ]),
+                          _vm._v(" "),
+                          _c("span", [
+                            _c("i", { staticClass: "fa fa-map-marker" }),
+                            _vm._v(" Sydney")
+                          ]),
+                          _vm._v(" "),
+                          _c("span", [
+                            _c("i", { staticClass: "fa fa-money" }),
+                            _vm._v(" $35 / hour")
+                          ]),
+                          _vm._v(" "),
+                          _c("p", [
+                            _vm._v(
+                              "Over 8000 hours on oDesk (only Drupal related). Highly motivated, goal-oriented, hands-on senior software engineer with extensive technical skills and over 15 years of experience in software development"
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "skills" }, [
+                            _c("span", [_vm._v("iOS Development")]),
+                            _vm._v(" "),
+                            _c("span", [_vm._v("iOS App Development")]),
+                            _vm._v(" "),
+                            _c("span", [_vm._v("Objective-C")])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "clearfix" })
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "clearfix" })
+                    ])
                   ])
-                ]
-              )
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form" }, [
-            _c("h5", [_vm._v("Rôle de l'investisseur")]),
-            _vm._v(" "),
-            _c(
-              "select",
-              {
-                staticClass: "chosen-select-no-single",
-                attrs: { "data-placeholder": "Full-Time" }
-              },
-              [
-                _c("option", { attrs: { value: "1" } }, [_vm._v("Full-Time")]),
+                ]),
                 _vm._v(" "),
-                _c("option", { attrs: { value: "2" } }, [_vm._v("Part-Time")]),
-                _vm._v(" "),
-                _c("option", { attrs: { value: "2" } }, [_vm._v("Internship")]),
-                _vm._v(" "),
-                _c("option", { attrs: { value: "2" } }, [_vm._v("Freelance")])
-              ]
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form" }, [
-            _c("h5", [_vm._v("Stade de développement")]),
-            _vm._v(" "),
-            _c(
-              "select",
-              {
-                staticClass: "chosen-select-no-single",
-                attrs: { "data-placeholder": "Full-Time" }
-              },
-              [
-                _c("option", { attrs: { value: "1" } }, [_vm._v("Full-Time")]),
-                _vm._v(" "),
-                _c("option", { attrs: { value: "2" } }, [_vm._v("Part-Time")]),
-                _vm._v(" "),
-                _c("option", { attrs: { value: "2" } }, [_vm._v("Internship")]),
-                _vm._v(" "),
-                _c("option", { attrs: { value: "2" } }, [_vm._v("Freelance")])
-              ]
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form" }, [
-            _c("h5", [_vm._v("Logo "), _c("span", [_vm._v("(optional)")])]),
-            _vm._v(" "),
-            _c("label", { staticClass: "upload-btn" }, [
-              _c("input", { attrs: { type: "file", multiple: "" } }),
-              _vm._v(" "),
-              _c("i", { staticClass: "fa fa-upload" }),
-              _vm._v(" Browse\n\t\t\t\t\t\t\t")
-            ]),
-            _vm._v(" "),
-            _c("span", { staticClass: "fake-input" }, [
-              _vm._v("No file selected")
-            ])
-          ])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "dashboard-list-box margin-top-30" }, [
-      _c("h4", [_vm._v("Présentation de l'offre")]),
-      _vm._v(" "),
-      _c("div", { staticClass: "dashboard-list-box-content" }, [
-        _c("div", { staticClass: "submit-page" }, [
-          _c("div", { staticClass: "form", staticStyle: { width: "100%" } }, [
-            _c("h5", [_vm._v("Description")]),
-            _vm._v(" "),
-            _c("textarea", {
-              attrs: {
-                name: "summary",
-                cols: "20",
-                rows: "1",
-                id: "summary",
-                spellcheck: "true"
-              }
-            })
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form", staticStyle: { width: "100%" } }, [
-            _c("h5", [_vm._v("Le marché")]),
-            _vm._v(" "),
-            _c("textarea", {
-              attrs: {
-                name: "summary",
-                cols: "20",
-                rows: "3",
-                id: "summary",
-                spellcheck: "true"
-              }
-            })
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form", staticStyle: { width: "100%" } }, [
-            _c("h5", [_vm._v("Progrès")]),
-            _vm._v(" "),
-            _c("textarea", {
-              attrs: {
-                name: "summary",
-                cols: "20",
-                rows: "3",
-                id: "summary",
-                spellcheck: "true"
-              }
-            })
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form", staticStyle: { width: "100%" } }, [
-            _c("h5", [_vm._v("Objectif")]),
-            _vm._v(" "),
-            _c("textarea", {
-              attrs: {
-                name: "summary",
-                cols: "60",
-                rows: "3",
-                id: "summary",
-                spellcheck: "true"
-              }
-            })
-          ])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "dashboard-list-box margin-top-30" }, [
-      _c("h4", [_vm._v("Documents")]),
-      _vm._v(" "),
-      _c("div", { staticClass: "dashboard-list-box-content" }, [
-        _c("div", { staticClass: "submit-page" }, [
-          _c("div", { staticClass: "form" }, [
-            _c("h5", [
-              _vm._v("Business plan"),
-              _c("span", [_vm._v("(optional)")])
-            ]),
-            _vm._v(" "),
-            _c("label", { staticClass: "upload-btn" }, [
-              _c("input", { attrs: { type: "file", multiple: "" } }),
-              _vm._v(" "),
-              _c("i", { staticClass: "fa fa-upload" }),
-              _vm._v(" Télécharger\n\t\t\t\t\t\t\t")
-            ]),
-            _vm._v(" "),
-            _c("span", { staticClass: "fake-input" }, [
-              _vm._v("No file selected")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form" }, [
-            _c("h5", [
-              _vm._v("Données financières"),
-              _c("span", [_vm._v("(optional)")])
-            ]),
-            _vm._v(" "),
-            _c("label", { staticClass: "upload-btn" }, [
-              _c("input", { attrs: { type: "file", multiple: "" } }),
-              _vm._v(" "),
-              _c("i", { staticClass: "fa fa-upload" }),
-              _vm._v("Télécharger\n\t\t\t\t\t\t\t")
-            ]),
-            _vm._v(" "),
-            _c("span", { staticClass: "fake-input" }, [
-              _vm._v("No file selected")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form" }, [
-            _c("h5", [
-              _vm._v("Sommaire exécutif"),
-              _c("span", [_vm._v("(optional)")])
-            ]),
-            _vm._v(" "),
-            _c("label", { staticClass: "upload-btn" }, [
-              _c("input", { attrs: { type: "file", multiple: "" } }),
-              _vm._v(" "),
-              _c("i", { staticClass: "fa fa-upload" }),
-              _vm._v("Télécharger\n\t\t\t\t\t\t\t")
-            ]),
-            _vm._v(" "),
-            _c("span", { staticClass: "fake-input" }, [
-              _vm._v("No file selected")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form" }, [
-            _c("h5", [_vm._v("Diaporama"), _c("span", [_vm._v("(optional)")])]),
-            _vm._v(" "),
-            _c("label", { staticClass: "upload-btn" }, [
-              _c("input", { attrs: { type: "file", multiple: "" } }),
-              _vm._v(" "),
-              _c("i", { staticClass: "fa fa-upload" }),
-              _vm._v(" Télécharger\n\t\t\t\t\t\t\t")
-            ]),
-            _vm._v(" "),
-            _c("span", { staticClass: "fake-input" }, [
-              _vm._v("No file selected")
+                _c("div", { staticClass: "col-md-6" }, [
+                  _c("ul", { staticClass: "resumes-list alternative" }, [
+                    _c("li", [
+                      _c("a", { attrs: { href: "resume-page.html" } }, [
+                        _c("img", {
+                          attrs: {
+                            src: "images/resumes-list-avatar-01.png",
+                            alt: ""
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "resumes-list-content" }, [
+                          _c("h4", [
+                            _vm._v("John Doe "),
+                            _c("span", [_vm._v("UX/UI Graphic Designer")])
+                          ]),
+                          _vm._v(" "),
+                          _c("span", [
+                            _c("i", { staticClass: "fa fa-map-marker" }),
+                            _vm._v(" Melbourne")
+                          ]),
+                          _vm._v(" "),
+                          _c("span", [
+                            _c("i", { staticClass: "fa fa-money" }),
+                            _vm._v(" $100 / hour")
+                          ]),
+                          _vm._v(" "),
+                          _c("p", [
+                            _vm._v(
+                              "Over 8000 hours on oDesk (only Drupal related). Highly motivated, goal-oriented, hands-on senior software engineer with extensive technical skills and over 15 years of experience in software development"
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "skills" }, [
+                            _c("span", [_vm._v("JavaScript")]),
+                            _vm._v(" "),
+                            _c("span", [_vm._v("PHP")]),
+                            _vm._v(" "),
+                            _c("span", [_vm._v("WordPress")])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "clearfix" })
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "clearfix" })
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("a", { attrs: { href: "resume-page.html" } }, [
+                        _c("img", {
+                          attrs: {
+                            src: "images/avatar-placeholder.png",
+                            alt: ""
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "resumes-list-content" }, [
+                          _c("h4", [
+                            _vm._v("Tom Smith "),
+                            _c("span", [_vm._v("iOS Mobile Developer")])
+                          ]),
+                          _vm._v(" "),
+                          _c("span", [
+                            _c("i", { staticClass: "fa fa-map-marker" }),
+                            _vm._v(" Sydney")
+                          ]),
+                          _vm._v(" "),
+                          _c("span", [
+                            _c("i", { staticClass: "fa fa-money" }),
+                            _vm._v(" $35 / hour")
+                          ]),
+                          _vm._v(" "),
+                          _c("p", [
+                            _vm._v(
+                              "Over 8000 hours on oDesk (only Drupal related). Highly motivated, goal-oriented, hands-on senior software engineer with extensive technical skills and over 15 years of experience in software development"
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "skills" }, [
+                            _c("span", [_vm._v("iOS Development")]),
+                            _vm._v(" "),
+                            _c("span", [_vm._v("iOS App Development")]),
+                            _vm._v(" "),
+                            _c("span", [_vm._v("Objective-C")])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "clearfix" })
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "clearfix" })
+                    ])
+                  ])
+                ])
+              ])
             ])
           ])
         ])
@@ -43373,9 +44337,7 @@ var render = function() {
               )
             ])
           ])
-        ]),
-        _vm._v(" "),
-        _vm._m(3)
+        ])
       ])
     ],
     1
@@ -43413,14 +44375,145 @@ var staticRenderFns = [
       _c("i", { staticClass: "fa fa-remove" }),
       _vm._v("Supprimer")
     ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/realstates/ListRealstates.vue?vue&type=template&id=4f1605b4&scoped=true&":
+/*!***********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/realstates/ListRealstates.vue?vue&type=template&id=4f1605b4&scoped=true& ***!
+  \***********************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "dashboard-content" },
+    [
+      _c("TitlebarComponent"),
+      _vm._v(" "),
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-lg-12 col-md-12" }, [
+          _c("div", { staticClass: "notification notice" }, [
+            _vm._v(
+              "\n\t\t\t\t\tYour resume can be viewed, edited or removed below.\n\t\t\t\t"
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "dashboard-list-box margin-top-30" }, [
+            _c("div", { staticClass: "dashboard-list-box-content" }, [
+              _c(
+                "table",
+                { staticClass: "manage-table resumes responsive-table" },
+                [
+                  _vm._m(0),
+                  _vm._v(" "),
+                  _c("tr", [
+                    _c("td", [_vm._v("Front End Web Developer")]),
+                    _vm._v(" "),
+                    _c("td", [
+                      _vm._v(
+                        "Lorem ipsum dolor sit amet consectetur adipisicing elit.\n\t\t\t\t\t\t\t\t\t\t Suscipit architecto, ut, veniam mollitia voluptates ad vitae sunt quae ipsa\n\t\t\t\t\t\t\t\t\t\t  sed tempora dolores iusto eveniet praesentium corporis quibusdam veritatis \n\t\t\t\t\t\t\t\t\t"
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("td", { staticClass: "centered" }, [
+                      _vm._v("1,000 - 2,000$")
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "td",
+                      { staticClass: "action" },
+                      [
+                        _c(
+                          "router-link",
+                          { attrs: { to: "/publication/View" } },
+                          [
+                            _c("i", { staticClass: "fa  fa-eye" }),
+                            _vm._v(
+                              "Voir\n                                        "
+                            )
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _vm._m(1)
+                      ],
+                      1
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _vm._m(2)
+                ]
+              )
+            ])
+          ])
+        ])
+      ])
+    ],
+    1
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [
+      _c("th", { staticStyle: { width: "30%" } }, [_vm._v("Titre")]),
+      _vm._v(" "),
+      _c("th", { staticStyle: { width: "45%" } }, [_vm._v(" Description")]),
+      _vm._v(" "),
+      _c("th", { staticStyle: { width: "15%" } }, [_vm._v(" Min-Max")]),
+      _vm._v(" "),
+      _c("th", { staticStyle: { width: "10%" } }, [_vm._v("Actions")])
+    ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-12" }, [
-      _c("div", { staticClass: "copyrights" }, [
-        _vm._v("© 2019 WorkScout. All Rights Reserved.")
+    return _c("a", { staticClass: "delete", attrs: { href: "#" } }, [
+      _c("i", { staticClass: "fa fa-remove" }),
+      _vm._v("Supprimer")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [
+      _c("td", [_vm._v("Logo Designer")]),
+      _vm._v(" "),
+      _c("td", [
+        _vm._v(
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit.\n\t\t\t\t\t\t\t\t\t\tSuscipit architecto, ut, veniam mollitia voluptates ad vitae sunt quae ipsa\n\t\t\t\t\t\t\t\t\t\t sed tempora dolores iusto eveniet praesentium corporis quibusdam veritatis \n\t\t\t\t\t\t\t\t   "
+        )
+      ]),
+      _vm._v(" "),
+      _c("td", { staticClass: "centered" }, [_vm._v("1,000 - 2,000$")]),
+      _vm._v(" "),
+      _c("td", { staticClass: "action" }, [
+        _c("a", { attrs: { href: "#" } }, [
+          _c("i", { staticClass: "fa  fa-eye" }),
+          _vm._v("Voir")
+        ]),
+        _vm._v(" "),
+        _c("a", { staticClass: "delete", attrs: { href: "#" } }, [
+          _c("i", { staticClass: "fa fa-remove" }),
+          _vm._v("Supprimer")
+        ])
       ])
     ])
   }
@@ -43553,7 +44646,7 @@ function normalizeComponent (
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /*!
-  * vue-router v3.4.4
+  * vue-router v3.4.7
   * (c) 2020 Evan You
   * @license MIT
   */
@@ -43578,158 +44671,6 @@ function extend (a, b) {
   return a
 }
 
-var View = {
-  name: 'RouterView',
-  functional: true,
-  props: {
-    name: {
-      type: String,
-      default: 'default'
-    }
-  },
-  render: function render (_, ref) {
-    var props = ref.props;
-    var children = ref.children;
-    var parent = ref.parent;
-    var data = ref.data;
-
-    // used by devtools to display a router-view badge
-    data.routerView = true;
-
-    // directly use parent context's createElement() function
-    // so that components rendered by router-view can resolve named slots
-    var h = parent.$createElement;
-    var name = props.name;
-    var route = parent.$route;
-    var cache = parent._routerViewCache || (parent._routerViewCache = {});
-
-    // determine current view depth, also check to see if the tree
-    // has been toggled inactive but kept-alive.
-    var depth = 0;
-    var inactive = false;
-    while (parent && parent._routerRoot !== parent) {
-      var vnodeData = parent.$vnode ? parent.$vnode.data : {};
-      if (vnodeData.routerView) {
-        depth++;
-      }
-      if (vnodeData.keepAlive && parent._directInactive && parent._inactive) {
-        inactive = true;
-      }
-      parent = parent.$parent;
-    }
-    data.routerViewDepth = depth;
-
-    // render previous view if the tree is inactive and kept-alive
-    if (inactive) {
-      var cachedData = cache[name];
-      var cachedComponent = cachedData && cachedData.component;
-      if (cachedComponent) {
-        // #2301
-        // pass props
-        if (cachedData.configProps) {
-          fillPropsinData(cachedComponent, data, cachedData.route, cachedData.configProps);
-        }
-        return h(cachedComponent, data, children)
-      } else {
-        // render previous empty view
-        return h()
-      }
-    }
-
-    var matched = route.matched[depth];
-    var component = matched && matched.components[name];
-
-    // render empty node if no matched route or no config component
-    if (!matched || !component) {
-      cache[name] = null;
-      return h()
-    }
-
-    // cache component
-    cache[name] = { component: component };
-
-    // attach instance registration hook
-    // this will be called in the instance's injected lifecycle hooks
-    data.registerRouteInstance = function (vm, val) {
-      // val could be undefined for unregistration
-      var current = matched.instances[name];
-      if (
-        (val && current !== vm) ||
-        (!val && current === vm)
-      ) {
-        matched.instances[name] = val;
-      }
-    }
-
-    // also register instance in prepatch hook
-    // in case the same component instance is reused across different routes
-    ;(data.hook || (data.hook = {})).prepatch = function (_, vnode) {
-      matched.instances[name] = vnode.componentInstance;
-    };
-
-    // register instance in init hook
-    // in case kept-alive component be actived when routes changed
-    data.hook.init = function (vnode) {
-      if (vnode.data.keepAlive &&
-        vnode.componentInstance &&
-        vnode.componentInstance !== matched.instances[name]
-      ) {
-        matched.instances[name] = vnode.componentInstance;
-      }
-    };
-
-    var configProps = matched.props && matched.props[name];
-    // save route and configProps in cache
-    if (configProps) {
-      extend(cache[name], {
-        route: route,
-        configProps: configProps
-      });
-      fillPropsinData(component, data, route, configProps);
-    }
-
-    return h(component, data, children)
-  }
-};
-
-function fillPropsinData (component, data, route, configProps) {
-  // resolve props
-  var propsToPass = data.props = resolveProps(route, configProps);
-  if (propsToPass) {
-    // clone to prevent mutation
-    propsToPass = data.props = extend({}, propsToPass);
-    // pass non-declared props as attrs
-    var attrs = data.attrs = data.attrs || {};
-    for (var key in propsToPass) {
-      if (!component.props || !(key in component.props)) {
-        attrs[key] = propsToPass[key];
-        delete propsToPass[key];
-      }
-    }
-  }
-}
-
-function resolveProps (route, config) {
-  switch (typeof config) {
-    case 'undefined':
-      return
-    case 'object':
-      return config
-    case 'function':
-      return config(route)
-    case 'boolean':
-      return config ? route.params : undefined
-    default:
-      if (true) {
-        warn(
-          false,
-          "props in \"" + (route.path) + "\" is a " + (typeof config) + ", " +
-          "expecting an object, function or boolean."
-        );
-      }
-  }
-}
-
 /*  */
 
 var encodeReserveRE = /[!'()*]/g;
@@ -43743,7 +44684,16 @@ var encode = function (str) { return encodeURIComponent(str)
     .replace(encodeReserveRE, encodeReserveReplacer)
     .replace(commaRE, ','); };
 
-var decode = decodeURIComponent;
+function decode (str) {
+  try {
+    return decodeURIComponent(str)
+  } catch (err) {
+    if (true) {
+      warn(false, ("Error decoding \"" + str + "\". Leaving it intact."));
+    }
+  }
+  return str
+}
 
 function resolveQuery (
   query,
@@ -43936,13 +44886,15 @@ function isObjectEqual (a, b) {
 
   // handle null value #1566
   if (!a || !b) { return a === b }
-  var aKeys = Object.keys(a);
-  var bKeys = Object.keys(b);
+  var aKeys = Object.keys(a).sort();
+  var bKeys = Object.keys(b).sort();
   if (aKeys.length !== bKeys.length) {
     return false
   }
-  return aKeys.every(function (key) {
+  return aKeys.every(function (key, i) {
     var aVal = a[key];
+    var bKey = bKeys[i];
+    if (bKey !== key) { return false }
     var bVal = b[key];
     // query values can be null and undefined
     if (aVal == null || bVal == null) { return aVal === bVal }
@@ -43971,6 +44923,178 @@ function queryIncludes (current, target) {
     }
   }
   return true
+}
+
+function handleRouteEntered (route) {
+  for (var i = 0; i < route.matched.length; i++) {
+    var record = route.matched[i];
+    for (var name in record.instances) {
+      var instance = record.instances[name];
+      var cbs = record.enteredCbs[name];
+      if (!instance || !cbs) { continue }
+      delete record.enteredCbs[name];
+      for (var i$1 = 0; i$1 < cbs.length; i$1++) {
+        if (!instance._isBeingDestroyed) { cbs[i$1](instance); }
+      }
+    }
+  }
+}
+
+var View = {
+  name: 'RouterView',
+  functional: true,
+  props: {
+    name: {
+      type: String,
+      default: 'default'
+    }
+  },
+  render: function render (_, ref) {
+    var props = ref.props;
+    var children = ref.children;
+    var parent = ref.parent;
+    var data = ref.data;
+
+    // used by devtools to display a router-view badge
+    data.routerView = true;
+
+    // directly use parent context's createElement() function
+    // so that components rendered by router-view can resolve named slots
+    var h = parent.$createElement;
+    var name = props.name;
+    var route = parent.$route;
+    var cache = parent._routerViewCache || (parent._routerViewCache = {});
+
+    // determine current view depth, also check to see if the tree
+    // has been toggled inactive but kept-alive.
+    var depth = 0;
+    var inactive = false;
+    while (parent && parent._routerRoot !== parent) {
+      var vnodeData = parent.$vnode ? parent.$vnode.data : {};
+      if (vnodeData.routerView) {
+        depth++;
+      }
+      if (vnodeData.keepAlive && parent._directInactive && parent._inactive) {
+        inactive = true;
+      }
+      parent = parent.$parent;
+    }
+    data.routerViewDepth = depth;
+
+    // render previous view if the tree is inactive and kept-alive
+    if (inactive) {
+      var cachedData = cache[name];
+      var cachedComponent = cachedData && cachedData.component;
+      if (cachedComponent) {
+        // #2301
+        // pass props
+        if (cachedData.configProps) {
+          fillPropsinData(cachedComponent, data, cachedData.route, cachedData.configProps);
+        }
+        return h(cachedComponent, data, children)
+      } else {
+        // render previous empty view
+        return h()
+      }
+    }
+
+    var matched = route.matched[depth];
+    var component = matched && matched.components[name];
+
+    // render empty node if no matched route or no config component
+    if (!matched || !component) {
+      cache[name] = null;
+      return h()
+    }
+
+    // cache component
+    cache[name] = { component: component };
+
+    // attach instance registration hook
+    // this will be called in the instance's injected lifecycle hooks
+    data.registerRouteInstance = function (vm, val) {
+      // val could be undefined for unregistration
+      var current = matched.instances[name];
+      if (
+        (val && current !== vm) ||
+        (!val && current === vm)
+      ) {
+        matched.instances[name] = val;
+      }
+    }
+
+    // also register instance in prepatch hook
+    // in case the same component instance is reused across different routes
+    ;(data.hook || (data.hook = {})).prepatch = function (_, vnode) {
+      matched.instances[name] = vnode.componentInstance;
+    };
+
+    // register instance in init hook
+    // in case kept-alive component be actived when routes changed
+    data.hook.init = function (vnode) {
+      if (vnode.data.keepAlive &&
+        vnode.componentInstance &&
+        vnode.componentInstance !== matched.instances[name]
+      ) {
+        matched.instances[name] = vnode.componentInstance;
+      }
+
+      // if the route transition has already been confirmed then we weren't
+      // able to call the cbs during confirmation as the component was not
+      // registered yet, so we call it here.
+      handleRouteEntered(route);
+    };
+
+    var configProps = matched.props && matched.props[name];
+    // save route and configProps in cache
+    if (configProps) {
+      extend(cache[name], {
+        route: route,
+        configProps: configProps
+      });
+      fillPropsinData(component, data, route, configProps);
+    }
+
+    return h(component, data, children)
+  }
+};
+
+function fillPropsinData (component, data, route, configProps) {
+  // resolve props
+  var propsToPass = data.props = resolveProps(route, configProps);
+  if (propsToPass) {
+    // clone to prevent mutation
+    propsToPass = data.props = extend({}, propsToPass);
+    // pass non-declared props as attrs
+    var attrs = data.attrs = data.attrs || {};
+    for (var key in propsToPass) {
+      if (!component.props || !(key in component.props)) {
+        attrs[key] = propsToPass[key];
+        delete propsToPass[key];
+      }
+    }
+  }
+}
+
+function resolveProps (route, config) {
+  switch (typeof config) {
+    case 'undefined':
+      return
+    case 'object':
+      return config
+    case 'function':
+      return config(route)
+    case 'boolean':
+      return config ? route.params : undefined
+    default:
+      if (true) {
+        warn(
+          false,
+          "props in \"" + (route.path) + "\" is a " + (typeof config) + ", " +
+          "expecting an object, function or boolean."
+        );
+      }
+  }
 }
 
 /*  */
@@ -44903,6 +46027,7 @@ function addRouteRecord (
     regex: compileRouteRegex(normalizedPath, pathToRegexpOptions),
     components: route.components || { default: route.component },
     instances: {},
+    enteredCbs: {},
     name: name,
     parent: parent,
     matchAs: matchAs,
@@ -45192,6 +46317,14 @@ function matchRoute (
   path,
   params
 ) {
+  try {
+    path = decodeURI(path);
+  } catch (err) {
+    if (true) {
+      warn(false, ("Error decoding \"" + path + "\". Leaving it intact."));
+    }
+  }
+
   var m = path.match(regex);
 
   if (!m) {
@@ -45202,10 +46335,9 @@ function matchRoute (
 
   for (var i = 1, len = m.length; i < len; ++i) {
     var key = regex.keys[i - 1];
-    var val = typeof m[i] === 'string' ? decodeURIComponent(m[i]) : m[i];
     if (key) {
       // Fix #1994: using * with props: true generates a param named 0
-      params[key.name || 'pathMatch'] = val;
+      params[key.name || 'pathMatch'] = m[i];
     }
   }
 
@@ -45704,10 +46836,10 @@ History.prototype.transitionTo = function transitionTo (
     // Exception should still be thrown
     throw e
   }
+  var prev = this.current;
   this.confirmTransition(
     route,
     function () {
-      var prev = this$1.current;
       this$1.updateRoute(route);
       onComplete && onComplete(route);
       this$1.ensureURL();
@@ -45728,16 +46860,14 @@ History.prototype.transitionTo = function transitionTo (
         onAbort(err);
       }
       if (err && !this$1.ready) {
-        this$1.ready = true;
-        // Initial redirection should still trigger the onReady onSuccess
+        // Initial redirection should not mark the history as ready yet
+        // because it's triggered by the redirection instead
         // https://github.com/vuejs/vue-router/issues/3225
-        if (!isNavigationFailure(err, NavigationFailureType.redirected)) {
+        // https://github.com/vuejs/vue-router/issues/3331
+        if (!isNavigationFailure(err, NavigationFailureType.redirected) || prev !== START) {
+          this$1.ready = true;
           this$1.readyErrorCbs.forEach(function (cb) {
             cb(err);
-          });
-        } else {
-          this$1.readyCbs.forEach(function (cb) {
-            cb(route);
           });
         }
       }
@@ -45835,11 +46965,9 @@ History.prototype.confirmTransition = function confirmTransition (route, onCompl
   };
 
   runQueue(queue, iterator, function () {
-    var postEnterCbs = [];
-    var isValid = function () { return this$1.current === route; };
     // wait until async components are resolved before
     // extracting in-component enter guards
-    var enterGuards = extractEnterGuards(activated, postEnterCbs, isValid);
+    var enterGuards = extractEnterGuards(activated);
     var queue = enterGuards.concat(this$1.router.resolveHooks);
     runQueue(queue, iterator, function () {
       if (this$1.pending !== route) {
@@ -45849,9 +46977,7 @@ History.prototype.confirmTransition = function confirmTransition (route, onCompl
       onComplete(route);
       if (this$1.router.app) {
         this$1.router.app.$nextTick(function () {
-          postEnterCbs.forEach(function (cb) {
-            cb();
-          });
+          handleRouteEntered(route);
         });
       }
     });
@@ -45964,15 +47090,13 @@ function bindGuard (guard, instance) {
 }
 
 function extractEnterGuards (
-  activated,
-  cbs,
-  isValid
+  activated
 ) {
   return extractGuards(
     activated,
     'beforeRouteEnter',
     function (guard, _, match, key) {
-      return bindEnterGuard(guard, match, key, cbs, isValid)
+      return bindEnterGuard(guard, match, key)
     }
   )
 }
@@ -45980,42 +47104,18 @@ function extractEnterGuards (
 function bindEnterGuard (
   guard,
   match,
-  key,
-  cbs,
-  isValid
+  key
 ) {
   return function routeEnterGuard (to, from, next) {
     return guard(to, from, function (cb) {
       if (typeof cb === 'function') {
-        cbs.push(function () {
-          // #750
-          // if a router-view is wrapped with an out-in transition,
-          // the instance may not have been registered at this time.
-          // we will need to poll for registration until current route
-          // is no longer valid.
-          poll(cb, match.instances, key, isValid);
-        });
+        if (!match.enteredCbs[key]) {
+          match.enteredCbs[key] = [];
+        }
+        match.enteredCbs[key].push(cb);
       }
       next(cb);
     })
-  }
-}
-
-function poll (
-  cb, // somehow flow cannot infer this is a function
-  instances,
-  key,
-  isValid
-) {
-  if (
-    instances[key] &&
-    !instances[key]._isBeingDestroyed // do not reuse being destroyed instance
-  ) {
-    cb(instances[key]);
-  } else if (isValid()) {
-    setTimeout(function () {
-      poll(cb, instances, key, isValid);
-    }, 16);
   }
 }
 
@@ -46112,7 +47212,7 @@ var HTML5History = /*@__PURE__*/(function (History) {
 }(History));
 
 function getLocation (base) {
-  var path = decodeURI(window.location.pathname);
+  var path = window.location.pathname;
   if (base && path.toLowerCase().indexOf(base.toLowerCase()) === 0) {
     path = path.slice(base.length);
   }
@@ -46252,18 +47352,6 @@ function getHash () {
   if (index < 0) { return '' }
 
   href = href.slice(index + 1);
-  // decode the hash but not the search or hash
-  // as search(query) is already decoded
-  // https://github.com/vuejs/vue-router/issues/2708
-  var searchIndex = href.indexOf('?');
-  if (searchIndex < 0) {
-    var hashIndex = href.indexOf('#');
-    if (hashIndex > -1) {
-      href = decodeURI(href.slice(0, hashIndex)) + href.slice(hashIndex);
-    } else { href = decodeURI(href); }
-  } else {
-    href = decodeURI(href.slice(0, searchIndex)) + href.slice(searchIndex);
-  }
 
   return href
 }
@@ -46604,7 +47692,7 @@ function createHref (base, fullPath, mode) {
 }
 
 VueRouter.install = install;
-VueRouter.version = '3.4.4';
+VueRouter.version = '3.4.7';
 VueRouter.isNavigationFailure = isNavigationFailure;
 VueRouter.NavigationFailureType = NavigationFailureType;
 
@@ -59787,6 +60875,75 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/pages/investor/DetailInvestor.vue":
+/*!********************************************************!*\
+  !*** ./resources/js/pages/investor/DetailInvestor.vue ***!
+  \********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _DetailInvestor_vue_vue_type_template_id_d3294db2_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./DetailInvestor.vue?vue&type=template&id=d3294db2&scoped=true& */ "./resources/js/pages/investor/DetailInvestor.vue?vue&type=template&id=d3294db2&scoped=true&");
+/* harmony import */ var _DetailInvestor_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DetailInvestor.vue?vue&type=script&lang=js& */ "./resources/js/pages/investor/DetailInvestor.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _DetailInvestor_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _DetailInvestor_vue_vue_type_template_id_d3294db2_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _DetailInvestor_vue_vue_type_template_id_d3294db2_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "d3294db2",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/pages/investor/DetailInvestor.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/pages/investor/DetailInvestor.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************!*\
+  !*** ./resources/js/pages/investor/DetailInvestor.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_DetailInvestor_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./DetailInvestor.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/investor/DetailInvestor.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_DetailInvestor_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/pages/investor/DetailInvestor.vue?vue&type=template&id=d3294db2&scoped=true&":
+/*!***************************************************************************************************!*\
+  !*** ./resources/js/pages/investor/DetailInvestor.vue?vue&type=template&id=d3294db2&scoped=true& ***!
+  \***************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DetailInvestor_vue_vue_type_template_id_d3294db2_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./DetailInvestor.vue?vue&type=template&id=d3294db2&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/investor/DetailInvestor.vue?vue&type=template&id=d3294db2&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DetailInvestor_vue_vue_type_template_id_d3294db2_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DetailInvestor_vue_vue_type_template_id_d3294db2_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/pages/investor/ListInvestor.vue":
 /*!******************************************************!*\
   !*** ./resources/js/pages/investor/ListInvestor.vue ***!
@@ -60408,6 +61565,75 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/pages/realstates/ListRealstates.vue":
+/*!**********************************************************!*\
+  !*** ./resources/js/pages/realstates/ListRealstates.vue ***!
+  \**********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _ListRealstates_vue_vue_type_template_id_4f1605b4_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ListRealstates.vue?vue&type=template&id=4f1605b4&scoped=true& */ "./resources/js/pages/realstates/ListRealstates.vue?vue&type=template&id=4f1605b4&scoped=true&");
+/* harmony import */ var _ListRealstates_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ListRealstates.vue?vue&type=script&lang=js& */ "./resources/js/pages/realstates/ListRealstates.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _ListRealstates_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _ListRealstates_vue_vue_type_template_id_4f1605b4_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _ListRealstates_vue_vue_type_template_id_4f1605b4_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "4f1605b4",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/pages/realstates/ListRealstates.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/pages/realstates/ListRealstates.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************!*\
+  !*** ./resources/js/pages/realstates/ListRealstates.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ListRealstates_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./ListRealstates.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/realstates/ListRealstates.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ListRealstates_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/pages/realstates/ListRealstates.vue?vue&type=template&id=4f1605b4&scoped=true&":
+/*!*****************************************************************************************************!*\
+  !*** ./resources/js/pages/realstates/ListRealstates.vue?vue&type=template&id=4f1605b4&scoped=true& ***!
+  \*****************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ListRealstates_vue_vue_type_template_id_4f1605b4_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./ListRealstates.vue?vue&type=template&id=4f1605b4&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/realstates/ListRealstates.vue?vue&type=template&id=4f1605b4&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ListRealstates_vue_vue_type_template_id_4f1605b4_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ListRealstates_vue_vue_type_template_id_4f1605b4_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/router.js":
 /*!********************************!*\
   !*** ./resources/js/router.js ***!
@@ -60428,18 +61654,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pages_publication_ViewPublication__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./pages/publication/ViewPublication */ "./resources/js/pages/publication/ViewPublication.vue");
 /* harmony import */ var _pages_publication_NewPublication__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./pages/publication/NewPublication */ "./resources/js/pages/publication/NewPublication.vue");
 /* harmony import */ var _pages_investor_ListInvestor__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./pages/investor/ListInvestor */ "./resources/js/pages/investor/ListInvestor.vue");
-/* harmony import */ var _pages_entrepreneur_ListEntrepreneur__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./pages/entrepreneur/ListEntrepreneur */ "./resources/js/pages/entrepreneur/ListEntrepreneur.vue");
-/* harmony import */ var _pages_account_AskAccount__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./pages/account/AskAccount */ "./resources/js/pages/account/AskAccount.vue");
-/* harmony import */ var _pages_industry_ListIndustry__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./pages/industry/ListIndustry */ "./resources/js/pages/industry/ListIndustry.vue");
-/* harmony import */ var _pages_industry_AddIndustry__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./pages/industry/AddIndustry */ "./resources/js/pages/industry/AddIndustry.vue");
-/* harmony import */ var _pages_Domain_ListDomain__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./pages/Domain/ListDomain */ "./resources/js/pages/Domain/ListDomain.vue");
-/* harmony import */ var _pages_Domain_AddDomain__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./pages/Domain/AddDomain */ "./resources/js/pages/Domain/AddDomain.vue");
-/* harmony import */ var _pages_country_ListCountry__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./pages/country/ListCountry */ "./resources/js/pages/country/ListCountry.vue");
-/* harmony import */ var _pages_country_AddCountry__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./pages/country/AddCountry */ "./resources/js/pages/country/AddCountry.vue");
-/* harmony import */ var _pages_level_ListLevel__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./pages/level/ListLevel */ "./resources/js/pages/level/ListLevel.vue");
-/* harmony import */ var _pages_level_AddLevel__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./pages/level/AddLevel */ "./resources/js/pages/level/AddLevel.vue");
-/* harmony import */ var _pages_partner_ListPartner__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./pages/partner/ListPartner */ "./resources/js/pages/partner/ListPartner.vue");
-/* harmony import */ var _pages_partner_AddPartner__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./pages/partner/AddPartner */ "./resources/js/pages/partner/AddPartner.vue");
+/* harmony import */ var _pages_investor_DetailInvestor__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./pages/investor/DetailInvestor */ "./resources/js/pages/investor/DetailInvestor.vue");
+/* harmony import */ var _pages_entrepreneur_ListEntrepreneur__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./pages/entrepreneur/ListEntrepreneur */ "./resources/js/pages/entrepreneur/ListEntrepreneur.vue");
+/* harmony import */ var _pages_account_AskAccount__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./pages/account/AskAccount */ "./resources/js/pages/account/AskAccount.vue");
+/* harmony import */ var _pages_industry_ListIndustry__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./pages/industry/ListIndustry */ "./resources/js/pages/industry/ListIndustry.vue");
+/* harmony import */ var _pages_industry_AddIndustry__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./pages/industry/AddIndustry */ "./resources/js/pages/industry/AddIndustry.vue");
+/* harmony import */ var _pages_Domain_ListDomain__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./pages/Domain/ListDomain */ "./resources/js/pages/Domain/ListDomain.vue");
+/* harmony import */ var _pages_Domain_AddDomain__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./pages/Domain/AddDomain */ "./resources/js/pages/Domain/AddDomain.vue");
+/* harmony import */ var _pages_country_ListCountry__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./pages/country/ListCountry */ "./resources/js/pages/country/ListCountry.vue");
+/* harmony import */ var _pages_country_AddCountry__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./pages/country/AddCountry */ "./resources/js/pages/country/AddCountry.vue");
+/* harmony import */ var _pages_level_ListLevel__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./pages/level/ListLevel */ "./resources/js/pages/level/ListLevel.vue");
+/* harmony import */ var _pages_level_AddLevel__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./pages/level/AddLevel */ "./resources/js/pages/level/AddLevel.vue");
+/* harmony import */ var _pages_partner_ListPartner__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./pages/partner/ListPartner */ "./resources/js/pages/partner/ListPartner.vue");
+/* harmony import */ var _pages_partner_AddPartner__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./pages/partner/AddPartner */ "./resources/js/pages/partner/AddPartner.vue");
+/* harmony import */ var _pages_realstates_ListRealstates__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./pages/realstates/ListRealstates */ "./resources/js/pages/realstates/ListRealstates.vue");
+
+
 
 
 
@@ -60491,41 +61721,47 @@ var routes = [{
   path: '/investor/list',
   component: _pages_investor_ListInvestor__WEBPACK_IMPORTED_MODULE_9__["default"]
 }, {
+  path: '/investor/View',
+  component: _pages_investor_DetailInvestor__WEBPACK_IMPORTED_MODULE_10__["default"]
+}, {
   path: '/entrepreneur/list',
-  component: _pages_entrepreneur_ListEntrepreneur__WEBPACK_IMPORTED_MODULE_10__["default"]
+  component: _pages_entrepreneur_ListEntrepreneur__WEBPACK_IMPORTED_MODULE_11__["default"]
 }, {
   path: '/account/ask',
-  component: _pages_account_AskAccount__WEBPACK_IMPORTED_MODULE_11__["default"]
+  component: _pages_account_AskAccount__WEBPACK_IMPORTED_MODULE_12__["default"]
 }, {
   path: '/industry/list',
-  component: _pages_industry_ListIndustry__WEBPACK_IMPORTED_MODULE_12__["default"]
+  component: _pages_industry_ListIndustry__WEBPACK_IMPORTED_MODULE_13__["default"]
 }, {
   path: '/industry/add',
-  component: _pages_industry_AddIndustry__WEBPACK_IMPORTED_MODULE_13__["default"]
+  component: _pages_industry_AddIndustry__WEBPACK_IMPORTED_MODULE_14__["default"]
 }, {
   path: '/domain/list',
-  component: _pages_Domain_ListDomain__WEBPACK_IMPORTED_MODULE_14__["default"]
+  component: _pages_Domain_ListDomain__WEBPACK_IMPORTED_MODULE_15__["default"]
 }, {
   path: '/domain/add',
-  component: _pages_Domain_AddDomain__WEBPACK_IMPORTED_MODULE_15__["default"]
+  component: _pages_Domain_AddDomain__WEBPACK_IMPORTED_MODULE_16__["default"]
 }, {
   path: '/country/list',
-  component: _pages_country_ListCountry__WEBPACK_IMPORTED_MODULE_16__["default"]
+  component: _pages_country_ListCountry__WEBPACK_IMPORTED_MODULE_17__["default"]
 }, {
   path: '/country/add',
-  component: _pages_country_AddCountry__WEBPACK_IMPORTED_MODULE_17__["default"]
+  component: _pages_country_AddCountry__WEBPACK_IMPORTED_MODULE_18__["default"]
 }, {
   path: '/level/list',
-  component: _pages_level_ListLevel__WEBPACK_IMPORTED_MODULE_18__["default"]
+  component: _pages_level_ListLevel__WEBPACK_IMPORTED_MODULE_19__["default"]
 }, {
   path: '/level/add',
-  component: _pages_level_AddLevel__WEBPACK_IMPORTED_MODULE_19__["default"]
+  component: _pages_level_AddLevel__WEBPACK_IMPORTED_MODULE_20__["default"]
 }, {
   path: '/partner/list',
-  component: _pages_partner_ListPartner__WEBPACK_IMPORTED_MODULE_20__["default"]
+  component: _pages_partner_ListPartner__WEBPACK_IMPORTED_MODULE_21__["default"]
 }, {
   path: '/partner/add',
-  component: _pages_partner_AddPartner__WEBPACK_IMPORTED_MODULE_21__["default"]
+  component: _pages_partner_AddPartner__WEBPACK_IMPORTED_MODULE_22__["default"]
+}, {
+  path: '/realstates/list',
+  component: _pages_realstates_ListRealstates__WEBPACK_IMPORTED_MODULE_23__["default"]
 }];
 /* harmony default export */ __webpack_exports__["default"] = (new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
   mode: 'history',
@@ -60560,10 +61796,10 @@ var items = [{
     "path": "/dashboard",
     "child": [{
       "title": "Liste des publications",
-      "path": "/publication/list"
+      "path": "/realstates/list"
     }, {
       "title": "En attente de publication",
-      "path": "/publication/waiting"
+      "path": "/realstates/waiting"
     }]
   }]
 }, {
@@ -60646,7 +61882,7 @@ var items = [{
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/serveur/Bureau/kuiah_group/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/doumbia/Documents/kuiah_group/resources/js/app.js */"./resources/js/app.js");
 
 
 /***/ })

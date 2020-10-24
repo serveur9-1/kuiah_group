@@ -59,10 +59,6 @@
 					</div>
 				</div>
 			</div>
-			<!-- Copyrights -->
-			<div class="col-md-12">
-				<div class="copyrights">© 2019 WorkScout. All Rights Reserved.</div>
-			</div>
 		</div>
 
 

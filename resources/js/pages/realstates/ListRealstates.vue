@@ -16,15 +16,12 @@
 
 						<!-- Table -->
 							<table class="manage-table resumes responsive-table">
-
 								<tr>
-									
 									<th style="width: 30%;">Titre</th>
 									<th style="width: 45%;"> Description</th>
 									<th style="width: 15%;"> Min-Max</th>
 									<th style="width: 10%;">Actions</th>
 								</tr>
-
 								<!-- Item #1 -->
 								<tr>
 									<td>Front End Web Developer</td>
@@ -34,7 +31,7 @@
 									</td>
 									<td class="centered">1,000 - 2,000$</td>
 									<td class="action">
-										<router-link to="/publication/waiting/View">
+										<router-link to="/publication/View">
                                            <i class="fa  fa-eye"></i>Voir
                                         </router-link>
 										<a href="#" class="delete"><i class="fa fa-remove"></i>Supprimer</a>
@@ -51,9 +48,7 @@
 								   </td>
 								   <td class="centered">1,000 - 2,000$</td>
 									<td class="action">
-										<router-link to="/publication/waiting/View">
-                                           <i class="fa  fa-eye"></i>Voir
-                                        </router-link>
+										<a href="#"><i class="fa  fa-eye"></i>Voir</a>
 										<a href="#" class="delete"><i class="fa fa-remove"></i>Supprimer</a>
 									</td>
 								</tr>	
