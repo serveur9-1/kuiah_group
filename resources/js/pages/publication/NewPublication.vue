@@ -280,7 +280,7 @@
 	                    </div>
 					</div>
 				</div>
-				<a href="#" class="button margin-top-30">Publier</a>
+				<a href="#" class="button margin-top-30">Activer</a>
 			</div>
 		</div>
     </div>

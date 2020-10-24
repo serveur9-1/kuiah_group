@@ -46,6 +46,7 @@
                                 <hr>
                             </article> <!-- card-body.// -->
                         </aside> <!-- col.// -->
+                        <a href="#" class="button margin-top-30">Activer</a>
                     </div> <!-- row.// -->
                 </div> <!-- card.// -->
             </div>

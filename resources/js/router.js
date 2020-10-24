@@ -25,6 +25,7 @@ import AddPartner from "./pages/partner/AddPartner";
 import ListRealstates from "./pages/realstates/ListRealstates";
 import WaitRealstates from "./pages/realstates/WaitRealstates";
 import DetailRealstates from "./pages/realstates/DetailRealstates";
+import NewRealstates from "./pages/realstates/NewRealstates";
 
 
 
@@ -135,6 +136,10 @@ const routes = [
     {
         path: '/realstates/View',
         component : DetailRealstates
+    },
+    {
+        path: '/realstates/waiting/View',
+        component : NewRealstates
     },
 ];
 
