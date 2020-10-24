@@ -16,6 +16,11 @@ class RealEstate extends Model
         "email",
         "is_actived",
         "is_archived",
-        "media_id",
+        "user_id",
     ];
+
+    public function toMedias()
+    {
+        return $this->hasMany('App\Media');
+    }
 }

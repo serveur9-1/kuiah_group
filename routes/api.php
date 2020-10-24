@@ -29,6 +29,8 @@ Route::group(['prefix' => 'v1'], function () {
     Route::resource('industries',\v1\IndustryController::class);
     Route::resource('domains',\v1\DomainController::class);
     Route::resource('partners',\v1\PartnerController::class);
+    Route::resource('stades',\v1\StadeController::class);
+    Route::resource('realEstates',\v1\RealEstateController::class);
 
     Route::get('/users/mail/test', 'v1\UserController@testMail');
 
