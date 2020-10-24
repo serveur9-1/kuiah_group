@@ -16,28 +16,13 @@
 
 						<!-- Table -->
 							<table class="manage-table resumes responsive-table">
+
 								<tr>
 									<th style="width: 15%;">Titre</th>
 									<th style="width: 40%;"> Description</th>
 									<th style="width: 15%;"> Prix</th>
                                     <th style="width: 20%;"> Contact</th>
 									<th style="width: 10%;">Actions</th>
-								</tr>
-								<!-- Item #1 -->
-								<tr>
-									<td>Front End Web Developer</td>
-									<td>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-										 Suscipit architecto, ut, veniam mollitia voluptates ad vitae sunt quae ipsa
-										  sed tempora dolores iusto eveniet praesentium corporis quibusdam veritatis 
-									</td>
-									<td class="centered">2,000$</td>
-                                    <td>+225 48 99 01 50</td>
-									<td class="action">
-										<router-link to="/realstates/View">
-                                           <i class="fa  fa-eye"></i>Voir
-                                        </router-link>
-										<a href="#" class="delete"><i class="fa fa-remove"></i>Supprimer</a>
-									</td>
 								</tr>
 
 								<!-- Item #1 -->
@@ -50,12 +35,31 @@
 									<td class="centered">2,000$</td>
                                     <td>+225 48 99 01 50</td>
 									<td class="action">
-										<router-link to="/realstates/View">
+										<router-link to="/publication/waiting/View">
                                            <i class="fa  fa-eye"></i>Voir
                                         </router-link>
 										<a href="#" class="delete"><i class="fa fa-remove"></i>Supprimer</a>
 									</td>
 								</tr>
+
+								<!-- Item #1 -->
+								<tr>
+									
+									<td>Front End Web Developer</td>
+									<td>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+										 Suscipit architecto, ut, veniam mollitia voluptates ad vitae sunt quae ipsa
+										  sed tempora dolores iusto eveniet praesentium corporis quibusdam veritatis 
+									</td>
+									<td class="centered">2,000$</td>
+                                    <td>+225 48 99 01 50</td>
+									<td class="action">
+										<router-link to="/publication/waiting/View">
+                                           <i class="fa  fa-eye"></i>Voir
+                                        </router-link>
+										<a href="#" class="delete"><i class="fa fa-remove"></i>Supprimer</a>
+									</td>
+								</tr>	
+
 							</table>
 					</div>
 				</div>
