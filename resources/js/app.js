@@ -1,13 +1,14 @@
 require('./bootstrap');
-import  router from './router'
-import Vuex from 'vuex'
+import {store} from "./store";
 
 window.Vue = require('vue');
-Vue.use(Vuex);
+import  router from './router'
+
 
 Vue.component('wrapper-component', require('./components/WrapperComponent.vue').default);
 
 const app = new Vue({
     el: '#app-vue',
-    router
+    router,
+    store
 });
