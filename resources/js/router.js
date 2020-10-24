@@ -10,6 +10,7 @@ import NewPublication from "./pages/publication/NewPublication";
 import ListInvestor from "./pages/investor/ListInvestor";
 import DetailInvestor from "./pages/investor/DetailInvestor";
 import ListEntrepreneur from "./pages/entrepreneur/ListEntrepreneur";
+import DetailEntrepreneur from "./pages/entrepreneur/DetailEntrepreneur";
 import AskAccount from "./pages/account/AskAccount";
 import ListIndustry from "./pages/industry/ListIndustry";
 import AddIndustry from "./pages/industry/AddIndustry";
@@ -72,6 +73,10 @@ const routes = [
     {
         path: '/entrepreneur/list',
         component : ListEntrepreneur
+    },
+    {
+        path: '/entrepreneur/View',
+        component : DetailEntrepreneur
     },
     {
         path: '/account/ask',

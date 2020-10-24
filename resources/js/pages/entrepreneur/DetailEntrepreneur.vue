@@ -8,7 +8,7 @@
 			<!-- Profile -->
 			<div class="col-lg-12 col-md-12">
 				<div class="dashboard-list-box margin-top-0">
-					<h4 class="gray">Investisseur</h4>
+					<h4 class="gray">Entrepreneur</h4>
 					<div class="dashboard-list-box-static">
 						<!-- Avatar -->
 						<div class="edit-profile-photo">
@@ -40,12 +40,6 @@
 
 							<label>Biographie</label>
 							<textarea name="notes" id="notes" cols="30" rows="10">Maecenas quis consequat libero, a feugiat eros. Nunc ut lacinia tortor morbi ultricies laoreet ullamcorper phasellus semper</textarea>
-
-							<label>Investissement Minimal</label>
-							<input  type="text">
-
-							<label>Investissement Maximal</label>
-							<input  type="text">
 
 
 							<label><i class="fa fa-twitter"></i> Twitter</label>
