@@ -8,7 +8,9 @@ import Waitpublication from "./pages/publication/Waitpublication";
 import ViewPublication from "./pages/publication/ViewPublication";
 import NewPublication from "./pages/publication/NewPublication";
 import ListInvestor from "./pages/investor/ListInvestor";
+import DetailInvestor from "./pages/investor/DetailInvestor";
 import ListEntrepreneur from "./pages/entrepreneur/ListEntrepreneur";
+import DetailEntrepreneur from "./pages/entrepreneur/DetailEntrepreneur";
 import AskAccount from "./pages/account/AskAccount";
 import ListIndustry from "./pages/industry/ListIndustry";
 import AddIndustry from "./pages/industry/AddIndustry";
@@ -20,6 +22,9 @@ import ListLevel from "./pages/level/ListLevel";
 import AddLevel from "./pages/level/AddLevel";
 import ListPartner from "./pages/partner/ListPartner";
 import AddPartner from "./pages/partner/AddPartner";
+import ListRealstates from "./pages/realstates/ListRealstates";
+import WaitRealstates from "./pages/realstates/WaitRealstates";
+import DetailRealstates from "./pages/realstates/DetailRealstates";
 
 
 
@@ -64,8 +69,16 @@ const routes = [
         component : ListInvestor
     },
     {
+        path: '/investor/View',
+        component : DetailInvestor
+    },
+    {
         path: '/entrepreneur/list',
         component : ListEntrepreneur
+    },
+    {
+        path: '/entrepreneur/View',
+        component : DetailEntrepreneur
     },
     {
         path: '/account/ask',
@@ -110,6 +123,18 @@ const routes = [
     {
         path: '/partner/add',
         component : AddPartner
+    },
+    {
+        path: '/realstates/list',
+        component : ListRealstates
+    },
+    {
+        path: '/realstates/waiting',
+        component : WaitRealstates
+    },
+    {
+        path: '/realstates/View',
+        component : DetailRealstates
     },
 ];
 

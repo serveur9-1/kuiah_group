@@ -18,10 +18,10 @@
 							<table class="manage-table resumes responsive-table">
 
 								<tr>
-									
-									<th style="width: 30%;">Titre</th>
-									<th style="width: 45%;"> Description</th>
-									<th style="width: 15%;"> Min-Max</th>
+									<th style="width: 15%;">Titre</th>
+									<th style="width: 40%;"> Description</th>
+									<th style="width: 15%;"> Prix</th>
+                                    <th style="width: 20%;"> Contact</th>
 									<th style="width: 10%;">Actions</th>
 								</tr>
 
@@ -32,7 +32,8 @@
 										 Suscipit architecto, ut, veniam mollitia voluptates ad vitae sunt quae ipsa
 										  sed tempora dolores iusto eveniet praesentium corporis quibusdam veritatis 
 									</td>
-									<td class="centered">1,000 - 2,000$</td>
+									<td class="centered">2,000$</td>
+                                    <td>+225 48 99 01 50</td>
 									<td class="action">
 										<router-link to="/publication/waiting/View">
                                            <i class="fa  fa-eye"></i>Voir
@@ -44,12 +45,13 @@
 								<!-- Item #1 -->
 								<tr>
 									
-									<td>Logo Designer</td>
+									<td>Front End Web Developer</td>
 									<td>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-										Suscipit architecto, ut, veniam mollitia voluptates ad vitae sunt quae ipsa
-										 sed tempora dolores iusto eveniet praesentium corporis quibusdam veritatis 
-								   </td>
-								   <td class="centered">1,000 - 2,000$</td>
+										 Suscipit architecto, ut, veniam mollitia voluptates ad vitae sunt quae ipsa
+										  sed tempora dolores iusto eveniet praesentium corporis quibusdam veritatis 
+									</td>
+									<td class="centered">2,000$</td>
+                                    <td>+225 48 99 01 50</td>
 									<td class="action">
 										<router-link to="/publication/waiting/View">
                                            <i class="fa  fa-eye"></i>Voir

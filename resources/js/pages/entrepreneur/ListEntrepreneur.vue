@@ -18,7 +18,6 @@
 							<table class="manage-table resumes responsive-table">
 
 								<tr>
-									
 									<th style="width: 10%;">Nom</th>
 									<th style="width: 30%;"> Prénom</th>
 									<th style="width: 20%;">Email</th>
@@ -35,7 +34,7 @@
                                     <td>Grand-lahou</td>
                                     <td>+225 48 99 01 50</td>
 									<td class="action">
-									    <router-link to="/account">
+									    <router-link to="/entrepreneur/View">
                                            <i class="fa  fa-eye"></i>Voir
                                         </router-link>
 										<a href="#" class="delete"><i class="fa fa-remove"></i>Supprimer</a>
@@ -50,7 +49,9 @@
                                     <td>Grand-lahou</td>
                                     <td>+225 48 99 01 50</td>
 									<td class="action">
-										<a href="#"><i class="fa  fa-eye"></i>Voir</a>
+										<router-link to="/entrepreneur/View">
+                                           <i class="fa  fa-eye"></i>Voir
+                                        </router-link>
 										<a href="#" class="delete"><i class="fa fa-remove"></i>Supprimer</a>
 									</td>
 								</tr>
@@ -58,10 +59,6 @@
 							</table>
 					</div>
 				</div>
-			</div>
-			<!-- Copyrights -->
-			<div class="col-md-12">
-				<div class="copyrights">© 2019 WorkScout. All Rights Reserved.</div>
 			</div>
 		</div>
 

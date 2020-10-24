@@ -190,12 +190,97 @@
 				<div class="dashboard-list-box margin-top-30">
 					<h4>Equipe</h4>
 					<div class="dashboard-list-box-content">
+                        <div class="padding-right">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <ul class="resumes-list alternative">
+                                        <li><a href="resume-page.html">
+                                            <img src="images/resumes-list-avatar-01.png" alt="">
+                                            <div class="resumes-list-content">
+                                                <h4>John Doe <span>UX/UI Graphic Designer</span></h4>
+                                                <span><i class="fa fa-map-marker"></i> Melbourne</span>
+                                                <span><i class="fa fa-money"></i> $100 / hour</span>
+                                                <p>Over 8000 hours on oDesk (only Drupal related). Highly motivated, goal-oriented, hands-on senior software engineer with extensive technical skills and over 15 years of experience in software development</p>
 
-					<center><a href="#" class="button margin-top-30">Voir les membre de l'équipe <i class="fa fa-arrow-circle-right"></i></a></center>
+                                                <div class="skills">
+                                                    <span>JavaScript</span>
+                                                    <span>PHP</span>
+                                                    <span>WordPress</span>
+                                                </div>
+                                                <div class="clearfix"></div>
 
+                                            </div>
+                                            </a>
+                                            <div class="clearfix"></div>
+                                        </li>
+                                        <li><a href="resume-page.html">
+                                            <img src="images/avatar-placeholder.png" alt="">
+                                            <div class="resumes-list-content">
+                                                <h4>Tom Smith <span>iOS Mobile Developer</span></h4>
+                                                <span><i class="fa fa-map-marker"></i> Sydney</span>
+                                                <span><i class="fa fa-money"></i> $35 / hour</span>
+                                                <p>Over 8000 hours on oDesk (only Drupal related). Highly motivated, goal-oriented, hands-on senior software engineer with extensive technical skills and over 15 years of experience in software development</p>
+
+                                                <div class="skills">
+                                                    <span>iOS Development</span>
+                                                    <span>iOS App Development</span>
+                                                    <span>Objective-C</span>
+                                                </div>
+                                                <div class="clearfix"></div>
+
+                                            </div>
+                                            </a>
+                                            <div class="clearfix"></div>
+                                        </li>	
+                                     </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <ul class="resumes-list alternative">
+                                        <li><a href="resume-page.html">
+                                            <img src="images/resumes-list-avatar-01.png" alt="">
+                                            <div class="resumes-list-content">
+                                                <h4>John Doe <span>UX/UI Graphic Designer</span></h4>
+                                                <span><i class="fa fa-map-marker"></i> Melbourne</span>
+                                                <span><i class="fa fa-money"></i> $100 / hour</span>
+                                                <p>Over 8000 hours on oDesk (only Drupal related). Highly motivated, goal-oriented, hands-on senior software engineer with extensive technical skills and over 15 years of experience in software development</p>
+
+                                                <div class="skills">
+                                                    <span>JavaScript</span>
+                                                    <span>PHP</span>
+                                                    <span>WordPress</span>
+                                                </div>
+                                                <div class="clearfix"></div>
+
+                                            </div>
+                                            </a>
+                                            <div class="clearfix"></div>
+                                        </li>
+                                        <li><a href="resume-page.html">
+                                            <img src="images/avatar-placeholder.png" alt="">
+                                            <div class="resumes-list-content">
+                                                <h4>Tom Smith <span>iOS Mobile Developer</span></h4>
+                                                <span><i class="fa fa-map-marker"></i> Sydney</span>
+                                                <span><i class="fa fa-money"></i> $35 / hour</span>
+                                                <p>Over 8000 hours on oDesk (only Drupal related). Highly motivated, goal-oriented, hands-on senior software engineer with extensive technical skills and over 15 years of experience in software development</p>
+
+                                                <div class="skills">
+                                                    <span>iOS Development</span>
+                                                    <span>iOS App Development</span>
+                                                    <span>Objective-C</span>
+                                                </div>
+                                                <div class="clearfix"></div>
+
+                                            </div>
+                                            </a>
+                                            <div class="clearfix"></div>
+                                        </li>	
+                                    </ul>
+                                </div>
+                            </div>
+	                    </div>
 					</div>
 				</div>
-				<a href="#" class="button margin-top-30">Publier<i class="fa fa-arrow-circle-right"></i></a>
+				<a href="#" class="button margin-top-30">Publier</a>
 			</div>
 		</div>
     </div>

@@ -22,11 +22,11 @@ const items = [
                 "child": [
                     {
                         "title": "Liste des publications",
-                        "path": "/publication/list"
+                        "path": "/realstates/list"
                     },
                     {
                         "title": "En attente de publication",
-                        "path": "/publication/waiting"
+                        "path": "/realstates/waiting"
                     },
                 ]
             },
