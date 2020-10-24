@@ -35,7 +35,7 @@
 									<td class="centered">2,000$</td>
                                     <td>+225 48 99 01 50</td>
 									<td class="action">
-										<router-link to="/publication/waiting/View">
+										<router-link to="/realstates/waiting/View">
                                            <i class="fa  fa-eye"></i>Voir
                                         </router-link>
 										<a href="#" class="delete"><i class="fa fa-remove"></i>Supprimer</a>
@@ -53,7 +53,7 @@
 									<td class="centered">2,000$</td>
                                     <td>+225 48 99 01 50</td>
 									<td class="action">
-										<router-link to="/publication/waiting/View">
+										<router-link to="/realstates/waiting/View">
                                            <i class="fa  fa-eye"></i>Voir
                                         </router-link>
 										<a href="#" class="delete"><i class="fa fa-remove"></i>Supprimer</a>

@@ -56,9 +56,7 @@ class PartnerController extends Controller
     {
         $old = $this->instance->newQuery()->findOrFail($id);
 
-        $old->name = $request->get("name");
-        $old->img = $request->get("img");
-        $old->save();
+        $old->update($request->all());
 
         return response()->json($old, 200);
     }

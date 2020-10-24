@@ -18,96 +18,57 @@
 
 						<!-- Email -->
 						<div class="form">
-							<h5>Intitulé du projet</h5>
-							<input class="search-field" type="text" placeholder="mail@example.com" value=""/>
+							<h5> <strong>Intitulé du projet</strong></h5>
+							<dd><p>Here goes description consectetur </p></dd>
 						</div>
 
 						<!-- Title -->
 						<div class="form">
-							<h5>Site web</h5>
-							<input class="search-field" type="text" placeholder="" value=""/>
+							<h5> <strong>Site web</strong></h5>
+							<dd><p>Here goes description consectetur </p></dd>
 						</div>
 						<div class="form">
-							<h5>Nom de l'entreprise</h5>
-							<input class="search-field" type="text" placeholder="" value=""/>
+							<h5> <strong> Nom de l'entreprise</strong></h5>
+							<dd><p>Here goes description consectetur </p></dd>
 						</div>
 
 						<!-- Job Type -->
 						<div class="form">
-							<h5>Localisation de l'entreprise</h5>
-							<select data-placeholder="Full-Time" class="chosen-select-no-single">
-								<option value="1">Full-Time</option>
-								<option value="2">Part-Time</option>
-								<option value="2">Internship</option>
-								<option value="2">Freelance</option>
-							</select>
+							<h5><strong>Localisation de l'entreprise</strong></h5>
+							<dd><p>Here goes description consectetur </p></dd>
 						</div>
 						<div class="form">
-							<h5>Numéro de téléphone</h5>
-							<input class="search-field" type="text" placeholder="" value=""/>
+							<h5> <strong>Numéro de téléphone</strong></h5>
+							<dd><p>Here goes description consectetur </p></dd>
 						</div>
-
-
 						<!-- Choose Category -->
 						<div class="form">
 							<div class="select">
-								<h5>Industrie</h5>
-								<select data-placeholder="Choose Categories" class="chosen-select" multiple>
-									<option value="1">Web Developers</option>
-									<option value="2">Mobile Developers</option>
-									<option value="3">Designers & Creatives</option>
-									<option value="4">Writers</option>
-									<option value="5">Virtual Assistants</option>
-									<option value="6">Customer Service Agents</option>
-									<option value="7">Sales & Marketing Experts</option>
-									<option value="8">Accountants & Consultants</option>
-								</select>
+								<h5><strong>Industrie</strong></h5>
+								<dd><p>Here goes description consectetur </p></dd>
 							</div>
 						</div>
 
 						<div class="form">
 							<div class="select">
-								<h5>Domaine</h5>
-								<select data-placeholder="Choose Categories" class="chosen-select" multiple>
-									<option value="1">Web Developers</option>
-									<option value="2">Mobile Developers</option>
-									<option value="3">Designers & Creatives</option>
-									<option value="4">Writers</option>
-									<option value="5">Virtual Assistants</option>
-									<option value="6">Customer Service Agents</option>
-									<option value="7">Sales & Marketing Experts</option>
-									<option value="8">Accountants & Consultants</option>
-								</select>
+								<h5><strong>Domaine</strong></h5>
+								<dd><p>Here goes description consectetur </p></dd>
 							</div>
 						</div>
 						<div class="form">
-							<h5>Rôle de l'investisseur</h5>
-							<select data-placeholder="Full-Time" class="chosen-select-no-single">
-								<option value="1">Full-Time</option>
-								<option value="2">Part-Time</option>
-								<option value="2">Internship</option>
-								<option value="2">Freelance</option>
-							</select>
+							<h5><strong>Rôle de l'investisseur</strong></h5>
+							<dd><p>Here goes description consectetur </p></dd>
 						</div>
 
 						<div class="form">
-							<h5>Stade de développement</h5>
-							<select data-placeholder="Full-Time" class="chosen-select-no-single">
-								<option value="1">Full-Time</option>
-								<option value="2">Part-Time</option>
-								<option value="2">Internship</option>
-								<option value="2">Freelance</option>
-							</select>
+							<h5><strong>Stade de développement</strong></h5>
+							<dd><p>Here goes description consectetur </p></dd>
 						</div>
 
 						<!-- Tags -->
 						<div class="form">
-							<h5>Logo <span>(optional)</span></h5>
-							<label class="upload-btn">
-							    <input type="file" multiple />
-							    <i class="fa fa-upload"></i> Browse
-							</label>
-							<span class="fake-input">No file selected</span>
+							<h5><strong>Investissement</strong></h5>
+							<dd><p>Here goes description consectetur </p></dd>
 						</div>
 					</div>
 
@@ -121,22 +82,30 @@
 
 						<!-- Company Name -->
 						<div class="form" style="width: 100%;">
-							<h5>Description</h5>
-							<textarea class="" name="summary" cols="20" rows="1" id="summary" spellcheck="true"></textarea>
+							<h5><strong>Description</strong> </h5>
+							<dd><p>Here goes description consectetur adipisicing elit, sed do eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                quis nostrud exercitation ullamco </p></dd>
 						</div>
 
 						<!-- Website -->
 						<div class="form" style="width: 100%;">
-							<h5>Le marché</h5>
-							<textarea class="" name="summary" cols="20" rows="3" id="summary" spellcheck="true"></textarea>
+							<h5><strong>Le marché</strong></h5>
+							<dd><p>Here goes description consectetur adipisicing elit, sed do eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                quis nostrud exercitation ullamco </p></dd>
 						</div>
 						<div class="form" style="width: 100%;">
-							<h5>Progrès</h5>
-							<textarea class="" name="summary" cols="20" rows="3" id="summary" spellcheck="true"></textarea>
+							<h5><strong>Progrès</strong></h5>
+							<dd><p>Here goes description consectetur adipisicing elit, sed do eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                quis nostrud exercitation ullamco </p></dd>
 						</div>
 						<div class="form" style="width: 100%;">
-							<h5>Objectif</h5>
-							<textarea class="" name="summary" cols="60" rows="3" id="summary" spellcheck="true"></textarea>
+							<h5><strong>Objectif</strong></h5>
+							<dd><p>Here goes description consectetur adipisicing elit, sed do eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                quis nostrud exercitation ullamco </p></dd>
 						</div>
 					</div>
 
@@ -152,36 +121,28 @@
 						<div class="form">
 							<h5>Business plan<span>(optional)</span></h5>
 							<label class="upload-btn">
-							    <input type="file" multiple />
 							    <i class="fa fa-upload"></i> Télécharger
 							</label>
-							<span class="fake-input">No file selected</span>
 						</div>
 
 						<!-- Website -->
 						<div class="form">
 							<h5>Données financières<span>(optional)</span></h5>
 							<label class="upload-btn">
-							    <input type="file" multiple />
 							    <i class="fa fa-upload"></i>Télécharger
 							</label>
-							<span class="fake-input">No file selected</span>
 						</div>
 						<div class="form">
 							<h5>Sommaire exécutif<span>(optional)</span></h5>
 							<label class="upload-btn">
-							    <input type="file" multiple />
 							    <i class="fa fa-upload"></i>Télécharger
 							</label>
-							<span class="fake-input">No file selected</span>
 						</div>
 						<div class="form">
 							<h5>Diaporama<span>(optional)</span></h5>
 							<label class="upload-btn">
-							    <input type="file" multiple />
 							    <i class="fa fa-upload"></i> Télécharger
 							</label>
-							<span class="fake-input">No file selected</span>
 						</div>
 					</div>
 
