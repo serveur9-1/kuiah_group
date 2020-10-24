@@ -1,5 +1,5 @@
 require('./bootstrap');
-import {store} from "./store";
+import store from "./store";
 
 window.Vue = require('vue');
 import  router from './router'
