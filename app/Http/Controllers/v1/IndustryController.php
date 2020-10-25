@@ -51,13 +51,20 @@ class IndustryController extends Controller
         return response()->json($new, 200);
     }
 
+    public function show($id, Request $req)
+    {
+        $selected = $this->instance->newQuery()->find($id);
+        $u = new IndustryResource($selected);
+
+        return response()->json($u,200);
+        
+    }
+
     public function update($id, Request $request)
     {
         $old = $this->instance->newQuery()->findOrFail($id);
 
-        $old->name_fr = $request->get("name_fr");
-        $old->name_en = $request->get("name_en");
-        $old->save();
+        $old->update($request->all());
 
         return response()->json($old, 200);
     }

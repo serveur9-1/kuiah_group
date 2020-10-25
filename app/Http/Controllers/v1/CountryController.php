@@ -52,11 +52,12 @@ class CountryController extends Controller
         return response()->json($new, 200);
     }
 
-    public function show($id)
+    public function show($id, Request $req)
     {
         $selected = $this->instance->newQuery()->find($id);
+        $u = new CountryResource($selected);
 
-        return response()->json($selected,200);
+        return response()->json($u,200);
         
     }
 
@@ -65,9 +66,7 @@ class CountryController extends Controller
     {
         $old = $this->instance->newQuery()->findOrFail($id);
 
-        $old->name_fr = $request->get("name_fr");
-        $old->name_en = $request->get("name_en");
-        $old->save();
+        $old->update($request->all());
 
         return response()->json($old, 200);
     }

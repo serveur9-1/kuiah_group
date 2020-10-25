@@ -18,15 +18,14 @@
 							<table class="manage-table resumes responsive-table">
 
 								<tr>
-									
 									<th>Nom du pays</th>
 									<th> Date de l'ajout</th>
 									<th>Actions</th>
 								</tr>
 
 								<!-- Item #1 -->
-								<tr>
-									<td>Front End Web Developer</td>
+								<tr v-for="country in countries">
+									<td>{{ country.name }}</td>
 									<td>23-09-2020</td>
 									<td class="action">
 										<router-link to="/country/edit">
@@ -36,6 +35,7 @@
 									</td>
 								</tr>
 
+<<<<<<< HEAD
 								<!-- Item #1 -->
 								<tr>
 									
@@ -49,6 +49,8 @@
 									</td>
 								</tr>	
 
+=======
+>>>>>>> 0417fe9680e6a4b5111b43d15e5f0d5a77e04584
 							</table>
 					</div>
 				</div>
@@ -62,6 +64,8 @@
 
 <script>
     import TitlebarComponent from "../../components/layouts/TitlebarComponent";
+    import { mapGetters, mapState, mapActions } from 'vuex'
+
     export default {
         name: "Dashboard",
         components: {TitlebarComponent},
@@ -70,10 +74,20 @@
                 message: "Mounted",
             }
         },
+        computed: {
+            ...mapState({
+                countries: state => state.country.items,
+                status: state => state.country.requestStatus,
+            })
+        },
         mounted() {
             this.onMounted()
+            this.fetchCountries()
         },
         methods: {
+            ...mapActions('country',{
+                fetchCountries: "GET_COUNTRIES",
+            }),
             onMounted: function () {
                 console.log(this.message)
             }

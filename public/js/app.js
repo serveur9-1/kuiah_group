@@ -2794,6 +2794,15 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_layouts_TitlebarComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../components/layouts/TitlebarComponent */ "./resources/js/components/layouts/TitlebarComponent.vue");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
 //
 //
 //
@@ -2857,6 +2866,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Dashboard",
   components: {
@@ -2867,14 +2877,25 @@ __webpack_require__.r(__webpack_exports__);
       message: "Mounted"
     };
   },
+  computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapState"])({
+    countries: function countries(state) {
+      return state.country.items;
+    },
+    status: function status(state) {
+      return state.country.requestStatus;
+    }
+  })),
   mounted: function mounted() {
     this.onMounted();
+    this.fetchCountries();
   },
-  methods: {
+  methods: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapActions"])('country', {
+    fetchCountries: "GET_COUNTRIES"
+  })), {}, {
     onMounted: function onMounted() {
       console.log(this.message);
     }
-  }
+  })
 });
 
 /***/ }),
@@ -42542,27 +42563,34 @@ var render = function() {
                 [
                   _vm._m(0),
                   _vm._v(" "),
-                  _c("tr", [
-                    _c("td", [_vm._v("Front End Web Developer")]),
-                    _vm._v(" "),
-                    _c("td", [_vm._v("23-09-2020")]),
-                    _vm._v(" "),
-                    _c(
-                      "td",
-                      { staticClass: "action" },
-                      [
-                        _c("router-link", { attrs: { to: "/country/edit" } }, [
-                          _c("i", { staticClass: "fa  fa-edit" }),
-                          _vm._v(
-                            "Modifier\n                                        "
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _vm._m(1)
-                      ],
-                      1
-                    )
-                  ]),
+                  _vm._l(_vm.countries, function(country) {
+                    return _c("tr", [
+                      _c("td", [_vm._v(_vm._s(country.name))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v("23-09-2020")]),
+                      _vm._v(" "),
+                      _c(
+                        "td",
+                        { staticClass: "action" },
+                        [
+                          _c(
+                            "router-link",
+                            { attrs: { to: "/country/edit" } },
+                            [
+                              _c("i", { staticClass: "fa  fa-edit" }),
+                              _vm._v(
+                                "Modifier\n                                        "
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _vm._m(1, true)
+                        ],
+                        1
+                      )
+                    ])
+                  }),
+                  _vm._v("\n\n<<<<<<< HEAD\n\t\t\t\t\t\t\t\t"),
                   _vm._v(" "),
                   _c("tr", [
                     _c("td", [_vm._v("Front End Web Developer")]),
@@ -42584,8 +42612,12 @@ var render = function() {
                       ],
                       1
                     )
-                  ])
-                ]
+                  ]),
+                  _vm._v(
+                    "\t\n\n=======\n>>>>>>> 0417fe9680e6a4b5111b43d15e5f0d5a77e04584\n\t\t\t\t\t\t\t"
+                  )
+                ],
+                2
               )
             ])
           ])
@@ -62276,7 +62308,7 @@ Vue.component('wrapper-component', __webpack_require__(/*! ./components/WrapperC
 var app = new Vue({
   el: '#app-vue',
   router: _router__WEBPACK_IMPORTED_MODULE_1__["default"],
-  store: _store__WEBPACK_IMPORTED_MODULE_0__["store"]
+  store: _store__WEBPACK_IMPORTED_MODULE_0__["default"]
 });
 
 /***/ }),
@@ -65085,19 +65117,101 @@ var items = [{
 /*!*************************************!*\
   !*** ./resources/js/store/index.js ***!
   \*************************************/
-/*! exports provided: store */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "store", function() { return store; });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _modules_country__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/country */ "./resources/js/store/modules/country.js");
+
 
 
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__["default"]);
-var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({});
+var debug = "development" !== 'production';
+/* harmony default export */ __webpack_exports__["default"] = (new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
+  modules: {
+    country: _modules_country__WEBPACK_IMPORTED_MODULE_2__["default"]
+  },
+  strict: debug
+}));
+
+/***/ }),
+
+/***/ "./resources/js/store/modules/country.js":
+/*!***********************************************!*\
+  !*** ./resources/js/store/modules/country.js ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../types */ "./resources/js/store/types.js");
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+var state = function state() {
+  return {
+    items: [{
+      id: null,
+      name: 'Mali'
+    }, {
+      id: null,
+      name: 'Congo'
+    }],
+    requestStatus: null
+  };
+};
+
+var getters = {};
+
+var actions = _defineProperty({}, _types__WEBPACK_IMPORTED_MODULE_0__["types"].GET_COUNTRIES, function (_ref) {
+  var commit = _ref.commit,
+      state = _ref.state;
+  commit("setRequestStatus", "loading");
+  console.log("Action mutation !!!");
+  commit("getCountries", {
+    id: 1,
+    name: "Burkina Faso"
+  });
+  commit("setRequestStatus", "success");
+});
+
+var mutations = {
+  setRequestStatus: function setRequestStatus(state, status) {
+    state.requestStatus = status;
+  },
+  getCountries: function getCountries(state, payload) {
+    state.items.push(payload);
+  }
+};
+/* harmony default export */ __webpack_exports__["default"] = ({
+  namespaced: true,
+  state: state,
+  getters: getters,
+  actions: actions,
+  mutations: mutations
+});
+
+/***/ }),
+
+/***/ "./resources/js/store/types.js":
+/*!*************************************!*\
+  !*** ./resources/js/store/types.js ***!
+  \*************************************/
+/*! exports provided: types */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "types", function() { return types; });
+var types = {
+  GET_COUNTRIES: "GET_COUNTRIES"
+};
 
 /***/ }),
 
