@@ -52,13 +52,13 @@ class CountryController extends Controller
         return response()->json($new, 200);
     }
 
-    public function show($id, Request $req)
+    public function show($id)
     {
         $selected = $this->instance->newQuery()->find($id);
         $u = new CountryResource($selected);
 
         return response()->json($u,200);
-        
+
     }
 
 

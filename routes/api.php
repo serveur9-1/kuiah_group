@@ -25,6 +25,9 @@ Route::group(['prefix' => 'v1'], function () {
         return "Work good !!!";
     });
 
+    Route::resource('users', \v1\UserController::class);
+    Route::post('users/{user}/status', 'v1\UserController@switchStatus')->where('user','[0-9]+');
+
     Route::resource('countries', \v1\CountryController::class);
     Route::resource('industries',\v1\IndustryController::class);
     Route::resource('domains',\v1\DomainController::class);

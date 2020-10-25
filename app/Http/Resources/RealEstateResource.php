@@ -16,21 +16,20 @@ class RealEstateResource extends JsonResource
      * @return array
      */
     public function toArray($request)
-    {   
-        $country = new CountryResource(Country::find($this->country_id));
+    {
         return [
             'id' => $this->id,
             'title' => $this->title,
             'description' => $this->description,
             'price' => $this->price,
-            'country' => $country->name_fr,
+            'country' => new CountryResource($this->toCountry),
             'location' => $this->location,
             'contact' => $this->contact,
             'email' => $this->email,
             'is_actived' => $this->is_actived,
             'is_archived' => $this->is_archived,
-            'user_id' => $this->user_id,
-            'Medias' => $this->toMedias
+            'user' => $this->user_id,
+            'medias' => $this->toMedias
         ];
     }
 }

@@ -23,4 +23,9 @@ class RealEstate extends Model
     {
         return $this->hasMany('App\Media');
     }
+
+    public function toCountry()
+    {
+        return $this->belongsTo('App\Country');
+    }
 }
