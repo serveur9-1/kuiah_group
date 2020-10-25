@@ -42,5 +42,6 @@
 <script src="{{asset('/scripts/slick.min.js')}}"></script>
 
 
+
 </body>
 </html>

@@ -2615,6 +2615,65 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Dashboard",
@@ -42379,11 +42438,138 @@ var render = function() {
   return _c(
     "div",
     { staticClass: "dashboard-content" },
-    [_c("TitlebarComponent")],
+    [
+      _c("TitlebarComponent"),
+      _vm._v(" "),
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-lg-12 col-md-12" }, [
+          _c("div", { staticClass: "notification notice" }, [
+            _vm._v("\n\t\t\t\t\tliste des entrepreneurs\n\t\t\t\t")
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "dashboard-list-box margin-top-30" }, [
+            _c("div", { staticClass: "dashboard-list-box-content" }, [
+              _c(
+                "table",
+                { staticClass: "manage-table resumes responsive-table" },
+                [
+                  _vm._m(0),
+                  _vm._v(" "),
+                  _c("tr", [
+                    _c("td", [_vm._v("Doumbia")]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v("Aboudramane")]),
+                    _vm._v(" "),
+                    _c("td", { staticClass: "centered" }, [
+                      _vm._v("Aboudramanedoumbia7@gmail.com")
+                    ]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v("Grand-lahou")]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v("+225 48 99 01 50")]),
+                    _vm._v(" "),
+                    _c(
+                      "td",
+                      { staticClass: "action" },
+                      [
+                        _c(
+                          "router-link",
+                          { attrs: { to: "/entrepreneur/View" } },
+                          [
+                            _c("i", { staticClass: "ln ln-icon-Checked-User" }),
+                            _vm._v(
+                              "Confirmer\n                                        "
+                            )
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "router-link",
+                          { attrs: { to: "/entrepreneur/View" } },
+                          [
+                            _c("i", { staticClass: "ln ln-icon-Lock-User" }),
+                            _vm._v(
+                              "Rejetter\n                                        "
+                            )
+                          ]
+                        )
+                      ],
+                      1
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("tr", [
+                    _c("td", [_vm._v("Doumbia")]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v("Aboudramane")]),
+                    _vm._v(" "),
+                    _c("td", { staticClass: "centered" }, [
+                      _vm._v("Aboudramanedoumbia7@gmail.com")
+                    ]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v("Grand-lahou")]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v("+225 48 99 01 50")]),
+                    _vm._v(" "),
+                    _c(
+                      "td",
+                      { staticClass: "action" },
+                      [
+                        _c(
+                          "router-link",
+                          { attrs: { to: "/entrepreneur/View" } },
+                          [
+                            _c("i", { staticClass: "ln ln-icon-Checked-User" }),
+                            _vm._v(
+                              "Confirmer\n                                        "
+                            )
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "router-link",
+                          { attrs: { to: "/entrepreneur/View" } },
+                          [
+                            _c("i", { staticClass: "ln ln-icon-Lock-User" }),
+                            _vm._v(
+                              "Rejetter\n                                        "
+                            )
+                          ]
+                        )
+                      ],
+                      1
+                    )
+                  ])
+                ]
+              )
+            ])
+          ])
+        ])
+      ])
+    ],
     1
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [
+      _c("th", { staticStyle: { width: "10%" } }, [_vm._v("Nom")]),
+      _vm._v(" "),
+      _c("th", { staticStyle: { width: "30%" } }, [_vm._v(" Prénom")]),
+      _vm._v(" "),
+      _c("th", { staticStyle: { width: "20%" } }, [_vm._v("Email")]),
+      _vm._v(" "),
+      _c("th", { staticStyle: { width: "15%" } }, [_vm._v("Ville")]),
+      _vm._v(" "),
+      _c("th", { staticStyle: { width: "15%" } }, [_vm._v("Date de demande")]),
+      _vm._v(" "),
+      _c("th", { staticStyle: { width: "10%" } }, [_vm._v("Actions")])
+    ])
+  }
+]
 render._withStripped = true
 
 
