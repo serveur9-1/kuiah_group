@@ -14,18 +14,24 @@ import DetailEntrepreneur from "./pages/entrepreneur/DetailEntrepreneur";
 import AskAccount from "./pages/account/AskAccount";
 import ListIndustry from "./pages/industry/ListIndustry";
 import AddIndustry from "./pages/industry/AddIndustry";
+import EditIndustry from "./pages/industry/EditIndustry";
 import ListDomain from "./pages/Domain/ListDomain";
 import AddDomain from "./pages/Domain/AddDomain";
 import ListCountry from "./pages/country/ListCountry";
 import AddCountry from "./pages/country/AddCountry";
+import EditCountry from "./pages/country/EditCountry";
 import ListLevel from "./pages/level/ListLevel";
 import AddLevel from "./pages/level/AddLevel";
+import EditLevel from "./pages/level/EditLevel";
 import ListPartner from "./pages/partner/ListPartner";
 import AddPartner from "./pages/partner/AddPartner";
+import EditPartner from "./pages/partner/EditPartner";
 import ListRealstates from "./pages/realstates/ListRealstates";
 import WaitRealstates from "./pages/realstates/WaitRealstates";
 import DetailRealstates from "./pages/realstates/DetailRealstates";
 import NewRealstates from "./pages/realstates/NewRealstates";
+import EditDomain from "./pages/Domain/EditDomain";
+
 
 
 
@@ -94,12 +100,20 @@ const routes = [
         component : AddIndustry
     },
     {
+        path: '/industry/edit',
+        component : EditIndustry
+    },
+    {
         path: '/domain/list',
         component : ListDomain
     },
     {
         path: '/domain/add',
         component : AddDomain
+    },
+    {
+        path: '/domain/edit',
+        component : EditDomain
     },
     {
         path: '/country/list',
@@ -110,6 +124,10 @@ const routes = [
         component : AddCountry
     },
     {
+        path: '/country/edit',
+        component : EditCountry
+    },
+    {
         path: '/level/list',
         component : ListLevel
     },
@@ -118,12 +136,20 @@ const routes = [
         component : AddLevel
     },
     {
+        path: '/level/edit',
+        component : EditLevel
+    },
+    {
         path: '/partner/list',
         component : ListPartner
     },
     {
         path: '/partner/add',
         component : AddPartner
+    },
+    {
+        path: '/partner/edit',
+        component : EditPartner
     },
     {
         path: '/realstates/list',

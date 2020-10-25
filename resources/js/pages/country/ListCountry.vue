@@ -28,13 +28,29 @@
 									<td>{{ country.name }}</td>
 									<td>23-09-2020</td>
 									<td class="action">
-										<router-link to="/publication/View">
-                                           <i class="fa  fa-eye"></i>Voir
+										<router-link to="/country/edit">
+                                           <i class="fa  fa-edit"></i>Modifier
                                         </router-link>
 										<a href="#" class="delete"><i class="fa fa-remove"></i>Supprimer</a>
 									</td>
 								</tr>
 
+<<<<<<< HEAD
+								<!-- Item #1 -->
+								<tr>
+									
+									<td>Front End Web Developer</td>
+									<td>23-09-2020</td>
+									<td class="action">
+										<router-link to="/country/edit">
+                                           <i class="fa  fa-edit"></i>Modifier
+                                        </router-link>
+										<a href="#" class="delete"><i class="fa fa-remove"></i>Supprimer</a>
+									</td>
+								</tr>	
+
+=======
+>>>>>>> 0417fe9680e6a4b5111b43d15e5f0d5a77e04584
 							</table>
 					</div>
 				</div>
