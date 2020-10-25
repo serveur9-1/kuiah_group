@@ -29,8 +29,8 @@
 									<td>Front End Web Developer</td>
 									<td>23-09-2020</td>
 									<td class="action">
-										<router-link to="/publication/View">
-                                           <i class="fa  fa-eye"></i>Voir
+										<router-link to="/country/edit">
+                                           <i class="fa  fa-edit"></i>Modifier
                                         </router-link>
 										<a href="#" class="delete"><i class="fa fa-remove"></i>Supprimer</a>
 									</td>
@@ -42,7 +42,9 @@
 									<td>Front End Web Developer</td>
 									<td>23-09-2020</td>
 									<td class="action">
-										<a href="#"><i class="fa  fa-eye"></i>Voir</a>
+										<router-link to="/country/edit">
+                                           <i class="fa  fa-edit"></i>Modifier
+                                        </router-link>
 										<a href="#" class="delete"><i class="fa fa-remove"></i>Supprimer</a>
 									</td>
 								</tr>	

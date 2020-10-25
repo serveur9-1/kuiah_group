@@ -11,49 +11,38 @@
 					<h4 class="gray">Entrepreneur</h4>
 					<div class="dashboard-list-box-static">
 						<!-- Avatar -->
-						<div class="edit-profile-photo">
-							<img src="http://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&amp;s=300" alt="">
-							<div class="change-photo-btn">
-								<div class="photoUpload">
-								    <span><i class="fa fa-upload"></i> Upload Photo</span>
-								    <input type="file" class="upload" />
-								</div>
-							</div>
-						</div>
 						<!-- Details -->
 						<div class="my-profile">
-
 							<label>Nom</label>
-							<input  type="text">
+							<dd><p>Here goes description consectetur </p></dd>
 
 							<label>Prénom</label>
-							<input  type="text">
+							<dd><p>Here goes description consectetur </p></dd>
 
 							<label>Email</label>
-							<input  type="text">
+							<dd><p>Here goes description consectetur </p></dd>
 
 							<label>Téléphone (Mobile)</label>
-							<input  type="text">
+							<dd><p>Here goes description consectetur </p></dd>
 
 							<label>Téléphone (Fixe)</label>
-							<input  type="text">
+							<dd><p>Here goes description consectetur </p></dd>
 
 							<label>Biographie</label>
-							<textarea name="notes" id="notes" cols="30" rows="10">Maecenas quis consequat libero, a feugiat eros. Nunc ut lacinia tortor morbi ultricies laoreet ullamcorper phasellus semper</textarea>
-
+							<dd><p>Here goes description consectetur adipisicing elit, sed do eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                quis nostrud exercitation ullamco </p></dd>
+							
 
 							<label><i class="fa fa-twitter"></i> Twitter</label>
-							<input placeholder="https://www.twitter.com/" type="text">
+							<dd><p>https://www.twitter.com/</p></dd>
 
 							<label><i class="fa fa-facebook-square"></i> Facebook</label>
-							<input placeholder="https://www.facebook.com/" type="text">
+							<dd><p>https://www.twitter.com/</p></dd>
 
 							<label><i class="fa fa-linkedin"></i>Linkedin</label>
-							<input placeholder="https://www.google.com/" type="text">
+								<dd><p>https://www.twitter.com/</p></dd>
 						</div>
-	
-						<button class="button margin-top-15">Save Changes</button>
-
 					</div>
 				</div>
 			</div>
