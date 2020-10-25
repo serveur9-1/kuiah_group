@@ -24,6 +24,9 @@ class UserResource extends JsonResource
             'profil' => $this->profil,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
+            'extension' => $this->toInvestor,
+            /*Afficher lorsque c'est l'admin*/
+            'real_estates' => RealEstateResource::collection($this->toRealEstate)
         ];
     }
 }

@@ -40,4 +40,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function toInvestor()
+    {
+        return $this->hasOne('App\Investor');
+    }
+
+    public function toRealEstate()
+    {
+        return $this->hasMany('App\RealEstate');
+    }
 }

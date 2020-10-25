@@ -28,4 +28,10 @@ class RealEstate extends Model
     {
         return $this->belongsTo('App\Country');
     }
+
+    public function toUser()
+    {
+        return $this->belongsTo('App\User');
+    }
+
 }
