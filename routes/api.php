@@ -30,7 +30,7 @@ Route::group(['prefix' => 'v1'], function () {
     Route::resource('domains',\v1\DomainController::class);
     Route::resource('partners',\v1\PartnerController::class);
     Route::resource('stades',\v1\StadeController::class);
-    Route::resource('realEstates',\v1\RealEstateController::class);
+    Route::resource('real_estates',\v1\RealEstateController::class);
 
     Route::get('/users/mail/test', 'v1\UserController@testMail');
 
