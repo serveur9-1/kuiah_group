@@ -3024,41 +3024,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Dashboard",
@@ -42904,65 +42869,7 @@ var render = function() {
   return _c(
     "div",
     { staticClass: "dashboard-content" },
-    [
-      _c("TitlebarComponent"),
-      _vm._v(" "),
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-lg-12 col-md-12" }, [
-          _vm._m(0),
-          _vm._v(" "),
-          _c("div", { staticClass: "dashboard-list-box margin-top-0" }, [
-            _c("h4", { staticClass: "gray" }, [_vm._v("Mes projets")]),
-            _vm._v(" "),
-            _c("div", { staticClass: "dashboard-list-box-static" }, [
-              _c(
-                "table",
-                { staticClass: "manage-table resumes responsive-table" },
-                [
-                  _vm._m(1),
-                  _vm._v(" "),
-                  _c("tr", [
-                    _c("td", [_vm._v("Front End Web Developer")]),
-                    _vm._v(" "),
-                    _c("td", [
-                      _vm._v(
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit.\n\t\t\t\t\t\t\t\t\t\t Suscipit architecto, ut, veniam mollitia voluptates ad vitae sunt quae ipsa\n\t\t\t\t\t\t\t\t\t\t  sed tempora dolores iusto eveniet praesentium corporis quibusdam veritatis \n\t\t\t\t\t\t\t\t\t"
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("td", { staticClass: "centered" }, [
-                      _vm._v("1,000 - 2,000$")
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "td",
-                      { staticClass: "action" },
-                      [
-                        _c(
-                          "router-link",
-                          { attrs: { to: "/publication/View" } },
-                          [
-                            _c("i", { staticClass: "fa  fa-eye" }),
-                            _vm._v(
-                              "Voir\n                                        "
-                            )
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _vm._m(2)
-                      ],
-                      1
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _vm._m(3)
-                ]
-              )
-            ])
-          ])
-        ])
-      ])
-    ],
+    [_c("TitlebarComponent"), _vm._v(" "), _vm._m(0)],
     1
   )
 }
@@ -42971,112 +42878,75 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "dashboard-list-box margin-top-0" }, [
-      _c("h4", { staticClass: "gray" }, [_vm._v("Entrepreneur")]),
-      _vm._v(" "),
-      _c("div", { staticClass: "dashboard-list-box-static" }, [
-        _c("div", { staticClass: "my-profile" }, [
-          _c("label", [_vm._v("Nom")]),
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-lg-12 col-md-12" }, [
+        _c("div", { staticClass: "dashboard-list-box margin-top-0" }, [
+          _c("h4", { staticClass: "gray" }, [_vm._v("Entrepreneur")]),
           _vm._v(" "),
-          _c("dd", [_c("p", [_vm._v("Here goes description consectetur ")])]),
-          _vm._v(" "),
-          _c("label", [_vm._v("Prénom")]),
-          _vm._v(" "),
-          _c("dd", [_c("p", [_vm._v("Here goes description consectetur ")])]),
-          _vm._v(" "),
-          _c("label", [_vm._v("Email")]),
-          _vm._v(" "),
-          _c("dd", [_c("p", [_vm._v("Here goes description consectetur ")])]),
-          _vm._v(" "),
-          _c("label", [_vm._v("Téléphone (Mobile)")]),
-          _vm._v(" "),
-          _c("dd", [_c("p", [_vm._v("Here goes description consectetur ")])]),
-          _vm._v(" "),
-          _c("label", [_vm._v("Téléphone (Fixe)")]),
-          _vm._v(" "),
-          _c("dd", [_c("p", [_vm._v("Here goes description consectetur ")])]),
-          _vm._v(" "),
-          _c("label", [_vm._v("Biographie")]),
-          _vm._v(" "),
-          _c("dd", [
-            _c("p", [
-              _vm._v(
-                "Here goes description consectetur adipisicing elit, sed do eiusmod\n                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n                                quis nostrud exercitation ullamco "
-              )
+          _c("div", { staticClass: "dashboard-list-box-static" }, [
+            _c("div", { staticClass: "my-profile" }, [
+              _c("label", [_vm._v("Nom")]),
+              _vm._v(" "),
+              _c("dd", [
+                _c("p", [_vm._v("Here goes description consectetur ")])
+              ]),
+              _vm._v(" "),
+              _c("label", [_vm._v("Prénom")]),
+              _vm._v(" "),
+              _c("dd", [
+                _c("p", [_vm._v("Here goes description consectetur ")])
+              ]),
+              _vm._v(" "),
+              _c("label", [_vm._v("Email")]),
+              _vm._v(" "),
+              _c("dd", [
+                _c("p", [_vm._v("Here goes description consectetur ")])
+              ]),
+              _vm._v(" "),
+              _c("label", [_vm._v("Téléphone (Mobile)")]),
+              _vm._v(" "),
+              _c("dd", [
+                _c("p", [_vm._v("Here goes description consectetur ")])
+              ]),
+              _vm._v(" "),
+              _c("label", [_vm._v("Téléphone (Fixe)")]),
+              _vm._v(" "),
+              _c("dd", [
+                _c("p", [_vm._v("Here goes description consectetur ")])
+              ]),
+              _vm._v(" "),
+              _c("label", [_vm._v("Biographie")]),
+              _vm._v(" "),
+              _c("dd", [
+                _c("p", [
+                  _vm._v(
+                    "Here goes description consectetur adipisicing elit, sed do eiusmod\n                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n                                quis nostrud exercitation ullamco "
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("label", [
+                _c("i", { staticClass: "fa fa-twitter" }),
+                _vm._v(" Twitter")
+              ]),
+              _vm._v(" "),
+              _c("dd", [_c("p", [_vm._v("https://www.twitter.com/")])]),
+              _vm._v(" "),
+              _c("label", [
+                _c("i", { staticClass: "fa fa-facebook-square" }),
+                _vm._v(" Facebook")
+              ]),
+              _vm._v(" "),
+              _c("dd", [_c("p", [_vm._v("https://www.twitter.com/")])]),
+              _vm._v(" "),
+              _c("label", [
+                _c("i", { staticClass: "fa fa-linkedin" }),
+                _vm._v("Linkedin")
+              ]),
+              _vm._v(" "),
+              _c("dd", [_c("p", [_vm._v("https://www.twitter.com/")])])
             ])
-          ]),
-          _vm._v(" "),
-          _c("label", [
-            _c("i", { staticClass: "fa fa-twitter" }),
-            _vm._v(" Twitter")
-          ]),
-          _vm._v(" "),
-          _c("dd", [_c("p", [_vm._v("https://www.twitter.com/")])]),
-          _vm._v(" "),
-          _c("label", [
-            _c("i", { staticClass: "fa fa-facebook-square" }),
-            _vm._v(" Facebook")
-          ]),
-          _vm._v(" "),
-          _c("dd", [_c("p", [_vm._v("https://www.twitter.com/")])]),
-          _vm._v(" "),
-          _c("label", [
-            _c("i", { staticClass: "fa fa-linkedin" }),
-            _vm._v("Linkedin")
-          ]),
-          _vm._v(" "),
-          _c("dd", [_c("p", [_vm._v("https://www.twitter.com/")])])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("tr", [
-      _c("th", { staticStyle: { width: "30%" } }, [_vm._v("Titre")]),
-      _vm._v(" "),
-      _c("th", { staticStyle: { width: "45%" } }, [_vm._v(" Description")]),
-      _vm._v(" "),
-      _c("th", { staticStyle: { width: "15%" } }, [_vm._v(" Min-Max")]),
-      _vm._v(" "),
-      _c("th", { staticStyle: { width: "10%" } }, [_vm._v("Actions")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("a", { staticClass: "delete", attrs: { href: "#" } }, [
-      _c("i", { staticClass: "fa fa-remove" }),
-      _vm._v("Supprimer")
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("tr", [
-      _c("td", [_vm._v("Logo Designer")]),
-      _vm._v(" "),
-      _c("td", [
-        _vm._v(
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit.\n\t\t\t\t\t\t\t\t\t\tSuscipit architecto, ut, veniam mollitia voluptates ad vitae sunt quae ipsa\n\t\t\t\t\t\t\t\t\t\t sed tempora dolores iusto eveniet praesentium corporis quibusdam veritatis \n\t\t\t\t\t\t\t\t   "
-        )
-      ]),
-      _vm._v(" "),
-      _c("td", { staticClass: "centered" }, [_vm._v("1,000 - 2,000$")]),
-      _vm._v(" "),
-      _c("td", { staticClass: "action" }, [
-        _c("a", { attrs: { href: "#" } }, [
-          _c("i", { staticClass: "fa  fa-eye" }),
-          _vm._v("Voir")
-        ]),
-        _vm._v(" "),
-        _c("a", { staticClass: "delete", attrs: { href: "#" } }, [
-          _c("i", { staticClass: "fa fa-remove" }),
-          _vm._v("Supprimer")
+          ])
         ])
       ])
     ])
@@ -65180,7 +65050,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pages_level_EditLevel__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./pages/level/EditLevel */ "./resources/js/pages/level/EditLevel.vue");
 /* harmony import */ var _pages_partner_ListPartner__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./pages/partner/ListPartner */ "./resources/js/pages/partner/ListPartner.vue");
 /* harmony import */ var _pages_partner_AddPartner__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./pages/partner/AddPartner */ "./resources/js/pages/partner/AddPartner.vue");
-/* harmony import */ var _pages_partner_EditPartner__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./pages/partner/EditPartner */ "./resources/js/pages/partner/EditPartner.vue");
+/* harmony import */ var _pages_partner_EditPartner__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./pages/partner/EditPartner */ "./resources/js/pages/partner/EditPartner.vue");
 /* harmony import */ var _pages_realstates_ListRealstates__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./pages/realstates/ListRealstates */ "./resources/js/pages/realstates/ListRealstates.vue");
 /* harmony import */ var _pages_realstates_WaitRealstates__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./pages/realstates/WaitRealstates */ "./resources/js/pages/realstates/WaitRealstates.vue");
 /* harmony import */ var _pages_realstates_DetailRealstates__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./pages/realstates/DetailRealstates */ "./resources/js/pages/realstates/DetailRealstates.vue");
@@ -65303,7 +65173,7 @@ var routes = [{
   component: _pages_partner_AddPartner__WEBPACK_IMPORTED_MODULE_26__["default"]
 }, {
   path: '/partner/edit',
-  component: _pages_partner_EditPartner__WEBPACK_IMPORTED_MODULE_27__["default"]
+  component: _pages_partner_EditPartner__WEBPACK_IMPORTED_MODULE_33__["default"]
 }, {
   path: '/realstates/list',
   component: _pages_realstates_ListRealstates__WEBPACK_IMPORTED_MODULE_28__["default"]
@@ -65538,7 +65408,7 @@ var types = {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/serveur/Bureau/kuiah_group/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/doumbia/Documents/kuiah_group/resources/js/app.js */"./resources/js/app.js");
 
 
 /***/ })
