@@ -13,17 +13,13 @@
 				</div>
 				<div class="dashboard-list-box margin-top-30">
 					<div class="dashboard-list-box-content">
-
 						<!-- Table -->
 							<table class="manage-table resumes responsive-table">
-
 								<tr>
-									
 									<th>Nom du niveau</th>
 									<th> Date de l'ajout</th>
 									<th>Actions</th>
 								</tr>
-
 								<!-- Item #1 -->
 								<tr>
 									<td>Front End Web Developer</td>

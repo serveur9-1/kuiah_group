@@ -347,7 +347,7 @@ ul.float-right li a:hover,
 .menu ul li.sfHover a.sf-with-ul,
 .menu ul li a:hover {
 	background-color: #505050;
-	color: #fff;
+	color: #000;
 }
 
 
@@ -3409,6 +3409,8 @@ span.temporary { background-color: #e12335; }
 	overflow: hidden;
 	border: 1px solid #e0e0e0;
 	margin-top: -1px;
+	margin-bottom: 8px;
+	background-color: white;
 }
 
 .listings-container .listing:first-child { border-radius: 4px 4px 0 0; }

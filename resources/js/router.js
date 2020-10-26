@@ -31,7 +31,8 @@ import WaitRealstates from "./pages/realstates/WaitRealstates";
 import DetailRealstates from "./pages/realstates/DetailRealstates";
 import NewRealstates from "./pages/realstates/NewRealstates";
 import EditDomain from "./pages/Domain/EditDomain";
-
+import Login from "./pages/auth/Login";
+import ListNotification from "./pages/notification/ListNotification";
 
 
 
@@ -54,6 +55,10 @@ const routes = [
     {
         path: '/account',
         component: UserAccount
+    },
+    {
+        path: '/login',
+        component: Login
     },
     {
         path: '/publication/list',
@@ -166,6 +171,10 @@ const routes = [
     {
         path: '/realstates/waiting/View',
         component : NewRealstates
+    },
+    {
+        path: '/notification/list',
+        component : ListNotification
     },
 ];
 
