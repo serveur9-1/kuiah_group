@@ -8,7 +8,7 @@ use App\Mail\WelcomeToYou;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
-
+use App\Mail\waitAccountValidate;
 
 class UserController extends Controller
 {
@@ -59,8 +59,11 @@ class UserController extends Controller
         }
 
         $new = $this->instance->newQuery()->create($request->all());
+        
+        // new UserResource($new)
 
-        return response()->json(new UserResource($new),200);
+        return new waitAccountValidate($request);
+        
     }
 
     public function update($id, Request $request)

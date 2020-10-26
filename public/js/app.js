@@ -65050,7 +65050,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pages_level_EditLevel__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./pages/level/EditLevel */ "./resources/js/pages/level/EditLevel.vue");
 /* harmony import */ var _pages_partner_ListPartner__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./pages/partner/ListPartner */ "./resources/js/pages/partner/ListPartner.vue");
 /* harmony import */ var _pages_partner_AddPartner__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./pages/partner/AddPartner */ "./resources/js/pages/partner/AddPartner.vue");
-/* harmony import */ var _pages_partner_EditPartner__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./pages/partner/EditPartner */ "./resources/js/pages/partner/EditPartner.vue");
+/* harmony import */ var _pages_partner_EditPartner__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./pages/partner/EditPartner */ "./resources/js/pages/partner/EditPartner.vue");
 /* harmony import */ var _pages_realstates_ListRealstates__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./pages/realstates/ListRealstates */ "./resources/js/pages/realstates/ListRealstates.vue");
 /* harmony import */ var _pages_realstates_WaitRealstates__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./pages/realstates/WaitRealstates */ "./resources/js/pages/realstates/WaitRealstates.vue");
 /* harmony import */ var _pages_realstates_DetailRealstates__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./pages/realstates/DetailRealstates */ "./resources/js/pages/realstates/DetailRealstates.vue");
@@ -65173,7 +65173,7 @@ var routes = [{
   component: _pages_partner_AddPartner__WEBPACK_IMPORTED_MODULE_26__["default"]
 }, {
   path: '/partner/edit',
-  component: _pages_partner_EditPartner__WEBPACK_IMPORTED_MODULE_33__["default"]
+  component: _pages_partner_EditPartner__WEBPACK_IMPORTED_MODULE_27__["default"]
 }, {
   path: '/realstates/list',
   component: _pages_realstates_ListRealstates__WEBPACK_IMPORTED_MODULE_28__["default"]
@@ -65408,7 +65408,7 @@ var types = {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/doumbia/Documents/kuiah_group/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/serveur/Bureau/kuiah_group/resources/js/app.js */"./resources/js/app.js");
 
 
 /***/ })
