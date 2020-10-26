@@ -46,6 +46,10 @@ class ProjectResource extends JsonResource
             "domain" => new DomainResource($this->toDomain),
             "stade" => new StadeResource($this->toStade),
             "investment_points" => $this->toInvestmentPoints,
+            "financial_data" => $this->toFinancialDatas,
+            "tags" => $this->toTags,
+            "teams" => $this->toTeams,
+            "medias" => $this->toOtherDocs,
             "created_at" => $this->created_at,
             "updated_at" => $this->updated_at,
         ];
