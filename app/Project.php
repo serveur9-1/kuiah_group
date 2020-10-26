@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Project extends Model
 {
+    protected $table = "projects";
+
     protected $fillable = [
         "title",
         "website",
@@ -19,7 +21,7 @@ class Project extends Model
         "logo",
         "banner",
         "market",
-        
+
         "proof_or_progres",
         "business_plan_doc",
         "financial_data_doc",
@@ -34,4 +36,19 @@ class Project extends Model
         "domain_id",
         "stade_id",
     ];
+
+    public function toTags()
+    {
+        return $this->hasMany('App\Tag');
+    }
+
+    public function toUser()
+    {
+        return $this->belongsTo('App\User');
+    }
+
+    public function toCountry()
+    {
+        return $this->belongsTo('App\User');
+    }
 }

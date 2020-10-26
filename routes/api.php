@@ -25,12 +25,18 @@ Route::group(['prefix' => 'v1'], function () {
         return "Work good !!!";
     });
 
+    Route::resource('users', \v1\UserController::class);
+    Route::post('users/{user}/status', 'v1\UserController@switchStatus')->where('user','[0-9]+');
+
+    Route::resource('investors', \v1\InvestorController::class)->only(['store', 'update']);
+
     Route::resource('countries', \v1\CountryController::class);
     Route::resource('industries',\v1\IndustryController::class);
     Route::resource('domains',\v1\DomainController::class);
     Route::resource('partners',\v1\PartnerController::class);
     Route::resource('stades',\v1\StadeController::class);
-    Route::resource('realEstates',\v1\RealEstateController::class);
+    Route::resource('real_estates',\v1\RealEstateController::class);
+    Route::resource('projects',\v1\ProjectController::class);
 
     Route::get('/users/mail/test', 'v1\UserController@testMail');
 
