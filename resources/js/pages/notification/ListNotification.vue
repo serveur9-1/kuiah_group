@@ -11,125 +11,32 @@
             <div class="padding-right">
                 <div class="listings-container">
                     <!-- Listing -->
-                    <a href="job-page-alt.html" class="listing full-time">
-                        <div class="listing-logo">
-                            <img src="images/job-list-logo-01.png" alt="">
-                        </div>
-                        <div class="listing-title">
-                            <h4>Marketing Coordinator - SEO / SEM Experience</h4>
-                            <ul class="listing-icons">
-                                <li><i class="ln ln-icon-Eye-Visible"></i> 20</li>
-                                <li><i class="ln ln-icon-Map2"></i> Yamoussoukro</li>
-                                <li><i class="ln ln-icon-Male"></i> 17</li>
-                                <li><div class="listing-date new">new</div></li>
-                            </ul>
-                        </div>
-                    </a>
-                    <!-- Listing -->
-                    <a href="job-page.html" class="listing part-time">
-                        <div class="listing-logo">
-                            <img src="images/job-list-logo-02.png" alt="">
-                        </div>
-                        <div class="listing-title">
-                            <h4>Core PHP Developer for Site Maintenance </h4>
-                            <ul class="listing-icons">
-                                <li><i class="ln ln-icon-Eye-Visible"></i> 20</li>
-                                <li><i class="ln ln-icon-Map2"></i> Yamoussoukro</li>
-                                <li><i class="ln ln-icon-Male"></i> 17</li>
-                                <li><div class="listing-date">3d ago</div></li>
-                            </ul>
-                        </div>
-                    </a>
-                    <!-- Listing -->
-                    <a href="job-page-alt.html" class="listing full-time">
-                        <div class="listing-logo">
-                            <img src="images/job-list-logo-01.png" alt="">
-                        </div>
-                        <div class="listing-title">
-                            <h4>Restaurant Team Member - Crew </h4>
-                            <ul class="listing-icons">
-                                <li><i class="ln ln-icon-Eye-Visible"></i> 20</li>
-                                <li><i class="ln ln-icon-Map2"></i> Yamoussoukro</li>
-                                <li><i class="ln ln-icon-Male"></i> 17</li>
-                                <li><div class="listing-date">3d ago</div></li>
-                            </ul>
-                        </div>
-                    </a>
-                    <!-- Listing -->
-                    <a href="job-page.html" class="listing full-time">
-                        <div class="listing-logo">
-                            <img src="images/job-list-logo-04.png" alt="">
-                        </div>
-                        <div class="listing-title">
-                            <h4>Power Systems User Experience Designer</h4>
-                            <ul class="listing-icons">
-                                <li><i class="ln ln-icon-Management"></i> Hexagon</li>
-                                <li><i class="ln ln-icon-Map2"></i> London</li>
-                                <li><i class="ln ln-icon-Money-2"></i> $55 / hour</li>
-                                <li><div class="listing-date">4d ago</div></li>
-                            </ul>
-                        </div>
-                    </a>
-                    <!-- Listing -->
-                    <a href="job-page.html" class="listing part-time">
-                        <div class="listing-logo">
-                            <img src="images/job-list-logo-05.png" alt="">
-                        </div>
-                        <div class="listing-title">
-                            <h4>iPhone / Android Music App Development </h4>
-                            <ul class="listing-icons">
-                                <li><i class="ln ln-icon-Eye-Visible"></i> 20</li>
-                                <li><i class="ln ln-icon-Map2"></i> Yamoussoukro</li>
-                                <li><i class="ln ln-icon-Male"></i> 17</li>
-                                <li><div class="listing-date">4d ago</div></li>
-                            </ul>
-                        </div>
-                    </a>
-                    <!-- Listing -->
-                    <a href="job-page.html" class="listing part-time">
-                        <div class="listing-logo">
-                            <img src="images/job-list-logo-02.png" alt="">
-                        </div>
-                        <div class="listing-title">
-                            <h4>Core PHP Developer for Site Maintenance </h4>
-                            <ul class="listing-icons">
-                                <li><i class="ln ln-icon-Eye-Visible"></i> 20</li>
-                                <li><i class="ln ln-icon-Map2"></i> Yamoussoukro</li>
-                                <li><i class="ln ln-icon-Male"></i> 17</li>
-                                <li><div class="listing-date">3d ago</div></li>
-                            </ul>
-                        </div>
-                    </a>
-                    <!-- Listing -->
-                    <a href="job-page.html" class="listing full-time">
-                        <div class="listing-logo">
-                            <img src="images/job-list-logo-01.png" alt="">
-                        </div>
+                    <router-link to="/publication/waiting/View" class="listing">
                         <div class="listing-title">
                             <h4>Assistant de direction</h4>
                             <ul class="listing-icons">
-                                <li><i class="ln ln-icon-Eye-Visible"></i> 20</li>
-                                <li><i class="ln ln-icon-Map2"></i> Yamoussoukro</li>
-                                <li><i class="ln ln-icon-Male"></i> 17</li>
+                                <li> <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, cumque eos? Natus ullam,
+                                     quibusdam quae harum praesentium nam odio sed veritatis nihi
+                                     </p>
+                                </li>
                                 <li><div class="listing-date">3d ago</div></li>
                             </ul>
                         </div>
-                    </a>
+                    </router-link>
                     <!-- Listing -->
-                    <a href="job-page.html" class="listing full-time">
-                        <div class="listing-logo">
-                            <img src="images/job-list-logo-04.png" alt="">
-                        </div>
+                     <router-link to="/publication/waiting/View" class="listing">
                         <div class="listing-title">
-                            <h4>Administrateur système </h4>
+                            <h4>Core PHP Developer for Site Maintenance </h4>
                             <ul class="listing-icons">
-                                <li><i class="ln ln-icon-Eye-Visible"></i> 20</li>
-                                <li><i class="ln ln-icon-Map2"></i> Yamoussoukro</li>
-                                <li><i class="ln ln-icon-Male"></i> 17</li>
+                                <li> <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, cumque eos? Natus ullam,
+                                     quibusdam quae harum praesentium nam odio sed veritatis nihi
+                                     </p>
+                                </li>
                                 <li><div class="listing-date">3d ago</div></li>
                             </ul>
                         </div>
-                    </a>
+                    </router-link>
+                    <!-- Listing -->
                 </div>
                 <div class="clearfix"></div>
             </div>

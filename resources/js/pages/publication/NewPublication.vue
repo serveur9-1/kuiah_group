@@ -5,11 +5,10 @@
         <TitlebarComponent/>
 
         <!-- Content -->
+		<a href="#" class="button margin-top-30" style="float:right; margin-bottom:15px;">Activer la publication</a>
         <div class="row">
-			
 			<!-- Table-->
 			<div class="col-lg-12 col-md-12">
-
 				<div class="dashboard-list-box margin-top-0">
 					<h4>La société</h4>
 					<div class="dashboard-list-box-content">
@@ -156,84 +155,84 @@
                                 <div class="col-md-6">
                                     <ul class="resumes-list alternative">
                                         <li><a href="resume-page.html">
-                                            <img src="images/resumes-list-avatar-01.png" alt="">
+                                            <img src="https://store.playstation.com/store/api/chihiro/00_09_000/container/CA/fr/999/UP1415-CUSA03724_00-AV00000000000192/1601172562000/image?w=240&h=240&bg_color=000000&opacity=100&_version=00_09_000" alt="">
                                             <div class="resumes-list-content">
                                                 <h4>John Doe <span>UX/UI Graphic Designer</span></h4>
-                                                <span><i class="fa fa-map-marker"></i> Melbourne</span>
-                                                <span><i class="fa fa-money"></i> $100 / hour</span>
-                                                <p>Over 8000 hours on oDesk (only Drupal related). Highly motivated, goal-oriented, hands-on senior software engineer with extensive technical skills and over 15 years of experience in software development</p>
-
-                                                <div class="skills">
-                                                    <span>JavaScript</span>
-                                                    <span>PHP</span>
-                                                    <span>WordPress</span>
-                                                </div>
+                                                <span><a href=""><i class="fa fa-twitter"></i> </a></span>
+                                                <span><a href=""><i class="fa fa-linkedin"></i></a> </span>
+												<span><a href=""><i class="fa fa-facebook"></i></a> </span>
+												<span><a href=""><i class="fa fa-instagram"></i></a> </span>
                                                 <div class="clearfix"></div>
-
                                             </div>
                                             </a>
-                                            <div class="clearfix"></div>
+                                            <div class="clearfix">
+												<p>Lorem ipsum dolor sit amet consectetur 
+													adipisicing elit. Temporibus magnam repudiandae 
+													assumenda quia blanditiis dolore perferendis molestiae 
+													illo evenie
+												</p>
+											</div>
                                         </li>
-                                        <li><a href="resume-page.html">
-                                            <img src="images/avatar-placeholder.png" alt="">
+                                         <li><a href="resume-page.html">
+                                            <img src="https://store.playstation.com/store/api/chihiro/00_09_000/container/CA/fr/999/UP1415-CUSA03724_00-AV00000000000192/1601172562000/image?w=240&h=240&bg_color=000000&opacity=100&_version=00_09_000" alt="">
                                             <div class="resumes-list-content">
-                                                <h4>Tom Smith <span>iOS Mobile Developer</span></h4>
-                                                <span><i class="fa fa-map-marker"></i> Sydney</span>
-                                                <span><i class="fa fa-money"></i> $35 / hour</span>
-                                                <p>Over 8000 hours on oDesk (only Drupal related). Highly motivated, goal-oriented, hands-on senior software engineer with extensive technical skills and over 15 years of experience in software development</p>
-
-                                                <div class="skills">
-                                                    <span>iOS Development</span>
-                                                    <span>iOS App Development</span>
-                                                    <span>Objective-C</span>
-                                                </div>
+                                                <h4>John Doe <span>UX/UI Graphic Designer</span></h4>
+                                                <span><a href=""><i class="fa fa-twitter"></i> </a></span>
+                                                <span><a href=""><i class="fa fa-linkedin"></i></a> </span>
+												<span><a href=""><i class="fa fa-facebook"></i></a> </span>
+												<span><a href=""><i class="fa fa-instagram"></i></a> </span>
                                                 <div class="clearfix"></div>
-
                                             </div>
                                             </a>
-                                            <div class="clearfix"></div>
+                                            <div class="clearfix">
+												<p>Lorem ipsum dolor sit amet consectetur 
+													adipisicing elit. Temporibus magnam repudiandae 
+													assumenda quia blanditiis dolore perferendis molestiae 
+													illo evenie
+												</p>
+											</div>
                                         </li>	
                                      </ul>
                                 </div>
                                 <div class="col-md-6">
                                     <ul class="resumes-list alternative">
                                         <li><a href="resume-page.html">
-                                            <img src="images/resumes-list-avatar-01.png" alt="">
+                                            <img src="https://store.playstation.com/store/api/chihiro/00_09_000/container/CA/fr/999/UP1415-CUSA03724_00-AV00000000000192/1601172562000/image?w=240&h=240&bg_color=000000&opacity=100&_version=00_09_000" alt="">
                                             <div class="resumes-list-content">
                                                 <h4>John Doe <span>UX/UI Graphic Designer</span></h4>
-                                                <span><i class="fa fa-map-marker"></i> Melbourne</span>
-                                                <span><i class="fa fa-money"></i> $100 / hour</span>
-                                                <p>Over 8000 hours on oDesk (only Drupal related). Highly motivated, goal-oriented, hands-on senior software engineer with extensive technical skills and over 15 years of experience in software development</p>
-
-                                                <div class="skills">
-                                                    <span>JavaScript</span>
-                                                    <span>PHP</span>
-                                                    <span>WordPress</span>
-                                                </div>
+                                                <span><a href=""><i class="fa fa-twitter"></i> </a></span>
+                                                <span><a href=""><i class="fa fa-linkedin"></i></a> </span>
+												<span><a href=""><i class="fa fa-facebook"></i></a> </span>
+												<span><a href=""><i class="fa fa-instagram"></i></a> </span>
                                                 <div class="clearfix"></div>
-
                                             </div>
                                             </a>
-                                            <div class="clearfix"></div>
+                                            <div class="clearfix">
+												<p>Lorem ipsum dolor sit amet consectetur 
+													adipisicing elit. Temporibus magnam repudiandae 
+													assumenda quia blanditiis dolore perferendis molestiae 
+													illo evenie
+												</p>
+											</div>
                                         </li>
-                                        <li><a href="resume-page.html">
-                                            <img src="images/avatar-placeholder.png" alt="">
+                                         <li><a href="resume-page.html">
+                                            <img src="https://store.playstation.com/store/api/chihiro/00_09_000/container/CA/fr/999/UP1415-CUSA03724_00-AV00000000000192/1601172562000/image?w=240&h=240&bg_color=000000&opacity=100&_version=00_09_000" alt="">
                                             <div class="resumes-list-content">
-                                                <h4>Tom Smith <span>iOS Mobile Developer</span></h4>
-                                                <span><i class="fa fa-map-marker"></i> Sydney</span>
-                                                <span><i class="fa fa-money"></i> $35 / hour</span>
-                                                <p>Over 8000 hours on oDesk (only Drupal related). Highly motivated, goal-oriented, hands-on senior software engineer with extensive technical skills and over 15 years of experience in software development</p>
-
-                                                <div class="skills">
-                                                    <span>iOS Development</span>
-                                                    <span>iOS App Development</span>
-                                                    <span>Objective-C</span>
-                                                </div>
+                                                <h4>John Doe <span>UX/UI Graphic Designer</span></h4>
+                                                <span><a href=""><i class="fa fa-twitter"></i> </a></span>
+                                                <span><a href=""><i class="fa fa-linkedin"></i></a> </span>
+												<span><a href=""><i class="fa fa-facebook"></i></a> </span>
+												<span><a href=""><i class="fa fa-instagram"></i></a> </span>
                                                 <div class="clearfix"></div>
-
                                             </div>
                                             </a>
-                                            <div class="clearfix"></div>
+                                            <div class="clearfix">
+												<p>Lorem ipsum dolor sit amet consectetur 
+													adipisicing elit. Temporibus magnam repudiandae 
+													assumenda quia blanditiis dolore perferendis molestiae 
+													illo evenie
+												</p>
+											</div>
                                         </li>	
                                     </ul>
                                 </div>
@@ -241,7 +240,6 @@
 	                    </div>
 					</div>
 				</div>
-                <a href="#" class="button margin-top-30">Activer</a>
 			</div>
 		</div>
     </div>

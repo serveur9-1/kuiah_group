@@ -3107,6 +3107,41 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Dashboard",
@@ -3964,99 +3999,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Dashboard",
@@ -4433,8 +4375,6 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_layouts_TitlebarComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../components/layouts/TitlebarComponent */ "./resources/js/components/layouts/TitlebarComponent.vue");
-//
-//
 //
 //
 //
@@ -9920,7 +9860,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.badge[data-v-c97109a8] {\n  position: absolute;\n  top: 8px;\n  right: 12px;\n  height:15px;\n  width: 15px;\n  border-radius: 50%;\n  background: red;\n  color: white;\n}\n.notif-wrapper[data-v-c97109a8] {\n    background: white !important;\n}\n\n", ""]);
+exports.push([module.i, "\n.badge[data-v-c97109a8] {\n  position: absolute;\n  top: 6px;\n  right: 10px;\n  height:20px;\n  width: 20px;\n  border-radius: 50%;\n  background: red;\n  color: white;\n}\n.notif-wrapper[data-v-c97109a8] {\n    background: white !important;\n}\n\n", ""]);
 
 // exports
 
@@ -41930,13 +41870,29 @@ var render = function() {
                       attrs: { to: "/notification/list" }
                     },
                     [
+                      _c("i", {
+                        staticClass: "fa  fa-bell",
+                        staticStyle: { "font-size": "29px" }
+                      }),
+                      _vm._v(" "),
                       _c(
-                        "i",
-                        {
-                          staticClass: "fa  fa-bell",
-                          staticStyle: { "font-size": "25px" }
-                        },
-                        [_c("span", { staticClass: "badge" })]
+                        "span",
+                        { staticClass: "badge" },
+                        [
+                          _c("center", [
+                            _c(
+                              "sup",
+                              {
+                                staticStyle: {
+                                  "font-size": "10px",
+                                  "font-weight": "bold"
+                                }
+                              },
+                              [_vm._v("99+")]
+                            )
+                          ])
+                        ],
+                        1
                       )
                     ]
                   )
@@ -43298,7 +43254,65 @@ var render = function() {
   return _c(
     "div",
     { staticClass: "dashboard-content" },
-    [_c("TitlebarComponent"), _vm._v(" "), _vm._m(0)],
+    [
+      _c("TitlebarComponent"),
+      _vm._v(" "),
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-lg-12 col-md-12" }, [
+          _vm._m(0),
+          _vm._v(" "),
+          _c("div", { staticClass: "dashboard-list-box margin-top-0" }, [
+            _c("h4", { staticClass: "gray" }, [_vm._v("Mes projets")]),
+            _vm._v(" "),
+            _c("div", { staticClass: "dashboard-list-box-static" }, [
+              _c(
+                "table",
+                { staticClass: "manage-table resumes responsive-table" },
+                [
+                  _vm._m(1),
+                  _vm._v(" "),
+                  _c("tr", [
+                    _c("td", [_vm._v("Front End Web Developer")]),
+                    _vm._v(" "),
+                    _c("td", [
+                      _vm._v(
+                        "Lorem ipsum dolor sit amet consectetur adipisicing elit.\n\t\t\t\t\t\t\t\t\t\t Suscipit architecto, ut, veniam mollitia voluptates ad vitae sunt quae ipsa\n\t\t\t\t\t\t\t\t\t\t  sed tempora dolores iusto eveniet praesentium corporis quibusdam veritatis \n\t\t\t\t\t\t\t\t\t"
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("td", { staticClass: "centered" }, [
+                      _vm._v("1,000 - 2,000$")
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "td",
+                      { staticClass: "action" },
+                      [
+                        _c(
+                          "router-link",
+                          { attrs: { to: "/publication/View" } },
+                          [
+                            _c("i", { staticClass: "fa  fa-eye" }),
+                            _vm._v(
+                              "Voir\n                                        "
+                            )
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _vm._m(2)
+                      ],
+                      1
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _vm._m(3)
+                ]
+              )
+            ])
+          ])
+        ])
+      ])
+    ],
     1
   )
 }
@@ -43307,75 +43321,112 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-lg-12 col-md-12" }, [
-        _c("div", { staticClass: "dashboard-list-box margin-top-0" }, [
-          _c("h4", { staticClass: "gray" }, [_vm._v("Entrepreneur")]),
+    return _c("div", { staticClass: "dashboard-list-box margin-top-0" }, [
+      _c("h4", { staticClass: "gray" }, [_vm._v("Entrepreneur")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "dashboard-list-box-static" }, [
+        _c("div", { staticClass: "my-profile" }, [
+          _c("label", [_vm._v("Nom")]),
           _vm._v(" "),
-          _c("div", { staticClass: "dashboard-list-box-static" }, [
-            _c("div", { staticClass: "my-profile" }, [
-              _c("label", [_vm._v("Nom")]),
-              _vm._v(" "),
-              _c("dd", [
-                _c("p", [_vm._v("Here goes description consectetur ")])
-              ]),
-              _vm._v(" "),
-              _c("label", [_vm._v("Prénom")]),
-              _vm._v(" "),
-              _c("dd", [
-                _c("p", [_vm._v("Here goes description consectetur ")])
-              ]),
-              _vm._v(" "),
-              _c("label", [_vm._v("Email")]),
-              _vm._v(" "),
-              _c("dd", [
-                _c("p", [_vm._v("Here goes description consectetur ")])
-              ]),
-              _vm._v(" "),
-              _c("label", [_vm._v("Téléphone (Mobile)")]),
-              _vm._v(" "),
-              _c("dd", [
-                _c("p", [_vm._v("Here goes description consectetur ")])
-              ]),
-              _vm._v(" "),
-              _c("label", [_vm._v("Téléphone (Fixe)")]),
-              _vm._v(" "),
-              _c("dd", [
-                _c("p", [_vm._v("Here goes description consectetur ")])
-              ]),
-              _vm._v(" "),
-              _c("label", [_vm._v("Biographie")]),
-              _vm._v(" "),
-              _c("dd", [
-                _c("p", [
-                  _vm._v(
-                    "Here goes description consectetur adipisicing elit, sed do eiusmod\n                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n                                quis nostrud exercitation ullamco "
-                  )
-                ])
-              ]),
-              _vm._v(" "),
-              _c("label", [
-                _c("i", { staticClass: "fa fa-twitter" }),
-                _vm._v(" Twitter")
-              ]),
-              _vm._v(" "),
-              _c("dd", [_c("p", [_vm._v("https://www.twitter.com/")])]),
-              _vm._v(" "),
-              _c("label", [
-                _c("i", { staticClass: "fa fa-facebook-square" }),
-                _vm._v(" Facebook")
-              ]),
-              _vm._v(" "),
-              _c("dd", [_c("p", [_vm._v("https://www.twitter.com/")])]),
-              _vm._v(" "),
-              _c("label", [
-                _c("i", { staticClass: "fa fa-linkedin" }),
-                _vm._v("Linkedin")
-              ]),
-              _vm._v(" "),
-              _c("dd", [_c("p", [_vm._v("https://www.twitter.com/")])])
+          _c("dd", [_c("p", [_vm._v("Here goes description consectetur ")])]),
+          _vm._v(" "),
+          _c("label", [_vm._v("Prénom")]),
+          _vm._v(" "),
+          _c("dd", [_c("p", [_vm._v("Here goes description consectetur ")])]),
+          _vm._v(" "),
+          _c("label", [_vm._v("Email")]),
+          _vm._v(" "),
+          _c("dd", [_c("p", [_vm._v("Here goes description consectetur ")])]),
+          _vm._v(" "),
+          _c("label", [_vm._v("Téléphone (Mobile)")]),
+          _vm._v(" "),
+          _c("dd", [_c("p", [_vm._v("Here goes description consectetur ")])]),
+          _vm._v(" "),
+          _c("label", [_vm._v("Téléphone (Fixe)")]),
+          _vm._v(" "),
+          _c("dd", [_c("p", [_vm._v("Here goes description consectetur ")])]),
+          _vm._v(" "),
+          _c("label", [_vm._v("Biographie")]),
+          _vm._v(" "),
+          _c("dd", [
+            _c("p", [
+              _vm._v(
+                "Here goes description consectetur adipisicing elit, sed do eiusmod\n                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n                                quis nostrud exercitation ullamco "
+              )
             ])
-          ])
+          ]),
+          _vm._v(" "),
+          _c("label", [
+            _c("i", { staticClass: "fa fa-twitter" }),
+            _vm._v(" Twitter")
+          ]),
+          _vm._v(" "),
+          _c("dd", [_c("p", [_vm._v("https://www.twitter.com/")])]),
+          _vm._v(" "),
+          _c("label", [
+            _c("i", { staticClass: "fa fa-facebook-square" }),
+            _vm._v(" Facebook")
+          ]),
+          _vm._v(" "),
+          _c("dd", [_c("p", [_vm._v("https://www.twitter.com/")])]),
+          _vm._v(" "),
+          _c("label", [
+            _c("i", { staticClass: "fa fa-linkedin" }),
+            _vm._v("Linkedin")
+          ]),
+          _vm._v(" "),
+          _c("dd", [_c("p", [_vm._v("https://www.twitter.com/")])])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [
+      _c("th", { staticStyle: { width: "30%" } }, [_vm._v("Titre")]),
+      _vm._v(" "),
+      _c("th", { staticStyle: { width: "45%" } }, [_vm._v(" Description")]),
+      _vm._v(" "),
+      _c("th", { staticStyle: { width: "15%" } }, [_vm._v(" Min-Max")]),
+      _vm._v(" "),
+      _c("th", { staticStyle: { width: "10%" } }, [_vm._v("Actions")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { staticClass: "delete", attrs: { href: "#" } }, [
+      _c("i", { staticClass: "fa fa-remove" }),
+      _vm._v("Supprimer")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [
+      _c("td", [_vm._v("Logo Designer")]),
+      _vm._v(" "),
+      _c("td", [
+        _vm._v(
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit.\n\t\t\t\t\t\t\t\t\t\tSuscipit architecto, ut, veniam mollitia voluptates ad vitae sunt quae ipsa\n\t\t\t\t\t\t\t\t\t\t sed tempora dolores iusto eveniet praesentium corporis quibusdam veritatis \n\t\t\t\t\t\t\t\t   "
+        )
+      ]),
+      _vm._v(" "),
+      _c("td", { staticClass: "centered" }, [_vm._v("1,000 - 2,000$")]),
+      _vm._v(" "),
+      _c("td", { staticClass: "action" }, [
+        _c("a", { attrs: { href: "#" } }, [
+          _c("i", { staticClass: "fa  fa-eye" }),
+          _vm._v("Voir")
+        ]),
+        _vm._v(" "),
+        _c("a", { staticClass: "delete", attrs: { href: "#" } }, [
+          _c("i", { staticClass: "fa fa-remove" }),
+          _vm._v("Supprimer")
         ])
       ])
     ])
@@ -44356,368 +44407,88 @@ var render = function() {
   return _c(
     "div",
     { staticClass: "dashboard-content" },
-    [_c("TitlebarComponent"), _vm._v(" "), _vm._m(0)],
+    [
+      _c("TitlebarComponent"),
+      _vm._v(" "),
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "col-md-12" }, [
+          _c("div", { staticClass: "padding-right" }, [
+            _c(
+              "div",
+              { staticClass: "listings-container" },
+              [
+                _c(
+                  "router-link",
+                  {
+                    staticClass: "listing",
+                    attrs: { to: "/publication/waiting/View" }
+                  },
+                  [
+                    _c("div", { staticClass: "listing-title" }, [
+                      _c("h4", [_vm._v("Assistant de direction")]),
+                      _vm._v(" "),
+                      _c("ul", { staticClass: "listing-icons" }, [
+                        _c("li", [
+                          _c("p", [
+                            _vm._v(
+                              "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, cumque eos? Natus ullam,\n                                     quibusdam quae harum praesentium nam odio sed veritatis nihi\n                                     "
+                            )
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("li", [
+                          _c("div", { staticClass: "listing-date" }, [
+                            _vm._v("3d ago")
+                          ])
+                        ])
+                      ])
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "router-link",
+                  {
+                    staticClass: "listing",
+                    attrs: { to: "/publication/waiting/View" }
+                  },
+                  [
+                    _c("div", { staticClass: "listing-title" }, [
+                      _c("h4", [
+                        _vm._v("Core PHP Developer for Site Maintenance ")
+                      ]),
+                      _vm._v(" "),
+                      _c("ul", { staticClass: "listing-icons" }, [
+                        _c("li", [
+                          _c("p", [
+                            _vm._v(
+                              "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, cumque eos? Natus ullam,\n                                     quibusdam quae harum praesentium nam odio sed veritatis nihi\n                                     "
+                            )
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("li", [
+                          _c("div", { staticClass: "listing-date" }, [
+                            _vm._v("3d ago")
+                          ])
+                        ])
+                      ])
+                    ])
+                  ]
+                )
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "clearfix" })
+          ])
+        ])
+      ])
+    ],
     1
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "col-md-12" }, [
-        _c("div", { staticClass: "padding-right" }, [
-          _c("div", { staticClass: "listings-container" }, [
-            _c(
-              "a",
-              {
-                staticClass: "listing full-time",
-                attrs: { href: "job-page-alt.html" }
-              },
-              [
-                _c("div", { staticClass: "listing-logo" }, [
-                  _c("img", {
-                    attrs: { src: "images/job-list-logo-01.png", alt: "" }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "listing-title" }, [
-                  _c("h4", [
-                    _vm._v("Marketing Coordinator - SEO / SEM Experience")
-                  ]),
-                  _vm._v(" "),
-                  _c("ul", { staticClass: "listing-icons" }, [
-                    _c("li", [
-                      _c("i", { staticClass: "ln ln-icon-Eye-Visible" }),
-                      _vm._v(" 20")
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("i", { staticClass: "ln ln-icon-Map2" }),
-                      _vm._v(" Yamoussoukro")
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("i", { staticClass: "ln ln-icon-Male" }),
-                      _vm._v(" 17")
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("div", { staticClass: "listing-date new" }, [
-                        _vm._v("new")
-                      ])
-                    ])
-                  ])
-                ])
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "a",
-              {
-                staticClass: "listing part-time",
-                attrs: { href: "job-page.html" }
-              },
-              [
-                _c("div", { staticClass: "listing-logo" }, [
-                  _c("img", {
-                    attrs: { src: "images/job-list-logo-02.png", alt: "" }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "listing-title" }, [
-                  _c("h4", [
-                    _vm._v("Core PHP Developer for Site Maintenance ")
-                  ]),
-                  _vm._v(" "),
-                  _c("ul", { staticClass: "listing-icons" }, [
-                    _c("li", [
-                      _c("i", { staticClass: "ln ln-icon-Eye-Visible" }),
-                      _vm._v(" 20")
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("i", { staticClass: "ln ln-icon-Map2" }),
-                      _vm._v(" Yamoussoukro")
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("i", { staticClass: "ln ln-icon-Male" }),
-                      _vm._v(" 17")
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("div", { staticClass: "listing-date" }, [
-                        _vm._v("3d ago")
-                      ])
-                    ])
-                  ])
-                ])
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "a",
-              {
-                staticClass: "listing full-time",
-                attrs: { href: "job-page-alt.html" }
-              },
-              [
-                _c("div", { staticClass: "listing-logo" }, [
-                  _c("img", {
-                    attrs: { src: "images/job-list-logo-01.png", alt: "" }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "listing-title" }, [
-                  _c("h4", [_vm._v("Restaurant Team Member - Crew ")]),
-                  _vm._v(" "),
-                  _c("ul", { staticClass: "listing-icons" }, [
-                    _c("li", [
-                      _c("i", { staticClass: "ln ln-icon-Eye-Visible" }),
-                      _vm._v(" 20")
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("i", { staticClass: "ln ln-icon-Map2" }),
-                      _vm._v(" Yamoussoukro")
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("i", { staticClass: "ln ln-icon-Male" }),
-                      _vm._v(" 17")
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("div", { staticClass: "listing-date" }, [
-                        _vm._v("3d ago")
-                      ])
-                    ])
-                  ])
-                ])
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "a",
-              {
-                staticClass: "listing full-time",
-                attrs: { href: "job-page.html" }
-              },
-              [
-                _c("div", { staticClass: "listing-logo" }, [
-                  _c("img", {
-                    attrs: { src: "images/job-list-logo-04.png", alt: "" }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "listing-title" }, [
-                  _c("h4", [_vm._v("Power Systems User Experience Designer")]),
-                  _vm._v(" "),
-                  _c("ul", { staticClass: "listing-icons" }, [
-                    _c("li", [
-                      _c("i", { staticClass: "ln ln-icon-Management" }),
-                      _vm._v(" Hexagon")
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("i", { staticClass: "ln ln-icon-Map2" }),
-                      _vm._v(" London")
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("i", { staticClass: "ln ln-icon-Money-2" }),
-                      _vm._v(" $55 / hour")
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("div", { staticClass: "listing-date" }, [
-                        _vm._v("4d ago")
-                      ])
-                    ])
-                  ])
-                ])
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "a",
-              {
-                staticClass: "listing part-time",
-                attrs: { href: "job-page.html" }
-              },
-              [
-                _c("div", { staticClass: "listing-logo" }, [
-                  _c("img", {
-                    attrs: { src: "images/job-list-logo-05.png", alt: "" }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "listing-title" }, [
-                  _c("h4", [_vm._v("iPhone / Android Music App Development ")]),
-                  _vm._v(" "),
-                  _c("ul", { staticClass: "listing-icons" }, [
-                    _c("li", [
-                      _c("i", { staticClass: "ln ln-icon-Eye-Visible" }),
-                      _vm._v(" 20")
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("i", { staticClass: "ln ln-icon-Map2" }),
-                      _vm._v(" Yamoussoukro")
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("i", { staticClass: "ln ln-icon-Male" }),
-                      _vm._v(" 17")
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("div", { staticClass: "listing-date" }, [
-                        _vm._v("4d ago")
-                      ])
-                    ])
-                  ])
-                ])
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "a",
-              {
-                staticClass: "listing part-time",
-                attrs: { href: "job-page.html" }
-              },
-              [
-                _c("div", { staticClass: "listing-logo" }, [
-                  _c("img", {
-                    attrs: { src: "images/job-list-logo-02.png", alt: "" }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "listing-title" }, [
-                  _c("h4", [
-                    _vm._v("Core PHP Developer for Site Maintenance ")
-                  ]),
-                  _vm._v(" "),
-                  _c("ul", { staticClass: "listing-icons" }, [
-                    _c("li", [
-                      _c("i", { staticClass: "ln ln-icon-Eye-Visible" }),
-                      _vm._v(" 20")
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("i", { staticClass: "ln ln-icon-Map2" }),
-                      _vm._v(" Yamoussoukro")
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("i", { staticClass: "ln ln-icon-Male" }),
-                      _vm._v(" 17")
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("div", { staticClass: "listing-date" }, [
-                        _vm._v("3d ago")
-                      ])
-                    ])
-                  ])
-                ])
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "a",
-              {
-                staticClass: "listing full-time",
-                attrs: { href: "job-page.html" }
-              },
-              [
-                _c("div", { staticClass: "listing-logo" }, [
-                  _c("img", {
-                    attrs: { src: "images/job-list-logo-01.png", alt: "" }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "listing-title" }, [
-                  _c("h4", [_vm._v("Assistant de direction")]),
-                  _vm._v(" "),
-                  _c("ul", { staticClass: "listing-icons" }, [
-                    _c("li", [
-                      _c("i", { staticClass: "ln ln-icon-Eye-Visible" }),
-                      _vm._v(" 20")
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("i", { staticClass: "ln ln-icon-Map2" }),
-                      _vm._v(" Yamoussoukro")
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("i", { staticClass: "ln ln-icon-Male" }),
-                      _vm._v(" 17")
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("div", { staticClass: "listing-date" }, [
-                        _vm._v("3d ago")
-                      ])
-                    ])
-                  ])
-                ])
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "a",
-              {
-                staticClass: "listing full-time",
-                attrs: { href: "job-page.html" }
-              },
-              [
-                _c("div", { staticClass: "listing-logo" }, [
-                  _c("img", {
-                    attrs: { src: "images/job-list-logo-04.png", alt: "" }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "listing-title" }, [
-                  _c("h4", [_vm._v("Administrateur système ")]),
-                  _vm._v(" "),
-                  _c("ul", { staticClass: "listing-icons" }, [
-                    _c("li", [
-                      _c("i", { staticClass: "ln ln-icon-Eye-Visible" }),
-                      _vm._v(" 20")
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("i", { staticClass: "ln ln-icon-Map2" }),
-                      _vm._v(" Yamoussoukro")
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("i", { staticClass: "ln ln-icon-Male" }),
-                      _vm._v(" 17")
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("div", { staticClass: "listing-date" }, [
-                        _vm._v("3d ago")
-                      ])
-                    ])
-                  ])
-                ])
-              ]
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "clearfix" })
-        ])
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -45165,7 +44936,21 @@ var render = function() {
   return _c(
     "div",
     { staticClass: "dashboard-content" },
-    [_c("TitlebarComponent"), _vm._v(" "), _vm._m(0)],
+    [
+      _c("TitlebarComponent"),
+      _vm._v(" "),
+      _c(
+        "a",
+        {
+          staticClass: "button margin-top-30",
+          staticStyle: { float: "right", "margin-bottom": "15px" },
+          attrs: { href: "#" }
+        },
+        [_vm._v("Activer la publication")]
+      ),
+      _vm._v(" "),
+      _vm._m(0)
+    ],
     1
   )
 }
@@ -45410,7 +45195,8 @@ var staticRenderFns = [
                       _c("a", { attrs: { href: "resume-page.html" } }, [
                         _c("img", {
                           attrs: {
-                            src: "images/resumes-list-avatar-01.png",
+                            src:
+                              "https://store.playstation.com/store/api/chihiro/00_09_000/container/CA/fr/999/UP1415-CUSA03724_00-AV00000000000192/1601172562000/image?w=240&h=240&bg_color=000000&opacity=100&_version=00_09_000",
                             alt: ""
                           }
                         }),
@@ -45422,80 +45208,93 @@ var staticRenderFns = [
                           ]),
                           _vm._v(" "),
                           _c("span", [
-                            _c("i", { staticClass: "fa fa-map-marker" }),
-                            _vm._v(" Melbourne")
+                            _c("a", { attrs: { href: "" } }, [
+                              _c("i", { staticClass: "fa fa-twitter" })
+                            ])
                           ]),
                           _vm._v(" "),
                           _c("span", [
-                            _c("i", { staticClass: "fa fa-money" }),
-                            _vm._v(" $100 / hour")
+                            _c("a", { attrs: { href: "" } }, [
+                              _c("i", { staticClass: "fa fa-linkedin" })
+                            ])
                           ]),
                           _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "Over 8000 hours on oDesk (only Drupal related). Highly motivated, goal-oriented, hands-on senior software engineer with extensive technical skills and over 15 years of experience in software development"
-                            )
+                          _c("span", [
+                            _c("a", { attrs: { href: "" } }, [
+                              _c("i", { staticClass: "fa fa-facebook" })
+                            ])
                           ]),
                           _vm._v(" "),
-                          _c("div", { staticClass: "skills" }, [
-                            _c("span", [_vm._v("JavaScript")]),
-                            _vm._v(" "),
-                            _c("span", [_vm._v("PHP")]),
-                            _vm._v(" "),
-                            _c("span", [_vm._v("WordPress")])
+                          _c("span", [
+                            _c("a", { attrs: { href: "" } }, [
+                              _c("i", { staticClass: "fa fa-instagram" })
+                            ])
                           ]),
                           _vm._v(" "),
                           _c("div", { staticClass: "clearfix" })
                         ])
                       ]),
                       _vm._v(" "),
-                      _c("div", { staticClass: "clearfix" })
+                      _c("div", { staticClass: "clearfix" }, [
+                        _c("p", [
+                          _vm._v(
+                            "Lorem ipsum dolor sit amet consectetur \n\t\t\t\t\t\t\t\t\t\t\t\t\tadipisicing elit. Temporibus magnam repudiandae \n\t\t\t\t\t\t\t\t\t\t\t\t\tassumenda quia blanditiis dolore perferendis molestiae \n\t\t\t\t\t\t\t\t\t\t\t\t\tillo evenie\n\t\t\t\t\t\t\t\t\t\t\t\t"
+                          )
+                        ])
+                      ])
                     ]),
                     _vm._v(" "),
                     _c("li", [
                       _c("a", { attrs: { href: "resume-page.html" } }, [
                         _c("img", {
                           attrs: {
-                            src: "images/avatar-placeholder.png",
+                            src:
+                              "https://store.playstation.com/store/api/chihiro/00_09_000/container/CA/fr/999/UP1415-CUSA03724_00-AV00000000000192/1601172562000/image?w=240&h=240&bg_color=000000&opacity=100&_version=00_09_000",
                             alt: ""
                           }
                         }),
                         _vm._v(" "),
                         _c("div", { staticClass: "resumes-list-content" }, [
                           _c("h4", [
-                            _vm._v("Tom Smith "),
-                            _c("span", [_vm._v("iOS Mobile Developer")])
+                            _vm._v("John Doe "),
+                            _c("span", [_vm._v("UX/UI Graphic Designer")])
                           ]),
                           _vm._v(" "),
                           _c("span", [
-                            _c("i", { staticClass: "fa fa-map-marker" }),
-                            _vm._v(" Sydney")
+                            _c("a", { attrs: { href: "" } }, [
+                              _c("i", { staticClass: "fa fa-twitter" })
+                            ])
                           ]),
                           _vm._v(" "),
                           _c("span", [
-                            _c("i", { staticClass: "fa fa-money" }),
-                            _vm._v(" $35 / hour")
+                            _c("a", { attrs: { href: "" } }, [
+                              _c("i", { staticClass: "fa fa-linkedin" })
+                            ])
                           ]),
                           _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "Over 8000 hours on oDesk (only Drupal related). Highly motivated, goal-oriented, hands-on senior software engineer with extensive technical skills and over 15 years of experience in software development"
-                            )
+                          _c("span", [
+                            _c("a", { attrs: { href: "" } }, [
+                              _c("i", { staticClass: "fa fa-facebook" })
+                            ])
                           ]),
                           _vm._v(" "),
-                          _c("div", { staticClass: "skills" }, [
-                            _c("span", [_vm._v("iOS Development")]),
-                            _vm._v(" "),
-                            _c("span", [_vm._v("iOS App Development")]),
-                            _vm._v(" "),
-                            _c("span", [_vm._v("Objective-C")])
+                          _c("span", [
+                            _c("a", { attrs: { href: "" } }, [
+                              _c("i", { staticClass: "fa fa-instagram" })
+                            ])
                           ]),
                           _vm._v(" "),
                           _c("div", { staticClass: "clearfix" })
                         ])
                       ]),
                       _vm._v(" "),
-                      _c("div", { staticClass: "clearfix" })
+                      _c("div", { staticClass: "clearfix" }, [
+                        _c("p", [
+                          _vm._v(
+                            "Lorem ipsum dolor sit amet consectetur \n\t\t\t\t\t\t\t\t\t\t\t\t\tadipisicing elit. Temporibus magnam repudiandae \n\t\t\t\t\t\t\t\t\t\t\t\t\tassumenda quia blanditiis dolore perferendis molestiae \n\t\t\t\t\t\t\t\t\t\t\t\t\tillo evenie\n\t\t\t\t\t\t\t\t\t\t\t\t"
+                          )
+                        ])
+                      ])
                     ])
                   ])
                 ]),
@@ -45506,7 +45305,8 @@ var staticRenderFns = [
                       _c("a", { attrs: { href: "resume-page.html" } }, [
                         _c("img", {
                           attrs: {
-                            src: "images/resumes-list-avatar-01.png",
+                            src:
+                              "https://store.playstation.com/store/api/chihiro/00_09_000/container/CA/fr/999/UP1415-CUSA03724_00-AV00000000000192/1601172562000/image?w=240&h=240&bg_color=000000&opacity=100&_version=00_09_000",
                             alt: ""
                           }
                         }),
@@ -45518,90 +45318,99 @@ var staticRenderFns = [
                           ]),
                           _vm._v(" "),
                           _c("span", [
-                            _c("i", { staticClass: "fa fa-map-marker" }),
-                            _vm._v(" Melbourne")
+                            _c("a", { attrs: { href: "" } }, [
+                              _c("i", { staticClass: "fa fa-twitter" })
+                            ])
                           ]),
                           _vm._v(" "),
                           _c("span", [
-                            _c("i", { staticClass: "fa fa-money" }),
-                            _vm._v(" $100 / hour")
+                            _c("a", { attrs: { href: "" } }, [
+                              _c("i", { staticClass: "fa fa-linkedin" })
+                            ])
                           ]),
                           _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "Over 8000 hours on oDesk (only Drupal related). Highly motivated, goal-oriented, hands-on senior software engineer with extensive technical skills and over 15 years of experience in software development"
-                            )
+                          _c("span", [
+                            _c("a", { attrs: { href: "" } }, [
+                              _c("i", { staticClass: "fa fa-facebook" })
+                            ])
                           ]),
                           _vm._v(" "),
-                          _c("div", { staticClass: "skills" }, [
-                            _c("span", [_vm._v("JavaScript")]),
-                            _vm._v(" "),
-                            _c("span", [_vm._v("PHP")]),
-                            _vm._v(" "),
-                            _c("span", [_vm._v("WordPress")])
+                          _c("span", [
+                            _c("a", { attrs: { href: "" } }, [
+                              _c("i", { staticClass: "fa fa-instagram" })
+                            ])
                           ]),
                           _vm._v(" "),
                           _c("div", { staticClass: "clearfix" })
                         ])
                       ]),
                       _vm._v(" "),
-                      _c("div", { staticClass: "clearfix" })
+                      _c("div", { staticClass: "clearfix" }, [
+                        _c("p", [
+                          _vm._v(
+                            "Lorem ipsum dolor sit amet consectetur \n\t\t\t\t\t\t\t\t\t\t\t\t\tadipisicing elit. Temporibus magnam repudiandae \n\t\t\t\t\t\t\t\t\t\t\t\t\tassumenda quia blanditiis dolore perferendis molestiae \n\t\t\t\t\t\t\t\t\t\t\t\t\tillo evenie\n\t\t\t\t\t\t\t\t\t\t\t\t"
+                          )
+                        ])
+                      ])
                     ]),
                     _vm._v(" "),
                     _c("li", [
                       _c("a", { attrs: { href: "resume-page.html" } }, [
                         _c("img", {
                           attrs: {
-                            src: "images/avatar-placeholder.png",
+                            src:
+                              "https://store.playstation.com/store/api/chihiro/00_09_000/container/CA/fr/999/UP1415-CUSA03724_00-AV00000000000192/1601172562000/image?w=240&h=240&bg_color=000000&opacity=100&_version=00_09_000",
                             alt: ""
                           }
                         }),
                         _vm._v(" "),
                         _c("div", { staticClass: "resumes-list-content" }, [
                           _c("h4", [
-                            _vm._v("Tom Smith "),
-                            _c("span", [_vm._v("iOS Mobile Developer")])
+                            _vm._v("John Doe "),
+                            _c("span", [_vm._v("UX/UI Graphic Designer")])
                           ]),
                           _vm._v(" "),
                           _c("span", [
-                            _c("i", { staticClass: "fa fa-map-marker" }),
-                            _vm._v(" Sydney")
+                            _c("a", { attrs: { href: "" } }, [
+                              _c("i", { staticClass: "fa fa-twitter" })
+                            ])
                           ]),
                           _vm._v(" "),
                           _c("span", [
-                            _c("i", { staticClass: "fa fa-money" }),
-                            _vm._v(" $35 / hour")
+                            _c("a", { attrs: { href: "" } }, [
+                              _c("i", { staticClass: "fa fa-linkedin" })
+                            ])
                           ]),
                           _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "Over 8000 hours on oDesk (only Drupal related). Highly motivated, goal-oriented, hands-on senior software engineer with extensive technical skills and over 15 years of experience in software development"
-                            )
+                          _c("span", [
+                            _c("a", { attrs: { href: "" } }, [
+                              _c("i", { staticClass: "fa fa-facebook" })
+                            ])
                           ]),
                           _vm._v(" "),
-                          _c("div", { staticClass: "skills" }, [
-                            _c("span", [_vm._v("iOS Development")]),
-                            _vm._v(" "),
-                            _c("span", [_vm._v("iOS App Development")]),
-                            _vm._v(" "),
-                            _c("span", [_vm._v("Objective-C")])
+                          _c("span", [
+                            _c("a", { attrs: { href: "" } }, [
+                              _c("i", { staticClass: "fa fa-instagram" })
+                            ])
                           ]),
                           _vm._v(" "),
                           _c("div", { staticClass: "clearfix" })
                         ])
                       ]),
                       _vm._v(" "),
-                      _c("div", { staticClass: "clearfix" })
+                      _c("div", { staticClass: "clearfix" }, [
+                        _c("p", [
+                          _vm._v(
+                            "Lorem ipsum dolor sit amet consectetur \n\t\t\t\t\t\t\t\t\t\t\t\t\tadipisicing elit. Temporibus magnam repudiandae \n\t\t\t\t\t\t\t\t\t\t\t\t\tassumenda quia blanditiis dolore perferendis molestiae \n\t\t\t\t\t\t\t\t\t\t\t\t\tillo evenie\n\t\t\t\t\t\t\t\t\t\t\t\t"
+                          )
+                        ])
+                      ])
                     ])
                   ])
                 ])
               ])
             ])
           ])
-        ]),
-        _vm._v(" "),
-        _c("a", { staticClass: "button margin-top-30", attrs: { href: "#" } }, [
-          _vm._v("Activer")
         ])
       ])
     ])
@@ -66102,7 +65911,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pages_level_EditLevel__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./pages/level/EditLevel */ "./resources/js/pages/level/EditLevel.vue");
 /* harmony import */ var _pages_partner_ListPartner__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./pages/partner/ListPartner */ "./resources/js/pages/partner/ListPartner.vue");
 /* harmony import */ var _pages_partner_AddPartner__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./pages/partner/AddPartner */ "./resources/js/pages/partner/AddPartner.vue");
-/* harmony import */ var _pages_partner_EditPartner__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./pages/partner/EditPartner */ "./resources/js/pages/partner/EditPartner.vue");
+/* harmony import */ var _pages_partner_EditPartner__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./pages/partner/EditPartner */ "./resources/js/pages/partner/EditPartner.vue");
 /* harmony import */ var _pages_realstates_ListRealstates__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./pages/realstates/ListRealstates */ "./resources/js/pages/realstates/ListRealstates.vue");
 /* harmony import */ var _pages_realstates_WaitRealstates__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./pages/realstates/WaitRealstates */ "./resources/js/pages/realstates/WaitRealstates.vue");
 /* harmony import */ var _pages_realstates_DetailRealstates__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./pages/realstates/DetailRealstates */ "./resources/js/pages/realstates/DetailRealstates.vue");
@@ -66232,7 +66041,7 @@ var routes = [{
   component: _pages_partner_AddPartner__WEBPACK_IMPORTED_MODULE_26__["default"]
 }, {
   path: '/partner/edit',
-  component: _pages_partner_EditPartner__WEBPACK_IMPORTED_MODULE_33__["default"]
+  component: _pages_partner_EditPartner__WEBPACK_IMPORTED_MODULE_27__["default"]
 }, {
   path: '/realstates/list',
   component: _pages_realstates_ListRealstates__WEBPACK_IMPORTED_MODULE_28__["default"]

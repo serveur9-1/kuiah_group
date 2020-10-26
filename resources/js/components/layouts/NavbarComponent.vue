@@ -16,9 +16,9 @@
                         <ul class="responsive float-right">
                             <li>
                                 <router-link to="/notification/list" class="notif-wrapper">
-                                    <i class="fa  fa-bell" style="font-size:25px;">
-                                        <span class="badge"></span>
+                                    <i class="fa  fa-bell" style="font-size:29px;">
                                     </i>
+                                     <span class="badge"><center><sup style="font-size:10px;font-weight: bold;">99+</sup></center></span>
                                 </router-link>
                             </li>
                             <li>
@@ -54,10 +54,10 @@
 <style scoped>
 .badge {
   position: absolute;
-  top: 8px;
-  right: 12px;
-  height:15px;
-  width: 15px;
+  top: 6px;
+  right: 10px;
+  height:20px;
+  width: 20px;
   border-radius: 50%;
   background: red;
   color: white;
