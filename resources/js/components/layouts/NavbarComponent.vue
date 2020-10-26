@@ -15,11 +15,22 @@
                     <nav id="navigation" class="menu">
                         <ul class="responsive float-right">
                             <li>
+                                <router-link to="/notification/list" class="notif-wrapper">
+                                    <i class="fa  fa-bell" style="font-size:25px;">
+                                        <span class="badge"></span>
+                                    </i>
+                                </router-link>
+                            </li>
+                            <li>
                                 <router-link to="/account">
                                     <i class="fa fa-user"></i> Mon compte
                                 </router-link>
                             </li>
-                            <li><a href="index.html"><i class="fa fa-sign-out"></i> Se deconnecter</a></li>
+                            <li>
+                                <router-link to="/login">
+                                    <i class="fa fa-sign-out"></i> Se deconnecter
+                                </router-link>
+                            </li>
                         </ul>
                     </nav>
 
@@ -41,5 +52,18 @@
 </script>
 
 <style scoped>
+.badge {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  height:15px;
+  width: 15px;
+  border-radius: 50%;
+  background: red;
+  color: white;
+}
+.notif-wrapper {
+    background: white !important;
+}
 
 </style>

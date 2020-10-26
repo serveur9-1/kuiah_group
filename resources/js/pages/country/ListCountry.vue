@@ -34,8 +34,6 @@
 										<a href="#" class="delete"><i class="fa fa-remove"></i>Supprimer</a>
 									</td>
 								</tr>
-
-<<<<<<< HEAD
 								<!-- Item #1 -->
 								<tr>
 									
@@ -48,9 +46,6 @@
 										<a href="#" class="delete"><i class="fa fa-remove"></i>Supprimer</a>
 									</td>
 								</tr>	
-
-=======
->>>>>>> 0417fe9680e6a4b5111b43d15e5f0d5a77e04584
 							</table>
 					</div>
 				</div>
