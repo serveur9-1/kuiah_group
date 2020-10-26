@@ -9,6 +9,7 @@ use App\FinancialData;
 use App\Tag;
 use App\Team;
 use App\OtherDoc;
+use App\Document;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -156,8 +157,14 @@ class ProjectController extends Controller
             //Update or create investment_points table
             if(is_array($request->get('teams')))
             {
+                //dd($request->all());
                 foreach ($request->get('teams') as $item)
                 {
+                    //Upload profile picture
+                    /*if ($request->file('docs')) {
+                        $docs = $this->__save->save(true, "projects/teams", "picture", "team_pic_$old->id", $request);
+                    }*/
+
                     //Update or create current teams if exist nor
                     if(isset($item['name']) && isset($item['role']))
                     {
@@ -225,6 +232,46 @@ class ProjectController extends Controller
                     "success" => true,
                     "message" => "Logo and Cover are successfully uploaded",
                 ],200);
+
+            } catch (Exception $exception) {
+                return response()->json($exception->getMessage(),$exception->getCode());
+            }
+        }
+
+        if($request->get('step') == 5)
+        {
+            try {
+
+                if ($request->file('docs')) {
+                    $docs = $this->__save->save(true,"projects/documents", "docs", "doc_project_$old->id", $request);
+                    // $data[0] return 1st item of array which verify if there are many files (true if an array)
+                    //Update logo
+                    if($docs[0]){
+
+                        for($i = 1; $i < count($docs); $i++)
+                        {
+                            Document::updateOrCreate(
+                                [
+                                    'project_id' => $old->id,
+                                    'title' => $docs[$i]
+                                ],
+                                [
+                                    'title' => $docs[$i],
+                                ]
+                            );
+                        }
+
+                        return response()->json([
+                            "success" => true,
+                            "message" => "Logo and Cover are successfully uploaded",
+                        ],200);
+                    }
+                } else {
+                    return response()->json([
+                        "success" => true,
+                        "message" => "An problem occured",
+                    ],200);
+                }
 
             } catch (Exception $exception) {
                 return response()->json($exception->getMessage(),$exception->getCode());

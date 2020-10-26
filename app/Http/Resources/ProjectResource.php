@@ -50,6 +50,7 @@ class ProjectResource extends JsonResource
             "tags" => $this->toTags,
             "teams" => $this->toTeams,
             "medias" => $this->toOtherDocs,
+            "documents" => $this->toDocuments,
             "created_at" => $this->created_at,
             "updated_at" => $this->updated_at,
         ];

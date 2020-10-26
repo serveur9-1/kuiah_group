@@ -49,10 +49,10 @@ class SaveFiles
 
                     $path = $file->storeAs(
                         $saveDir.$dir,
-                        $cn.$i.".".$ext ?? $filename.".".$ext
+                        $cn."_".$i.".".$ext ?? $filename.".".$ext
                     );
 
-                    array_push($response, $cn.$i.".".$ext ?? $filename.".".$ext);
+                    array_push($response, $cn."_".$i.".".$ext ?? $filename.".".$ext);
                 }
 
             } else {
