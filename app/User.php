@@ -19,7 +19,8 @@ class User extends Authenticatable
         'firstname', 'lastname', 'email',
         'password', 'profil', 'process_type_is_investor',
         'is_archived',
-        'is_actived'
+        'is_actived',
+        'is_first_activation'
     ];
 
 

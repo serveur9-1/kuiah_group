@@ -72,7 +72,6 @@ class DomainController extends Controller
         $u = new DomainResource($selected);
 
         return response()->json($u,200);
-        
     }
 
     public function update($id, Request $request)

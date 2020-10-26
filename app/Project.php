@@ -51,4 +51,19 @@ class Project extends Model
     {
         return $this->belongsTo('App\User');
     }
+
+    public function toDomain()
+    {
+        return $this->belongsTo('App\Domain');
+    }
+
+    public function toStade()
+    {
+        return $this->belongsTo('App\Stade');
+    }
+
+    public function toInvestmentPoints()
+    {
+        return $this->hasMany('App\InvestmentPoint');
+    }
 }

@@ -5,6 +5,8 @@ namespace App\Http\Resources;
 use Illuminate\Http\Resources\Json\JsonResource;
 use App\Http\Resources\CountryResource;
 use App\Http\Resources\UserResource;
+use App\Http\Resources\StadeResource;
+use App\Http\Resources\DomainResource;
 
 class ProjectResource extends JsonResource
 {
@@ -41,8 +43,9 @@ class ProjectResource extends JsonResource
             "has_drafted" => $this->has_drafted,
             "user" => new UserResource($this->toUser),
             "country" => new CountryResource($this->toCountry),
-            "domain_id" => $this->domain_id,
-            "stade_id" => $this->stade_id,
+            "domain" => new DomainResource($this->toDomain),
+            "stade" => new StadeResource($this->toStade),
+            "investment_points" => $this->toInvestmentPoints,
             "created_at" => $this->created_at,
             "updated_at" => $this->updated_at,
         ];
