@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class waitAccountValidate extends Mailable
+class enableOrDisableProject extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -16,9 +16,9 @@ class waitAccountValidate extends Mailable
      *
      * @return void
      */
-    public function __construct($event)
+    public function __construct()
     {
-        $this->event = $event;
+        //
     }
 
     /**
@@ -28,12 +28,12 @@ class waitAccountValidate extends Mailable
      */
     public function build()
     {
-        $template_loaded = $this->event->is_fr? 'emails.waitAccountValidate.waitAccountValidate_fr': 'emails.waitAccountValidate.waitAccountValidate_en';
+        $template_loaded = $this->event->is_fr? 'emails.projects.enableOrDisableProject_fr': 'emails.projects.enableOrDisableProject_en';
 
-        return $this->subject($this->event->is_fr? 'Votre compte est en attente de validation': 'Your account is pending validation')
+        return $this->subject($this->event->is_fr? 'Votre annonce sur KUIAH Finance': 'Your ad on KUIAH Finance)')
             ->to($this->event->email)
             ->markdown($template_loaded)->with([
-                '_firstname' => $this->event->firstname
+                '_name' => $this->event->name
             ]);
     }
 }

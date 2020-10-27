@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class enableOrDisableAccount extends Mailable
+class interestedProject extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -21,7 +21,6 @@ class enableOrDisableAccount extends Mailable
         $this->event = $event;
     }
 
-
     /**
      * Build the message.
      *
@@ -29,14 +28,12 @@ class enableOrDisableAccount extends Mailable
      */
     public function build()
     {
-        $template_loaded = $this->event->is_fr? 'emails.enableOrDisableAccount.enableOrDisableAccount_fr': 'emails.enableOrDisableAccount.enableOrDisableAccount_en';
+        $template_loaded = $this->event->is_fr? 'emails.interestedProject.interestedProject_fr': 'emails.interestedProject.interestedProject_en';
 
-        return $this->subject($this->event->is_fr? 'Votre compte sur KUIAH Finance': 'Your account on KUIAH Finance')
+        return $this->subject($this->event->is_fr? 'Personne interessé par votre annonce': 'Person interested in your ad')
             ->to($this->event->email)
             ->markdown($template_loaded)->with([
                 '_name' => $this->event->firstname,
-                'is_first_activation' => $this->event->is_first_activation,
-                'is_actived' => $this->event->is_actived,
             ]);
     }
 }

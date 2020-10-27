@@ -9,6 +9,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 use App\Mail\waitAccountValidate;
+use App\Mail\enableOrDisableAccount;
+use App\Mail\waitAdsValidate;
 
 class UserController extends Controller
 {
@@ -22,10 +24,17 @@ class UserController extends Controller
 
         $request->email = "ymjm97@gmail.com";
         $request->name = "Yves";
+        $request->title = "le tueur qui tue";
+        $request->img = "http://localhost:8000/public/partners/kuiahfinance_profil.jpeg";
+        $request->description = "le tueur qui tue";
 
         //Mail::send(new WelcomeToYou($request));
-        return new WelcomeToYou($request);
-    }
+
+        //send salutation
+         return new waitAdsValidate($request);
+
+    
+     }
 
     public function __construct(User $user)
     {
@@ -88,7 +97,7 @@ class UserController extends Controller
         return response()->json(new UserResource($selected), 200);
     }
 
-    public function switchStatus($id)
+    public function switchStatus($id, Request $request)
     {
         $selected = $this->instance->newQuery()->findOrFail($id);
 
@@ -96,8 +105,21 @@ class UserController extends Controller
             'is_actived' => !$selected->is_actived
         ]);
 
+        // new UserResource($selected)
 
-        return response()->json(new UserResource($selected), 200);
+        // Send mail
+        
+        if(!$selected->is_actived) 
+        {
+            $selected->update([
+                'is_first_activation' => false
+            ]);
+        }
+
+        $selected->is_fr = $request->is_fr;
+
+        return new enableOrDisableAccount($selected);
+        
     }
 
 }
