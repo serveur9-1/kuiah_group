@@ -16,16 +16,12 @@
 
 						<!-- Table -->
 							<table class="manage-table resumes responsive-table">
-
 								<tr>
-									
 									<th style="width: 30%;">Titre</th>
 									<th style="width: 45%;"> Description</th>
 									<th style="width: 15%;"> Min-Max</th>
 									<th style="width: 10%;">Actions</th>
 								</tr>
-
-								<!-- Item #1 -->
 								<tr>
 									<td>Front End Web Developer</td>
 									<td>Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -40,10 +36,7 @@
 										<a href="#" class="delete"><i class="fa fa-remove"></i>Supprimer</a>
 									</td>
 								</tr>
-
-								<!-- Item #1 -->
 								<tr>
-									
 									<td>Logo Designer</td>
 									<td>Lorem ipsum dolor sit amet consectetur adipisicing elit.
 										Suscipit architecto, ut, veniam mollitia voluptates ad vitae sunt quae ipsa

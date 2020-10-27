@@ -4,12 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class OtherDoc extends Model
+class Document extends Model
 {
-    public $timestamps = false;
-
     protected $fillable = [
-        "title",
-        "project_id",
+        'title',
+        'project_id'
     ];
 }
