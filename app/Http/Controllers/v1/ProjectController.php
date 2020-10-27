@@ -28,6 +28,41 @@ class ProjectController extends Controller
         return response()->json(ProjectResource::collection($this->instance->newQuery()->get()),200);
     }
 
+    public function show($id)
+    {
+        return response()->json(new ProjectResource($this->instance->newQuery()->find($id)),200);
+    }
+
+    //Get project with filters
+    public function filtered(Request $request)
+    {
+        $prj = Project::orderBy('created_at','desc');
+
+        if($request->has('countries') && $request->filled('countries'))
+        {
+            $prj = $prj->whereIn("country_id", json_decode($request->get('countries'), true));
+        }
+
+        if($request->has('domains') && $request->filled('domains'))
+        {
+            $prj = $prj->whereIn("domain_id", json_decode($request->get('domains'), true));
+        }
+
+        if($request->has('stades') && $request->filled('stades'))
+        {
+            $prj = $prj->whereIn("stade_id", json_decode($request->get('stade_id'), true));
+        }
+
+        if($request->has('range') && $request->filled('range'))
+        {
+            $prj = $prj->whereBetween("total_amount", json_decode($request->get('range'), true));
+        }
+
+        $prj = $prj->paginate($request->get('per') ?? 1);
+
+        return ProjectResource::collection($prj);
+    }
+
 
     public function store(Request $request)
     {

@@ -36,10 +36,13 @@ Route::group(['prefix' => 'v1'], function () {
     Route::resource('partners',\v1\PartnerController::class);
     Route::resource('stades',\v1\StadeController::class);
     Route::resource('real_estates',\v1\RealEstateController::class);
-
+    Route::get  ('projects/filter', ['uses' => 'v1\ProjectController@filtered']);
     Route::resource('projects',\v1\ProjectController::class)->except(['update']);
-    Route::post  ('projects/{project}', ['uses' => 'v1\ProjectController@update', 'middleware' => 'makePostPatch']);
 
     Route::get('/users/mail/test', 'v1\UserController@testMail');
+
+    Route::group(['middleware' => 'makePostPatch'], function () {
+        Route::post('projects/{project}', ['uses' => 'v1\ProjectController@update'])->where('user','[0-9]+');
+    });
 
 });
