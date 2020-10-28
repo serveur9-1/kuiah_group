@@ -44,10 +44,17 @@ Route::group(['prefix' => 'v1'], function () {
         //Auth
         Route::post('users/login', ['uses' => 'v1\AuthController@login']);
         Route::post('users/register', ['uses' => 'v1\AuthController@register']);
+        Route::post('users/refreshtoken', 'v1\AuthController@refreshToken');
+        Route::post('users/generatecode', 'v1\AuthController@generateResetPasswordCode');
 
+        //Extra
+        Route::get('/unauthorized', 'v1\AuthController@unauthorized');
+
+        //Private routes
         Route::middleware('auth:api')->group(function () {
 
             Route::post('users/logout', ['uses' => 'v1\AuthController@logout']);
+            Route::post('users/updatePassword', 'v1\AuthController@updatePassword');
 
         });
 

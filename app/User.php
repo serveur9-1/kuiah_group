@@ -21,7 +21,9 @@ class User extends Authenticatable
         'password', 'profil', 'process_type_is_investor',
         'is_archived',
         'is_actived',
-        'is_first_activation'
+        'is_first_activation',
+        'password_reset_code',
+        'password_reset_code_created',
     ];
 
 

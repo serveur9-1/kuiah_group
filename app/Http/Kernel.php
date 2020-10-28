@@ -67,5 +67,10 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'makePostPatch' => \App\Http\Middleware\MakePostPatch::class,
         'json.response' => \App\Http\Middleware\ForceJsonResponse::class,
+        'CheckClientCredentials' => \App\Http\Middleware\CheckClientCredentials::class
+    ];
+
+    protected $middlewarePriority = [
+        \App\Http\Middleware\CheckClientCredentials::class
     ];
 }

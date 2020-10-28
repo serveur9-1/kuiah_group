@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Validator;
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Passport\Client as OClient;
+use Illuminate\Support\Str;
 
 use App\Mail\waitAccountValidate;
 
@@ -63,6 +64,97 @@ class AuthController extends Controller
         $token->revoke();
         $response = ['message' => 'You have been successfully logged out!'];
         return response($response, $this->successStatus);
+    }
+
+    public function generateResetPasswordCode(Request $request)
+    {
+        $user = User::where('email', $request->get('email'))->first();
+
+        if($user)
+        {
+            $rand = Str::random(5);
+            $expire = now()->addMinute(14);
+
+            $user->update([
+                "password_reset_code" => bcrypt($rand),
+                "password_reset_code_created" => $expire
+            ]);
+
+            //Send mail with params @email, @rand, @expire
+
+            return response()->json([
+                'code' => $rand,
+                "expire_in" => $expire
+            ], 200);
+
+        } else {
+            return response()->json(['error'=>"User does not exist"], 401);
+        }
+    }
+
+    //Modify password
+    public function updatePassword(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'password' => 'required|confirmed',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json(['error' => $validator->errors()], 401);
+        }
+
+        $user = User::where('email', $request->user()->email)->first();
+
+        if($user)
+        {
+            $user->update([
+                "password" => bcrypt($request->get('email')),
+                "password_reset_code" => null,
+                "password_reset_code_created" => null
+            ]);
+
+            return response()->json(["message" => "Password updated"], 200);
+
+        } else {
+            return response()->json(['error'=>"User does not exist"], 401);
+        }
+    }
+
+
+    public function refreshToken(Request $request) {
+        $refresh_token = $request->header('Refresh-Token');
+        $oClient = OClient::where('password_client', 1)->first();
+
+        $http = new Client([
+            'base_uri' => 'http://localhost:8001',
+            'defaults' => [
+                'exceptions' => false
+            ]
+        ]);
+
+        try {
+
+            $response = $http->request('POST', '/oauth/token', [
+                'form_params' => [
+                    'grant_type' => 'refresh_token',
+                    'refresh_token' => $refresh_token,
+                    'client_id' => $oClient->id,
+                    'client_secret' => $oClient->secret,
+                    'scope' => '*',
+                ],
+            ]);
+            return json_decode((string) $response->getBody(), true);
+
+        } catch (Exception $e) {
+            $response = ['message' => 'Unauthorized'];
+            return response()->json($response, 401);
+        }
+    }
+
+    public function unauthorized()
+    {
+        $response = ['message' => 'Unauthorized'];
+        return response()->json($response, 401);
     }
 
     public function getTokenAndRefreshToken(OClient $oClient, $email, $password) {
