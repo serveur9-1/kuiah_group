@@ -335,16 +335,6 @@ class ProjectController extends Controller
 
 
     //When admin able or disable a project #Lorsque l'admin active ou désactive un projet.
-    public function switch($id)
-    {
-        $selected = $this->instance->newQuery()->find($id);
-
-        $selected->update([
-            'has_drafted' => !$selected->has_drafted
-        ]);
-
-        return response()->json(new ProjectResource($selected),200);
-    }
 
     public function switchStatus($id, Request $request)
     {
@@ -359,7 +349,7 @@ class ProjectController extends Controller
         $selected->name = "sande";
         $selected->email = "francksande@live.ca"; 
 
-        // new UserResource($selected)
+        //return response()->json(new ProjectResource($selected),200);
 
         return new enableOrDisableProject($selected);
         
