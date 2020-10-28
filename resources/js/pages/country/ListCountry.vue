@@ -36,7 +36,7 @@
 								</tr>
 								<!-- Item #1 -->
 								<tr>
-									
+
 									<td>Front End Web Developer</td>
 									<td>23-09-2020</td>
 									<td class="action">
@@ -45,7 +45,7 @@
                                         </router-link>
 										<a href="#" class="delete"><i class="fa fa-remove"></i>Supprimer</a>
 									</td>
-								</tr>	
+								</tr>
 							</table>
 					</div>
 				</div>
@@ -78,6 +78,30 @@
         mounted() {
             this.onMounted()
             this.fetchCountries()
+
+            //notify
+            const notification = {
+                title: 'Your title',
+                options: {
+                    icon: "https://master.uvci.edu.ci/pluginfile.php/1/theme_mb2cg/logo/1594217413/logocampus%20%282%29.png",
+                    body: 'This is an example!'
+                },
+                events: {
+                    onerror: function () {
+                        console.log('Custom error event was called');
+                    },
+                    onclick: function () {
+                        console.log('Custom click event was called');
+                    },
+                    onclose: function () {
+                        console.log('Custom close event was called');
+                    },
+                    onshow: function () {
+                        console.log('Custom show event was called');
+                    }
+                }
+            }
+            this.$notification.show(notification.title, notification.options, notification.events)
         },
         methods: {
             ...mapActions('country',{

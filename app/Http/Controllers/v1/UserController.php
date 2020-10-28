@@ -32,7 +32,7 @@ class UserController extends Controller
         //send salutation
          return new waitAdsValidate($request);
 
-    
+
      }
 
     public function __construct(User $user)
@@ -49,29 +49,6 @@ class UserController extends Controller
     {
         $selected = $this->instance->newQuery()->find($id);
         return response()->json(new UserResource($selected),200);
-    }
-
-    public function store(Request $request)
-    {
-        $validator = Validator::make($request->all(),
-            [
-                'firstname' => 'required',
-                'lastname' => 'required',
-                'email' => 'required|unique:users',
-                'password' => 'required',
-            ]
-        );
-
-        if ($validator->fails()) {
-            return response()->json(['error'=>$validator->errors()], 401);
-        }
-
-        $new = $this->instance->newQuery()->create($request->all());
-        
-        // new UserResource($new)
-
-        return new waitAccountValidate($request);
-        
     }
 
     public function update($id, Request $request)
@@ -107,8 +84,8 @@ class UserController extends Controller
         // new UserResource($selected)
 
         // Send mail
-        
-        if(!$selected->is_actived) 
+
+        if(!$selected->is_actived)
         {
             $selected->update([
                 'is_first_activation' => false
@@ -118,7 +95,14 @@ class UserController extends Controller
         $selected->is_fr = $request->is_fr;
 
         return new enableOrDisableAccount($selected);
-        
+
+    }
+
+    //Upload profile picture
+
+    public function uploadProfilePicture(Request $request)
+    {
+
     }
 
 }
