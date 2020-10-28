@@ -14,6 +14,10 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Shared\SaveFiles;
+use App\Mail\enableOrDisableProject;
+use App\Mail\waitAdsValidate;
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
 
 class ProjectController extends Controller
 {
@@ -82,7 +86,9 @@ class ProjectController extends Controller
 
         $new = $this->instance->newQuery()->create($request->all());
 
-        return response()->json($new,200);
+        return new waitAdsValidate($request);
+
+        // return response()->json($new,200);
     }
 
 
@@ -338,6 +344,25 @@ class ProjectController extends Controller
         ]);
 
         return response()->json(new ProjectResource($selected),200);
+    }
+
+    public function switchStatus($id, Request $request)
+    {
+        $selected = $this->instance->newQuery()->findOrFail($id);
+
+        $selected->update([
+            'is_actived' => !$selected->is_actived
+        ]);
+        
+        $selected->is_fr = $request->is_fr; 
+
+        $selected->name = "sande";
+        $selected->email = "francksande@live.ca"; 
+
+        // new UserResource($selected)
+
+        return new enableOrDisableProject($selected);
+        
     }
 
 }

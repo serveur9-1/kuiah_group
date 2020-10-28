@@ -16,9 +16,9 @@ class enableOrDisableProject extends Mailable
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($event)
     {
-        //
+        $this->event = $event;
     }
 
     /**
@@ -33,7 +33,9 @@ class enableOrDisableProject extends Mailable
         return $this->subject($this->event->is_fr? 'Votre annonce sur KUIAH Finance': 'Your ad on KUIAH Finance)')
             ->to($this->event->email)
             ->markdown($template_loaded)->with([
-                '_name' => $this->event->name
+                '_name' => $this->event->name,
+                '_title' => $this->event->title,
+                'is_actived' => $this->event->is_actived,
             ]);
     }
 }

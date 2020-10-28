@@ -9,6 +9,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Resources\RealEstateResource;
 use App\Shared\SaveFiles;
+use App\Mail\waitAdsValidate;
+use App\Mail\enableOrDisableProject;
 
 
 class RealEstateController extends Controller
@@ -49,7 +51,7 @@ class RealEstateController extends Controller
 
         if ($files = $request->file('medias')) {
 
-            $data = $this->__save->save(true,"realestates", "medias", $request);
+            $data = $this->__save->save(true,"realestates", "medias",  "realestate_$new->id", $request);
             // $data[0] return 1st item of array which verify if there are many files (true if an array)
 
             for ($i = 1; $i < count($data); $i++)
@@ -60,8 +62,10 @@ class RealEstateController extends Controller
                 ]);
             }
         }
+        
+        return new waitAdsValidate($request);
 
-        return response()->json($new, 200);
+        // return response()->json($new, 200);
     }
 
     public function show($id, Request $req)
@@ -87,5 +91,24 @@ class RealEstateController extends Controller
         $selected = $this->instance->newQuery()->findOrFail($id);
         $selected->delete();
         return response()->json(null,200);
+    }
+
+    public function switchStatus($id, Request $request)
+    {
+        $selected = $this->instance->newQuery()->findOrFail($id);
+
+        $selected->update([
+            'is_actived' => !$selected->is_actived
+        ]);
+        
+        $selected->is_fr = $request->is_fr; 
+
+        $selected->name = "sande";
+        $selected->email = "francksande@live.ca"; 
+
+        // new UserResource($selected)
+
+        return new enableOrDisableProject($selected);
+        
     }
 }

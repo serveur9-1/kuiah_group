@@ -35,8 +35,6 @@ class waitAdsValidate extends Mailable
             ->markdown($template_loaded)->with([
                 '_name' => $this->event->name,
                 '_title' => $this->event->title,
-                '_img' => $this->event->img,
-                '_description' => $this->event->description
             ]);
     }
 }
