@@ -68,15 +68,24 @@ class AuthController extends Controller
 
     public function generateResetPasswordCode(Request $request)
     {
+        $validator = Validator::make($request->all(), [
+            'email' => 'required|email',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json(['error' => $validator->errors()], 401);
+        }
         $user = User::where('email', $request->get('email'))->first();
 
         if($user)
         {
             $rand = Str::random(5);
-            $expire = now()->addMinute(14);
+
+            //Code expire in 15min
+            $expire = now()->addMinute(1);
 
             $user->update([
-                "password_reset_code" => bcrypt($rand),
+                "password_reset_code" => $rand,
                 "password_reset_code_created" => $expire
             ]);
 
@@ -91,6 +100,32 @@ class AuthController extends Controller
             return response()->json(['error'=>"User does not exist"], 401);
         }
     }
+
+    //Verify reset password code
+    public function checkResetCode(Request $request)
+    {
+        $user = User::where('password_reset_code', $request->get('password_reset_code'))->first();
+
+        if($user)
+        {
+            //Code expire in 15min
+            if($user->password_reset_code_created < now()->toDateTimeString())
+            {
+                return response()->json(['error' => "Code expired"], 401);
+            }
+
+            $user->update([
+                "password_reset_code" => null,
+                "password_reset_code_created" => null
+            ]);
+
+            return response()->json(['message' => 'Code is validate'], 200);
+
+        } else {
+            return response()->json(['error' => "Code does not exist"], 401);
+        }
+    }
+
 
     //Modify password
     public function updatePassword(Request $request)

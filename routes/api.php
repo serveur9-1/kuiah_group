@@ -49,6 +49,7 @@ Route::group(['prefix' => 'v1'], function () {
         Route::post('users/register', ['uses' => 'v1\AuthController@register']);
         Route::post('users/refreshtoken', 'v1\AuthController@refreshToken');
         Route::post('users/generatecode', 'v1\AuthController@generateResetPasswordCode');
+        Route::post('users/checkresetcode', 'v1\AuthController@checkResetCode');
 
         //Extra
         Route::get('/unauthorized', 'v1\AuthController@unauthorized');
