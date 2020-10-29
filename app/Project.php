@@ -30,6 +30,7 @@ class Project extends Model
         "executive_summary",
         "offer",
         "is_actived",
+        "is_archived",
         "has_drafted",
         "user_id",
         "country_id",

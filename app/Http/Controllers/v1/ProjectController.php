@@ -86,6 +86,9 @@ class ProjectController extends Controller
 
         $new = $this->instance->newQuery()->create($request->all());
 
+        $request->name = "sande";
+        $request->email = "francksande@live.ca";
+
         return new waitAdsValidate($request);
 
         // return response()->json($new,200);
@@ -328,6 +331,17 @@ class ProjectController extends Controller
 
         $selected->update([
             'has_drafted' => false
+        ]);
+
+        return response()->json(new ProjectResource($selected),200);
+    }
+
+    public function destroy($id)
+    {
+        $selected = $this->instance->newQuery()->find($id);
+
+        $selected->update([
+            'is_archived' => true
         ]);
 
         return response()->json(new ProjectResource($selected),200);

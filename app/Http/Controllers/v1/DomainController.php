@@ -54,7 +54,6 @@ class DomainController extends Controller
                 "industry_id" => $request->get("industry_id"),
             ]);
             
-
             return response()->json([
                 "success" => true,
                 "message" => "File successfully uploaded",

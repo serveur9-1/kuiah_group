@@ -62,6 +62,9 @@ class RealEstateController extends Controller
                 ]);
             }
         }
+
+        $request->name = "sande";
+        $request->email = "francksande@live.ca";
         
         return new waitAdsValidate($request);
 
@@ -86,11 +89,17 @@ class RealEstateController extends Controller
         return response()->json($old, 200);
     }
 
+    //When a user archives a project #Lorsqu'un utilisateur met son projet en archive.
+
     public function destroy($id)
     {
-        $selected = $this->instance->newQuery()->findOrFail($id);
-        $selected->delete();
-        return response()->json(null,200);
+        $selected = $this->instance->newQuery()->find($id);
+
+        $selected->update([
+            'is_archived' => true
+        ]);
+
+        return response()->json(new RealEstateResource($selected),200);
     }
 
     public function switchStatus($id, Request $request)
@@ -106,7 +115,7 @@ class RealEstateController extends Controller
         $selected->name = "sande";
         $selected->email = "francksande@live.ca"; 
 
-        // new UserResource($selected)
+        // new RealEstateResource($selected)
 
         return new enableOrDisableProject($selected);
         

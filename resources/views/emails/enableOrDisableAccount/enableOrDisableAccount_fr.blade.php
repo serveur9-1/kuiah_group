@@ -10,9 +10,9 @@
     d'option, vos courriels de notification et plus à partir
     de l’espace mon compte de KUIAH.
 @else
-    <p>Votre compte sur KUIAH a bien été @if($is_actived)  réactivé. <br>
+    <p>Votre compte sur KUIAH @if($is_actived) a bien été réactivé. <br>
     Vous pouvez à présent vous connecter et publier vos
-    annonce en accord avec nos conditions d’utilisation. @else désactivé .<br>
+    annonce en accord avec nos conditions d’utilisation. @else a été  désactivé .<br>
     Nous avons constaté le non-respect de nos conditions
     d’utilisation, de nos règles et de notre politique.
     Veuillez nous contacter pour en savoir plus

@@ -40,6 +40,7 @@ class ProjectResource extends JsonResource
             "executive_summary" => $this->executive_summary,
             "offer" => $this->offer,
             "is_actived" => $this->is_actived,
+            "is_archived" => $this->is_archived,
             "has_drafted" => $this->has_drafted,
             "user" => new UserResource($this->toUser),
             "country" => new CountryResource($this->toCountry),

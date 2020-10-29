@@ -29,6 +29,9 @@ Route::group(['prefix' => 'v1'], function () {
         Route::post('users/{user}/status', 'v1\UserController@switchStatus')->where('user','[0-9]+');
         Route::post('real_estates/{real_estate}/status', 'v1\RealEstateController@switchStatus')->where('real_estate','[0-9]+');
         Route::post('projects/{project}/status', 'v1\ProjectController@switchStatus')->where('project','[0-9]+');
+        Route::post('users/{user}/status', 'v1\UserController@switchStatus')->where('user','[0-9]+');
+        Route::post('projects/{project}/publish', 'v1\ProjectController@publish')->where('project','[0-9]+');
+
 
         Route::resource('investors', \v1\InvestorController::class)->only(['store', 'update']);
 
