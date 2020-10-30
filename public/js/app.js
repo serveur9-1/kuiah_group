@@ -2677,14 +2677,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Dashboard",
@@ -2718,14 +2710,6 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_layouts_TitlebarComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../components/layouts/TitlebarComponent */ "./resources/js/components/layouts/TitlebarComponent.vue");
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -4623,6 +4607,22 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Dashboard",
@@ -4656,6 +4656,20 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_layouts_TitlebarComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../components/layouts/TitlebarComponent */ "./resources/js/components/layouts/TitlebarComponent.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -44939,6 +44953,8 @@ var render = function() {
     [
       _c("TitlebarComponent"),
       _vm._v(" "),
+      _vm._m(0),
+      _vm._v(" "),
       _c(
         "a",
         {
@@ -44949,12 +44965,40 @@ var render = function() {
         [_vm._v("Activer la publication")]
       ),
       _vm._v(" "),
-      _vm._m(0)
+      _vm._m(1)
     ],
     1
   )
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "row", staticStyle: { "margin-bottom": "20px" } },
+      [
+        _c("div", { staticClass: "col-md-4" }, [
+          _c("img", {
+            attrs: {
+              src:
+                "https://store.playstation.com/store/api/chihiro/00_09_000/container/CA/fr/999/UP1415-CUSA03724_00-AV00000000000192/1601172562000/image?w=240&h=240&bg_color=000000&opacity=100&_version=00_09_000",
+              alt: ""
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-md-8" }, [
+          _c("p", [
+            _vm._v(
+              "\n\t\t\t\t\tLorem ipsum dolor sit amet consectetur adipisicing elit. \n\t\t\t\t\tQuia blanditiis ducimus suscipit provident reiciendis nam, at \n\t\t\t\t\tipsum in rem? Voluptate molestias deleniti placeat dolores voluptas maiores esse accusantium cumque laboriosam.\n\t\t\t\t\tLorem ipsum dolor sit amet consectetur adipisicing elit. \n\t\t\t\t\tQuia blanditiis ducimus suscipit provident reiciendis nam, at \n\t\t\t\t\tipsum in rem? Voluptate molestias deleniti placeat dolores voluptas maiores esse accusantium cumque laboriosam.\n\t\t\t\t"
+            )
+          ])
+        ])
+      ]
+    )
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -45440,11 +45484,39 @@ var render = function() {
   return _c(
     "div",
     { staticClass: "dashboard-content" },
-    [_c("TitlebarComponent"), _vm._v(" "), _vm._m(0)],
+    [_c("TitlebarComponent"), _vm._v(" "), _vm._m(0), _vm._v(" "), _vm._m(1)],
     1
   )
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "row", staticStyle: { "margin-bottom": "20px" } },
+      [
+        _c("div", { staticClass: "col-md-4" }, [
+          _c("img", {
+            attrs: {
+              src:
+                "https://store.playstation.com/store/api/chihiro/00_09_000/container/CA/fr/999/UP1415-CUSA03724_00-AV00000000000192/1601172562000/image?w=240&h=240&bg_color=000000&opacity=100&_version=00_09_000",
+              alt: ""
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-md-8" }, [
+          _c("p", [
+            _vm._v(
+              "\n\t\t\t\t\tLorem ipsum dolor sit amet consectetur adipisicing elit. \n\t\t\t\t\tQuia blanditiis ducimus suscipit provident reiciendis nam, at \n\t\t\t\t\tipsum in rem? Voluptate molestias deleniti placeat dolores voluptas maiores esse accusantium cumque laboriosam.\n\t\t\t\t\tLorem ipsum dolor sit amet consectetur adipisicing elit. \n\t\t\t\t\tQuia blanditiis ducimus suscipit provident reiciendis nam, at \n\t\t\t\t\tipsum in rem? Voluptate molestias deleniti placeat dolores voluptas maiores esse accusantium cumque laboriosam.\n\t\t\t\t"
+            )
+          ])
+        ])
+      ]
+    )
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement

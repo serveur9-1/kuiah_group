@@ -3,7 +3,6 @@
 
         <!-- Titlebar -->
         <TitlebarComponent/>
-
         <!-- Content -->
         <div class="row">
 			<!-- Table-->
@@ -13,10 +12,8 @@
 				</div>
 				<div class="dashboard-list-box margin-top-30">
 					<div class="dashboard-list-box-content">
-
 						<!-- Table -->
 							<table class="manage-table resumes responsive-table">
-
 								<tr>
 									<th style="width: 10%;">Nom</th>
 									<th style="width: 30%;"> Prénom</th>
@@ -25,7 +22,6 @@
                                     <th style="width: 15%;">Date de demande</th>
 									<th style="width: 10%;">Actions</th>
 								</tr>
-
 								<!-- Item #1 -->
 								<tr>
 									<td>Doumbia</td>
@@ -42,7 +38,6 @@
                                         </router-link>
 									</td>
 								</tr>
-
 								<!-- Item #1 -->
 								<tr>
 									<td>Doumbia</td>
@@ -59,14 +54,11 @@
                                         </router-link>
 									</td>
 								</tr>
-
 							</table>
 					</div>
 				</div>
 			</div>
 		</div>
-
-
     </div>
     <!-- Content / End -->
 </template>

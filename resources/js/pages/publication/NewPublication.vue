@@ -5,8 +5,24 @@
         <TitlebarComponent/>
 
         <!-- Content -->
+		<div class="row" style="margin-bottom:20px;">
+			<div class="col-md-4">
+			  <img src="https://store.playstation.com/store/api/chihiro/00_09_000/container/CA/fr/999/UP1415-CUSA03724_00-AV00000000000192/1601172562000/image?w=240&h=240&bg_color=000000&opacity=100&_version=00_09_000" alt="">
+		   </div>
+		    <div class="col-md-8">
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+					Quia blanditiis ducimus suscipit provident reiciendis nam, at 
+					ipsum in rem? Voluptate molestias deleniti placeat dolores voluptas maiores esse accusantium cumque laboriosam.
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+					Quia blanditiis ducimus suscipit provident reiciendis nam, at 
+					ipsum in rem? Voluptate molestias deleniti placeat dolores voluptas maiores esse accusantium cumque laboriosam.
+				</p>
+		   </div>
+		</div>
 		<a href="#" class="button margin-top-30" style="float:right; margin-bottom:15px;">Activer la publication</a>
         <div class="row">
+
 			<!-- Table-->
 			<div class="col-lg-12 col-md-12">
 				<div class="dashboard-list-box margin-top-0">
