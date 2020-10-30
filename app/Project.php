@@ -30,6 +30,7 @@ class Project extends Model
         "executive_summary",
         "offer",
         "is_actived",
+        "is_archived",
         "has_drafted",
         "user_id",
         "country_id",
@@ -66,4 +67,25 @@ class Project extends Model
     {
         return $this->hasMany('App\InvestmentPoint');
     }
+
+    public function toFinancialDatas()
+    {
+        return $this->hasMany('App\FinancialData');
+    }
+
+    public function toTeams()
+    {
+        return $this->hasMany('App\Team');
+    }
+
+    public function toOtherDocs()
+    {
+        return $this->hasMany('App\OtherDoc');
+    }
+
+    public function toDocuments()
+    {
+        return $this->hasMany('App\Document');
+    }
+
 }

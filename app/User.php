@@ -5,10 +5,11 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Laravel\Passport\HasApiTokens;
 
 class User extends Authenticatable
 {
-    use Notifiable;
+    use Notifiable, HasApiTokens;
 
     /**
      * The attributes that are mass assignable.
@@ -20,7 +21,9 @@ class User extends Authenticatable
         'password', 'profil', 'process_type_is_investor',
         'is_archived',
         'is_actived',
-        'is_first_activation'
+        'is_first_activation',
+        'password_reset_code',
+        'password_reset_code_created',
     ];
 
 
@@ -50,5 +53,10 @@ class User extends Authenticatable
     public function toRealEstate()
     {
         return $this->hasMany('App\RealEstate');
+    }
+
+    public function toDomains()
+    {
+        return $this->belongsToMany('App\Domain');
     }
 }

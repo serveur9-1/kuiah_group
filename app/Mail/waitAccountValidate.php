@@ -33,7 +33,7 @@ class waitAccountValidate extends Mailable
         return $this->subject($this->event->is_fr? 'Votre compte est en attente de validation': 'Your account is pending validation')
             ->to($this->event->email)
             ->markdown($template_loaded)->with([
-                '_firstname' => $this->event->firstname,
+                '_firstname' => $this->event->firstname
             ]);
     }
 }

@@ -36,7 +36,7 @@ class PartnerController extends Controller
 
         if ($files = $request->file('img')) {
 
-            $data = $this->__save->save(true,"partners", "img", $request);
+            $data = $this->__save->save(true,"partners", "img", $request->get("name"), $request);
             // $data[0] return 1st item of array which verify if there are many files (true if an array)
             $new = $this->instance->newQuery()->create([
                 "name" => $request->get("name"),

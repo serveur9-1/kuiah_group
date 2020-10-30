@@ -3,12 +3,14 @@
 namespace App\Http\Controllers\v1;
 use App\Http\Resources\UserResource;
 use App\User;
+use App\Domain;
 use App\Http\Controllers\Controller;
 use App\Mail\WelcomeToYou;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 use App\Mail\waitAccountValidate;
+use App\Mail\enableOrDisableAccount;
 
 class UserController extends Controller
 {
@@ -22,10 +24,17 @@ class UserController extends Controller
 
         $request->email = "ymjm97@gmail.com";
         $request->name = "Yves";
+        $request->title = "le tueur qui tue";
+        $request->img = "http://localhost:8000/public/partners/kuiahfinance_profil.jpeg";
+        $request->description = "le tueur qui tue";
 
         //Mail::send(new WelcomeToYou($request));
-        return new WelcomeToYou($request);
-    }
+
+        //send salutation
+         return new waitAdsValidate($request);
+
+
+     }
 
     public function __construct(User $user)
     {
@@ -41,29 +50,6 @@ class UserController extends Controller
     {
         $selected = $this->instance->newQuery()->find($id);
         return response()->json(new UserResource($selected),200);
-    }
-
-    public function store(Request $request)
-    {
-        $validator = Validator::make($request->all(),
-            [
-                'firstname' => 'required',
-                'lastname' => 'required',
-                'email' => 'required|unique:users',
-                'password' => 'required',
-            ]
-        );
-
-        if ($validator->fails()) {
-            return response()->json(['error'=>$validator->errors()], 401);
-        }
-
-        $new = $this->instance->newQuery()->create($request->all());
-        
-        // new UserResource($new)
-
-        return new waitAccountValidate($request);
-        
     }
 
     public function update($id, Request $request)
@@ -88,7 +74,7 @@ class UserController extends Controller
         return response()->json(new UserResource($selected), 200);
     }
 
-    public function switchStatus($id)
+    public function switchStatus($id, Request $request)
     {
         $selected = $this->instance->newQuery()->findOrFail($id);
 
@@ -96,8 +82,50 @@ class UserController extends Controller
             'is_actived' => !$selected->is_actived
         ]);
 
+        // new UserResource($selected)
 
-        return response()->json(new UserResource($selected), 200);
+        // Send mail
+
+        if(!$selected->is_actived)
+        {
+            $selected->update([
+                'is_first_activation' => false
+            ]);
+        }
+
+        $selected->is_fr = $request->is_fr;
+
+        return new enableOrDisableAccount($selected);
+
+    }
+
+    //Upload profile picture
+
+    public function uploadProfilePicture(Request $request)
+    {
+
+    }
+
+    //My domains
+
+    public function addDomain(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'domains' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json(['error' => $validator->errors()], 401);
+        }
+
+        if($request->user())
+        {
+            if(is_array($request->get('domains')))
+            {
+                $request->user()->toDomains()->sync($request->get('domains'));
+                return response()->json(['message' => 'Added successful'],200);
+            }
+        }
     }
 
 }

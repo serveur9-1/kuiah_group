@@ -45,7 +45,7 @@ class DomainController extends Controller
 
         if ($files = $request->file('img')) {
 
-            $data = $this->__save->save(true,"domains", "img", $request);
+            $data = $this->__save->save(true,"domains", "img", "domain_$request->id",$request);
             // $data[0] return 1st item of array which verify if there are many files (true if an array)
             $new = $this->instance->newQuery()->create([
                 "name_fr" => $request->get("name_fr"),
@@ -53,7 +53,7 @@ class DomainController extends Controller
                 "img" => $data[2],
                 "industry_id" => $request->get("industry_id"),
             ]);
-
+            
             return response()->json([
                 "success" => true,
                 "message" => "File successfully uploaded",
