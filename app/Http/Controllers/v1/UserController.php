@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\v1;
 use App\Http\Resources\UserResource;
 use App\User;
+use App\Domain;
 use App\Http\Controllers\Controller;
 use App\Mail\WelcomeToYou;
 use Illuminate\Http\Request;
@@ -103,6 +104,28 @@ class UserController extends Controller
     public function uploadProfilePicture(Request $request)
     {
 
+    }
+
+    //My domains
+
+    public function addDomain(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'domains' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json(['error' => $validator->errors()], 401);
+        }
+
+        if($request->user())
+        {
+            if(is_array($request->get('domains')))
+            {
+                $request->user()->toDomains()->sync($request->get('domains'));
+                return response()->json(['message' => 'Added successful'],200);
+            }
+        }
     }
 
 }

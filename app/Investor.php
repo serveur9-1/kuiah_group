@@ -26,4 +26,9 @@ class Investor extends Model
         "max",
         "user_id",
     ];
+
+    public function toInterestedProjects()
+    {
+        return $this->belongsToMany('App\Project');
+    }
 }

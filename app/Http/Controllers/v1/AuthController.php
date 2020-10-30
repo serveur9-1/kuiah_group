@@ -82,7 +82,7 @@ class AuthController extends Controller
             $rand = Str::random(5);
 
             //Code expire in 15min
-            $expire = now()->addMinute(1);
+            $expire = now()->addMinute(15);
 
             $user->update([
                 "password_reset_code" => $rand,

@@ -54,4 +54,9 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\RealEstate');
     }
+
+    public function toDomains()
+    {
+        return $this->belongsToMany('App\Domain');
+    }
 }

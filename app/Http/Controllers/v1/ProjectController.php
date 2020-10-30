@@ -9,20 +9,33 @@ use App\FinancialData;
 use App\Tag;
 use App\Team;
 use App\OtherDoc;
+use App\Investor;
 use App\Document;
 use App\Http\Controllers\Controller;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Shared\SaveFiles;
 use App\Mail\enableOrDisableProject;
 use App\Mail\waitAdsValidate;
+use Illuminate\Support\Arr;
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
+
 
 class ProjectController extends Controller
 {
     public function __construct(Project $project, SaveFiles $__save)
     {
+
+        //Apply middleware
+        $this->middleware('auth:api', [
+            'except' => [
+                'index',
+                'show',
+                'filtered',
+            ]
+        ]);
+
         $this->instance = $project;
         $this->__save = $__save;
     }
@@ -41,6 +54,30 @@ class ProjectController extends Controller
     public function filtered(Request $request)
     {
         $prj = Project::orderBy('created_at','desc');
+
+        //Project which can interest the current user
+
+        if($request->has('user_id') && $request->filled('user_id'))
+        {
+            $user = User::where('id', $request->get("user_id"))->first();
+            if($user)
+            {
+                //Filter by user's choosen domains
+                $ids = Arr::pluck($user->toDomains, "id");
+                $prj = $prj->orWhereIn("domain_id", $ids);
+
+                //filter by user's interesting projects domain_id
+                if($user->toInvestor)
+                {
+                    $ids = Arr::pluck(
+                        $user->toInvestor->toInterestedProjects,
+                        "domain_id"
+                    );
+
+                    $prj = $prj->orWhereIn("domain_id", $ids);
+                }
+            }
+        }
 
         if($request->has('countries') && $request->filled('countries'))
         {
@@ -357,16 +394,54 @@ class ProjectController extends Controller
         $selected->update([
             'is_actived' => !$selected->is_actived
         ]);
-        
-        $selected->is_fr = $request->is_fr; 
+
+        $selected->is_fr = $request->is_fr;
 
         $selected->name = "sande";
-        $selected->email = "francksande@live.ca"; 
+        $selected->email = "francksande@live.ca";
 
         //return response()->json(new ProjectResource($selected),200);
 
         return new enableOrDisableProject($selected);
-        
+
+    }
+
+
+    //Add a project to my interessing projects
+    public function itInterestMe($id, Request $request)
+    {
+        $project = $this->instance->newQuery()->findOrFail($id);
+        if($request->user())
+        {
+            $investor = Investor::where('user_id', $request->user()->id)->first();
+            $investor->toInterestedProjects()->sync($project);
+            return response()->json(["message" => "Added to interesting projects"],200);
+        }
+    }
+
+    //Remove a project to my interessing projects
+    public function itNotInterestMe($id, Request $request)
+    {
+        $project = $this->instance->newQuery()->findOrFail($id);
+        if($request->user())
+        {
+            $investor = Investor::where('user_id', $request->user()->id)->first();
+            $investor->toInterestedProjects()->detach($project);
+            return response()->json(["message" => "Removed to interesting projects"],200);
+        }
+    }
+
+    //Change project looking step for investor (for example study documents ...)
+    public function atThisStep($id, Request $request)
+    {
+        $project = $this->instance->newQuery()->findOrFail($id);
+
+        if($request->user())
+        {
+            $investor = Investor::where('user_id', $request->user()->id)->first();
+
+            //Notify project owner
+        }
     }
 
 }
