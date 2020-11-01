@@ -50,22 +50,27 @@ const routes = [
     },
     {
         path: '/dashboard',
+        name: 'dashboard',
         component: Dashboard
     },
     {
         path: '/account',
+        name: 'account',
         component: UserAccount
     },
     {
         path: '/login',
+        name: 'login',
         component: Login
     },
     {
         path: '/publication/list',
+        name: 'listPublication',
         component : ListPublication
     },
     {
         path: '/publication/waiting',
+        name: 'waitPublication',
         component : Waitpublication
     },
     {
@@ -78,6 +83,7 @@ const routes = [
     },
     {
         path: '/investor/list',
+        name: 'listInvestor',
         component : ListInvestor
     },
     {
@@ -86,6 +92,7 @@ const routes = [
     },
     {
         path: '/entrepreneur/list',
+        name: 'listEntrepreneur',
         component : ListEntrepreneur
     },
     {
@@ -94,70 +101,87 @@ const routes = [
     },
     {
         path: '/account/ask',
+        name: 'askAccount',
         component : AskAccount
     },
     {
         path: '/industry/list',
+        name : 'listIndustries',
         component : ListIndustry
     },
     {
         path: '/industry/add',
+        name: 'addIndustry',
         component : AddIndustry
     },
     {
         path: '/industry/edit',
+        name: 'editIndustry',
         component : EditIndustry
     },
     {
         path: '/domain/list',
+        name: 'listDomain',
         component : ListDomain
     },
     {
         path: '/domain/add',
+        name: 'addDomain',
         component : AddDomain
     },
     {
         path: '/domain/edit',
+        name: 'editDomain',
         component : EditDomain
     },
     {
         path: '/country/list',
+        name : 'listCountry',
         component : ListCountry
     },
     {
         path: '/country/add',
+        name : 'addCountry',
         component : AddCountry
     },
     {
         path: '/country/edit',
+        name : 'editCountry',
         component : EditCountry
     },
     {
         path: '/level/list',
+        name: 'listLevel',
         component : ListLevel
     },
     {
         path: '/level/add',
+        name: 'addLevel',
         component : AddLevel
     },
     {
         path: '/level/edit',
+        name: 'editLevel',
         component : EditLevel
     },
     {
         path: '/partner/list',
+        name: 'listPartner',
         component : ListPartner
     },
     {
         path: '/partner/add',
+        name: 'addPartner',
         component : AddPartner
     },
     {
         path: '/partner/edit',
+        name: 'editRealstate',
         component : EditPartner
     },
     {
         path: '/realstates/list',
+        name: 'listRealstates',
         component : ListRealstates
     },
     {
@@ -174,6 +198,7 @@ const routes = [
     },
     {
         path: '/notification/list',
+        name: 'listNotification',
         component : ListNotification
     },
 ];
