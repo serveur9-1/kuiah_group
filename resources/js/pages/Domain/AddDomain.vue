@@ -11,27 +11,42 @@
 				<div class="dashboard-list-box margin-top-0">
 					<h4>Ajouter un domaine</h4>
 					<div class="dashboard-list-box-content">
-
-					<div class="submit-page">
-
-						<!-- Email -->
-						<div class="form">
-							<h5>Nom du domaine (Fr)</h5>
-							<input class="search-field" type="text" value=""/>
-						</div>
-
-						<!-- Email -->
-						<div class="form">
-							<h5>Nom du domain(En)</h5>
-							<input class="search-field" type="text" value=""/>
-						</div>
-                         <a href="#" class="button margin-top-30 margin-bottom-15 ">Enregistrer</a>
-					</div>
-					</div>
-				</div>
-			
-			</div>
-		</div>
+                        <form @submit.prevent="addDomain">
+                                <div class="submit-page">
+                                    <!-- Email -->
+                                    <div class="form">
+                                        <h5>Sélectionner une industrie</h5>
+                                        <select data-placeholder="Full-Time" class="chosen-select-no-single">
+                                            <option value="1">Full-Time</option>
+                                            <option value="2">Part-Time</option>
+                                            <option value="2">Internship</option>
+                                            <option value="2">Freelance</option>
+                                        </select>
+                                    </div>
+                                    <div class="form">
+                                        <h5>Image domaine</h5>
+                                        <label class="upload-btn">
+                                            <input type="file" />
+                                            <i class="fa fa-upload"></i> Browse
+                                        </label>
+                                        <span class="fake-input">No file selected</span>
+                                    </div>
+                                    <div class="form">
+                                        <h5>Nom du domaine (Fr)</h5>
+                                        <input class="search-field" type="text" v-model="name_fr"/>
+                                    </div>
+                                    <!-- Email -->
+                                    <div class="form">
+                                        <h5>Nom du domaine (En)</h5>
+                                        <input class="search-field" type="text" v-model="name_en"/>
+                                    </div>
+                                    <button v-bind:class="{ 'is-loading' : isLoading }" class="button margin-top-30 margin-bottom-20">Enregistrer</button>
+                                </div>
+                        </form>
+				    </div>
+			    </div>
+		    </div>
+	    </div>
     </div>
     <!-- Content / End -->
 </template>

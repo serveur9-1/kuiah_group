@@ -33,6 +33,8 @@ import NewRealstates from "./pages/realstates/NewRealstates";
 import EditDomain from "./pages/Domain/EditDomain";
 import Login from "./pages/auth/Login";
 import ListNotification from "./pages/notification/ListNotification";
+import ListTestimonial from "./pages/testimonial/ListTestimonial";
+import AddTestimonial from "./pages/testimonial/AddTestimonial";
 
 
 
@@ -200,6 +202,14 @@ const routes = [
         path: '/notification/list',
         name: 'listNotification',
         component : ListNotification
+    },
+    {
+        path: '/testimonial/list',
+        component : ListTestimonial
+    },
+    {
+        path: '/testimonial/add',
+        component : AddTestimonial
     },
 ];
 

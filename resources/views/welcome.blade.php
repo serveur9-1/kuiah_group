@@ -13,6 +13,7 @@
 <link rel="stylesheet" href="{{asset('/css/style.css')}}">
 <link rel="stylesheet" href="{{asset('/dashboard-2.html')}}">
 <link rel="stylesheet" href="{{asset('/css/colors.css')}}">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
 <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
 </head>
 
@@ -24,7 +25,7 @@
 <!-- Scripts
 ================================================== -->
 <script src="{{mix("/js/app.js")}}"></script>
-
+<script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
 <script src="{{asset('/scripts/jquery-3.4.1.min.js')}}"></script>
 <script src="{{asset('/scripts/jquery-migrate-3.1.0.min.js')}}"></script>
 <script src="{{asset('/scripts/custom.js')}}"></script>

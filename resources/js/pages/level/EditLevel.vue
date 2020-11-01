@@ -18,22 +18,12 @@
                     <div class="dashboard-list-box-content">
                         <form @submit.prevent="updateLevel">
 
-<<<<<<< HEAD
-						<!-- Email -->
-						<div class="form">
-							<h5>Nom du niveau (En)</h5>
-							<input class="search-field" type="text" value=""/>
-						</div>
-                        <a href="#" class="button margin-top-30 margin-bottom-15 ">Enregistrer</a>
-					</div>
-=======
                             <div class="submit-page">
                                 <!-- Email -->
                                 <div class="form">
                                     <h5>Niveau (Fr)</h5>
                                     <input class="search-field" type="text" v-model="level.name_fr" />
                                 </div>
->>>>>>> 4cd620bc44142d7a98f360a7d42c53e13e2e5c06
 
                                 <!-- Email -->
                                 <div class="form">

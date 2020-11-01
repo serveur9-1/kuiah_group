@@ -14,24 +14,6 @@
 				<div class="dashboard-list-box margin-top-0">
 					<h4>Ajouter un pays</h4>
 					<div class="dashboard-list-box-content">
-<<<<<<< HEAD
-					<div class="submit-page">
-						<!-- Email -->
-						<div class="form">
-							<h5>Nom du pays(Fr)</h5>
-							<input class="search-field" type="text" value=""/>
-						</div>
-						<!-- Email -->
-						<div class="form">
-							<h5>Nom du pays(En)</h5>
-							<input class="search-field" type="text" value=""/>
-						</div>
-                        <a href="#" class="button margin-top-30 margin-bottom-20">Enregistrer</a>
-					</div>
-					</div>
-				</div>
-				
-=======
 
                         <form @submit.prevent="addCountry">
 
@@ -55,7 +37,6 @@
 					</div>
 				</div>
 
->>>>>>> 4cd620bc44142d7a98f360a7d42c53e13e2e5c06
 			</div>
 		</div>
 

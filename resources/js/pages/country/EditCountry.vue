@@ -13,7 +13,6 @@
                 </div>
 				<div class="dashboard-list-box margin-top-0">
 					<h4>Modifier le pays</h4>
-<<<<<<< HEAD
 					<div class="dashboard-list-box-content">
 					<div class="submit-page">
 						<!-- Email -->
@@ -31,30 +30,6 @@
 					</div>
 				</div>
 				
-=======
-
-
-                    <div class="dashboard-list-box-content">
-                        <form @submit.prevent="updateCountry">
-
-                            <div class="submit-page">
-                                <!-- Email -->
-                                <div class="form">
-                                    <h5>Nom du pays (Fr)</h5>
-                                    <input class="search-field" type="text" v-model="country.name_fr" />
-                                </div>
-
-                                <!-- Email -->
-                                <div class="form">
-                                    <h5>Nom du pays (En)</h5>
-                                    <input class="search-field" type="text" v-model="country.name_en" />
-                                </div>
-                                <button type="submit" class="button margin-top-30">Modifier</button>
-                            </div>
-                        </form>
-					</div>
-				</div>
->>>>>>> 4cd620bc44142d7a98f360a7d42c53e13e2e5c06
 			</div>
 		</div>
 

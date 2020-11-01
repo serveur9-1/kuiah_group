@@ -4,7 +4,7 @@ const items = [
         "section_items": [
             {
                 "item_parent": "Projets",
-                "path": "/dashboard",
+                "path": "/publication/list",
                 "child": [
                     {
                         "title": "Liste des publications",
@@ -18,7 +18,7 @@ const items = [
             },
             {
                 "item_parent": "Biens immobiliers",
-                "path": "/dashboard",
+                "path": "/realstates/list",
                 "child": [
                     {
                         "title": "Liste des publications",
@@ -58,7 +58,7 @@ const items = [
         "section_items": [
             {
                 "item_parent": "Industries",
-                "path": "/account",
+                "path": "/industry/list",
                 "child": [
                     {
                         "title": "Liste des industries",
@@ -72,7 +72,7 @@ const items = [
             },
             {
                 "item_parent": "Domaines",
-                "path": "/account",
+                "path": "/domain/list",
                 "child": [
                     {
                         "title": "Liste des domaines",
@@ -86,7 +86,7 @@ const items = [
             },
             {
                 "item_parent": "Pays",
-                "path": "/account",
+                "path": "/country/list",
                 "child": [
                     {
                         "title": "Liste des pays",
@@ -100,7 +100,7 @@ const items = [
             },
             {
                 "item_parent": "Niveau",
-                "path": "/account",
+                "path": "/level/list",
                 "child": [
                     {
                         "title": "Liste des niveaux",
@@ -114,7 +114,7 @@ const items = [
             },
             {
                 "item_parent": "Partenaire",
-                "path": "/account",
+                "path": "/partner/list",
                 "child": [
                     {
                         "title": "Liste des partenaires",
@@ -123,6 +123,20 @@ const items = [
                     {
                         "title": "Ajouter un partenaire",
                         "path": "/partner/add"
+                    },
+                ]
+            },
+            {
+                "item_parent": "Témoignage",
+                "path": "/testimonial/list",
+                "child": [
+                    {
+                        "title": "Liste des témoignages",
+                        "path": "/testimonial/list"
+                    },
+                    {
+                        "title": "Ajouter un témopignage",
+                        "path": "/testimonial/add"
                     },
                 ]
             },
