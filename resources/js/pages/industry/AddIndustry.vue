@@ -11,25 +11,21 @@
 				<div class="dashboard-list-box margin-top-0">
 					<h4>Ajouter une industrie</h4>
 					<div class="dashboard-list-box-content">
-
 					<div class="submit-page">
-
 						<!-- Email -->
 						<div class="form">
 							<h5>Nom de l'industrie (Fr)</h5>
 							<input class="search-field" type="text" value=""/>
 						</div>
-
 						<!-- Email -->
 						<div class="form">
 							<h5>Nom de l'industrie (En)</h5>
 							<input class="search-field" type="text" value=""/>
 						</div>
+                             <a href="#" class="button margin-top-30 margin-bottom-15 ">Enregistrer</a>
 					</div>
-
 					</div>
 				</div>
-				<a href="#" class="button margin-top-30">Enregistrer</a>
 			</div>
 		</div>
 

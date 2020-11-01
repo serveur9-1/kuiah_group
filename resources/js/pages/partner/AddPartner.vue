@@ -28,11 +28,11 @@
 							</label>
 							<span class="fake-input">No file selected</span>
 						</div>
+                        <a href="#" class="button margin-top-30 margin-bottom-15 ">Enregistrer</a>
 					</div>
 
 					</div>
 				</div>
-				<a href="#" class="button margin-top-30">Enregistrer</a>
 			</div>
 		</div>
 

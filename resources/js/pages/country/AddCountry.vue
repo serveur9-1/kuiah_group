@@ -11,25 +11,22 @@
 				<div class="dashboard-list-box margin-top-0">
 					<h4>Ajouter un pays</h4>
 					<div class="dashboard-list-box-content">
-
 					<div class="submit-page">
-
 						<!-- Email -->
 						<div class="form">
 							<h5>Nom du pays(Fr)</h5>
 							<input class="search-field" type="text" value=""/>
 						</div>
-
 						<!-- Email -->
 						<div class="form">
 							<h5>Nom du pays(En)</h5>
 							<input class="search-field" type="text" value=""/>
 						</div>
+                        <a href="#" class="button margin-top-30 margin-bottom-20">Enregistrer</a>
 					</div>
-
 					</div>
 				</div>
-				<a href="#" class="button margin-top-30">Enregistrer</a>
+				
 			</div>
 		</div>
 

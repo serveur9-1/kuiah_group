@@ -2275,8 +2275,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Dashboard",
@@ -2816,9 +2814,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Dashboard",
@@ -2852,9 +2847,6 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_layouts_TitlebarComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../components/layouts/TitlebarComponent */ "./resources/js/components/layouts/TitlebarComponent.vue");
-//
-//
-//
 //
 //
 //
@@ -3284,10 +3276,6 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_layouts_TitlebarComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../components/layouts/TitlebarComponent */ "./resources/js/components/layouts/TitlebarComponent.vue");
-//
-//
-//
-//
 //
 //
 //
@@ -3834,6 +3822,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Dashboard",
@@ -4115,9 +4104,6 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_layouts_TitlebarComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../components/layouts/TitlebarComponent */ "./resources/js/components/layouts/TitlebarComponent.vue");
-//
-//
-//
 //
 //
 //
@@ -42398,13 +42384,18 @@ var staticRenderFns = [
                   staticClass: "search-field",
                   attrs: { type: "text", value: "" }
                 })
-              ])
+              ]),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "button margin-top-30 margin-bottom-15 ",
+                  attrs: { href: "#" }
+                },
+                [_vm._v("Enregistrer")]
+              )
             ])
           ])
-        ]),
-        _vm._v(" "),
-        _c("a", { staticClass: "button margin-top-30", attrs: { href: "#" } }, [
-          _vm._v("Enregistrer")
         ])
       ])
     ])
@@ -42466,13 +42457,18 @@ var staticRenderFns = [
                   staticClass: "search-field",
                   attrs: { type: "text", value: "" }
                 })
-              ])
+              ]),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "button margin-top-30 margin-bottom-15 ",
+                  attrs: { href: "#" }
+                },
+                [_vm._v("Enregistrer")]
+              )
             ])
           ])
-        ]),
-        _vm._v(" "),
-        _c("a", { staticClass: "button margin-top-30", attrs: { href: "#" } }, [
-          _vm._v("Enregistrer")
         ])
       ])
     ])
@@ -43052,13 +43048,18 @@ var staticRenderFns = [
                   staticClass: "search-field",
                   attrs: { type: "text", value: "" }
                 })
-              ])
+              ]),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "button margin-top-30 margin-bottom-20",
+                  attrs: { href: "#" }
+                },
+                [_vm._v("Enregistrer")]
+              )
             ])
           ])
-        ]),
-        _vm._v(" "),
-        _c("a", { staticClass: "button margin-top-30", attrs: { href: "#" } }, [
-          _vm._v("Enregistrer")
         ])
       ])
     ])
@@ -43120,13 +43121,18 @@ var staticRenderFns = [
                   staticClass: "search-field",
                   attrs: { type: "text", value: "" }
                 })
-              ])
+              ]),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "button margin-top-30 margin-bottom-20",
+                  attrs: { href: "#" }
+                },
+                [_vm._v("Enregistrer")]
+              )
             ])
           ])
-        ]),
-        _vm._v(" "),
-        _c("a", { staticClass: "button margin-top-30", attrs: { href: "#" } }, [
-          _vm._v("Enregistrer")
         ])
       ])
     ])
@@ -43681,13 +43687,18 @@ var staticRenderFns = [
                   staticClass: "search-field",
                   attrs: { type: "text", value: "" }
                 })
-              ])
+              ]),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "button margin-top-30 margin-bottom-15 ",
+                  attrs: { href: "#" }
+                },
+                [_vm._v("Enregistrer")]
+              )
             ])
           ])
-        ]),
-        _vm._v(" "),
-        _c("a", { staticClass: "button margin-top-30", attrs: { href: "#" } }, [
-          _vm._v("Enregistrer")
         ])
       ])
     ])
@@ -43749,13 +43760,18 @@ var staticRenderFns = [
                   staticClass: "search-field",
                   attrs: { type: "text", value: "" }
                 })
-              ])
+              ]),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "button margin-top-30 margin-bottom-15 ",
+                  attrs: { href: "#" }
+                },
+                [_vm._v("Enregistrer")]
+              )
             ])
           ])
-        ]),
-        _vm._v(" "),
-        _c("a", { staticClass: "button margin-top-30", attrs: { href: "#" } }, [
-          _vm._v("Enregistrer")
         ])
       ])
     ])
@@ -44212,13 +44228,18 @@ var staticRenderFns = [
                   staticClass: "search-field",
                   attrs: { type: "text", value: "" }
                 })
-              ])
+              ]),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "button margin-top-30 margin-bottom-15 ",
+                  attrs: { href: "#" }
+                },
+                [_vm._v("Enregistrer")]
+              )
             ])
           ])
-        ]),
-        _vm._v(" "),
-        _c("a", { staticClass: "button margin-top-30", attrs: { href: "#" } }, [
-          _vm._v("Enregistrer")
         ])
       ])
     ])
@@ -44280,7 +44301,16 @@ var staticRenderFns = [
                   staticClass: "search-field",
                   attrs: { type: "text", value: "" }
                 })
-              ])
+              ]),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "button margin-top-30 margin-bottom-15 ",
+                  attrs: { href: "#" }
+                },
+                [_vm._v("Enregistrer")]
+              )
             ])
           ])
         ]),
@@ -44588,13 +44618,18 @@ var staticRenderFns = [
                 _c("span", { staticClass: "fake-input" }, [
                   _vm._v("No file selected")
                 ])
-              ])
+              ]),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "button margin-top-30 margin-bottom-15 ",
+                  attrs: { href: "#" }
+                },
+                [_vm._v("Enregistrer")]
+              )
             ])
           ])
-        ]),
-        _vm._v(" "),
-        _c("a", { staticClass: "button margin-top-30", attrs: { href: "#" } }, [
-          _vm._v("Enregistrer")
         ])
       ])
     ])
@@ -44662,13 +44697,18 @@ var staticRenderFns = [
                 _c("span", { staticClass: "fake-input" }, [
                   _vm._v("No file selected")
                 ])
-              ])
+              ]),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "button margin-top-30 margin-bottom-20",
+                  attrs: { href: "#" }
+                },
+                [_vm._v("Enregistrer")]
+              )
             ])
           ])
-        ]),
-        _vm._v(" "),
-        _c("a", { staticClass: "button margin-top-30", attrs: { href: "#" } }, [
-          _vm._v("Enregistrer")
         ])
       ])
     ])
@@ -66516,7 +66556,7 @@ var types = {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/yves/workspace/kuiah_group/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/doumbia/Documents/kuiah_group/resources/js/app.js */"./resources/js/app.js");
 
 
 /***/ })

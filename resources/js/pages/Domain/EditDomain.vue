@@ -25,11 +25,11 @@
 							<h5>Nom du domain(En)</h5>
 							<input class="search-field" type="text" value=""/>
 						</div>
+                        <a href="#" class="button margin-top-30 margin-bottom-15 ">Enregistrer</a>
 					</div>
 
 					</div>
 				</div>
-				<a href="#" class="button margin-top-30">Enregistrer</a>
 			</div>
 		</div>
 
