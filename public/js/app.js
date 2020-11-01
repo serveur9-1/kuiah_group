@@ -4456,7 +4456,23 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _components_layouts_TitlebarComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../components/layouts/TitlebarComponent */ "./resources/js/components/layouts/TitlebarComponent.vue");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _src_config__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../src/config */ "./resources/js/pages/src/config.js");
+/* harmony import */ var _components_layouts_TitlebarComponent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/layouts/TitlebarComponent */ "./resources/js/components/layouts/TitlebarComponent.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -4501,14 +4517,23 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Dashboard",
   components: {
-    TitlebarComponent: _components_layouts_TitlebarComponent__WEBPACK_IMPORTED_MODULE_0__["default"]
+    TitlebarComponent: _components_layouts_TitlebarComponent__WEBPACK_IMPORTED_MODULE_2__["default"]
   },
   data: function data() {
     return {
-      message: "Mounted"
+      message: "Mounted",
+      form: new Form({
+        name: '',
+        img: ''
+      }),
+      errors: '',
+      savingSuccessful: false,
+      isLoading: false
     };
   },
   mounted: function mounted() {
@@ -4517,6 +4542,38 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     onMounted: function onMounted() {
       console.log(this.message);
+    },
+    formSubmit: function formSubmit() {
+      var _this = this;
+
+      this.form.post(_src_config__WEBPACK_IMPORTED_MODULE_1__["API_BASE_URL"] + '/partners').then(function (response) {
+        var attr = document.getElementById("text");
+        attr.innerHTML = response.data.message;
+
+        _this.form.reset();
+      });
+    },
+    onFileChange: function onFileChange(e) {
+      var _this2 = this;
+
+      var file = e.target.files[0];
+      var reader = new FileReader();
+
+      if (file['size'] < 2111775) {
+        reader.onloadend = function (file) {
+          //console.log('RESULT', reader.result)
+          _this2.form.img = reader.result;
+        };
+
+        reader.readAsDataURL(file);
+      } else {
+        alert('File size can not be bigger than 2 MB');
+      }
+    },
+    //For getting Instant Uploaded Photo
+    get_img: function get_img() {
+      var photo = this.form.img.length > 100 ? this.form.img : this.form.img;
+      return photo;
     }
   }
 });
@@ -4608,14 +4665,18 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _components_layouts_TitlebarComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../components/layouts/TitlebarComponent */ "./resources/js/components/layouts/TitlebarComponent.vue");
-//
-//
-//
-//
-//
-//
-//
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _src_config__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../src/config */ "./resources/js/pages/src/config.js");
+/* harmony import */ var _components_layouts_TitlebarComponent__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/layouts/TitlebarComponent */ "./resources/js/components/layouts/TitlebarComponent.vue");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 //
 //
 //
@@ -4673,14 +4734,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Dashboard",
   components: {
-    TitlebarComponent: _components_layouts_TitlebarComponent__WEBPACK_IMPORTED_MODULE_0__["default"]
+    TitlebarComponent: _components_layouts_TitlebarComponent__WEBPACK_IMPORTED_MODULE_3__["default"]
   },
   data: function data() {
     return {
-      message: "Mounted"
+      partners: {},
+      isLoading: true,
+      deleteSuccessful: false
     };
   },
   mounted: function mounted() {
@@ -4688,7 +4753,53 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     onMounted: function onMounted() {
-      console.log(this.message);
+      var _this = this;
+
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(_src_config__WEBPACK_IMPORTED_MODULE_2__["API_BASE_URL"] + "/partners").then(function (data) {
+        _this.partners = data.data;
+        _this.isLoading = false; // console.log(response.data);
+      });
+    },
+    isDeleting: function isDeleting(id) {
+      var index = this.partners.findIndex(function (partner) {
+        return partner.id === id;
+      });
+      return this.partners[index].isDeleting;
+    },
+    deletePartner: function deletePartner(id) {
+      var _this2 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        var index;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                index = _this2.partners.findIndex(function (partner) {
+                  return partner.id === id;
+                });
+                Vue.set(_this2.partners[index], 'isDeleting', true);
+
+                if (!confirm("Voulez vous vraiment supprimer ce partenaire?")) {
+                  _context.next = 7;
+                  break;
+                }
+
+                _context.next = 5;
+                return axios__WEBPACK_IMPORTED_MODULE_1___default.a["delete"](_src_config__WEBPACK_IMPORTED_MODULE_2__["API_BASE_URL"] + '/partners/' + id);
+
+              case 5:
+                _this2.partners.splice(index, 1);
+
+                _this2.deleteSuccessful = true;
+
+              case 7:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }))();
     }
   }
 });
@@ -46090,56 +46201,116 @@ var render = function() {
   return _c(
     "div",
     { staticClass: "dashboard-content" },
-    [_c("TitlebarComponent"), _vm._v(" "), _vm._m(0)],
+    [
+      _c("TitlebarComponent"),
+      _vm._v(" "),
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-lg-12 col-md-12" }, [
+          _vm.savingSuccessful
+            ? _c("div", { staticClass: "notification notice" }, [
+                _vm._v(
+                  "\n                    Vous avez ajouté " +
+                    _vm._s(_vm.name) +
+                    " avec succès.\n                "
+                )
+              ])
+            : _vm._e(),
+          _vm._v(" "),
+          _c("div", { staticClass: "dashboard-list-box margin-top-0" }, [
+            _c("h4", [_vm._v("Ajouter un partenaire")]),
+            _vm._v(" "),
+            _c("div", { staticClass: "dashboard-list-box-content" }, [
+              _c(
+                "form",
+                {
+                  on: {
+                    submit: function($event) {
+                      $event.preventDefault()
+                      return _vm.formSubmit($event)
+                    }
+                  }
+                },
+                [
+                  _c("div", { staticClass: "submit-page" }, [
+                    _c("div", { staticClass: "form" }, [
+                      _c("h5", [_vm._v("Nom du partenaire")]),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.form.name,
+                            expression: "form.name"
+                          }
+                        ],
+                        staticClass: "search-field",
+                        attrs: { name: "name", type: "text" },
+                        domProps: { value: _vm.form.name },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(_vm.form, "name", $event.target.value)
+                          }
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass: "form",
+                        staticStyle: { display: "inline-block" }
+                      },
+                      [
+                        _c("h5", [_vm._v("Logo")]),
+                        _vm._v(" "),
+                        _c("div", [
+                          _c("label", { staticClass: "upload-btn" }, [
+                            _c("input", {
+                              attrs: { name: "img", type: "file" },
+                              on: { change: _vm.onFileChange }
+                            }),
+                            _vm._v(" "),
+                            _c("i", { staticClass: "fa fa-upload" }),
+                            _vm._v(
+                              " Parcourir\n                                        "
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "fake-input" }, [
+                            _vm._v("Aucun fichier")
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", [
+                          _c("img", { attrs: { src: _vm.get_img() } })
+                        ])
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
+                        staticClass: "button margin-top-30",
+                        attrs: { type: "submit" }
+                      },
+                      [_vm._v("Enregistrer")]
+                    )
+                  ])
+                ]
+              )
+            ])
+          ])
+        ])
+      ])
+    ],
     1
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-lg-12 col-md-12" }, [
-        _c("div", { staticClass: "dashboard-list-box margin-top-0" }, [
-          _c("h4", [_vm._v("Ajouter un partenaire")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "dashboard-list-box-content" }, [
-            _c("div", { staticClass: "submit-page" }, [
-              _c("div", { staticClass: "form" }, [
-                _c("h5", [_vm._v("Nom du partenaire")]),
-                _vm._v(" "),
-                _c("input", {
-                  staticClass: "search-field",
-                  attrs: { type: "text", value: "" }
-                })
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form" }, [
-                _c("h5", [_vm._v("Logo")]),
-                _vm._v(" "),
-                _c("label", { staticClass: "upload-btn" }, [
-                  _c("input", { attrs: { type: "file", multiple: "" } }),
-                  _vm._v(" "),
-                  _c("i", { staticClass: "fa fa-upload" }),
-                  _vm._v(" Browse\n\t\t\t\t\t\t\t")
-                ]),
-                _vm._v(" "),
-                _c("span", { staticClass: "fake-input" }, [
-                  _vm._v("No file selected")
-                ])
-              ])
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("a", { staticClass: "button margin-top-30", attrs: { href: "#" } }, [
-          _vm._v("Enregistrer")
-        ])
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -46242,73 +46413,87 @@ var render = function() {
       _c("TitlebarComponent"),
       _vm._v(" "),
       _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-lg-12 col-md-12" }, [
-          _c("div", { staticClass: "notification notice" }, [
-            _vm._v(
-              "\n\t\t\t\t\tYour resume can be viewed, edited or removed below.\n\t\t\t\t"
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "dashboard-list-box margin-top-30" }, [
-            _c("div", { staticClass: "dashboard-list-box-content" }, [
-              _c(
-                "table",
-                { staticClass: "manage-table resumes responsive-table" },
-                [
-                  _vm._m(0),
-                  _vm._v(" "),
-                  _c("tr", [
-                    _c("td", [_vm._v(" image ")]),
-                    _vm._v(" "),
-                    _c("td", [_vm._v("Front End Web Developer")]),
-                    _vm._v(" "),
-                    _c("td", [_vm._v("23-09-2020")]),
-                    _vm._v(" "),
+        _vm.isLoading
+          ? _c("div", { staticClass: "loader" })
+          : _c("div", [
+              _c("div", { staticClass: "col-lg-12 col-md-12" }, [
+                _vm.deleteSuccessful
+                  ? _c("div", { staticClass: "notification notice" }, [
+                      _vm._v(
+                        "\n                        suppression effectué avec succès.\n                    "
+                      )
+                    ])
+                  : _vm._e(),
+                _vm._v(" "),
+                _c("div", { staticClass: "dashboard-list-box margin-top-30" }, [
+                  _c("div", { staticClass: "dashboard-list-box-content" }, [
                     _c(
-                      "td",
-                      { staticClass: "action" },
+                      "table",
+                      { staticClass: "manage-table resumes responsive-table" },
                       [
-                        _c("router-link", { attrs: { to: "/partner/edit" } }, [
-                          _c("i", { staticClass: "fa  fa-edit" }),
-                          _vm._v(
-                            "Modifier\n                                        "
-                          )
-                        ]),
+                        _vm._m(0),
                         _vm._v(" "),
-                        _vm._m(1)
+                        _vm._l(_vm.partners, function(partner) {
+                          return _c("tr", { key: partner.id }, [
+                            _c("td", [_vm._v(_vm._s(partner.img))]),
+                            _vm._v(" "),
+                            _c("td", [_vm._v(_vm._s(partner.name))]),
+                            _vm._v(" "),
+                            _c("td", [_vm._v(_vm._s(partner.created_at))]),
+                            _vm._v(" "),
+                            _c(
+                              "td",
+                              { staticClass: "action" },
+                              [
+                                _c(
+                                  "router-link",
+                                  {
+                                    attrs: {
+                                      to: {
+                                        name: "editPartner",
+                                        params: { id: partner.id }
+                                      }
+                                    }
+                                  },
+                                  [
+                                    _c("i", { staticClass: "fa  fa-edit" }),
+                                    _vm._v(
+                                      "Modifier\n                                            "
+                                    )
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "a",
+                                  {
+                                    staticClass: "delete",
+                                    class: {
+                                      "is-loading": _vm.isDeleting(partner.id)
+                                    },
+                                    attrs: { href: "#" },
+                                    on: {
+                                      click: function($event) {
+                                        return _vm.deletePartner(partner.id)
+                                      }
+                                    }
+                                  },
+                                  [
+                                    _c("i", { staticClass: "fa fa-remove" }),
+                                    _vm._v("Supprimer")
+                                  ]
+                                )
+                              ],
+                              1
+                            )
+                          ])
+                        })
                       ],
-                      1
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("tr", [
-                    _c("td", [_vm._v(" image ")]),
-                    _vm._v(" "),
-                    _c("td", [_vm._v("Front End Web Developer")]),
-                    _vm._v(" "),
-                    _c("td", [_vm._v("23-09-2020")]),
-                    _vm._v(" "),
-                    _c(
-                      "td",
-                      { staticClass: "action" },
-                      [
-                        _c("router-link", { attrs: { to: "/partner/edit" } }, [
-                          _c("i", { staticClass: "fa  fa-edit" }),
-                          _vm._v(
-                            "Modifier\n                                        "
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _vm._m(2)
-                      ],
-                      1
+                      2
                     )
                   ])
-                ]
-              )
+                ])
+              ])
             ])
-          ])
-        ])
       ])
     ],
     1
@@ -46327,24 +46512,6 @@ var staticRenderFns = [
       _c("th", [_vm._v(" Date de l'ajout")]),
       _vm._v(" "),
       _c("th", [_vm._v("Actions")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("a", { staticClass: "delete", attrs: { href: "#" } }, [
-      _c("i", { staticClass: "fa fa-remove" }),
-      _vm._v("Supprimer")
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("a", { staticClass: "delete", attrs: { href: "#" } }, [
-      _c("i", { staticClass: "fa fa-remove" }),
-      _vm._v("Supprimer")
     ])
   }
 ]
@@ -67854,7 +68021,7 @@ var routes = [{
   component: _pages_partner_AddPartner__WEBPACK_IMPORTED_MODULE_26__["default"]
 }, {
   path: '/partner/edit',
-  name: 'editRealstate',
+  name: 'editPartner',
   component: _pages_partner_EditPartner__WEBPACK_IMPORTED_MODULE_27__["default"]
 }, {
   path: '/realstates/list',

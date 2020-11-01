@@ -176,7 +176,7 @@ const routes = [
     },
     {
         path: '/partner/edit',
-        name: 'editRealstate',
+        name: 'editPartner',
         component : EditPartner
     },
     {
