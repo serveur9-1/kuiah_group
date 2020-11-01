@@ -15,7 +15,6 @@
 				<div class="dashboard-list-box margin-top-0">
 					<h4>Ajouter un partenaire</h4>
 					<div class="dashboard-list-box-content">
-
                         <form @submit.prevent="formSubmit">
 
                             <div class="submit-page">
@@ -42,10 +41,8 @@
                             </div>
                         </form>
 
-
 					</div>
 				</div>
-
 			</div>
 		</div>
 

@@ -11,15 +11,12 @@
 				<div class="dashboard-list-box margin-top-0">
 					<h4>Modifier le  partenaire</h4>
 					<div class="dashboard-list-box-content">
-
 					<div class="submit-page">
-
 						<!-- Email -->
 						<div class="form">
 							<h5>Nom du partenaire</h5>
 							<input class="search-field" type="text" value=""/>
 						</div>
-
 						<div class="form">
 							<h5>Logo</h5>
 							<label class="upload-btn">
@@ -28,11 +25,11 @@
 							</label>
 							<span class="fake-input">No file selected</span>
 						</div>
+                        <a href="#" class="button margin-top-30 margin-bottom-20">Enregistrer</a>
 					</div>
 
 					</div>
 				</div>
-				<a href="#" class="button margin-top-30">Enregistrer</a>
 			</div>
 		</div>
 
