@@ -6,7 +6,7 @@
 
         <!-- Content -->
         <div class="row">
-			 <div v-if="isLoading" class="loader">
+			<div v-if="isLoading" class="loader">
             </div>
             <div v-else>
                 <!-- Table-->

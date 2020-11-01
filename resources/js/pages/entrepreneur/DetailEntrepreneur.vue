@@ -12,15 +12,19 @@
 					<div class="dashboard-list-box-static">
 						<!-- Avatar -->
 						<!-- Details -->
+                        <h1>{{ entrepreneur }}</h1>
 						<div class="my-profile">
 							<label>Nom</label>
-							<dd><p>Here goes description consectetur </p></dd>
+							<dd><p>{{ entrepreneur.firstname }} </p></dd>
 
 							<label>Prénom</label>
-							<dd><p>Here goes description consectetur </p></dd>
+							<dd><p>{{ entrepreneur.lastname }} </p></dd>
 
 							<label>Email</label>
-							<dd><p>Here goes description consectetur </p></dd>
+							<dd><p>{{ entrepreneur.email }} </p></dd>
+
+                            <label>Date de création</label>
+							<dd><p>{{ entrepreneur.created_at }} </p></dd>
 
 							<label>Téléphone (Mobile)</label>
 							<dd><p>Here goes description consectetur </p></dd>
@@ -57,7 +61,7 @@
 									<td>Front End Web Developer</td>
 									<td>Lorem ipsum dolor sit amet consectetur adipisicing elit.
 										 Suscipit architecto, ut, veniam mollitia voluptates ad vitae sunt quae ipsa
-										  sed tempora dolores iusto eveniet praesentium corporis quibusdam veritatis 
+										  sed tempora dolores iusto eveniet praesentium corporis quibusdam veritatis
 									</td>
 									<td class="centered">1,000 - 2,000$</td>
 									<td class="action">
@@ -71,14 +75,14 @@
 									<td>Logo Designer</td>
 									<td>Lorem ipsum dolor sit amet consectetur adipisicing elit.
 										Suscipit architecto, ut, veniam mollitia voluptates ad vitae sunt quae ipsa
-										 sed tempora dolores iusto eveniet praesentium corporis quibusdam veritatis 
+										 sed tempora dolores iusto eveniet praesentium corporis quibusdam veritatis
 								   </td>
 								   <td class="centered">1,000 - 2,000$</td>
 									<td class="action">
 										<a href="#"><i class="fa  fa-eye"></i>Voir</a>
 										<a href="#" class="delete"><i class="fa fa-remove"></i>Supprimer</a>
 									</td>
-								</tr>	
+								</tr>
 							</table>
 					</div>
 				</div>
@@ -89,6 +93,8 @@
 </template>
 
 <script>
+    import axios from 'axios'
+    import { API_BASE_URL } from '../src/config'
     import TitlebarComponent from "../../components/layouts/TitlebarComponent";
     export default {
         name: "Dashboard",
@@ -96,6 +102,11 @@
         data: function () {
             return {
                 message: "Mounted",
+                entrepreneur: {},
+                id : "",
+                errors: '',
+                isLoading: false,
+
             }
         },
         mounted() {
@@ -103,8 +114,12 @@
         },
         methods: {
             onMounted: function () {
-                console.log(this.message)
-            }
+                let id = this.$router.currentRoute.params.id;
+                this.id=this.$route.params.id;
+                axios.get(API_BASE_URL+'/users/'+this.id).then((response) => {
+                    this.entrepreneur = response.data;
+                });
+            },
         }
     }
 </script>

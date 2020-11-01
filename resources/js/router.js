@@ -90,6 +90,7 @@ const routes = [
     },
     {
         path: '/investor/View',
+        name: 'investorView',
         component : DetailInvestor
     },
     {
@@ -99,6 +100,7 @@ const routes = [
     },
     {
         path: '/entrepreneur/View',
+        name: 'entrepreneurView',
         component : DetailEntrepreneur
     },
     {
@@ -178,7 +180,7 @@ const routes = [
     },
     {
         path: '/partner/edit',
-        name: 'editRealstate',
+        name: 'editPartner',
         component : EditPartner
     },
     {
