@@ -88,6 +88,7 @@ const routes = [
     },
     {
         path: '/investor/View',
+        name: 'investorView',
         component : DetailInvestor
     },
     {
@@ -97,6 +98,7 @@ const routes = [
     },
     {
         path: '/entrepreneur/View',
+        name: 'entrepreneurView',
         component : DetailEntrepreneur
     },
     {

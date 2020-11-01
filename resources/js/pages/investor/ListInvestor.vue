@@ -31,16 +31,18 @@
 
                                     <!-- Item #1 -->
                                     <tr v-for="investor in investors" :key="investor.id">
-                                        <td>{{ investor.firstname }}</td>
-                                        <td>{{ investor.lastname }}</td>
-                                        <td class="centered">{{ investor.email }}</td>
-                                        <td>{{ investor.created_at }}</td>
-                                        <td class="action">
-                                            <router-link :to="{name: '/investor/View', params: { id: investor.id }}">
-                                            <i class="fa  fa-eye"></i>Voir
-                                            </router-link>
-                                            <a href ="#" class="delete" v-bind:class="{ 'is-loading' : isDeleting(investor.id) }" @click="deleteInvestor(investor.id)"><i class="fa fa-remove"></i>Supprimer</a>
-                                        </td>
+                                        <template v-if="investor.is_archived == 0 && investor.is_first_activation == 0">
+                                            <td>{{ investor.firstname }}</td>
+                                            <td>{{ investor.lastname }}</td>
+                                            <td class="centered">{{ investor.email }}</td>
+                                            <td>{{ investor.created_at }}</td>
+                                            <td class="action">
+                                                <router-link :to="{name: 'investorView', params: { id: investor.id }}">
+                                                <i class="fa  fa-eye"></i>Voir
+                                                </router-link>
+                                                <a href ="#" class="delete" v-bind:class="{ 'is-loading' : isDeleting(investor.id) }" @click="deleteInvestor(investor.id)"><i class="fa fa-remove"></i>Supprimer</a>
+                                            </td>
+                                        </template >
                                     </tr>
 
                                 </table>
@@ -51,31 +53,10 @@
             </div>
 		</div>
 
-
     </div>
     <!-- Content / End -->
 </template>
 
-<script>
-    import TitlebarComponent from "../../components/layouts/TitlebarComponent";
-    export default {
-        name: "Dashboard",
-        components: {TitlebarComponent},
-        data: function () {
-            return {
-                message: "Mounted",
-            }
-        },
-        mounted() {
-            this.onMounted()
-        },
-        methods: {
-            onMounted: function () {
-                console.log(this.message)
-            }
-        }
-    }
-</script>
 <script>
     import axios from 'axios'
     import { API_BASE_URL } from '../src/config'
@@ -112,9 +93,9 @@
                 let index = this.investors.findIndex(investor => investor.id === id)
                 Vue.set(this.investors[index], 'isDeleting', true)
 
-                if(confirm("Voulez vous vraiment supprimer ce niveau?")){
+                if(confirm("Voulez vous vraiment supprimer cet investisseur?")){
 
-                    await axios.delete(API_BASE_URL + '/users?investor=true' + id)
+                    await axios.delete(API_BASE_URL + '/users/' + id)
                     this.investors.splice(index, 1)
                     this.deleteSuccessful=true
 

@@ -14,13 +14,16 @@
 						<!-- Details -->
 						<div class="my-profile">
 							<label>Nom</label>
-							<dd><p>Here goes description consectetur </p></dd>
+							<dd><p>{{ investor.firstname }} </p></dd>
 
 							<label>Prénom</label>
-							<dd><p>Here goes description consectetur </p></dd>
+							<dd><p>{{ investor.lastname }} </p></dd>
 
 							<label>Email</label>
-							<dd><p>Here goes description consectetur </p></dd>
+							<dd><p>{{ investor.email }} </p></dd>
+
+                            <label>Date de création</label>
+							<dd><p>{{ investor.created_at }} </p></dd>
 
 							<label>Téléphone (Mobile)</label>
 							<dd><p>Here goes description consectetur </p></dd>
@@ -59,6 +62,8 @@
 </template>
 
 <script>
+    import axios from 'axios'
+    import { API_BASE_URL } from '../src/config'
     import TitlebarComponent from "../../components/layouts/TitlebarComponent";
     export default {
         name: "Dashboard",
@@ -66,6 +71,11 @@
         data: function () {
             return {
                 message: "Mounted",
+                investor: {},
+                id : "",
+                errors: '',
+                isLoading: false,
+
             }
         },
         mounted() {
@@ -73,8 +83,12 @@
         },
         methods: {
             onMounted: function () {
-                console.log(this.message)
-            }
+                let id = this.$router.currentRoute.params.id;
+                this.id=this.$route.params.id;
+                axios.get(API_BASE_URL+'/users/'+this.id).then((response) => {
+                    this.investor = response.data;
+                });
+            },
         }
     }
 </script>

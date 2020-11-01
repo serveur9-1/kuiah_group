@@ -2621,16 +2621,18 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _components_layouts_TitlebarComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../components/layouts/TitlebarComponent */ "./resources/js/components/layouts/TitlebarComponent.vue");
-//
-//
-//
-//
-//
-//
-//
-//
-//
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _src_config__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../src/config */ "./resources/js/pages/src/config.js");
+/* harmony import */ var _components_layouts_TitlebarComponent__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/layouts/TitlebarComponent */ "./resources/js/components/layouts/TitlebarComponent.vue");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 //
 //
 //
@@ -2688,14 +2690,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Dashboard",
   components: {
-    TitlebarComponent: _components_layouts_TitlebarComponent__WEBPACK_IMPORTED_MODULE_0__["default"]
+    TitlebarComponent: _components_layouts_TitlebarComponent__WEBPACK_IMPORTED_MODULE_3__["default"]
   },
   data: function data() {
     return {
-      message: "Mounted"
+      accounts: {},
+      isLoading: true,
+      deleteSuccessful: false
     };
   },
   mounted: function mounted() {
@@ -2703,7 +2709,53 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     onMounted: function onMounted() {
-      console.log(this.message);
+      var _this = this;
+
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(_src_config__WEBPACK_IMPORTED_MODULE_2__["API_BASE_URL"] + "/users/").then(function (data) {
+        _this.accounts = data.data;
+        _this.isLoading = false; // console.log(response.data);
+      });
+    },
+    isDeleting: function isDeleting(id) {
+      var index = this.accounts.findIndex(function (account) {
+        return account.id === id;
+      });
+      return this.accounts[index].isDeleting;
+    },
+    deleteAccount: function deleteAccount(id) {
+      var _this2 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        var index;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                index = _this2.accounts.findIndex(function (account) {
+                  return account.id === id;
+                });
+                Vue.set(_this2.accounts[index], 'isDeleting', true);
+
+                if (!confirm("Voulez vous vraiment confirmer ce compte ?")) {
+                  _context.next = 7;
+                  break;
+                }
+
+                _context.next = 5;
+                return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post(_src_config__WEBPACK_IMPORTED_MODULE_2__["API_BASE_URL"] + '/users/' + id + '/status');
+
+              case 5:
+                _this2.accounts.splice(index, 1);
+
+                _this2.deleteSuccessful = true;
+
+              case 7:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }))();
     }
   }
 });
@@ -3176,7 +3228,14 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _components_layouts_TitlebarComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../components/layouts/TitlebarComponent */ "./resources/js/components/layouts/TitlebarComponent.vue");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _src_config__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../src/config */ "./resources/js/pages/src/config.js");
+/* harmony import */ var _components_layouts_TitlebarComponent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/layouts/TitlebarComponent */ "./resources/js/components/layouts/TitlebarComponent.vue");
+//
+//
+//
+//
 //
 //
 //
@@ -3268,14 +3327,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Dashboard",
   components: {
-    TitlebarComponent: _components_layouts_TitlebarComponent__WEBPACK_IMPORTED_MODULE_0__["default"]
+    TitlebarComponent: _components_layouts_TitlebarComponent__WEBPACK_IMPORTED_MODULE_2__["default"]
   },
   data: function data() {
     return {
-      message: "Mounted"
+      message: "Mounted",
+      entrepreneur: {},
+      id: "",
+      errors: '',
+      isLoading: false
     };
   },
   mounted: function mounted() {
@@ -3283,7 +3348,13 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     onMounted: function onMounted() {
-      console.log(this.message);
+      var _this = this;
+
+      var id = this.$router.currentRoute.params.id;
+      this.id = this.$route.params.id;
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get(_src_config__WEBPACK_IMPORTED_MODULE_1__["API_BASE_URL"] + '/users/' + this.id).then(function (response) {
+        _this.entrepreneur = response.data;
+      });
     }
   }
 });
@@ -3299,18 +3370,18 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _components_layouts_TitlebarComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../components/layouts/TitlebarComponent */ "./resources/js/components/layouts/TitlebarComponent.vue");
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _src_config__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../src/config */ "./resources/js/pages/src/config.js");
+/* harmony import */ var _components_layouts_TitlebarComponent__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/layouts/TitlebarComponent */ "./resources/js/components/layouts/TitlebarComponent.vue");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 //
 //
 //
@@ -3370,14 +3441,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Dashboard",
   components: {
-    TitlebarComponent: _components_layouts_TitlebarComponent__WEBPACK_IMPORTED_MODULE_0__["default"]
+    TitlebarComponent: _components_layouts_TitlebarComponent__WEBPACK_IMPORTED_MODULE_3__["default"]
   },
   data: function data() {
     return {
-      message: "Mounted"
+      entrepreneurs: {},
+      isLoading: true,
+      deleteSuccessful: false
     };
   },
   mounted: function mounted() {
@@ -3385,7 +3460,53 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     onMounted: function onMounted() {
-      console.log(this.message);
+      var _this = this;
+
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(_src_config__WEBPACK_IMPORTED_MODULE_2__["API_BASE_URL"] + "/users?investor=false").then(function (data) {
+        _this.entrepreneurs = data.data;
+        _this.isLoading = false; // console.log(response.data);
+      });
+    },
+    isDeleting: function isDeleting(id) {
+      var index = this.entrepreneurs.findIndex(function (entrepreneur) {
+        return entrepreneur.id === id;
+      });
+      return this.entrepreneurs[index].isDeleting;
+    },
+    deleteEntrepreneur: function deleteEntrepreneur(id) {
+      var _this2 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        var index;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                index = _this2.entrepreneurs.findIndex(function (entrepreneur) {
+                  return entrepreneur.id === id;
+                });
+                Vue.set(_this2.entrepreneurs[index], 'isDeleting', true);
+
+                if (!confirm("Voulez vous vraiment supprimer cet entreprise ?")) {
+                  _context.next = 7;
+                  break;
+                }
+
+                _context.next = 5;
+                return axios__WEBPACK_IMPORTED_MODULE_1___default.a["delete"](_src_config__WEBPACK_IMPORTED_MODULE_2__["API_BASE_URL"] + '/users/' + id);
+
+              case 5:
+                _this2.entrepreneurs.splice(index, 1);
+
+                _this2.deleteSuccessful = true;
+
+              case 7:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }))();
     }
   }
 });
@@ -3789,7 +3910,13 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _components_layouts_TitlebarComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../components/layouts/TitlebarComponent */ "./resources/js/components/layouts/TitlebarComponent.vue");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _src_config__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../src/config */ "./resources/js/pages/src/config.js");
+/* harmony import */ var _components_layouts_TitlebarComponent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/layouts/TitlebarComponent */ "./resources/js/components/layouts/TitlebarComponent.vue");
+//
+//
+//
 //
 //
 //
@@ -3851,14 +3978,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Dashboard",
   components: {
-    TitlebarComponent: _components_layouts_TitlebarComponent__WEBPACK_IMPORTED_MODULE_0__["default"]
+    TitlebarComponent: _components_layouts_TitlebarComponent__WEBPACK_IMPORTED_MODULE_2__["default"]
   },
   data: function data() {
     return {
-      message: "Mounted"
+      message: "Mounted",
+      investor: {},
+      id: "",
+      errors: '',
+      isLoading: false
     };
   },
   mounted: function mounted() {
@@ -3866,7 +3999,13 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     onMounted: function onMounted() {
-      console.log(this.message);
+      var _this = this;
+
+      var id = this.$router.currentRoute.params.id;
+      this.id = this.$route.params.id;
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get(_src_config__WEBPACK_IMPORTED_MODULE_1__["API_BASE_URL"] + '/users/' + this.id).then(function (response) {
+        _this.investor = response.data;
+      });
     }
   }
 });
@@ -3894,25 +4033,6 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -4019,13 +4139,13 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 });
                 Vue.set(_this2.investors[index], 'isDeleting', true);
 
-                if (!confirm("Voulez vous vraiment supprimer ce niveau?")) {
+                if (!confirm("Voulez vous vraiment supprimer cet investisseur?")) {
                   _context.next = 7;
                   break;
                 }
 
                 _context.next = 5;
-                return axios__WEBPACK_IMPORTED_MODULE_1___default.a["delete"](_src_config__WEBPACK_IMPORTED_MODULE_2__["API_BASE_URL"] + '/users?investor=true' + id);
+                return axios__WEBPACK_IMPORTED_MODULE_1___default.a["delete"](_src_config__WEBPACK_IMPORTED_MODULE_2__["API_BASE_URL"] + '/users/' + id);
 
               case 5:
                 _this2.investors.splice(index, 1);
@@ -44116,109 +44236,91 @@ var render = function() {
       _c("TitlebarComponent"),
       _vm._v(" "),
       _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-lg-12 col-md-12" }, [
-          _c("div", { staticClass: "notification notice" }, [
-            _vm._v("\n\t\t\t\t\tliste des entrepreneurs\n\t\t\t\t")
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "dashboard-list-box margin-top-30" }, [
-            _c("div", { staticClass: "dashboard-list-box-content" }, [
-              _c(
-                "table",
-                { staticClass: "manage-table resumes responsive-table" },
-                [
-                  _vm._m(0),
-                  _vm._v(" "),
-                  _c("tr", [
-                    _c("td", [_vm._v("Doumbia")]),
-                    _vm._v(" "),
-                    _c("td", [_vm._v("Aboudramane")]),
-                    _vm._v(" "),
-                    _c("td", { staticClass: "centered" }, [
-                      _vm._v("Aboudramanedoumbia7@gmail.com")
-                    ]),
-                    _vm._v(" "),
-                    _c("td", [_vm._v("Grand-lahou")]),
-                    _vm._v(" "),
-                    _c("td", [_vm._v("+225 48 99 01 50")]),
-                    _vm._v(" "),
+        _vm.isLoading
+          ? _c("div", { staticClass: "loader" })
+          : _c("div", [
+              _c("div", { staticClass: "col-lg-12 col-md-12" }, [
+                _vm.deleteSuccessful
+                  ? _c("div", { staticClass: "notification notice" }, [
+                      _vm._v(
+                        "\n                        Modification effectuée avec succès.\n                    "
+                      )
+                    ])
+                  : _vm._e(),
+                _vm._v(" "),
+                _c("div", { staticClass: "dashboard-list-box margin-top-30" }, [
+                  _c("div", { staticClass: "dashboard-list-box-content" }, [
                     _c(
-                      "td",
-                      { staticClass: "action" },
+                      "table",
+                      { staticClass: "manage-table resumes responsive-table" },
                       [
-                        _c(
-                          "router-link",
-                          { attrs: { to: "/entrepreneur/View" } },
-                          [
-                            _c("i", { staticClass: "ln ln-icon-Checked-User" }),
-                            _vm._v(
-                              "Confirmer\n                                        "
-                            )
-                          ]
-                        ),
+                        _vm._m(0),
                         _vm._v(" "),
-                        _c(
-                          "router-link",
-                          { attrs: { to: "/entrepreneur/View" } },
-                          [
-                            _c("i", { staticClass: "ln ln-icon-Lock-User" }),
-                            _vm._v(
-                              "Rejetter\n                                        "
-                            )
-                          ]
-                        )
+                        _vm._l(_vm.accounts, function(account) {
+                          return _c(
+                            "tr",
+                            { key: account.id },
+                            [
+                              account.is_first_activation == 1
+                                ? [
+                                    _c("td", [
+                                      _vm._v(_vm._s(account.firstname))
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("td", [
+                                      _vm._v(_vm._s(account.lastname))
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("td", { staticClass: "centered" }, [
+                                      _vm._v(_vm._s(account.email))
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("td", [
+                                      _vm._v(_vm._s(account.created_at))
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("td", { staticClass: "action" }, [
+                                      _c(
+                                        "a",
+                                        {
+                                          class: {
+                                            "is-loading": _vm.isDeleting(
+                                              account.id
+                                            )
+                                          },
+                                          attrs: { href: "#" },
+                                          on: {
+                                            click: function($event) {
+                                              return _vm.deleteAccount(
+                                                account.id
+                                              )
+                                            }
+                                          }
+                                        },
+                                        [
+                                          _c("i", {
+                                            staticClass:
+                                              "ln ln-icon-Checked-User"
+                                          }),
+                                          _vm._v(
+                                            "Confirmer\n                                                "
+                                          )
+                                        ]
+                                      )
+                                    ])
+                                  ]
+                                : _vm._e()
+                            ],
+                            2
+                          )
+                        })
                       ],
-                      1
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("tr", [
-                    _c("td", [_vm._v("Doumbia")]),
-                    _vm._v(" "),
-                    _c("td", [_vm._v("Aboudramane")]),
-                    _vm._v(" "),
-                    _c("td", { staticClass: "centered" }, [
-                      _vm._v("Aboudramanedoumbia7@gmail.com")
-                    ]),
-                    _vm._v(" "),
-                    _c("td", [_vm._v("Grand-lahou")]),
-                    _vm._v(" "),
-                    _c("td", [_vm._v("+225 48 99 01 50")]),
-                    _vm._v(" "),
-                    _c(
-                      "td",
-                      { staticClass: "action" },
-                      [
-                        _c(
-                          "router-link",
-                          { attrs: { to: "/entrepreneur/View" } },
-                          [
-                            _c("i", { staticClass: "ln ln-icon-Checked-User" }),
-                            _vm._v(
-                              "Confirmer\n                                        "
-                            )
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "router-link",
-                          { attrs: { to: "/entrepreneur/View" } },
-                          [
-                            _c("i", { staticClass: "ln ln-icon-Lock-User" }),
-                            _vm._v(
-                              "Rejetter\n                                        "
-                            )
-                          ]
-                        )
-                      ],
-                      1
+                      2
                     )
                   ])
-                ]
-              )
+                ])
+              ])
             ])
-          ])
-        ])
       ])
     ],
     1
@@ -44232,11 +44334,9 @@ var staticRenderFns = [
     return _c("tr", [
       _c("th", { staticStyle: { width: "10%" } }, [_vm._v("Nom")]),
       _vm._v(" "),
-      _c("th", { staticStyle: { width: "30%" } }, [_vm._v(" Prénom")]),
+      _c("th", { staticStyle: { width: "30%" } }, [_vm._v("Prénom")]),
       _vm._v(" "),
       _c("th", { staticStyle: { width: "20%" } }, [_vm._v("Email")]),
-      _vm._v(" "),
-      _c("th", { staticStyle: { width: "15%" } }, [_vm._v("Ville")]),
       _vm._v(" "),
       _c("th", { staticStyle: { width: "15%" } }, [_vm._v("Date de demande")]),
       _vm._v(" "),
@@ -44772,7 +44872,63 @@ var render = function() {
       _vm._v(" "),
       _c("div", { staticClass: "row" }, [
         _c("div", { staticClass: "col-lg-12 col-md-12" }, [
-          _vm._m(0),
+          _c("div", { staticClass: "dashboard-list-box margin-top-0" }, [
+            _c("h4", { staticClass: "gray" }, [_vm._v("Entrepreneur")]),
+            _vm._v(" "),
+            _c("div", { staticClass: "dashboard-list-box-static" }, [
+              _c("h1", [_vm._v(_vm._s(_vm.entrepreneur))]),
+              _vm._v(" "),
+              _c("div", { staticClass: "my-profile" }, [
+                _c("label", [_vm._v("Nom")]),
+                _vm._v(" "),
+                _c("dd", [
+                  _c("p", [_vm._v(_vm._s(_vm.entrepreneur.firstname) + " ")])
+                ]),
+                _vm._v(" "),
+                _c("label", [_vm._v("Prénom")]),
+                _vm._v(" "),
+                _c("dd", [
+                  _c("p", [_vm._v(_vm._s(_vm.entrepreneur.lastname) + " ")])
+                ]),
+                _vm._v(" "),
+                _c("label", [_vm._v("Email")]),
+                _vm._v(" "),
+                _c("dd", [
+                  _c("p", [_vm._v(_vm._s(_vm.entrepreneur.email) + " ")])
+                ]),
+                _vm._v(" "),
+                _c("label", [_vm._v("Date de création")]),
+                _vm._v(" "),
+                _c("dd", [
+                  _c("p", [_vm._v(_vm._s(_vm.entrepreneur.created_at) + " ")])
+                ]),
+                _vm._v(" "),
+                _c("label", [_vm._v("Téléphone (Mobile)")]),
+                _vm._v(" "),
+                _vm._m(0),
+                _vm._v(" "),
+                _c("label", [_vm._v("Téléphone (Fixe)")]),
+                _vm._v(" "),
+                _vm._m(1),
+                _vm._v(" "),
+                _c("label", [_vm._v("Biographie")]),
+                _vm._v(" "),
+                _vm._m(2),
+                _vm._v(" "),
+                _vm._m(3),
+                _vm._v(" "),
+                _vm._m(4),
+                _vm._v(" "),
+                _vm._m(5),
+                _vm._v(" "),
+                _vm._m(6),
+                _vm._v(" "),
+                _vm._m(7),
+                _vm._v(" "),
+                _vm._m(8)
+              ])
+            ])
+          ]),
           _vm._v(" "),
           _c("div", { staticClass: "dashboard-list-box margin-top-0" }, [
             _c("h4", { staticClass: "gray" }, [_vm._v("Mes projets")]),
@@ -44782,14 +44938,14 @@ var render = function() {
                 "table",
                 { staticClass: "manage-table resumes responsive-table" },
                 [
-                  _vm._m(1),
+                  _vm._m(9),
                   _vm._v(" "),
                   _c("tr", [
                     _c("td", [_vm._v("Front End Web Developer")]),
                     _vm._v(" "),
                     _c("td", [
                       _vm._v(
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit.\n\t\t\t\t\t\t\t\t\t\t Suscipit architecto, ut, veniam mollitia voluptates ad vitae sunt quae ipsa\n\t\t\t\t\t\t\t\t\t\t  sed tempora dolores iusto eveniet praesentium corporis quibusdam veritatis \n\t\t\t\t\t\t\t\t\t"
+                        "Lorem ipsum dolor sit amet consectetur adipisicing elit.\n\t\t\t\t\t\t\t\t\t\t Suscipit architecto, ut, veniam mollitia voluptates ad vitae sunt quae ipsa\n\t\t\t\t\t\t\t\t\t\t  sed tempora dolores iusto eveniet praesentium corporis quibusdam veritatis\n\t\t\t\t\t\t\t\t\t"
                       )
                     ]),
                     _vm._v(" "),
@@ -44812,13 +44968,13 @@ var render = function() {
                           ]
                         ),
                         _vm._v(" "),
-                        _vm._m(2)
+                        _vm._m(10)
                       ],
                       1
                     )
                   ]),
                   _vm._v(" "),
-                  _vm._m(3)
+                  _vm._m(11)
                 ]
               )
             ])
@@ -44834,64 +44990,70 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "dashboard-list-box margin-top-0" }, [
-      _c("h4", { staticClass: "gray" }, [_vm._v("Entrepreneur")]),
-      _vm._v(" "),
-      _c("div", { staticClass: "dashboard-list-box-static" }, [
-        _c("div", { staticClass: "my-profile" }, [
-          _c("label", [_vm._v("Nom")]),
-          _vm._v(" "),
-          _c("dd", [_c("p", [_vm._v("Here goes description consectetur ")])]),
-          _vm._v(" "),
-          _c("label", [_vm._v("Prénom")]),
-          _vm._v(" "),
-          _c("dd", [_c("p", [_vm._v("Here goes description consectetur ")])]),
-          _vm._v(" "),
-          _c("label", [_vm._v("Email")]),
-          _vm._v(" "),
-          _c("dd", [_c("p", [_vm._v("Here goes description consectetur ")])]),
-          _vm._v(" "),
-          _c("label", [_vm._v("Téléphone (Mobile)")]),
-          _vm._v(" "),
-          _c("dd", [_c("p", [_vm._v("Here goes description consectetur ")])]),
-          _vm._v(" "),
-          _c("label", [_vm._v("Téléphone (Fixe)")]),
-          _vm._v(" "),
-          _c("dd", [_c("p", [_vm._v("Here goes description consectetur ")])]),
-          _vm._v(" "),
-          _c("label", [_vm._v("Biographie")]),
-          _vm._v(" "),
-          _c("dd", [
-            _c("p", [
-              _vm._v(
-                "Here goes description consectetur adipisicing elit, sed do eiusmod\n                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n                                quis nostrud exercitation ullamco "
-              )
-            ])
-          ]),
-          _vm._v(" "),
-          _c("label", [
-            _c("i", { staticClass: "fa fa-twitter" }),
-            _vm._v(" Twitter")
-          ]),
-          _vm._v(" "),
-          _c("dd", [_c("p", [_vm._v("https://www.twitter.com/")])]),
-          _vm._v(" "),
-          _c("label", [
-            _c("i", { staticClass: "fa fa-facebook-square" }),
-            _vm._v(" Facebook")
-          ]),
-          _vm._v(" "),
-          _c("dd", [_c("p", [_vm._v("https://www.twitter.com/")])]),
-          _vm._v(" "),
-          _c("label", [
-            _c("i", { staticClass: "fa fa-linkedin" }),
-            _vm._v("Linkedin")
-          ]),
-          _vm._v(" "),
-          _c("dd", [_c("p", [_vm._v("https://www.twitter.com/")])])
-        ])
+    return _c("dd", [_c("p", [_vm._v("Here goes description consectetur ")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("dd", [_c("p", [_vm._v("Here goes description consectetur ")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("dd", [
+      _c("p", [
+        _vm._v(
+          "Here goes description consectetur adipisicing elit, sed do eiusmod\n                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n                                quis nostrud exercitation ullamco "
+        )
       ])
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", [
+      _c("i", { staticClass: "fa fa-twitter" }),
+      _vm._v(" Twitter")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("dd", [_c("p", [_vm._v("https://www.twitter.com/")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", [
+      _c("i", { staticClass: "fa fa-facebook-square" }),
+      _vm._v(" Facebook")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("dd", [_c("p", [_vm._v("https://www.twitter.com/")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", [
+      _c("i", { staticClass: "fa fa-linkedin" }),
+      _vm._v("Linkedin")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("dd", [_c("p", [_vm._v("https://www.twitter.com/")])])
   },
   function() {
     var _vm = this
@@ -44925,7 +45087,7 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("td", [
         _vm._v(
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit.\n\t\t\t\t\t\t\t\t\t\tSuscipit architecto, ut, veniam mollitia voluptates ad vitae sunt quae ipsa\n\t\t\t\t\t\t\t\t\t\t sed tempora dolores iusto eveniet praesentium corporis quibusdam veritatis \n\t\t\t\t\t\t\t\t   "
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit.\n\t\t\t\t\t\t\t\t\t\tSuscipit architecto, ut, veniam mollitia voluptates ad vitae sunt quae ipsa\n\t\t\t\t\t\t\t\t\t\t sed tempora dolores iusto eveniet praesentium corporis quibusdam veritatis\n\t\t\t\t\t\t\t\t   "
         )
       ]),
       _vm._v(" "),
@@ -44973,91 +45135,115 @@ var render = function() {
       _c("TitlebarComponent"),
       _vm._v(" "),
       _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-lg-12 col-md-12" }, [
-          _c("div", { staticClass: "notification notice" }, [
-            _vm._v("\n\t\t\t\t\tliste des entrepreneurs\n\t\t\t\t")
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "dashboard-list-box margin-top-30" }, [
-            _c("div", { staticClass: "dashboard-list-box-content" }, [
-              _c(
-                "table",
-                { staticClass: "manage-table resumes responsive-table" },
-                [
-                  _vm._m(0),
-                  _vm._v(" "),
-                  _c("tr", [
-                    _c("td", [_vm._v("Doumbia")]),
-                    _vm._v(" "),
-                    _c("td", [_vm._v("Aboudramane")]),
-                    _vm._v(" "),
-                    _c("td", { staticClass: "centered" }, [
-                      _vm._v("Aboudramanedoumbia7@gmail.com")
-                    ]),
-                    _vm._v(" "),
-                    _c("td", [_vm._v("Grand-lahou")]),
-                    _vm._v(" "),
-                    _c("td", [_vm._v("+225 48 99 01 50")]),
-                    _vm._v(" "),
+        _vm.isLoading
+          ? _c("div", { staticClass: "loader" })
+          : _c("div", [
+              _c("div", { staticClass: "col-lg-12 col-md-12" }, [
+                _vm.deleteSuccessful
+                  ? _c("div", { staticClass: "notification notice" }, [
+                      _vm._v(
+                        "\n                        suppression effectué avec succès.\n                    "
+                      )
+                    ])
+                  : _vm._e(),
+                _vm._v(" "),
+                _c("div", { staticClass: "dashboard-list-box margin-top-30" }, [
+                  _c("div", { staticClass: "dashboard-list-box-content" }, [
                     _c(
-                      "td",
-                      { staticClass: "action" },
+                      "table",
+                      { staticClass: "manage-table resumes responsive-table" },
                       [
-                        _c(
-                          "router-link",
-                          { attrs: { to: "/entrepreneur/View" } },
-                          [
-                            _c("i", { staticClass: "fa  fa-eye" }),
-                            _vm._v(
-                              "Voir\n                                        "
-                            )
-                          ]
-                        ),
+                        _vm._m(0),
                         _vm._v(" "),
-                        _vm._m(1)
+                        _vm._l(_vm.entrepreneurs, function(entrepreneur) {
+                          return _c(
+                            "tr",
+                            { key: entrepreneur.id },
+                            [
+                              entrepreneur.is_archived == 0 &&
+                              entrepreneur.is_first_activation == 0
+                                ? [
+                                    _c("td", [
+                                      _vm._v(_vm._s(entrepreneur.firstname))
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("td", [
+                                      _vm._v(_vm._s(entrepreneur.lastname))
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("td", { staticClass: "centered" }, [
+                                      _vm._v(_vm._s(entrepreneur.email))
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("td", [
+                                      _vm._v(_vm._s(entrepreneur.created_at))
+                                    ]),
+                                    _vm._v(" "),
+                                    _c(
+                                      "td",
+                                      { staticClass: "action" },
+                                      [
+                                        _c(
+                                          "router-link",
+                                          {
+                                            attrs: {
+                                              to: {
+                                                name: "entrepreneurView",
+                                                params: { id: entrepreneur.id }
+                                              }
+                                            }
+                                          },
+                                          [
+                                            _c("i", {
+                                              staticClass: "fa  fa-eye"
+                                            }),
+                                            _vm._v(
+                                              "Voir\n                                                "
+                                            )
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "a",
+                                          {
+                                            staticClass: "delete",
+                                            class: {
+                                              "is-loading": _vm.isDeleting(
+                                                entrepreneur.id
+                                              )
+                                            },
+                                            attrs: { href: "#" },
+                                            on: {
+                                              click: function($event) {
+                                                return _vm.deleteEntrepreneur(
+                                                  entrepreneur.id
+                                                )
+                                              }
+                                            }
+                                          },
+                                          [
+                                            _c("i", {
+                                              staticClass: "fa fa-remove"
+                                            }),
+                                            _vm._v("Supprimer")
+                                          ]
+                                        )
+                                      ],
+                                      1
+                                    )
+                                  ]
+                                : _vm._e()
+                            ],
+                            2
+                          )
+                        })
                       ],
-                      1
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("tr", [
-                    _c("td", [_vm._v("Doumbia")]),
-                    _vm._v(" "),
-                    _c("td", [_vm._v("Aboudramane")]),
-                    _vm._v(" "),
-                    _c("td", { staticClass: "centered" }, [
-                      _vm._v("Aboudramanedoumbia7@gmail.com")
-                    ]),
-                    _vm._v(" "),
-                    _c("td", [_vm._v("Grand-lahou")]),
-                    _vm._v(" "),
-                    _c("td", [_vm._v("+225 48 99 01 50")]),
-                    _vm._v(" "),
-                    _c(
-                      "td",
-                      { staticClass: "action" },
-                      [
-                        _c(
-                          "router-link",
-                          { attrs: { to: "/entrepreneur/View" } },
-                          [
-                            _c("i", { staticClass: "fa  fa-eye" }),
-                            _vm._v(
-                              "Voir\n                                        "
-                            )
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _vm._m(2)
-                      ],
-                      1
+                      2
                     )
                   ])
-                ]
-              )
+                ])
+              ])
             ])
-          ])
-        ])
       ])
     ],
     1
@@ -45071,33 +45257,13 @@ var staticRenderFns = [
     return _c("tr", [
       _c("th", { staticStyle: { width: "10%" } }, [_vm._v("Nom")]),
       _vm._v(" "),
-      _c("th", { staticStyle: { width: "30%" } }, [_vm._v(" Prénom")]),
+      _c("th", { staticStyle: { width: "20%" } }, [_vm._v("Prénom")]),
       _vm._v(" "),
       _c("th", { staticStyle: { width: "20%" } }, [_vm._v("Email")]),
       _vm._v(" "),
-      _c("th", { staticStyle: { width: "15%" } }, [_vm._v("Ville")]),
-      _vm._v(" "),
-      _c("th", { staticStyle: { width: "15%" } }, [_vm._v("Numéro")]),
+      _c("th", { staticStyle: { width: "15%" } }, [_vm._v("Date de création")]),
       _vm._v(" "),
       _c("th", { staticStyle: { width: "10%" } }, [_vm._v("Actions")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("a", { staticClass: "delete", attrs: { href: "#" } }, [
-      _c("i", { staticClass: "fa fa-remove" }),
-      _vm._v("Supprimer")
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("a", { staticClass: "delete", attrs: { href: "#" } }, [
-      _c("i", { staticClass: "fa fa-remove" }),
-      _vm._v("Supprimer")
     ])
   }
 ]
@@ -45515,7 +45681,75 @@ var render = function() {
   return _c(
     "div",
     { staticClass: "dashboard-content" },
-    [_c("TitlebarComponent"), _vm._v(" "), _vm._m(0)],
+    [
+      _c("TitlebarComponent"),
+      _vm._v(" "),
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-lg-12 col-md-12" }, [
+          _c("div", { staticClass: "dashboard-list-box margin-top-0" }, [
+            _c("h4", { staticClass: "gray" }, [_vm._v("Investisseur")]),
+            _vm._v(" "),
+            _c("div", { staticClass: "dashboard-list-box-static" }, [
+              _c("div", { staticClass: "my-profile" }, [
+                _c("label", [_vm._v("Nom")]),
+                _vm._v(" "),
+                _c("dd", [
+                  _c("p", [_vm._v(_vm._s(_vm.investor.firstname) + " ")])
+                ]),
+                _vm._v(" "),
+                _c("label", [_vm._v("Prénom")]),
+                _vm._v(" "),
+                _c("dd", [
+                  _c("p", [_vm._v(_vm._s(_vm.investor.lastname) + " ")])
+                ]),
+                _vm._v(" "),
+                _c("label", [_vm._v("Email")]),
+                _vm._v(" "),
+                _c("dd", [_c("p", [_vm._v(_vm._s(_vm.investor.email) + " ")])]),
+                _vm._v(" "),
+                _c("label", [_vm._v("Date de création")]),
+                _vm._v(" "),
+                _c("dd", [
+                  _c("p", [_vm._v(_vm._s(_vm.investor.created_at) + " ")])
+                ]),
+                _vm._v(" "),
+                _c("label", [_vm._v("Téléphone (Mobile)")]),
+                _vm._v(" "),
+                _vm._m(0),
+                _vm._v(" "),
+                _c("label", [_vm._v("Téléphone (Fixe)")]),
+                _vm._v(" "),
+                _vm._m(1),
+                _vm._v(" "),
+                _c("label", [_vm._v("Biographie")]),
+                _vm._v(" "),
+                _vm._m(2),
+                _vm._v(" "),
+                _c("label", [_vm._v("Investissement Minimal")]),
+                _vm._v(" "),
+                _vm._m(3),
+                _vm._v(" "),
+                _c("label", [_vm._v("Investissement Maximal")]),
+                _vm._v(" "),
+                _vm._m(4),
+                _vm._v(" "),
+                _vm._m(5),
+                _vm._v(" "),
+                _vm._m(6),
+                _vm._v(" "),
+                _vm._m(7),
+                _vm._v(" "),
+                _vm._m(8),
+                _vm._v(" "),
+                _vm._m(9),
+                _vm._v(" "),
+                _vm._m(10)
+              ])
+            ])
+          ])
+        ])
+      ])
+    ],
     1
   )
 }
@@ -45524,90 +45758,82 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-lg-12 col-md-12" }, [
-        _c("div", { staticClass: "dashboard-list-box margin-top-0" }, [
-          _c("h4", { staticClass: "gray" }, [_vm._v("Investisseur")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "dashboard-list-box-static" }, [
-            _c("div", { staticClass: "my-profile" }, [
-              _c("label", [_vm._v("Nom")]),
-              _vm._v(" "),
-              _c("dd", [
-                _c("p", [_vm._v("Here goes description consectetur ")])
-              ]),
-              _vm._v(" "),
-              _c("label", [_vm._v("Prénom")]),
-              _vm._v(" "),
-              _c("dd", [
-                _c("p", [_vm._v("Here goes description consectetur ")])
-              ]),
-              _vm._v(" "),
-              _c("label", [_vm._v("Email")]),
-              _vm._v(" "),
-              _c("dd", [
-                _c("p", [_vm._v("Here goes description consectetur ")])
-              ]),
-              _vm._v(" "),
-              _c("label", [_vm._v("Téléphone (Mobile)")]),
-              _vm._v(" "),
-              _c("dd", [
-                _c("p", [_vm._v("Here goes description consectetur ")])
-              ]),
-              _vm._v(" "),
-              _c("label", [_vm._v("Téléphone (Fixe)")]),
-              _vm._v(" "),
-              _c("dd", [
-                _c("p", [_vm._v("Here goes description consectetur ")])
-              ]),
-              _vm._v(" "),
-              _c("label", [_vm._v("Biographie")]),
-              _vm._v(" "),
-              _c("dd", [
-                _c("p", [
-                  _vm._v(
-                    "Here goes description consectetur adipisicing elit, sed do eiusmod\n                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n                                quis nostrud exercitation ullamco "
-                  )
-                ])
-              ]),
-              _vm._v(" "),
-              _c("label", [_vm._v("Investissement Minimal")]),
-              _vm._v(" "),
-              _c("dd", [
-                _c("p", [_vm._v("Here goes description consectetur ")])
-              ]),
-              _vm._v(" "),
-              _c("label", [_vm._v("Investissement Maximal")]),
-              _vm._v(" "),
-              _c("dd", [
-                _c("p", [_vm._v("Here goes description consectetur ")])
-              ]),
-              _vm._v(" "),
-              _c("label", [
-                _c("i", { staticClass: "fa fa-twitter" }),
-                _vm._v(" Twitter")
-              ]),
-              _vm._v(" "),
-              _c("dd", [_c("p", [_vm._v("https://www.twitter.com/")])]),
-              _vm._v(" "),
-              _c("label", [
-                _c("i", { staticClass: "fa fa-facebook-square" }),
-                _vm._v(" Facebook")
-              ]),
-              _vm._v(" "),
-              _c("dd", [_c("p", [_vm._v("https://www.twitter.com/")])]),
-              _vm._v(" "),
-              _c("label", [
-                _c("i", { staticClass: "fa fa-linkedin" }),
-                _vm._v("Linkedin")
-              ]),
-              _vm._v(" "),
-              _c("dd", [_c("p", [_vm._v("https://www.twitter.com/")])])
-            ])
-          ])
-        ])
+    return _c("dd", [_c("p", [_vm._v("Here goes description consectetur ")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("dd", [_c("p", [_vm._v("Here goes description consectetur ")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("dd", [
+      _c("p", [
+        _vm._v(
+          "Here goes description consectetur adipisicing elit, sed do eiusmod\n                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n                                quis nostrud exercitation ullamco "
+        )
       ])
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("dd", [_c("p", [_vm._v("Here goes description consectetur ")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("dd", [_c("p", [_vm._v("Here goes description consectetur ")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", [
+      _c("i", { staticClass: "fa fa-twitter" }),
+      _vm._v(" Twitter")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("dd", [_c("p", [_vm._v("https://www.twitter.com/")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", [
+      _c("i", { staticClass: "fa fa-facebook-square" }),
+      _vm._v(" Facebook")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("dd", [_c("p", [_vm._v("https://www.twitter.com/")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", [
+      _c("i", { staticClass: "fa fa-linkedin" }),
+      _vm._v("Linkedin")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("dd", [_c("p", [_vm._v("https://www.twitter.com/")])])
   }
 ]
 render._withStripped = true
@@ -45659,62 +45885,86 @@ var render = function() {
                         _vm._m(0),
                         _vm._v(" "),
                         _vm._l(_vm.investors, function(investor) {
-                          return _c("tr", { key: investor.id }, [
-                            _c("td", [_vm._v(_vm._s(investor.firstname))]),
-                            _vm._v(" "),
-                            _c("td", [_vm._v(_vm._s(investor.lastname))]),
-                            _vm._v(" "),
-                            _c("td", { staticClass: "centered" }, [
-                              _vm._v(_vm._s(investor.email))
-                            ]),
-                            _vm._v(" "),
-                            _c("td", [_vm._v(_vm._s(investor.created_at))]),
-                            _vm._v(" "),
-                            _c(
-                              "td",
-                              { staticClass: "action" },
-                              [
-                                _c(
-                                  "router-link",
-                                  {
-                                    attrs: {
-                                      to: {
-                                        name: "/investor/View",
-                                        params: { id: investor.id }
-                                      }
-                                    }
-                                  },
-                                  [
-                                    _c("i", { staticClass: "fa  fa-eye" }),
-                                    _vm._v(
-                                      "Voir\n                                            "
+                          return _c(
+                            "tr",
+                            { key: investor.id },
+                            [
+                              investor.is_archived == 0 &&
+                              investor.is_first_activation == 0
+                                ? [
+                                    _c("td", [
+                                      _vm._v(_vm._s(investor.firstname))
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("td", [
+                                      _vm._v(_vm._s(investor.lastname))
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("td", { staticClass: "centered" }, [
+                                      _vm._v(_vm._s(investor.email))
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("td", [
+                                      _vm._v(_vm._s(investor.created_at))
+                                    ]),
+                                    _vm._v(" "),
+                                    _c(
+                                      "td",
+                                      { staticClass: "action" },
+                                      [
+                                        _c(
+                                          "router-link",
+                                          {
+                                            attrs: {
+                                              to: {
+                                                name: "investorView",
+                                                params: { id: investor.id }
+                                              }
+                                            }
+                                          },
+                                          [
+                                            _c("i", {
+                                              staticClass: "fa  fa-eye"
+                                            }),
+                                            _vm._v(
+                                              "Voir\n                                                "
+                                            )
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "a",
+                                          {
+                                            staticClass: "delete",
+                                            class: {
+                                              "is-loading": _vm.isDeleting(
+                                                investor.id
+                                              )
+                                            },
+                                            attrs: { href: "#" },
+                                            on: {
+                                              click: function($event) {
+                                                return _vm.deleteInvestor(
+                                                  investor.id
+                                                )
+                                              }
+                                            }
+                                          },
+                                          [
+                                            _c("i", {
+                                              staticClass: "fa fa-remove"
+                                            }),
+                                            _vm._v("Supprimer")
+                                          ]
+                                        )
+                                      ],
+                                      1
                                     )
                                   ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "a",
-                                  {
-                                    staticClass: "delete",
-                                    class: {
-                                      "is-loading": _vm.isDeleting(investor.id)
-                                    },
-                                    attrs: { href: "#" },
-                                    on: {
-                                      click: function($event) {
-                                        return _vm.deleteInvestor(investor.id)
-                                      }
-                                    }
-                                  },
-                                  [
-                                    _c("i", { staticClass: "fa fa-remove" }),
-                                    _vm._v("Supprimer")
-                                  ]
-                                )
-                              ],
-                              1
-                            )
-                          ])
+                                : _vm._e()
+                            ],
+                            2
+                          )
                         })
                       ],
                       2
@@ -68013,6 +68263,7 @@ var routes = [{
   component: _pages_investor_ListInvestor__WEBPACK_IMPORTED_MODULE_9__["default"]
 }, {
   path: '/investor/View',
+  name: 'investorView',
   component: _pages_investor_DetailInvestor__WEBPACK_IMPORTED_MODULE_10__["default"]
 }, {
   path: '/entrepreneur/list',
@@ -68020,6 +68271,7 @@ var routes = [{
   component: _pages_entrepreneur_ListEntrepreneur__WEBPACK_IMPORTED_MODULE_11__["default"]
 }, {
   path: '/entrepreneur/View',
+  name: 'entrepreneurView',
   component: _pages_entrepreneur_DetailEntrepreneur__WEBPACK_IMPORTED_MODULE_12__["default"]
 }, {
   path: '/account/ask',
