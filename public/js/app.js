@@ -10786,7 +10786,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.badge[data-v-c97109a8] {\n  position: absolute;\n  top: 6px;\n  right: 10px;\n  height:20px;\n  width: 20px;\n  border-radius: 50%;\n  background: red;\n  color: white;\n}\n.notif-wrapper[data-v-c97109a8] {\n    background: white !important;\n}\n.logo[data-v-c97109a8]{\n    height: 90px;\n    width: 200px;\n    padding-bottom: 10px;\n}\n\n", ""]);
+exports.push([module.i, "\n.badge[data-v-c97109a8] {\n  position: absolute;\n  top: 6px;\n  right: 10px;\n  height:20px;\n  width: 20px;\n  border-radius: 50%;\n  background: red;\n  color: white;\n}\n.notif-wrapper[data-v-c97109a8] {\n    background: white !important;\n}\n.logo[data-v-c97109a8]{\n    height:auto;\n    width: 100px;\n}\n\n", ""]);
 
 // exports
 
@@ -44820,9 +44820,9 @@ var staticRenderFns = [
       _c("div", { staticClass: "col-lg-3 col-md-6" }, [
         _c("div", { staticClass: "dashboard-stat color-1" }, [
           _c("div", { staticClass: "dashboard-stat-content" }, [
-            _c("h4", { staticClass: "counter" }, [_vm._v("3")]),
+            _c("h4", { staticClass: "counter" }, [_vm._v("32")]),
             _vm._v(" "),
-            _c("span", [_vm._v("Active Job Listings")])
+            _c("span", [_vm._v("Projets publués")])
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "dashboard-stat-icon" }, [
@@ -44836,7 +44836,7 @@ var staticRenderFns = [
           _c("div", { staticClass: "dashboard-stat-content" }, [
             _c("h4", { staticClass: "counter" }, [_vm._v("527")]),
             _vm._v(" "),
-            _c("span", [_vm._v("Total Job Views")])
+            _c("span", [_vm._v("Projets investis")])
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "dashboard-stat-icon" }, [
@@ -44848,9 +44848,9 @@ var staticRenderFns = [
       _c("div", { staticClass: "col-lg-3 col-md-6" }, [
         _c("div", { staticClass: "dashboard-stat color-3" }, [
           _c("div", { staticClass: "dashboard-stat-content" }, [
-            _c("h4", { staticClass: "counter" }, [_vm._v("17")]),
+            _c("h4", { staticClass: "counter" }, [_vm._v("534")]),
             _vm._v(" "),
-            _c("span", [_vm._v("Total Applications")])
+            _c("span", [_vm._v("Entrepreneurs")])
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "dashboard-stat-icon" }, [
@@ -44864,7 +44864,7 @@ var staticRenderFns = [
           _c("div", { staticClass: "dashboard-stat-content" }, [
             _c("h4", { staticClass: "counter" }, [_vm._v("36")]),
             _vm._v(" "),
-            _c("span", [_vm._v("Times Bookmarked")])
+            _c("span", [_vm._v("Investisseurs")])
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "dashboard-stat-icon" }, [

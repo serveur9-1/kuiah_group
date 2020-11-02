@@ -66,9 +66,8 @@
     background: white !important;
 }
 .logo{
-    height: 90px;
-    width: 200px;
-    padding-bottom: 10px;
+    height:auto;
+    width: 100px;
 }
 
 </style>

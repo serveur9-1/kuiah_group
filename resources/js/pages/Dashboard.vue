@@ -10,7 +10,7 @@
             <!-- Item -->
             <div class="col-lg-3 col-md-6">
                 <div class="dashboard-stat color-1">
-                    <div class="dashboard-stat-content"><h4 class="counter">3</h4> <span>Active Job Listings</span></div>
+                    <div class="dashboard-stat-content"><h4 class="counter">32</h4> <span>Projets publués</span></div>
                     <div class="dashboard-stat-icon"><i class="ln ln-icon-File-Link"></i></div>
                 </div>
             </div>
@@ -18,7 +18,7 @@
             <!-- Item -->
             <div class="col-lg-3 col-md-6">
                 <div class="dashboard-stat color-2">
-                    <div class="dashboard-stat-content"><h4 class="counter">527</h4> <span>Total Job Views</span></div>
+                    <div class="dashboard-stat-content"><h4 class="counter">527</h4> <span>Projets investis</span></div>
                     <div class="dashboard-stat-icon"><i class="ln ln-icon-Bar-Chart"></i></div>
                 </div>
             </div>
@@ -27,7 +27,7 @@
             <!-- Item -->
             <div class="col-lg-3 col-md-6">
                 <div class="dashboard-stat color-3">
-                    <div class="dashboard-stat-content"><h4 class="counter">17</h4> <span>Total Applications</span></div>
+                    <div class="dashboard-stat-content"><h4 class="counter">534</h4> <span>Entrepreneurs</span></div>
                     <div class="dashboard-stat-icon"><i class="ln ln-icon-Business-ManWoman"></i></div>
                 </div>
             </div>
@@ -36,7 +36,7 @@
             <!-- Item -->
             <div class="col-lg-3 col-md-6">
                 <div class="dashboard-stat color-4">
-                    <div class="dashboard-stat-content"><h4 class="counter">36</h4> <span>Times Bookmarked</span></div>
+                    <div class="dashboard-stat-content"><h4 class="counter">36</h4> <span>Investisseurs</span></div>
                     <div class="dashboard-stat-icon"><i class="ln ln-icon-Add-UserStar "></i></div>
                 </div>
             </div>
