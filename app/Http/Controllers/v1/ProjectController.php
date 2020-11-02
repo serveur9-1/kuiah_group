@@ -99,7 +99,7 @@ class ProjectController extends Controller
             $prj = $prj->whereBetween("total_amount", json_decode($request->get('range'), true));
         }
 
-        $prj = $prj->paginate($request->get('per') ?? 1);
+        $prj = $prj->paginate($request->get('per') ?? 10);
 
         return ProjectResource::collection($prj);
     }

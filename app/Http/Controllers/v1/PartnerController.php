@@ -52,6 +52,7 @@ class PartnerController extends Controller
         }
     }
 
+
     public function update($id, Request $request)
     {
         $old = $this->instance->newQuery()->findOrFail($id);
@@ -61,10 +62,12 @@ class PartnerController extends Controller
         return response()->json($old, 200);
     }
 
+
     public function destroy($id)
     {
         $selected = $this->instance->newQuery()->findOrFail($id);
         $selected->delete();
         return response()->json(null,200);
     }
+
 }

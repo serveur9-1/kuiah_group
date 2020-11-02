@@ -42,9 +42,59 @@ class UserController extends Controller
         $this->instance = $user;
     }
 
-    public function index()
+    /*
+     * Params
+     * @bool is_investor
+     * @bool paginate
+     * @int per
+     *  */
+    public function index(Request $request)
     {
-        return response()->json(UserResource::collection($this->instance->newQuery()->get()),200);
+        $this->r = $request;
+
+        $prj = User::orderBy('created_at','desc');
+
+        //When not a guest
+        if($request->user())
+        {
+            //when not admin
+            if($request->user()->is_investor)
+            {
+                if($request->user()->toInvestor->is_investor)
+                {
+
+                    $prj = $prj->whereHas('toInvestor', function ($query) {
+                        $query->where("is_investor", false);
+                    });
+
+                } else {
+
+                    $prj = $prj->whereHas('toInvestor', function ($query) {
+                        $query->where("is_investor", true);
+                    });
+
+                }
+
+            } else {
+                $prj = $prj->whereHas('toInvestor', function ($query) {
+                    $query->where("is_investor", filter_var($this->r->get("investor"), FILTER_VALIDATE_BOOLEAN));
+                });
+
+            }
+        } else {
+            $prj = $prj->where("is_investor", true);
+        }
+
+        if(filter_var($request->get("paginate"), FILTER_VALIDATE_BOOLEAN))
+        {
+            $prj = $prj->paginate($request->has("per") ?? 10);
+
+            return UserResource::collection($prj);
+        }
+
+        $prj = $prj->get();
+
+        return response()->json(UserResource::collection($prj), 200);
     }
 
     public function show($id)
