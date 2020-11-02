@@ -12,7 +12,6 @@
 					<div class="dashboard-list-box-static">
 						<!-- Avatar -->
 						<!-- Details -->
-                        <h1>{{ entrepreneur }}</h1>
 						<div class="my-profile">
 							<label>Nom</label>
 							<dd><p>{{ entrepreneur.firstname }} </p></dd>

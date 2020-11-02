@@ -15,7 +15,7 @@
 				<div class="dashboard-list-box margin-top-0">
 					<h4>Ajouter un partenaire</h4>
 					<div class="dashboard-list-box-content">
-                        <form @submit.prevent="formSubmit">
+                        <form>
 
                             <div class="submit-page">
                                 <!-- Email -->
@@ -26,18 +26,19 @@
 
                                 <div class="form" style="display:inline-block">
                                     <h5>Logo</h5>
-                                    <div >
+                                    <div  v-if="!isUpload">
                                         <label class="upload-btn">
-                                            <input name="img" type="file" @change="onFileChange" />
+                                            <input type="file" @change='uploadPhoto' name="img" />
                                             <i class="fa fa-upload"></i> Parcourir
                                         </label>
                                         <span class="fake-input">Aucun fichier</span>
                                     </div>
-                                    <div>
-                                        <img :src="get_img()"/>
+                                    <div v-else>
+                                        <button @click="removePhoto()" style="background-color:red; float:right">X</button>
+                                        <img :src="getPhoto()"/>
                                     </div>
                                 </div>
-                                <button type="submit" class="button margin-top-30">Enregistrer</button>
+                                <button type="submit" @click.prevent="SubmitPhoto" class="button margin-top-30">Enregistrer</button>
                             </div>
                         </form>
 
@@ -61,11 +62,11 @@
         data: function () {
             return {
                 message: "Mounted",
+                isUpload : false,
                 form: new Form({
-                name: '',
-                img: '',
-                 }),
-                errors: '',
+                    name : '',
+                    img: ''
+                }),
                 savingSuccessful:false,
                 isLoading: false
             }
@@ -77,38 +78,43 @@
             onMounted: function () {
                 console.log(this.message)
             },
-            formSubmit () {
-                this.form.post(API_BASE_URL + '/partners')
-                    .then(( response ) => {
-
-                        var attr = document.getElementById("text");
-                        attr.innerHTML = response.data.message;
-
-                        this.form.reset();
-
-                     })
-            },
-            onFileChange(e){
+            uploadPhoto(e){
                 let file = e.target.files[0];
                 let reader = new FileReader();
 
                 if(file['size'] < 2111775)
                 {
                     reader.onloadend = (file) => {
-                    //console.log('RESULT', reader.result)
+                     //console.log('RESULT', reader.result)
                      this.form.img = reader.result;
                     }
                      reader.readAsDataURL(file);
+                     this.isUpload = true;
                 }else{
                     alert('File size can not be bigger than 2 MB')
                 }
             },
-             //For getting Instant Uploaded Photo
-            get_img(){
-               let photo = (this.form.img.length > 100) ? this.form.img : this.form.img;
-               return photo;
+            //For getting Instant Uploaded Photo
+            getPhoto(){
+               let img = (this.form.img.length > 100) ? this.form.img : "img/profile/"+ this.form.img;
+                return img;
             },
+            //Insert Photo
+            SubmitPhoto(){
+            console.log(this.form)
+            this.form.post(API_BASE_URL + '/partners/')
+               .then(()=>{
 
+                   console.log("success.....")
+               })
+               .catch(()=>{
+                  console.log("Error.....")
+               })
+
+            },
+            removePhoto(){
+               this.img = '';
+            },
         }
     }
 </script>

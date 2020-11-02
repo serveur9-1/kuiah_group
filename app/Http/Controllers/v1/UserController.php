@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 use App\Mail\waitAccountValidate;
+use App\Mail\waitAdsValidate;
 use App\Mail\enableOrDisableAccount;
 
 class UserController extends Controller
@@ -86,7 +87,7 @@ class UserController extends Controller
 
         // Send mail
 
-        if(!$selected->is_actived)
+        if($selected->is_first_activation)
         {
             $selected->update([
                 'is_first_activation' => false

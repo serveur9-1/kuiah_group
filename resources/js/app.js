@@ -8,6 +8,11 @@ Vue.use(VueNativeNotification, {
 })
 import  router from './router'
 
+//Import v-from
+import { Form, HasError, AlertError } from 'vform'
+window.Form = Form;
+Vue.component(HasError.name, HasError)
+Vue.component(AlertError.name, AlertError)
 
 Vue.component('wrapper-component', require('./components/WrapperComponent.vue').default);
 

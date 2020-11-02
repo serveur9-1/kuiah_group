@@ -37,6 +37,10 @@ Route::group(['prefix' => 'v1'], function () {
         Route::get('projects/{project}/itnotinterestme', ['uses' => 'v1\ProjectController@itNotInterestMe'])->where('project','[0-9]+');
         Route::get('projects/{project}/athistep', ['uses' => 'v1\ProjectController@atThisStep'])->where('project','[0-9]+');
 
+        //User Private
+        Route::resource('users', \v1\UserController::class)->except(['store']);
+        Route::post('users/{user}/status', 'v1\UserController@switchStatus')->where('user','[0-9]+');
+        Route::post('users/domains/add', 'v1\UserController@addDomain');
 
         Route::resource('investors', \v1\InvestorController::class)->only(['store', 'update']);
 
@@ -65,9 +69,9 @@ Route::group(['prefix' => 'v1'], function () {
             Route::post('users/updatePassword', 'v1\AuthController@updatePassword');
 
             //User Private
-            Route::resource('users', \v1\UserController::class)->except(['store']);
-            Route::post('users/{user}/status', 'v1\UserController@switchStatus')->where('user','[0-9]+');
-            Route::post('users/domains/add', 'v1\UserController@addDomain');
+            // Route::resource('users', \v1\UserController::class)->except(['store']);
+            // Route::post('users/{user}/status', 'v1\UserController@switchStatus')->where('user','[0-9]+');
+            // Route::post('users/domains/add', 'v1\UserController@addDomain');
 
         });
 
