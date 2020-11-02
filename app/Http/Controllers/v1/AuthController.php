@@ -89,7 +89,7 @@ class AuthController extends Controller
                 "password_reset_code_created" => $expire
             ]);
 
-            //Send mail with params @email, @rand, @expire
+            //Send mail with params @email, @rand, @expire f
 
             return response()->json([
                 'code' => $rand,
