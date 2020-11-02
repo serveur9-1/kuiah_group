@@ -19,15 +19,12 @@
 
                             <!-- Table -->
                                 <table class="manage-table resumes responsive-table">
-
                                     <tr>
-
                                         <th>Nom du pays (Fr)</th>
                                         <th>Nom du pays (En)</th>
                                         <th> Date de l'ajout</th>
                                         <th>Actions</th>
                                     </tr>
-
                                     <!-- Item #1 -->
                                     <tr v-for="country in countries" :key="country.id">
                                         <td>{{ country.name_fr }}</td>

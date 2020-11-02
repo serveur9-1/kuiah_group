@@ -38,7 +38,7 @@
                                         <img :src="getPhoto()"/>
                                     </div>
                                 </div>
-                                <button type="submit" @click.prevent="SubmitPhoto" class="button margin-top-30">Enregistrer</button>
+                                <button type="submit" @click.prevent="SubmitPhoto" class="button margin-top-30 margin-bottom-30">Enregistrer</button>
                             </div>
                         </form>
 

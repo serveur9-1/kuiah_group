@@ -29,7 +29,7 @@
                                     <h5>Nom de l'industrie (En)</h5>
                                     <input class="search-field" type="text" v-model="name_en"/>
                                 </div>
-                                <button v-bind:class="{ 'is-loading' : isLoading }" class="button margin-top-30">Enregistrer</button>
+                                <button v-bind:class="{ 'is-loading' : isLoading }" class="button margin-top-30 margin-bottom-20">Enregistrer</button>
                             </div>
                         </form>
 

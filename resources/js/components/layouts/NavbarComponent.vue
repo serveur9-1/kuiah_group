@@ -7,7 +7,7 @@
                     <div id="logo">
                         <h1>
                             <router-link to="/dashboard">
-                                <img src="images/logo.png" alt="Work Scout" />
+                                <img src="images/logo.jpeg" alt="kuiah group" class="logo" />
                             </router-link>
                         </h1>
                     </div>
@@ -64,6 +64,11 @@
 }
 .notif-wrapper {
     background: white !important;
+}
+.logo{
+    height: 90px;
+    width: 200px;
+    padding-bottom: 10px;
 }
 
 </style>

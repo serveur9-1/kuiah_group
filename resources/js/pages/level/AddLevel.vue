@@ -29,19 +29,12 @@
                                     <h5>Niveau (En)</h5>
                                     <input class="search-field" type="text" v-model="name_en"/>
                                 </div>
-                                <button v-bind:class="{ 'is-loading' : isLoading }" class="button margin-top-30">Enregistrer</button>
+                                <button v-bind:class="{ 'is-loading' : isLoading }" class="button margin-top-30 margin-bottom-20">Enregistrer</button>
                             </div>
                         </form>
 
-<<<<<<< HEAD
-
 					</div>
 				</div>
-
-=======
-					</div>
-				</div>
->>>>>>> 872509757476cbc93c79006c6f5b094b6f2392cb
 			</div>
 		</div>
 

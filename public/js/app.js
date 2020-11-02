@@ -3041,28 +3041,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -3130,9 +3108,6 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
-//
-//
-//
 //
 //
 //
@@ -4223,13 +4198,6 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -10818,7 +10786,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.badge[data-v-c97109a8] {\n  position: absolute;\n  top: 6px;\n  right: 10px;\n  height:20px;\n  width: 20px;\n  border-radius: 50%;\n  background: red;\n  color: white;\n}\n.notif-wrapper[data-v-c97109a8] {\n    background: white !important;\n}\n\n", ""]);
+exports.push([module.i, "\n.badge[data-v-c97109a8] {\n  position: absolute;\n  top: 6px;\n  right: 10px;\n  height:20px;\n  width: 20px;\n  border-radius: 50%;\n  background: red;\n  color: white;\n}\n.notif-wrapper[data-v-c97109a8] {\n    background: white !important;\n}\n.logo[data-v-c97109a8]{\n    height: 90px;\n    width: 200px;\n    padding-bottom: 10px;\n}\n\n", ""]);
 
 // exports
 
@@ -44589,7 +44557,8 @@ var render = function() {
               [
                 _c("router-link", { attrs: { to: "/dashboard" } }, [
                   _c("img", {
-                    attrs: { src: "images/logo.png", alt: "Work Scout" }
+                    staticClass: "logo",
+                    attrs: { src: "images/logo.jpeg", alt: "kuiah group" }
                   })
                 ])
               ],
@@ -45269,7 +45238,7 @@ var staticRenderFns = [
               _c(
                 "a",
                 {
-                  staticClass: "button margin-top-30 margin-bottom-15 ",
+                  staticClass: "button margin-top-30 margin-bottom-20 ",
                   attrs: { href: "#" }
                 },
                 [_vm._v("Enregistrer")]
@@ -45901,7 +45870,7 @@ var render = function() {
                     _c(
                       "button",
                       {
-                        staticClass: "button margin-top-30",
+                        staticClass: "button margin-top-30 margin-bottom-20",
                         class: { "is-loading": _vm.isLoading }
                       },
                       [_vm._v("Enregistrer")]
@@ -45955,133 +45924,102 @@ var render = function() {
               ])
             : _vm._e(),
           _vm._v(" "),
-          _vm._m(0),
-          _vm._v("\n\t\t\t\t\n=======\n\n\n                    "),
-          _c("div", { staticClass: "dashboard-list-box-content" }, [
-            _c(
-              "form",
-              {
-                on: {
-                  submit: function($event) {
-                    $event.preventDefault()
-                    return _vm.updateCountry($event)
+          _c("div", { staticClass: "dashboard-list-box margin-top-0" }, [
+            _c("h4", [_vm._v("Modifier le pays")]),
+            _vm._v(" "),
+            _c("div", { staticClass: "dashboard-list-box-content" }, [
+              _c(
+                "form",
+                {
+                  on: {
+                    submit: function($event) {
+                      $event.preventDefault()
+                      return _vm.updateCountry($event)
+                    }
                   }
-                }
-              },
-              [
-                _c("div", { staticClass: "submit-page" }, [
-                  _c("div", { staticClass: "form" }, [
-                    _c("h5", [_vm._v("Nom du pays (Fr)")]),
-                    _vm._v(" "),
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.country.name_fr,
-                          expression: "country.name_fr"
-                        }
-                      ],
-                      staticClass: "search-field",
-                      attrs: { type: "text" },
-                      domProps: { value: _vm.country.name_fr },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
+                },
+                [
+                  _c("div", { staticClass: "submit-page" }, [
+                    _c("div", { staticClass: "form" }, [
+                      _c("h5", [_vm._v("Nom du pays (Fr)")]),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.country.name_fr,
+                            expression: "country.name_fr"
                           }
-                          _vm.$set(_vm.country, "name_fr", $event.target.value)
-                        }
-                      }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "form" }, [
-                    _c("h5", [_vm._v("Nom du pays (En)")]),
-                    _vm._v(" "),
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.country.name_en,
-                          expression: "country.name_en"
-                        }
-                      ],
-                      staticClass: "search-field",
-                      attrs: { type: "text" },
-                      domProps: { value: _vm.country.name_en },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
+                        ],
+                        staticClass: "search-field",
+                        attrs: { type: "text" },
+                        domProps: { value: _vm.country.name_fr },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.country,
+                              "name_fr",
+                              $event.target.value
+                            )
                           }
-                          _vm.$set(_vm.country, "name_en", $event.target.value)
                         }
-                      }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass: "button margin-top-30",
-                      attrs: { type: "submit" }
-                    },
-                    [_vm._v("Modifier")]
-                  )
-                ])
-              ]
-            )
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form" }, [
+                      _c("h5", [_vm._v("Nom du pays (En)")]),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.country.name_en,
+                            expression: "country.name_en"
+                          }
+                        ],
+                        staticClass: "search-field",
+                        attrs: { type: "text" },
+                        domProps: { value: _vm.country.name_en },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.country,
+                              "name_en",
+                              $event.target.value
+                            )
+                          }
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
+                        staticClass: "button margin-top-30 margin-bottom-20",
+                        attrs: { type: "submit" }
+                      },
+                      [_vm._v("Modifier")]
+                    )
+                  ])
+                ]
+              )
+            ])
           ])
-        ]),
-        _vm._v("\n>>>>>>> 872509757476cbc93c79006c6f5b094b6f2392cb\n\t\t\t")
+        ])
       ])
     ],
     1
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "dashboard-list-box margin-top-0" }, [
-      _c("h4", [_vm._v("Modifier le pays")]),
-      _vm._v("\n<<<<<<< HEAD\n\t\t\t\t\t"),
-      _c("div", { staticClass: "dashboard-list-box-content" }, [
-        _c("div", { staticClass: "submit-page" }, [
-          _c("div", { staticClass: "form" }, [
-            _c("h5", [_vm._v("Nom du pays(Fr)")]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "search-field",
-              attrs: { type: "text", value: "" }
-            })
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form" }, [
-            _c("h5", [_vm._v("Nom du pays(En)")]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "search-field",
-              attrs: { type: "text", value: "" }
-            })
-          ]),
-          _vm._v(" "),
-          _c(
-            "a",
-            {
-              staticClass: "button margin-top-30 margin-bottom-20",
-              attrs: { href: "#" }
-            },
-            [_vm._v("Enregistrer")]
-          )
-        ])
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -46744,7 +46682,7 @@ var render = function() {
                     _c(
                       "button",
                       {
-                        staticClass: "button margin-top-30",
+                        staticClass: "button margin-top-30 margin-bottom-20",
                         class: { "is-loading": _vm.isLoading }
                       },
                       [_vm._v("Enregistrer")]
@@ -46877,7 +46815,7 @@ var render = function() {
                     _c(
                       "button",
                       {
-                        staticClass: "button margin-top-30",
+                        staticClass: "button margin-top-30 margin-top-20",
                         attrs: { type: "submit" }
                       },
                       [_vm._v("Modifier")]
@@ -47473,21 +47411,18 @@ var render = function() {
                     _c(
                       "button",
                       {
-                        staticClass: "button margin-top-30",
+                        staticClass: "button margin-top-30 margin-bottom-20",
                         class: { "is-loading": _vm.isLoading }
                       },
                       [_vm._v("Enregistrer")]
                     )
                   ])
                 ]
-              ),
-              _vm._v("\n\n<<<<<<< HEAD\n\n\t\t\t\t\t")
+              )
             ])
-          ]),
-          _vm._v("\n\n=======\n\t\t\t\t\t")
+          ])
         ])
-      ]),
-      _vm._v("\n>>>>>>> 872509757476cbc93c79006c6f5b094b6f2392cb\n\t\t\t")
+      ])
     ],
     1
   )
@@ -47601,7 +47536,7 @@ var render = function() {
                     _c(
                       "button",
                       {
-                        staticClass: "button margin-top-30",
+                        staticClass: "button margin-top-30 margin-bottom-20",
                         attrs: { type: "submit" }
                       },
                       [_vm._v("Modifier")]
@@ -47977,7 +47912,7 @@ var render = function() {
                   _c(
                     "button",
                     {
-                      staticClass: "button margin-top-30",
+                      staticClass: "button margin-top-30 margin-bottom-30",
                       attrs: { type: "submit" },
                       on: {
                         click: function($event) {
@@ -70393,7 +70328,7 @@ var types = {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/serveur/Bureau/kuiah_group/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/doumbia/Documents/kuiah_group/resources/js/app.js */"./resources/js/app.js");
 
 
 /***/ })

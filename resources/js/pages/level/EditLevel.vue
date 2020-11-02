@@ -30,7 +30,7 @@
                                     <h5>Niveau (En)</h5>
                                     <input class="search-field" type="text" v-model="level.name_en" />
                                 </div>
-                                <button type="submit" class="button margin-top-30">Modifier</button>
+                                <button type="submit" class="button margin-top-30 margin-bottom-20">Modifier</button>
                             </div>
                         </form>
 					</div>
