@@ -32,9 +32,10 @@ class SaveFiles
      * */
     public function save($is_public=true, $dir, $attr, $customName, $request)
     {
+        $prefix = "kuiahfinance_";
+
         if($request->hasfile($attr))
         {
-            $prefix = "kuiahfinance_";
             $response = [];
             $cn = $prefix.$customName;
             array_push($response, is_array($request->file($attr)));
@@ -59,7 +60,7 @@ class SaveFiles
 
                 $file_mime = $request->file($attr)->getClientMimeType();
                 $ext = explode("/", $file_mime)[1];
-                $filename = "kuiahfinance_".explode(".",$request->file($attr)->getClientOriginalName())[0];
+                $filename = $prefix.($customName ?? explode(".",$request->file($attr)->getClientOriginalName())[0]);
                 $is_public? $saveDir="public/" : $path="private/";
 
                 $path = $request->file($attr)->storeAs(
@@ -67,7 +68,6 @@ class SaveFiles
                     $filename.".".$ext
                 );
 
-                dd($path);
                 array_push($response, $path);
                 array_push($response, $cn.".".$ext ?? $filename.".".$ext);
             }
