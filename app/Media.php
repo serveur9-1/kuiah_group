@@ -13,4 +13,11 @@ class Media extends Model
         "real_estate_id",
     ];
     protected $table = "medias";
+
+    protected $appends = ['img_url'];
+
+    public function getImgUrlAttribute()
+    {
+        return asset("public/realestates/$this->name");
+    }
 }

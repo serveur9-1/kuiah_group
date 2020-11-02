@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\v1;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\PartnerResource;
 use App\Partner;
 use App\Shared\SaveFiles;
 use Illuminate\Http\Request;
@@ -18,7 +19,9 @@ class PartnerController extends Controller
 
     public function index (Request $r)
     {
-        return response()->json($this->instance->newQuery()->get(),200);
+        return response()->json(
+            PartnerResource::collection($this->instance->newQuery()->get())
+        ,200);
     }
 
     public function store(Request $request)
