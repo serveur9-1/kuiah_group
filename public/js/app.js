@@ -2169,53 +2169,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Dashboard",
@@ -44703,7 +44656,7 @@ var render = function() {
             _c(
               "h1",
               [
-                _c("router-link", { attrs: { to: "/dashboard" } }, [
+                _c("router-link", { attrs: { to: "/" } }, [
                   _c("img", {
                     staticClass: "logo",
                     attrs: { src: "images/logo.jpeg", alt: "kuiah group" }
@@ -44770,7 +44723,7 @@ var render = function() {
               _c(
                 "li",
                 [
-                  _c("router-link", { attrs: { to: "/login" } }, [
+                  _c("router-link", { attrs: { to: { name: "login" } } }, [
                     _c("i", { staticClass: "fa fa-sign-out" }),
                     _vm._v(" Se deconnecter\n                            ")
                   ])
@@ -44970,7 +44923,7 @@ var staticRenderFns = [
           _c("div", { staticClass: "dashboard-stat-content" }, [
             _c("h4", { staticClass: "counter" }, [_vm._v("32")]),
             _vm._v(" "),
-            _c("span", [_vm._v("Projets publués")])
+            _c("span", [_vm._v("Projets publiés")])
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "dashboard-stat-icon" }, [
@@ -45027,136 +44980,57 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-lg-6 col-md-12" }, [
+      _c("div", { staticClass: "col-lg-12 col-md-12" }, [
         _c("div", { staticClass: "dashboard-list-box margin-top-20" }, [
-          _c("h4", [_vm._v("Recent Activities")]),
+          _c("h4", [_vm._v("Statistiques")]),
           _vm._v(" "),
           _c("ul", [
             _c("li", [
-              _vm._v("\n                        Your listing "),
               _c("strong", [
                 _c("a", { attrs: { href: "#" } }, [
-                  _vm._v("Marketing Coordinator - SEO / SEM Experience ")
+                  _vm._v(
+                    "Coût total des investissements réalisés sur la plateforme "
+                  ),
+                  _c(
+                    "span",
+                    { staticStyle: { float: "right", "font-size": "20px" } },
+                    [_vm._v("1.000.000.000 $")]
+                  )
                 ])
-              ]),
-              _vm._v(" has been approved!\n                        "),
-              _c(
-                "a",
-                { staticClass: "close-list-item", attrs: { href: "#" } },
-                [_c("i", { staticClass: "fa fa-close" })]
-              )
+              ])
             ]),
             _vm._v(" "),
             _c("li", [
-              _vm._v("\n                        Kathy Brown has sent you "),
               _c("strong", [
-                _c("a", { attrs: { href: "#" } }, [_vm._v("private message")])
-              ]),
-              _vm._v("!\n                        "),
-              _c(
-                "a",
-                { staticClass: "close-list-item", attrs: { href: "#" } },
-                [_c("i", { staticClass: "fa fa-close" })]
-              )
+                _c("a", { attrs: { href: "#" } }, [
+                  _vm._v(
+                    "Nombre total de téléchargement de notre application "
+                  ),
+                  _c(
+                    "span",
+                    { staticStyle: { float: "right", "font-size": "20px" } },
+                    [_vm._v("1.000.000.000")]
+                  )
+                ])
+              ])
             ]),
             _vm._v(" "),
             _c("li", [
-              _vm._v("\n                        Someone bookmarked your "),
               _c("strong", [
                 _c("a", { attrs: { href: "#" } }, [
-                  _vm._v("Restaurant Team Member - Crew")
+                  _vm._v(
+                    "Nombre total de téléchargement de notre application "
+                  ),
+                  _c(
+                    "span",
+                    { staticStyle: { float: "right", "font-size": "20px" } },
+                    [_vm._v("1.000.000.000")]
+                  )
                 ])
-              ]),
-              _vm._v("!\n                        "),
-              _c(
-                "a",
-                { staticClass: "close-list-item", attrs: { href: "#" } },
-                [_c("i", { staticClass: "fa fa-close" })]
-              )
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _vm._v("\n                        You have new application for "),
-              _c("strong", [
-                _c("a", { attrs: { href: "#" } }, [
-                  _vm._v("Power Systems User Experience Designer")
-                ])
-              ]),
-              _vm._v("!\n                        "),
-              _c(
-                "a",
-                { staticClass: "close-list-item", attrs: { href: "#" } },
-                [_c("i", { staticClass: "fa fa-close" })]
-              )
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _vm._v("\n                        Someone bookmarked your "),
-              _c("strong", [
-                _c("a", { attrs: { href: "#" } }, [
-                  _vm._v("Core PHP Developer for Site Maintenance  ")
-                ])
-              ]),
-              _vm._v(" listing!\n                        "),
-              _c(
-                "a",
-                { staticClass: "close-list-item", attrs: { href: "#" } },
-                [_c("i", { staticClass: "fa fa-close" })]
-              )
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _vm._v("\n                        Your job listing "),
-              _c("strong", [
-                _c("a", { attrs: { href: "#" } }, [
-                  _vm._v("Core PHP Developer for Site Maintenance  ")
-                ])
-              ]),
-              _vm._v(" is expiring!\n                        "),
-              _c(
-                "a",
-                { staticClass: "close-list-item", attrs: { href: "#" } },
-                [_c("i", { staticClass: "fa fa-close" })]
-              )
+              ])
             ])
           ])
         ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-lg-6 col-md-12" }, [
-        _c(
-          "div",
-          { staticClass: "dashboard-list-box with-icons margin-top-20" },
-          [
-            _c("h4", [_vm._v("Your Packages")]),
-            _vm._v(" "),
-            _c("ul", { staticClass: "dashboard-packages" }, [
-              _c("li", [
-                _c("i", { staticClass: "list-box-icon fa fa-shopping-cart" }),
-                _vm._v(" "),
-                _c("strong", [_vm._v("Basic")]),
-                _vm._v(" "),
-                _c("span", [_vm._v("You have 2 listings posted")])
-              ]),
-              _vm._v(" "),
-              _c("li", [
-                _c("i", { staticClass: "list-box-icon fa fa-shopping-cart" }),
-                _vm._v(" "),
-                _c("strong", [_vm._v("Extended")]),
-                _vm._v(" "),
-                _c("span", [_vm._v("You have 2 listings posted")])
-              ]),
-              _vm._v(" "),
-              _c("li", [
-                _c("i", { staticClass: "list-box-icon fa fa-shopping-cart" }),
-                _vm._v(" "),
-                _c("strong", [_vm._v("Professional")]),
-                _vm._v(" "),
-                _c("span", [_vm._v("You have 5 listings posted")])
-              ])
-            ])
-          ]
-        )
       ])
     ])
   }
@@ -70422,9 +70296,6 @@ var routes = [{
   component: _pages_NotFound__WEBPACK_IMPORTED_MODULE_4__["default"]
 }, {
   path: '/',
-  component: _pages_Dashboard__WEBPACK_IMPORTED_MODULE_2__["default"]
-}, {
-  path: '/dashboard',
   name: 'dashboard',
   component: _pages_Dashboard__WEBPACK_IMPORTED_MODULE_2__["default"]
 }, {
