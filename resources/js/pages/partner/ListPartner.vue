@@ -30,7 +30,7 @@
 
                                     <!-- Item #1 -->
                                     <tr v-for="partner in partners" :key="partner.id">
-                                        <td>{{ partner.img }}</td>
+                                        <td><img :src="partner.img_url" alt=""></td>
                                         <td>{{ partner.name }}</td>
                                         <td>{{ partner.created_at}}</td>
                                         <td class="action">

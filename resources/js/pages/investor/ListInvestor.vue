@@ -31,7 +31,7 @@
 
                                     <!-- Item #1 -->
                                     <tr v-for="investor in investors" :key="investor.id">
-                                        <template v-if="investor.is_archived == 0 && investor.is_first_activation == 0">
+                                        <template v-if="investor.is_archived == 0 && investor.is_first_activation == 0 && investor.extension.is_investor == 1">
                                             <td>{{ investor.firstname }}</td>
                                             <td>{{ investor.lastname }}</td>
                                             <td class="centered">{{ investor.email }}</td>

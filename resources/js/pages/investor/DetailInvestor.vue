@@ -26,32 +26,60 @@
 							<dd><p>{{ investor.created_at }} </p></dd>
 
 							<label>Téléphone (Mobile)</label>
-							<dd><p>Here goes description consectetur </p></dd>
+							<dd><p>{{ investor.extension.p_number }} </p></dd>
 
 							<label>Téléphone (Fixe)</label>
-							<dd><p>Here goes description consectetur </p></dd>
+							<dd><p>{{ investor.extension.f_number}}</p></dd>
 
 							<label>Biographie</label>
-							<dd><p>Here goes description consectetur adipisicing elit, sed do eiusmod
-                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                quis nostrud exercitation ullamco </p></dd>
+							<dd><p>{{ investor.extension.biography}} </p></dd>
+
 							<label>Investissement Minimal</label>
-							<dd><p>Here goes description consectetur </p></dd>
+							<dd><p>{{ investor.extension.min}}</p></dd>
 
 							<label>Investissement Maximal</label>
-							<dd><p>Here goes description consectetur </p></dd>
+							<dd><p>{{ investor.extension.max}} </p></dd>
 
 
 							<label><i class="fa fa-twitter"></i> Twitter</label>
-							<dd><p>https://www.twitter.com/</p></dd>
+							<dd><p>{{ investor.extension.twitter}}</p></dd>
 
 							<label><i class="fa fa-facebook-square"></i> Facebook</label>
-							<dd><p>https://www.twitter.com/</p></dd>
+							<dd><p>{{ investor.extension.facebook}}</p></dd>
 
 							<label><i class="fa fa-linkedin"></i>Linkedin</label>
-								<dd><p>https://www.twitter.com/</p></dd>
+								<dd><p>{{ investor.extension.linkedin}}</p></dd>
 						</div>
 					</div>
+                    <div class="dashboard-list-box margin-top-0">
+                        <h4 class="gray">Biens immobiliers</h4>
+                        <div class="notification notice" v-if="deleteSuccessful">
+                            Status modifié avec succès.
+                        </div>
+                        <div class="dashboard-list-box-static">
+
+                                <table class="manage-table resumes responsive-table">
+                                    <tr>
+                                        <th style="width: 30%;">Titre</th>
+                                        <th style="width: 45%;"> Description</th>
+                                        <th style="width: 15%;"> Prix</th>
+                                        <th style="width: 10%;">Actions</th>
+                                    </tr>
+                                    <tr  v-for="realstate in investor.real_estates" :key="realstate.id">
+                                        <td>{{ realstate.title}}</td>
+                                        <td>{{ realstate.description}}</td>
+                                        <td class="centered">{{ realstate.price}}</td>
+                                        <td class="action">
+                                            <router-link :to="{name: 'viewRealstates', params: { id: realstate.id }}">
+                                            <i class="fa  fa-eye"></i>Voir
+                                            </router-link>
+                                            <a href="#" v-if="realstate.is_actived " @click="stateInvestor(realstate.id)" class="delete" ><i class="fa fa-remove"></i>désactiver</a>
+                                            <a href="#" v-else @click="stateInvestor(realstate.id)" class="success" ><i class="fa fa-check"></i>activer</a>
+                                        </td>
+                                    </tr>
+                                </table>
+                        </div>
+                    </div>
 				</div>
 			</div>
 		</div>
@@ -75,6 +103,7 @@
                 id : "",
                 errors: '',
                 isLoading: false,
+                deleteSuccessful: false,
 
             }
         },
@@ -89,6 +118,12 @@
                     this.investor = response.data;
                 });
             },
+            stateInvestor(id) {
+
+                axios.post(API_BASE_URL + '/real_estates/'+id+'/status')
+                this.deleteSuccessful=true
+
+            }
         }
     }
 </script>

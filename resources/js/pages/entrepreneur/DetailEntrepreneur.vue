@@ -26,60 +26,49 @@
 							<dd><p>{{ entrepreneur.created_at }} </p></dd>
 
 							<label>Téléphone (Mobile)</label>
-							<dd><p>Here goes description consectetur </p></dd>
+							<dd><p>{{ entrepreneur.extension.p_number }} </p></dd>
 
 							<label>Téléphone (Fixe)</label>
-							<dd><p>Here goes description consectetur </p></dd>
+							<dd><p>{{ entrepreneur.extension.f_number}}</p></dd>
 
 							<label>Biographie</label>
-							<dd><p>Here goes description consectetur adipisicing elit, sed do eiusmod
-                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                quis nostrud exercitation ullamco </p></dd>
+							<dd><p>{{ entrepreneur.extension.biography}} </p></dd>
+
 							<label><i class="fa fa-twitter"></i> Twitter</label>
-							<dd><p>https://www.twitter.com/</p></dd>
+							<dd><p>{{ entrepreneur.extension.twitter}}</p></dd>
 
 							<label><i class="fa fa-facebook-square"></i> Facebook</label>
-							<dd><p>https://www.twitter.com/</p></dd>
+							<dd><p>{{ entrepreneur.extension.facebook}}</p></dd>
 
 							<label><i class="fa fa-linkedin"></i>Linkedin</label>
-								<dd><p>https://www.twitter.com/</p></dd>
+								<dd><p>{{ entrepreneur.extension.linkedin}}</p></dd>
 						</div>
 					</div>
 				</div>
 				<div class="dashboard-list-box margin-top-0">
 					<h4 class="gray">Mes projets</h4>
+                    <div class="notification notice" v-if="deleteSuccessful">
+                        Status modifié avec succès.
+                    </div>
 					<div class="dashboard-list-box-static">
 							<table class="manage-table resumes responsive-table">
 								<tr>
 									<th style="width: 30%;">Titre</th>
 									<th style="width: 45%;"> Description</th>
-									<th style="width: 15%;"> Min-Max</th>
+									<th style="width: 15%;"> Besoin total</th>
 									<th style="width: 10%;">Actions</th>
 								</tr>
-								<tr>
-									<td>Front End Web Developer</td>
-									<td>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-										 Suscipit architecto, ut, veniam mollitia voluptates ad vitae sunt quae ipsa
-										  sed tempora dolores iusto eveniet praesentium corporis quibusdam veritatis
+								<tr v-for="project in entrepreneur.projects" :key="project.id">
+									<td>{{ project.title}}</td>
+									<td>{{ project.company_description}}
 									</td>
-									<td class="centered">1,000 - 2,000$</td>
+									<td class="centered">{{ project.total_amount}}</td>
 									<td class="action">
-										<router-link to="/publication/View">
+										<router-link :to="{name: 'viewPublication', params: { id: project.id }}">
                                            <i class="fa  fa-eye"></i>Voir
                                         </router-link>
-										<a href="#" class="delete"><i class="fa fa-remove"></i>Supprimer</a>
-									</td>
-								</tr>
-								<tr>
-									<td>Logo Designer</td>
-									<td>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-										Suscipit architecto, ut, veniam mollitia voluptates ad vitae sunt quae ipsa
-										 sed tempora dolores iusto eveniet praesentium corporis quibusdam veritatis
-								   </td>
-								   <td class="centered">1,000 - 2,000$</td>
-									<td class="action">
-										<a href="#"><i class="fa  fa-eye"></i>Voir</a>
-										<a href="#" class="delete"><i class="fa fa-remove"></i>Supprimer</a>
+										<a href="#" v-if="project.is_actived " @click="stateEntrepreneur(project.id)" class="delete" ><i class="fa fa-remove"></i>désactiver</a>
+                                            <a href="#" v-else @click="stateEntrepreneur(project.id)" class="success" ><i class="fa fa-check"></i>activer</a>
 									</td>
 								</tr>
 							</table>
@@ -119,6 +108,12 @@
                     this.entrepreneur = response.data;
                 });
             },
+            stateEntrepreneur(id) {
+
+                axios.post(API_BASE_URL + '/projects/'+id+'/status')
+                this.deleteSuccessful=true
+
+            }
         }
     }
 </script>

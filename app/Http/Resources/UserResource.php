@@ -28,7 +28,8 @@ class UserResource extends JsonResource
             'updated_at' => $this->updated_at,
             'extension' => $this->toInvestor,
             /*Afficher lorsque c'est l'admin*/
-            'real_estates' => RealEstateResource::collection($this->toRealEstate)
+            'real_estates' => RealEstateResource::collection($this->toRealEstate),
+            'projects' => ProjectResource::collection($this->toProject)
         ];
     }
 }

@@ -76,7 +76,8 @@ const routes = [
         component : Waitpublication
     },
     {
-        path: '/publication/View',
+        path: '/publication/View:id',
+        name: 'viewPublication',
         component : ViewPublication
     },
     {
@@ -89,7 +90,7 @@ const routes = [
         component : ListInvestor
     },
     {
-        path: '/investor/View',
+        path: '/investor/View:id',
         name: 'investorView',
         component : DetailInvestor
     },
@@ -99,7 +100,7 @@ const routes = [
         component : ListEntrepreneur
     },
     {
-        path: '/entrepreneur/View',
+        path: '/entrepreneur/View:id',
         name: 'entrepreneurView',
         component : DetailEntrepreneur
     },
@@ -193,7 +194,8 @@ const routes = [
         component : WaitRealstates
     },
     {
-        path: '/realstates/View',
+        path: '/realstates/View:id',
+        name: 'viewRealstates',
         component : DetailRealstates
     },
     {

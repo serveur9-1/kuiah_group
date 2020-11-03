@@ -15,6 +15,7 @@
                     <div class="notification notice" v-if="deleteSuccessful">
                         suppression effectué avec succès.
                     </div>
+
                     <div class="dashboard-list-box margin-top-30">
                         <div class="dashboard-list-box-content">
 
@@ -31,7 +32,7 @@
 
                                     <!-- Item #1 -->
                                     <tr v-for="entrepreneur in entrepreneurs" :key="entrepreneur.id">
-                                        <template v-if="entrepreneur.is_archived == 0 && entrepreneur.is_first_activation == 0">
+                                        <template v-if="entrepreneur.is_archived == 0 && entrepreneur.is_first_activation == 0 && entrepreneur.extension.is_investor == 0">
                                             <td>{{ entrepreneur.firstname }}</td>
                                             <td>{{ entrepreneur.lastname }}</td>
                                             <td class="centered">{{ entrepreneur.email }}</td>

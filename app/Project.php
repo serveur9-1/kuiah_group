@@ -50,7 +50,7 @@ class Project extends Model
 
     public function toCountry()
     {
-        return $this->belongsTo('App\User');
+        return $this->belongsTo('App\Country');
     }
 
     public function toDomain()

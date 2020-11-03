@@ -3329,17 +3329,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -3369,6 +3358,10 @@ __webpack_require__.r(__webpack_exports__);
       axios__WEBPACK_IMPORTED_MODULE_0___default.a.get(_src_config__WEBPACK_IMPORTED_MODULE_1__["API_BASE_URL"] + '/users/' + this.id).then(function (response) {
         _this.entrepreneur = response.data;
       });
+    },
+    stateEntrepreneur: function stateEntrepreneur(id) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.post(_src_config__WEBPACK_IMPORTED_MODULE_1__["API_BASE_URL"] + '/projects/' + id + '/status');
+      this.deleteSuccessful = true;
     }
   }
 });
@@ -3396,6 +3389,7 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
+//
 //
 //
 //
@@ -3989,6 +3983,34 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -4003,7 +4025,8 @@ __webpack_require__.r(__webpack_exports__);
       investor: {},
       id: "",
       errors: '',
-      isLoading: false
+      isLoading: false,
+      deleteSuccessful: false
     };
   },
   mounted: function mounted() {
@@ -4018,6 +4041,10 @@ __webpack_require__.r(__webpack_exports__);
       axios__WEBPACK_IMPORTED_MODULE_0___default.a.get(_src_config__WEBPACK_IMPORTED_MODULE_1__["API_BASE_URL"] + '/users/' + this.id).then(function (response) {
         _this.investor = response.data;
       });
+    },
+    stateInvestor: function stateInvestor(id) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.post(_src_config__WEBPACK_IMPORTED_MODULE_1__["API_BASE_URL"] + '/real_estates/' + id + '/status');
+      this.deleteSuccessful = true;
     }
   }
 });
@@ -5402,65 +5429,10 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _components_layouts_TitlebarComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../components/layouts/TitlebarComponent */ "./resources/js/components/layouts/TitlebarComponent.vue");
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _src_config__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../src/config */ "./resources/js/pages/src/config.js");
+/* harmony import */ var _components_layouts_TitlebarComponent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/layouts/TitlebarComponent */ "./resources/js/components/layouts/TitlebarComponent.vue");
 //
 //
 //
@@ -5674,14 +5646,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Dashboard",
   components: {
-    TitlebarComponent: _components_layouts_TitlebarComponent__WEBPACK_IMPORTED_MODULE_0__["default"]
+    TitlebarComponent: _components_layouts_TitlebarComponent__WEBPACK_IMPORTED_MODULE_2__["default"]
   },
   data: function data() {
     return {
-      message: "Mounted"
+      project: {},
+      id: "",
+      errors: '',
+      isLoading: false
     };
   },
   mounted: function mounted() {
@@ -5689,7 +5666,13 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     onMounted: function onMounted() {
-      console.log(this.message);
+      var _this = this;
+
+      var id = this.$router.currentRoute.params.id;
+      this.id = this.$route.params.id;
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get(_src_config__WEBPACK_IMPORTED_MODULE_1__["API_BASE_URL"] + '/projects/' + this.id).then(function (response) {
+        _this.project = response.data;
+      });
     }
   }
 });
@@ -5809,7 +5792,17 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _components_layouts_TitlebarComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../components/layouts/TitlebarComponent */ "./resources/js/components/layouts/TitlebarComponent.vue");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _src_config__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../src/config */ "./resources/js/pages/src/config.js");
+/* harmony import */ var _components_layouts_TitlebarComponent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/layouts/TitlebarComponent */ "./resources/js/components/layouts/TitlebarComponent.vue");
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -5868,14 +5861,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Dashboard",
   components: {
-    TitlebarComponent: _components_layouts_TitlebarComponent__WEBPACK_IMPORTED_MODULE_0__["default"]
+    TitlebarComponent: _components_layouts_TitlebarComponent__WEBPACK_IMPORTED_MODULE_2__["default"]
   },
   data: function data() {
     return {
-      message: "Mounted"
+      realstate: {},
+      id: "",
+      errors: '',
+      isLoading: false
     };
   },
   mounted: function mounted() {
@@ -5883,7 +5881,13 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     onMounted: function onMounted() {
-      console.log(this.message);
+      var _this = this;
+
+      var id = this.$router.currentRoute.params.id;
+      this.id = this.$route.params.id;
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get(_src_config__WEBPACK_IMPORTED_MODULE_1__["API_BASE_URL"] + '/real_estates/' + this.id).then(function (response) {
+        _this.realstate = response.data;
+      });
     }
   }
 });
@@ -46210,27 +46214,43 @@ var render = function() {
                 _vm._v(" "),
                 _c("label", [_vm._v("Téléphone (Mobile)")]),
                 _vm._v(" "),
-                _vm._m(0),
+                _c("dd", [
+                  _c("p", [
+                    _vm._v(_vm._s(_vm.entrepreneur.extension.p_number) + " ")
+                  ])
+                ]),
                 _vm._v(" "),
                 _c("label", [_vm._v("Téléphone (Fixe)")]),
                 _vm._v(" "),
-                _vm._m(1),
+                _c("dd", [
+                  _c("p", [_vm._v(_vm._s(_vm.entrepreneur.extension.f_number))])
+                ]),
                 _vm._v(" "),
                 _c("label", [_vm._v("Biographie")]),
                 _vm._v(" "),
+                _c("dd", [
+                  _c("p", [
+                    _vm._v(_vm._s(_vm.entrepreneur.extension.biography) + " ")
+                  ])
+                ]),
+                _vm._v(" "),
+                _vm._m(0),
+                _vm._v(" "),
+                _c("dd", [
+                  _c("p", [_vm._v(_vm._s(_vm.entrepreneur.extension.twitter))])
+                ]),
+                _vm._v(" "),
+                _vm._m(1),
+                _vm._v(" "),
+                _c("dd", [
+                  _c("p", [_vm._v(_vm._s(_vm.entrepreneur.extension.facebook))])
+                ]),
+                _vm._v(" "),
                 _vm._m(2),
                 _vm._v(" "),
-                _vm._m(3),
-                _vm._v(" "),
-                _vm._m(4),
-                _vm._v(" "),
-                _vm._m(5),
-                _vm._v(" "),
-                _vm._m(6),
-                _vm._v(" "),
-                _vm._m(7),
-                _vm._v(" "),
-                _vm._m(8)
+                _c("dd", [
+                  _c("p", [_vm._v(_vm._s(_vm.entrepreneur.extension.linkedin))])
+                ])
               ])
             ])
           ]),
@@ -46238,49 +46258,98 @@ var render = function() {
           _c("div", { staticClass: "dashboard-list-box margin-top-0" }, [
             _c("h4", { staticClass: "gray" }, [_vm._v("Mes projets")]),
             _vm._v(" "),
+            _vm.deleteSuccessful
+              ? _c("div", { staticClass: "notification notice" }, [
+                  _vm._v(
+                    "\n                        Status modifié avec succès.\n                    "
+                  )
+                ])
+              : _vm._e(),
+            _vm._v(" "),
             _c("div", { staticClass: "dashboard-list-box-static" }, [
               _c(
                 "table",
                 { staticClass: "manage-table resumes responsive-table" },
                 [
-                  _vm._m(9),
+                  _vm._m(3),
                   _vm._v(" "),
-                  _c("tr", [
-                    _c("td", [_vm._v("Front End Web Developer")]),
-                    _vm._v(" "),
-                    _c("td", [
-                      _vm._v(
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit.\n\t\t\t\t\t\t\t\t\t\t Suscipit architecto, ut, veniam mollitia voluptates ad vitae sunt quae ipsa\n\t\t\t\t\t\t\t\t\t\t  sed tempora dolores iusto eveniet praesentium corporis quibusdam veritatis\n\t\t\t\t\t\t\t\t\t"
+                  _vm._l(_vm.entrepreneur.projects, function(project) {
+                    return _c("tr", { key: project.id }, [
+                      _c("td", [_vm._v(_vm._s(project.title))]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _vm._v(
+                          _vm._s(project.company_description) +
+                            "\n\t\t\t\t\t\t\t\t\t"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("td", { staticClass: "centered" }, [
+                        _vm._v(_vm._s(project.total_amount))
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "td",
+                        { staticClass: "action" },
+                        [
+                          _c(
+                            "router-link",
+                            {
+                              attrs: {
+                                to: {
+                                  name: "viewPublication",
+                                  params: { id: project.id }
+                                }
+                              }
+                            },
+                            [
+                              _c("i", { staticClass: "fa  fa-eye" }),
+                              _vm._v(
+                                "Voir\n                                        "
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          project.is_actived
+                            ? _c(
+                                "a",
+                                {
+                                  staticClass: "delete",
+                                  attrs: { href: "#" },
+                                  on: {
+                                    click: function($event) {
+                                      return _vm.stateEntrepreneur(project.id)
+                                    }
+                                  }
+                                },
+                                [
+                                  _c("i", { staticClass: "fa fa-remove" }),
+                                  _vm._v("désactiver")
+                                ]
+                              )
+                            : _c(
+                                "a",
+                                {
+                                  staticClass: "success",
+                                  attrs: { href: "#" },
+                                  on: {
+                                    click: function($event) {
+                                      return _vm.stateEntrepreneur(project.id)
+                                    }
+                                  }
+                                },
+                                [
+                                  _c("i", { staticClass: "fa fa-check" }),
+                                  _vm._v("activer")
+                                ]
+                              )
+                        ],
+                        1
                       )
-                    ]),
-                    _vm._v(" "),
-                    _c("td", { staticClass: "centered" }, [
-                      _vm._v("1,000 - 2,000$")
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "td",
-                      { staticClass: "action" },
-                      [
-                        _c(
-                          "router-link",
-                          { attrs: { to: "/publication/View" } },
-                          [
-                            _c("i", { staticClass: "fa  fa-eye" }),
-                            _vm._v(
-                              "Voir\n                                        "
-                            )
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _vm._m(10)
-                      ],
-                      1
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _vm._m(11)
-                ]
+                    ])
+                  })
+                ],
+                2
               )
             ])
           ])
@@ -46295,40 +46364,10 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("dd", [_c("p", [_vm._v("Here goes description consectetur ")])])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("dd", [_c("p", [_vm._v("Here goes description consectetur ")])])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("dd", [
-      _c("p", [
-        _vm._v(
-          "Here goes description consectetur adipisicing elit, sed do eiusmod\n                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n                                quis nostrud exercitation ullamco "
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c("label", [
       _c("i", { staticClass: "fa fa-twitter" }),
       _vm._v(" Twitter")
     ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("dd", [_c("p", [_vm._v("https://www.twitter.com/")])])
   },
   function() {
     var _vm = this
@@ -46343,22 +46382,10 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("dd", [_c("p", [_vm._v("https://www.twitter.com/")])])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c("label", [
       _c("i", { staticClass: "fa fa-linkedin" }),
       _vm._v("Linkedin")
     ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("dd", [_c("p", [_vm._v("https://www.twitter.com/")])])
   },
   function() {
     var _vm = this
@@ -46369,46 +46396,9 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("th", { staticStyle: { width: "45%" } }, [_vm._v(" Description")]),
       _vm._v(" "),
-      _c("th", { staticStyle: { width: "15%" } }, [_vm._v(" Min-Max")]),
+      _c("th", { staticStyle: { width: "15%" } }, [_vm._v(" Besoin total")]),
       _vm._v(" "),
       _c("th", { staticStyle: { width: "10%" } }, [_vm._v("Actions")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("a", { staticClass: "delete", attrs: { href: "#" } }, [
-      _c("i", { staticClass: "fa fa-remove" }),
-      _vm._v("Supprimer")
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("tr", [
-      _c("td", [_vm._v("Logo Designer")]),
-      _vm._v(" "),
-      _c("td", [
-        _vm._v(
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit.\n\t\t\t\t\t\t\t\t\t\tSuscipit architecto, ut, veniam mollitia voluptates ad vitae sunt quae ipsa\n\t\t\t\t\t\t\t\t\t\t sed tempora dolores iusto eveniet praesentium corporis quibusdam veritatis\n\t\t\t\t\t\t\t\t   "
-        )
-      ]),
-      _vm._v(" "),
-      _c("td", { staticClass: "centered" }, [_vm._v("1,000 - 2,000$")]),
-      _vm._v(" "),
-      _c("td", { staticClass: "action" }, [
-        _c("a", { attrs: { href: "#" } }, [
-          _c("i", { staticClass: "fa  fa-eye" }),
-          _vm._v("Voir")
-        ]),
-        _vm._v(" "),
-        _c("a", { staticClass: "delete", attrs: { href: "#" } }, [
-          _c("i", { staticClass: "fa fa-remove" }),
-          _vm._v("Supprimer")
-        ])
-      ])
     ])
   }
 ]
@@ -46466,7 +46456,8 @@ var render = function() {
                             { key: entrepreneur.id },
                             [
                               entrepreneur.is_archived == 0 &&
-                              entrepreneur.is_first_activation == 0
+                              entrepreneur.is_first_activation == 0 &&
+                              entrepreneur.extension.is_investor == 0
                                 ? [
                                     _c("td", [
                                       _vm._v(_vm._s(entrepreneur.firstname))
@@ -47020,35 +47011,149 @@ var render = function() {
                 _vm._v(" "),
                 _c("label", [_vm._v("Téléphone (Mobile)")]),
                 _vm._v(" "),
-                _vm._m(0),
+                _c("dd", [
+                  _c("p", [
+                    _vm._v(_vm._s(_vm.investor.extension.p_number) + " ")
+                  ])
+                ]),
                 _vm._v(" "),
                 _c("label", [_vm._v("Téléphone (Fixe)")]),
                 _vm._v(" "),
-                _vm._m(1),
+                _c("dd", [
+                  _c("p", [_vm._v(_vm._s(_vm.investor.extension.f_number))])
+                ]),
                 _vm._v(" "),
                 _c("label", [_vm._v("Biographie")]),
                 _vm._v(" "),
-                _vm._m(2),
+                _c("dd", [
+                  _c("p", [
+                    _vm._v(_vm._s(_vm.investor.extension.biography) + " ")
+                  ])
+                ]),
                 _vm._v(" "),
                 _c("label", [_vm._v("Investissement Minimal")]),
                 _vm._v(" "),
-                _vm._m(3),
+                _c("dd", [
+                  _c("p", [_vm._v(_vm._s(_vm.investor.extension.min))])
+                ]),
                 _vm._v(" "),
                 _c("label", [_vm._v("Investissement Maximal")]),
                 _vm._v(" "),
-                _vm._m(4),
+                _c("dd", [
+                  _c("p", [_vm._v(_vm._s(_vm.investor.extension.max) + " ")])
+                ]),
                 _vm._v(" "),
-                _vm._m(5),
+                _vm._m(0),
                 _vm._v(" "),
-                _vm._m(6),
+                _c("dd", [
+                  _c("p", [_vm._v(_vm._s(_vm.investor.extension.twitter))])
+                ]),
                 _vm._v(" "),
-                _vm._m(7),
+                _vm._m(1),
                 _vm._v(" "),
-                _vm._m(8),
+                _c("dd", [
+                  _c("p", [_vm._v(_vm._s(_vm.investor.extension.facebook))])
+                ]),
                 _vm._v(" "),
-                _vm._m(9),
+                _vm._m(2),
                 _vm._v(" "),
-                _vm._m(10)
+                _c("dd", [
+                  _c("p", [_vm._v(_vm._s(_vm.investor.extension.linkedin))])
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "dashboard-list-box margin-top-0" }, [
+              _c("h4", { staticClass: "gray" }, [_vm._v("Biens immobiliers")]),
+              _vm._v(" "),
+              _vm.deleteSuccessful
+                ? _c("div", { staticClass: "notification notice" }, [
+                    _vm._v(
+                      "\n                            Status modifié avec succès.\n                        "
+                    )
+                  ])
+                : _vm._e(),
+              _vm._v(" "),
+              _c("div", { staticClass: "dashboard-list-box-static" }, [
+                _c(
+                  "table",
+                  { staticClass: "manage-table resumes responsive-table" },
+                  [
+                    _vm._m(3),
+                    _vm._v(" "),
+                    _vm._l(_vm.investor.real_estates, function(realstate) {
+                      return _c("tr", { key: realstate.id }, [
+                        _c("td", [_vm._v(_vm._s(realstate.title))]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v(_vm._s(realstate.description))]),
+                        _vm._v(" "),
+                        _c("td", { staticClass: "centered" }, [
+                          _vm._v(_vm._s(realstate.price))
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          { staticClass: "action" },
+                          [
+                            _c(
+                              "router-link",
+                              {
+                                attrs: {
+                                  to: {
+                                    name: "viewRealstates",
+                                    params: { id: realstate.id }
+                                  }
+                                }
+                              },
+                              [
+                                _c("i", { staticClass: "fa  fa-eye" }),
+                                _vm._v(
+                                  "Voir\n                                            "
+                                )
+                              ]
+                            ),
+                            _vm._v(" "),
+                            realstate.is_actived
+                              ? _c(
+                                  "a",
+                                  {
+                                    staticClass: "delete",
+                                    attrs: { href: "#" },
+                                    on: {
+                                      click: function($event) {
+                                        return _vm.stateInvestor(realstate.id)
+                                      }
+                                    }
+                                  },
+                                  [
+                                    _c("i", { staticClass: "fa fa-remove" }),
+                                    _vm._v("désactiver")
+                                  ]
+                                )
+                              : _c(
+                                  "a",
+                                  {
+                                    staticClass: "success",
+                                    attrs: { href: "#" },
+                                    on: {
+                                      click: function($event) {
+                                        return _vm.stateInvestor(realstate.id)
+                                      }
+                                    }
+                                  },
+                                  [
+                                    _c("i", { staticClass: "fa fa-check" }),
+                                    _vm._v("activer")
+                                  ]
+                                )
+                          ],
+                          1
+                        )
+                      ])
+                    })
+                  ],
+                  2
+                )
               ])
             ])
           ])
@@ -47063,52 +47168,10 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("dd", [_c("p", [_vm._v("Here goes description consectetur ")])])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("dd", [_c("p", [_vm._v("Here goes description consectetur ")])])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("dd", [
-      _c("p", [
-        _vm._v(
-          "Here goes description consectetur adipisicing elit, sed do eiusmod\n                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n                                quis nostrud exercitation ullamco "
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("dd", [_c("p", [_vm._v("Here goes description consectetur ")])])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("dd", [_c("p", [_vm._v("Here goes description consectetur ")])])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c("label", [
       _c("i", { staticClass: "fa fa-twitter" }),
       _vm._v(" Twitter")
     ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("dd", [_c("p", [_vm._v("https://www.twitter.com/")])])
   },
   function() {
     var _vm = this
@@ -47123,12 +47186,6 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("dd", [_c("p", [_vm._v("https://www.twitter.com/")])])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c("label", [
       _c("i", { staticClass: "fa fa-linkedin" }),
       _vm._v("Linkedin")
@@ -47138,7 +47195,15 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("dd", [_c("p", [_vm._v("https://www.twitter.com/")])])
+    return _c("tr", [
+      _c("th", { staticStyle: { width: "30%" } }, [_vm._v("Titre")]),
+      _vm._v(" "),
+      _c("th", { staticStyle: { width: "45%" } }, [_vm._v(" Description")]),
+      _vm._v(" "),
+      _c("th", { staticStyle: { width: "15%" } }, [_vm._v(" Prix")]),
+      _vm._v(" "),
+      _c("th", { staticStyle: { width: "10%" } }, [_vm._v("Actions")])
+    ])
   }
 ]
 render._withStripped = true
@@ -47195,7 +47260,8 @@ var render = function() {
                             { key: investor.id },
                             [
                               investor.is_archived == 0 &&
-                              investor.is_first_activation == 0
+                              investor.is_first_activation == 0 &&
+                              investor.extension.is_investor == 1
                                 ? [
                                     _c("td", [
                                       _vm._v(_vm._s(investor.firstname))
@@ -48063,7 +48129,11 @@ var render = function() {
                         _vm._v(" "),
                         _vm._l(_vm.partners, function(partner) {
                           return _c("tr", { key: partner.id }, [
-                            _c("td", [_vm._v(_vm._s(partner.img))]),
+                            _c("td", [
+                              _c("img", {
+                                attrs: { src: partner.img_url, alt: "" }
+                              })
+                            ]),
                             _vm._v(" "),
                             _c("td", [_vm._v(_vm._s(partner.name))]),
                             _vm._v(" "),
@@ -48842,7 +48912,355 @@ var render = function() {
   return _c(
     "div",
     { staticClass: "dashboard-content" },
-    [_c("TitlebarComponent"), _vm._v(" "), _vm._m(0), _vm._v(" "), _vm._m(1)],
+    [
+      _c("TitlebarComponent"),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "row", staticStyle: { "margin-bottom": "20px" } },
+        [
+          _c("div", { staticClass: "col-md-4" }, [
+            _c("img", {
+              attrs: {
+                src:
+                  "https://store.playstation.com/store/api/chihiro/00_09_000/container/CA/fr/999/UP1415-CUSA03724_00-AV00000000000192/1601172562000/image?w=240&h=240&bg_color=000000&opacity=100&_version=00_09_000",
+                title: _vm.project.logo_url
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-8" }, [
+            _c("p", [
+              _vm._v(
+                "\n\t\t\t\t\t" +
+                  _vm._s(_vm.project.company_description) +
+                  "\n\t\t\t\t"
+              )
+            ])
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-lg-12 col-md-12" }, [
+          _c("div", { staticClass: "dashboard-list-box margin-top-0" }, [
+            _c("h4", [_vm._v("La société")]),
+            _vm._v(" "),
+            _c("div", { staticClass: "dashboard-list-box-content" }, [
+              _c("div", { staticClass: "submit-page" }, [
+                _c("div", { staticClass: "form" }, [
+                  _vm._m(0),
+                  _vm._v(" "),
+                  _c("dd", [_c("p", [_vm._v(_vm._s(_vm.project.title))])])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form" }, [
+                  _vm._m(1),
+                  _vm._v(" "),
+                  _c("dd", [
+                    _c("p", [_vm._v(_vm._s(_vm.project.website) + " ")])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form" }, [
+                  _vm._m(2),
+                  _vm._v(" "),
+                  _c("dd", [
+                    _c("p", [_vm._v(_vm._s(_vm.project.company_name))])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form" }, [
+                  _vm._m(3),
+                  _vm._v(" "),
+                  _c("dd", [
+                    _c("p", [_vm._v(_vm._s(_vm.project.country) + " ")])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form" }, [
+                  _c("div", { staticClass: "select" }, [
+                    _vm._m(4),
+                    _vm._v(" "),
+                    _c("dd", [
+                      _c("p", [_vm._v(_vm._s(_vm.project.domain) + " ")])
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form" }, [
+                  _vm._m(5),
+                  _vm._v(" "),
+                  _c("dd", [
+                    _c("p", [_vm._v(_vm._s(_vm.project.investor_role) + " ")])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form" }, [
+                  _vm._m(6),
+                  _vm._v(" "),
+                  _c("dd", [_c("p", [_vm._v(_vm._s(_vm.project.stade) + " ")])])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form" }, [
+                  _vm._m(7),
+                  _vm._v(" "),
+                  _c("dd", [
+                    _c("p", [
+                      _vm._v(_vm._s(_vm.project.executive_summary) + " ")
+                    ])
+                  ])
+                ])
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "dashboard-list-box margin-top-30" }, [
+            _c("h4", [_vm._v("Présentation de l'offre")]),
+            _vm._v(" "),
+            _c("div", { staticClass: "dashboard-list-box-content" }, [
+              _c("div", { staticClass: "submit-page" }, [
+                _vm._m(8),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "form", staticStyle: { width: "100%" } },
+                  [
+                    _vm._m(9),
+                    _vm._v(" "),
+                    _c("dd", [
+                      _c("p", [_vm._v(_vm._s(_vm.project.market) + " ")])
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "form", staticStyle: { width: "100%" } },
+                  [
+                    _vm._m(10),
+                    _vm._v(" "),
+                    _c("dd", [
+                      _c("p", [_vm._v(_vm._s(_vm.project.offer) + " ")])
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "form", staticStyle: { width: "100%" } },
+                  [
+                    _vm._m(11),
+                    _vm._v(" "),
+                    _c("dd", [
+                      _c("p", [_vm._v(_vm._s(_vm.project.Objective) + " ")])
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "form", staticStyle: { width: "100%" } },
+                  [
+                    _vm._m(12),
+                    _vm._v(" "),
+                    _c(
+                      "dd",
+                      _vm._l(_vm.project.tags, function(tag) {
+                        return _c(
+                          "span",
+                          { key: tag.id, staticClass: "success mr-4" },
+                          [
+                            _c("a", { attrs: { href: "" } }, [
+                              _vm._v(_vm._s(tag.title) + " ")
+                            ])
+                          ]
+                        )
+                      }),
+                      0
+                    )
+                  ]
+                )
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "dashboard-list-box margin-top-30" }, [
+            _c("h4", { staticClass: "gray" }, [_vm._v("Données financières")]),
+            _vm._v(" "),
+            _c("div", { staticClass: "dashboard-list-box-static" }, [
+              _c(
+                "table",
+                { staticClass: "manage-table resumes responsive-table" },
+                [
+                  _vm._m(13),
+                  _vm._v(" "),
+                  _vm._l(_vm.project.financial_data, function(financial) {
+                    return _c("tr", { key: financial.id }, [
+                      _c("td", [_vm._v(_vm._s(financial.year))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(financial.turnover))]),
+                      _vm._v(" "),
+                      _c("td", { staticClass: "centered" }, [
+                        _vm._v(_vm._s(financial.profit))
+                      ])
+                    ])
+                  })
+                ],
+                2
+              )
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "dashboard-list-box margin-top-30" }, [
+            _c("h4", [_vm._v("Documents")]),
+            _vm._v(" "),
+            _c("div", { staticClass: "dashboard-list-box-content" }, [
+              _c("div", { staticClass: "submit-page" }, [
+                _c("div", { staticClass: "form" }, [
+                  _vm._m(14),
+                  _vm._v(" "),
+                  _vm._m(15),
+                  _vm._v(
+                    "\n                            " +
+                      _vm._s(_vm.project.business_plan_doc) +
+                      "\n\t\t\t\t\t\t"
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form" }, [
+                  _vm._m(16),
+                  _vm._v(" "),
+                  _vm._m(17),
+                  _vm._v(
+                    "\n                            " +
+                      _vm._s(_vm.project.financial_data_doc) +
+                      "\n\t\t\t\t\t\t"
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form" }, [
+                  _vm._m(18),
+                  _vm._v(" "),
+                  _vm._m(19),
+                  _vm._v(
+                    "\n                            " +
+                      _vm._s(_vm.project.executive_summary_doc) +
+                      "\n\t\t\t\t\t\t"
+                  )
+                ]),
+                _vm._v(" "),
+                _vm._m(20)
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "dashboard-list-box margin-top-30" }, [
+            _c("h4", [_vm._v("Equipe")]),
+            _vm._v(" "),
+            _c("div", { staticClass: "dashboard-list-box-content" }, [
+              _c("div", { staticClass: "padding-right" }, [
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-md-12" }, [
+                    _c(
+                      "ul",
+                      { staticClass: "resumes-list alternative" },
+                      _vm._l(_vm.project.teams, function(team) {
+                        return _c(
+                          "li",
+                          {
+                            key: team.id,
+                            staticClass: "col-md-6 mb-4",
+                            staticStyle: { "margin-bottom": "20px" }
+                          },
+                          [
+                            _c("a", [
+                              _c("img", {
+                                attrs: {
+                                  src:
+                                    "https://store.playstation.com/store/api/chihiro/00_09_000/container/CA/fr/999/UP1415-CUSA03724_00-AV00000000000192/1601172562000/image?w=240&h=240&bg_color=000000&opacity=100&_version=00_09_000",
+                                  title: team.picture
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "resumes-list-content" },
+                                [
+                                  _c("h4", [
+                                    _vm._v(_vm._s(team.name) + " "),
+                                    _c("span", [
+                                      _vm._v(_vm._s(team.role) + " ")
+                                    ])
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("span", [
+                                    _c(
+                                      "a",
+                                      {
+                                        attrs: {
+                                          href: team.link_twitter,
+                                          target: "_blank"
+                                        }
+                                      },
+                                      [
+                                        _c("i", {
+                                          staticClass: "fa fa-twitter"
+                                        })
+                                      ]
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("span", [
+                                    _c(
+                                      "a",
+                                      { attrs: { href: team.link_linkedin } },
+                                      [
+                                        _c("i", {
+                                          staticClass: "fa fa-linkedin"
+                                        })
+                                      ]
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("span", [
+                                    _c(
+                                      "a",
+                                      { attrs: { href: team.link_facebook } },
+                                      [
+                                        _c("i", {
+                                          staticClass: "fa fa-facebook"
+                                        })
+                                      ]
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "clearfix" })
+                                ]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "clearfix" }, [
+                              _c("p", [
+                                _vm._v(
+                                  _vm._s(team.biography) +
+                                    "\n\t\t\t\t\t\t\t\t\t\t\t\t"
+                                )
+                              ])
+                            ])
+                          ]
+                        )
+                      }),
+                      0
+                    )
+                  ])
+                ])
+              ])
+            ])
+          ])
+        ])
+      ])
+    ],
     1
   )
 }
@@ -48851,26 +49269,124 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
+    return _c("h5", [_c("strong", [_vm._v("Intitulé du projet")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h5", [_c("strong", [_vm._v("Site web")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h5", [_c("strong", [_vm._v(" Nom de l'entreprise")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h5", [_c("strong", [_vm._v("Localisation de l'entreprise")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h5", [_c("strong", [_vm._v("Domaine")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h5", [_c("strong", [_vm._v("Rôle de l'investisseur")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h5", [_c("strong", [_vm._v("Stade de développement")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h5", [_c("strong", [_vm._v("sommaire exécutif")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form", staticStyle: { width: "100%" } }, [
+      _c("h5", [_c("strong", [_vm._v("Description")])]),
+      _vm._v(" "),
+      _c("dd", [
+        _c("p", [
+          _vm._v(
+            "Here goes description consectetur adipisicing elit, sed do eiusmod\n                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n                                quis nostrud exercitation ullamco "
+          )
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h5", [_c("strong", [_vm._v("Le marché")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h5", [_c("strong", [_vm._v("Offre")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h5", [_c("strong", [_vm._v("Objectif")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h5", [_c("strong", [_vm._v("Tags")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [
+      _c("th", { staticStyle: { width: "30%" } }, [_vm._v("Année")]),
+      _vm._v(" "),
+      _c("th", { staticStyle: { width: "45%" } }, [
+        _vm._v(" chiffre d'affaires")
+      ]),
+      _vm._v(" "),
+      _c("th", { staticStyle: { width: "15%" } }, [_vm._v(" Profit")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h5", [
+      _vm._v("Business plan"),
+      _c("span", [_vm._v("(optional)")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
     return _c(
-      "div",
-      { staticClass: "row", staticStyle: { "margin-bottom": "20px" } },
+      "a",
+      { attrs: { href: "/images/myw3schoolsimage.jpg", download: "" } },
       [
-        _c("div", { staticClass: "col-md-4" }, [
-          _c("img", {
-            attrs: {
-              src:
-                "https://store.playstation.com/store/api/chihiro/00_09_000/container/CA/fr/999/UP1415-CUSA03724_00-AV00000000000192/1601172562000/image?w=240&h=240&bg_color=000000&opacity=100&_version=00_09_000",
-              alt: ""
-            }
-          })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-md-8" }, [
-          _c("p", [
-            _vm._v(
-              "\n\t\t\t\t\tLorem ipsum dolor sit amet consectetur adipisicing elit. \n\t\t\t\t\tQuia blanditiis ducimus suscipit provident reiciendis nam, at \n\t\t\t\t\tipsum in rem? Voluptate molestias deleniti placeat dolores voluptas maiores esse accusantium cumque laboriosam.\n\t\t\t\t\tLorem ipsum dolor sit amet consectetur adipisicing elit. \n\t\t\t\t\tQuia blanditiis ducimus suscipit provident reiciendis nam, at \n\t\t\t\t\tipsum in rem? Voluptate molestias deleniti placeat dolores voluptas maiores esse accusantium cumque laboriosam.\n\t\t\t\t"
-            )
-          ])
+        _c("label", { staticClass: "upload-btn" }, [
+          _c("i", { staticClass: "fa fa-upload" }),
+          _vm._v("Télécharger\n\t\t\t\t\t\t\t   ")
         ])
       ]
     )
@@ -48879,504 +49395,67 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-lg-12 col-md-12" }, [
-        _c("div", { staticClass: "dashboard-list-box margin-top-0" }, [
-          _c("h4", [_vm._v("La société")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "dashboard-list-box-content" }, [
-            _c("div", { staticClass: "submit-page" }, [
-              _c("div", { staticClass: "form" }, [
-                _c("h5", [_c("strong", [_vm._v("Intitulé du projet")])]),
-                _vm._v(" "),
-                _c("dd", [
-                  _c("p", [_vm._v("Here goes description consectetur ")])
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form" }, [
-                _c("h5", [_c("strong", [_vm._v("Site web")])]),
-                _vm._v(" "),
-                _c("dd", [
-                  _c("p", [_vm._v("Here goes description consectetur ")])
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form" }, [
-                _c("h5", [_c("strong", [_vm._v(" Nom de l'entreprise")])]),
-                _vm._v(" "),
-                _c("dd", [
-                  _c("p", [_vm._v("Here goes description consectetur ")])
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form" }, [
-                _c("h5", [
-                  _c("strong", [_vm._v("Localisation de l'entreprise")])
-                ]),
-                _vm._v(" "),
-                _c("dd", [
-                  _c("p", [_vm._v("Here goes description consectetur ")])
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form" }, [
-                _c("h5", [_c("strong", [_vm._v("Numéro de téléphone")])]),
-                _vm._v(" "),
-                _c("dd", [
-                  _c("p", [_vm._v("Here goes description consectetur ")])
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form" }, [
-                _c("div", { staticClass: "select" }, [
-                  _c("h5", [_c("strong", [_vm._v("Industrie")])]),
-                  _vm._v(" "),
-                  _c("dd", [
-                    _c("p", [_vm._v("Here goes description consectetur ")])
-                  ])
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form" }, [
-                _c("div", { staticClass: "select" }, [
-                  _c("h5", [_c("strong", [_vm._v("Domaine")])]),
-                  _vm._v(" "),
-                  _c("dd", [
-                    _c("p", [_vm._v("Here goes description consectetur ")])
-                  ])
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form" }, [
-                _c("h5", [_c("strong", [_vm._v("Rôle de l'investisseur")])]),
-                _vm._v(" "),
-                _c("dd", [
-                  _c("p", [_vm._v("Here goes description consectetur ")])
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form" }, [
-                _c("h5", [_c("strong", [_vm._v("Stade de développement")])]),
-                _vm._v(" "),
-                _c("dd", [
-                  _c("p", [_vm._v("Here goes description consectetur ")])
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form" }, [
-                _c("h5", [_c("strong", [_vm._v("Investissement")])]),
-                _vm._v(" "),
-                _c("dd", [
-                  _c("p", [_vm._v("Here goes description consectetur ")])
-                ])
-              ])
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "dashboard-list-box margin-top-30" }, [
-          _c("h4", [_vm._v("Présentation de l'offre")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "dashboard-list-box-content" }, [
-            _c("div", { staticClass: "submit-page" }, [
-              _c(
-                "div",
-                { staticClass: "form", staticStyle: { width: "100%" } },
-                [
-                  _c("h5", [_c("strong", [_vm._v("Description")])]),
-                  _vm._v(" "),
-                  _c("dd", [
-                    _c("p", [
-                      _vm._v(
-                        "Here goes description consectetur adipisicing elit, sed do eiusmod\n                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n                                quis nostrud exercitation ullamco "
-                      )
-                    ])
-                  ])
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "form", staticStyle: { width: "100%" } },
-                [
-                  _c("h5", [_c("strong", [_vm._v("Le marché")])]),
-                  _vm._v(" "),
-                  _c("dd", [
-                    _c("p", [
-                      _vm._v(
-                        "Here goes description consectetur adipisicing elit, sed do eiusmod\n                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n                                quis nostrud exercitation ullamco "
-                      )
-                    ])
-                  ])
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "form", staticStyle: { width: "100%" } },
-                [
-                  _c("h5", [_c("strong", [_vm._v("Progrès")])]),
-                  _vm._v(" "),
-                  _c("dd", [
-                    _c("p", [
-                      _vm._v(
-                        "Here goes description consectetur adipisicing elit, sed do eiusmod\n                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n                                quis nostrud exercitation ullamco "
-                      )
-                    ])
-                  ])
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "form", staticStyle: { width: "100%" } },
-                [
-                  _c("h5", [_c("strong", [_vm._v("Objectif")])]),
-                  _vm._v(" "),
-                  _c("dd", [
-                    _c("p", [
-                      _vm._v(
-                        "Here goes description consectetur adipisicing elit, sed do eiusmod\n                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n                                quis nostrud exercitation ullamco "
-                      )
-                    ])
-                  ])
-                ]
-              )
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "dashboard-list-box margin-top-30" }, [
-          _c("h4", [_vm._v("Documents")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "dashboard-list-box-content" }, [
-            _c("div", { staticClass: "submit-page" }, [
-              _c("div", { staticClass: "form" }, [
-                _c("h5", [
-                  _vm._v("Business plan"),
-                  _c("span", [_vm._v("(optional)")])
-                ]),
-                _vm._v(" "),
-                _c(
-                  "a",
-                  {
-                    attrs: {
-                      href: "/images/myw3schoolsimage.jpg",
-                      download: ""
-                    }
-                  },
-                  [
-                    _c("label", { staticClass: "upload-btn" }, [
-                      _c("i", { staticClass: "fa fa-upload" }),
-                      _vm._v("Télécharger\n\t\t\t\t\t\t\t   ")
-                    ])
-                  ]
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form" }, [
-                _c("h5", [
-                  _vm._v("Données financières"),
-                  _c("span", [_vm._v("(optional)")])
-                ]),
-                _vm._v(" "),
-                _c(
-                  "a",
-                  {
-                    attrs: {
-                      href: "/images/myw3schoolsimage.jpg",
-                      download: ""
-                    }
-                  },
-                  [
-                    _c("label", { staticClass: "upload-btn" }, [
-                      _c("i", { staticClass: "fa fa-upload" }),
-                      _vm._v("Télécharger\n\t\t\t\t\t\t\t   ")
-                    ])
-                  ]
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form" }, [
-                _c("h5", [
-                  _vm._v("Sommaire exécutif"),
-                  _c("span", [_vm._v("(optional)")])
-                ]),
-                _vm._v(" "),
-                _c(
-                  "a",
-                  {
-                    attrs: {
-                      href: "/images/myw3schoolsimage.jpg",
-                      download: ""
-                    }
-                  },
-                  [
-                    _c("label", { staticClass: "upload-btn" }, [
-                      _c("i", { staticClass: "fa fa-upload" }),
-                      _vm._v("Télécharger\n\t\t\t\t\t\t\t   ")
-                    ])
-                  ]
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form" }, [
-                _c("h5", [
-                  _vm._v("Diaporama"),
-                  _c("span", [_vm._v("(optional)")])
-                ]),
-                _vm._v(" "),
-                _c(
-                  "a",
-                  {
-                    attrs: {
-                      href: "/images/myw3schoolsimage.jpg",
-                      download: ""
-                    }
-                  },
-                  [
-                    _c("label", { staticClass: "upload-btn" }, [
-                      _c("i", { staticClass: "fa fa-upload" }),
-                      _vm._v("Télécharger\n\t\t\t\t\t\t\t   ")
-                    ])
-                  ]
-                )
-              ])
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "dashboard-list-box margin-top-30" }, [
-          _c("h4", [_vm._v("Equipe")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "dashboard-list-box-content" }, [
-            _c("div", { staticClass: "padding-right" }, [
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-md-6" }, [
-                  _c("ul", { staticClass: "resumes-list alternative" }, [
-                    _c("li", [
-                      _c("a", { attrs: { href: "resume-page.html" } }, [
-                        _c("img", {
-                          attrs: {
-                            src:
-                              "https://store.playstation.com/store/api/chihiro/00_09_000/container/CA/fr/999/UP1415-CUSA03724_00-AV00000000000192/1601172562000/image?w=240&h=240&bg_color=000000&opacity=100&_version=00_09_000",
-                            alt: ""
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "resumes-list-content" }, [
-                          _c("h4", [
-                            _vm._v("John Doe "),
-                            _c("span", [_vm._v("UX/UI Graphic Designer")])
-                          ]),
-                          _vm._v(" "),
-                          _c("span", [
-                            _c("a", { attrs: { href: "" } }, [
-                              _c("i", { staticClass: "fa fa-twitter" })
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("span", [
-                            _c("a", { attrs: { href: "" } }, [
-                              _c("i", { staticClass: "fa fa-linkedin" })
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("span", [
-                            _c("a", { attrs: { href: "" } }, [
-                              _c("i", { staticClass: "fa fa-facebook" })
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("span", [
-                            _c("a", { attrs: { href: "" } }, [
-                              _c("i", { staticClass: "fa fa-instagram" })
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "clearfix" })
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "clearfix" }, [
-                        _c("p", [
-                          _vm._v(
-                            "Lorem ipsum dolor sit amet consectetur \n\t\t\t\t\t\t\t\t\t\t\t\t\tadipisicing elit. Temporibus magnam repudiandae \n\t\t\t\t\t\t\t\t\t\t\t\t\tassumenda quia blanditiis dolore perferendis molestiae \n\t\t\t\t\t\t\t\t\t\t\t\t\tillo evenie\n\t\t\t\t\t\t\t\t\t\t\t\t"
-                          )
-                        ])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("a", { attrs: { href: "resume-page.html" } }, [
-                        _c("img", {
-                          attrs: {
-                            src:
-                              "https://store.playstation.com/store/api/chihiro/00_09_000/container/CA/fr/999/UP1415-CUSA03724_00-AV00000000000192/1601172562000/image?w=240&h=240&bg_color=000000&opacity=100&_version=00_09_000",
-                            alt: ""
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "resumes-list-content" }, [
-                          _c("h4", [
-                            _vm._v("John Doe "),
-                            _c("span", [_vm._v("UX/UI Graphic Designer")])
-                          ]),
-                          _vm._v(" "),
-                          _c("span", [
-                            _c("a", { attrs: { href: "" } }, [
-                              _c("i", { staticClass: "fa fa-twitter" })
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("span", [
-                            _c("a", { attrs: { href: "" } }, [
-                              _c("i", { staticClass: "fa fa-linkedin" })
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("span", [
-                            _c("a", { attrs: { href: "" } }, [
-                              _c("i", { staticClass: "fa fa-facebook" })
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("span", [
-                            _c("a", { attrs: { href: "" } }, [
-                              _c("i", { staticClass: "fa fa-instagram" })
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "clearfix" })
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "clearfix" }, [
-                        _c("p", [
-                          _vm._v(
-                            "Lorem ipsum dolor sit amet consectetur \n\t\t\t\t\t\t\t\t\t\t\t\t\tadipisicing elit. Temporibus magnam repudiandae \n\t\t\t\t\t\t\t\t\t\t\t\t\tassumenda quia blanditiis dolore perferendis molestiae \n\t\t\t\t\t\t\t\t\t\t\t\t\tillo evenie\n\t\t\t\t\t\t\t\t\t\t\t\t"
-                          )
-                        ])
-                      ])
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-md-6" }, [
-                  _c("ul", { staticClass: "resumes-list alternative" }, [
-                    _c("li", [
-                      _c("a", { attrs: { href: "resume-page.html" } }, [
-                        _c("img", {
-                          attrs: {
-                            src:
-                              "https://store.playstation.com/store/api/chihiro/00_09_000/container/CA/fr/999/UP1415-CUSA03724_00-AV00000000000192/1601172562000/image?w=240&h=240&bg_color=000000&opacity=100&_version=00_09_000",
-                            alt: ""
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "resumes-list-content" }, [
-                          _c("h4", [
-                            _vm._v("John Doe "),
-                            _c("span", [_vm._v("UX/UI Graphic Designer")])
-                          ]),
-                          _vm._v(" "),
-                          _c("span", [
-                            _c("a", { attrs: { href: "" } }, [
-                              _c("i", { staticClass: "fa fa-twitter" })
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("span", [
-                            _c("a", { attrs: { href: "" } }, [
-                              _c("i", { staticClass: "fa fa-linkedin" })
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("span", [
-                            _c("a", { attrs: { href: "" } }, [
-                              _c("i", { staticClass: "fa fa-facebook" })
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("span", [
-                            _c("a", { attrs: { href: "" } }, [
-                              _c("i", { staticClass: "fa fa-instagram" })
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "clearfix" })
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "clearfix" }, [
-                        _c("p", [
-                          _vm._v(
-                            "Lorem ipsum dolor sit amet consectetur \n\t\t\t\t\t\t\t\t\t\t\t\t\tadipisicing elit. Temporibus magnam repudiandae \n\t\t\t\t\t\t\t\t\t\t\t\t\tassumenda quia blanditiis dolore perferendis molestiae \n\t\t\t\t\t\t\t\t\t\t\t\t\tillo evenie\n\t\t\t\t\t\t\t\t\t\t\t\t"
-                          )
-                        ])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("a", { attrs: { href: "resume-page.html" } }, [
-                        _c("img", {
-                          attrs: {
-                            src:
-                              "https://store.playstation.com/store/api/chihiro/00_09_000/container/CA/fr/999/UP1415-CUSA03724_00-AV00000000000192/1601172562000/image?w=240&h=240&bg_color=000000&opacity=100&_version=00_09_000",
-                            alt: ""
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "resumes-list-content" }, [
-                          _c("h4", [
-                            _vm._v("John Doe "),
-                            _c("span", [_vm._v("UX/UI Graphic Designer")])
-                          ]),
-                          _vm._v(" "),
-                          _c("span", [
-                            _c("a", { attrs: { href: "" } }, [
-                              _c("i", { staticClass: "fa fa-twitter" })
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("span", [
-                            _c("a", { attrs: { href: "" } }, [
-                              _c("i", { staticClass: "fa fa-linkedin" })
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("span", [
-                            _c("a", { attrs: { href: "" } }, [
-                              _c("i", { staticClass: "fa fa-facebook" })
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("span", [
-                            _c("a", { attrs: { href: "" } }, [
-                              _c("i", { staticClass: "fa fa-instagram" })
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "clearfix" })
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "clearfix" }, [
-                        _c("p", [
-                          _vm._v(
-                            "Lorem ipsum dolor sit amet consectetur \n\t\t\t\t\t\t\t\t\t\t\t\t\tadipisicing elit. Temporibus magnam repudiandae \n\t\t\t\t\t\t\t\t\t\t\t\t\tassumenda quia blanditiis dolore perferendis molestiae \n\t\t\t\t\t\t\t\t\t\t\t\t\tillo evenie\n\t\t\t\t\t\t\t\t\t\t\t\t"
-                          )
-                        ])
-                      ])
-                    ])
-                  ])
-                ])
-              ])
-            ])
-          ])
+    return _c("h5", [
+      _vm._v("Données financières"),
+      _c("span", [_vm._v("(optional)")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      { attrs: { href: "/images/myw3schoolsimage.jpg", download: "" } },
+      [
+        _c("label", { staticClass: "upload-btn" }, [
+          _c("i", { staticClass: "fa fa-upload" }),
+          _vm._v("Télécharger\n\t\t\t\t\t\t\t   ")
         ])
-      ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h5", [
+      _vm._v("Sommaire exécutif"),
+      _c("span", [_vm._v("(optional)")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      { attrs: { href: "/images/myw3schoolsimage.jpg", download: "" } },
+      [
+        _c("label", { staticClass: "upload-btn" }, [
+          _c("i", { staticClass: "fa fa-upload" }),
+          _vm._v("Télécharger\n\t\t\t\t\t\t\t   ")
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form" }, [
+      _c("h5", [_vm._v("Diaporama"), _c("span", [_vm._v("(optional)")])]),
+      _vm._v(" "),
+      _c(
+        "a",
+        { attrs: { href: "/images/myw3schoolsimage.jpg", download: "" } },
+        [
+          _c("label", { staticClass: "upload-btn" }, [
+            _c("i", { staticClass: "fa fa-upload" }),
+            _vm._v("Télécharger\n\t\t\t\t\t\t\t   ")
+          ])
+        ]
+      )
     ])
   }
 ]
@@ -49558,7 +49637,98 @@ var render = function() {
   return _c(
     "div",
     { staticClass: "dashboard-content" },
-    [_c("TitlebarComponent"), _vm._v(" "), _vm._m(0)],
+    [
+      _c("TitlebarComponent"),
+      _vm._v(" "),
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "card" }, [
+          _c("div", { staticClass: "row" }, [
+            _c("aside", { staticClass: "col-sm-5 border-right" }, [
+              _vm.realstate.medias[0]
+                ? _c("article", { staticClass: "gallery-wrap" }, [
+                    _c("div", { staticClass: "img-big-wrap" }, [
+                      _c("div", [
+                        _c("a", { attrs: { href: "#" } }, [
+                          _c("img", {
+                            attrs: {
+                              src:
+                                "https://stehroniope.com/onewebstatic/7ba48f251a.jpg"
+                            }
+                          }),
+                          _vm._v(_vm._s(_vm.realstate.medias[0].name))
+                        ])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "img-small-wrap" },
+                      _vm._l(_vm.realstate.medias, function(image) {
+                        return _c(
+                          "div",
+                          { key: image.id, staticClass: "item-gallery" },
+                          [
+                            _c("img", {
+                              attrs: { src: image.name, title: image.name }
+                            })
+                          ]
+                        )
+                      }),
+                      0
+                    )
+                  ])
+                : _c("article", { staticClass: "gallery-wrap" }, [_vm._m(0)])
+            ]),
+            _vm._v(" "),
+            _c("aside", { staticClass: "col-sm-7" }, [
+              _c("article", { staticClass: "card-body p-5" }, [
+                _c("h3", { staticClass: "title mb-3" }, [
+                  _vm._v("Titre : " + _vm._s(_vm.realstate.title))
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "price-detail-wrap" }, [
+                  _c("span", { staticClass: "price h3 text-warning" }, [
+                    _c("span", { staticClass: "num" }, [
+                      _vm._v("Prix : " + _vm._s(_vm.realstate.price))
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("dl", { staticClass: "item-property" }, [
+                  _vm._m(1),
+                  _vm._v(" "),
+                  _c("dd", [
+                    _c("p", [_vm._v(_vm._s(_vm.realstate.description) + " ")])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("dl", { staticClass: "param param-feature" }, [
+                  _vm._m(2),
+                  _vm._v(" "),
+                  _c("dd", [_vm._v(_vm._s(_vm.realstate.contact))]),
+                  _vm._v(" "),
+                  _c("dd", [_vm._v(_vm._s(_vm.realstate.email))])
+                ]),
+                _vm._v(" "),
+                _c("dl", { staticClass: "param param-feature" }, [
+                  _vm._m(3),
+                  _vm._v(" "),
+                  _c("dd", [_vm._v(_vm._s(_vm.realstate.location))])
+                ]),
+                _vm._v(" "),
+                _c("dl", { staticClass: "param param-feature" }, [
+                  _vm._m(4),
+                  _vm._v(" "),
+                  _c("dd", [_vm._v(_vm._s(_vm.realstate.created_at))])
+                ]),
+                _vm._v(" "),
+                _c("hr")
+              ])
+            ])
+          ])
+        ])
+      ])
+    ],
     1
   )
 }
@@ -49567,105 +49737,44 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "card" }, [
-        _c("div", { staticClass: "row" }, [
-          _c("aside", { staticClass: "col-sm-5 border-right" }, [
-            _c("article", { staticClass: "gallery-wrap" }, [
-              _c("div", { staticClass: "img-big-wrap" }, [
-                _c("div", [
-                  _c("a", { attrs: { href: "#" } }, [
-                    _c("img", {
-                      attrs: {
-                        src:
-                          "https://stehroniope.com/onewebstatic/7ba48f251a.jpg"
-                      }
-                    })
-                  ])
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "img-small-wrap" }, [
-                _c("div", { staticClass: "item-gallery" }, [
-                  _c("img", {
-                    attrs: {
-                      src: "https://stehroniope.com/onewebstatic/7ba48f251a.jpg"
-                    }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "item-gallery" }, [
-                  _c("img", {
-                    attrs: {
-                      src: "https://stehroniope.com/onewebstatic/7ba48f251a.jpg"
-                    }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "item-gallery" }, [
-                  _c("img", {
-                    attrs: {
-                      src: "https://stehroniope.com/onewebstatic/7ba48f251a.jpg"
-                    }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "item-gallery" }, [
-                  _c("img", {
-                    attrs: {
-                      src: "https://stehroniope.com/onewebstatic/7ba48f251a.jpg"
-                    }
-                  })
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("aside", { staticClass: "col-sm-7" }, [
-            _c("article", { staticClass: "card-body p-5" }, [
-              _c("h3", { staticClass: "title mb-3" }, [
-                _vm._v("Maison blanche avec piscine")
-              ]),
-              _vm._v(" "),
-              _c("p", { staticClass: "price-detail-wrap" }, [
-                _c("span", { staticClass: "price h3 text-warning" }, [
-                  _c("span", { staticClass: "currency" }, [_vm._v("US $")]),
-                  _c("span", { staticClass: "num" }, [_vm._v("200000")])
-                ])
-              ]),
-              _vm._v(" "),
-              _c("dl", { staticClass: "item-property" }, [
-                _c("dt", [_c("strong", [_vm._v("Description")])]),
-                _vm._v(" "),
-                _c("dd", [
-                  _c("p", [
-                    _vm._v(
-                      "Here goes description consectetur adipisicing elit, sed do eiusmod\n                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n                            quis nostrud exercitation ullamco "
-                    )
-                  ])
-                ])
-              ]),
-              _vm._v(" "),
-              _c("dl", { staticClass: "param param-feature" }, [
-                _c("dt", [_c("strong", [_vm._v("Contact")])]),
-                _vm._v(" "),
-                _c("dd", [_vm._v("+225 48 99 01 50")]),
-                _vm._v(" "),
-                _c("dd", [_vm._v("Aboudramanedoumbia@gmail.com")])
-              ]),
-              _vm._v(" "),
-              _c("dl", { staticClass: "param param-feature" }, [
-                _c("dt", [_c("strong", [_vm._v("Localisation")])]),
-                _vm._v(" "),
-                _c("dd", [_vm._v("Abidjan, Côte d'Ivoire")])
-              ]),
-              _vm._v(" "),
-              _c("hr")
-            ])
-          ])
-        ])
-      ])
-    ])
+    return _c(
+      "div",
+      { staticClass: "img-big-wrap", staticStyle: { "padding-left": "10%" } },
+      [
+        _c("div", [
+          _c("i", {
+            staticClass: "fa  fa-file",
+            staticStyle: { "font-size": "200px", margin: "auto" }
+          })
+        ]),
+        _vm._v(" "),
+        _c("h2", { staticStyle: { margin: "auto" } }, [_vm._v(" Aucune image")])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("dt", [_c("strong", [_vm._v("Description")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("dt", [_c("strong", [_vm._v("Contact")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("dt", [_c("strong", [_vm._v("Localisation")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("dt", [_c("strong", [_vm._v("Date de création")])])
   }
 ]
 render._withStripped = true
@@ -69988,7 +70097,8 @@ var routes = [{
   name: 'waitPublication',
   component: _pages_publication_Waitpublication__WEBPACK_IMPORTED_MODULE_6__["default"]
 }, {
-  path: '/publication/View',
+  path: '/publication/View:id',
+  name: 'viewPublication',
   component: _pages_publication_ViewPublication__WEBPACK_IMPORTED_MODULE_7__["default"]
 }, {
   path: '/publication/waiting/View',
@@ -69998,7 +70108,7 @@ var routes = [{
   name: 'listInvestor',
   component: _pages_investor_ListInvestor__WEBPACK_IMPORTED_MODULE_9__["default"]
 }, {
-  path: '/investor/View',
+  path: '/investor/View:id',
   name: 'investorView',
   component: _pages_investor_DetailInvestor__WEBPACK_IMPORTED_MODULE_10__["default"]
 }, {
@@ -70006,7 +70116,7 @@ var routes = [{
   name: 'listEntrepreneur',
   component: _pages_entrepreneur_ListEntrepreneur__WEBPACK_IMPORTED_MODULE_11__["default"]
 }, {
-  path: '/entrepreneur/View',
+  path: '/entrepreneur/View:id',
   name: 'entrepreneurView',
   component: _pages_entrepreneur_DetailEntrepreneur__WEBPACK_IMPORTED_MODULE_12__["default"]
 }, {
@@ -70081,7 +70191,8 @@ var routes = [{
   path: '/realstates/waiting',
   component: _pages_realstates_WaitRealstates__WEBPACK_IMPORTED_MODULE_29__["default"]
 }, {
-  path: '/realstates/View',
+  path: '/realstates/View:id',
+  name: 'viewRealstates',
   component: _pages_realstates_DetailRealstates__WEBPACK_IMPORTED_MODULE_30__["default"]
 }, {
   path: '/realstates/waiting/View',
@@ -70328,7 +70439,7 @@ var types = {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/doumbia/Documents/kuiah_group/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/serveur/Bureau/kuiah_group/resources/js/app.js */"./resources/js/app.js");
 
 
 /***/ })
