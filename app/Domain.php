@@ -14,4 +14,9 @@ class Domain extends Model
         "img",
         "industry_id",
     ];
+
+    public function toProjects()
+    {
+        return $this->hasMany('App\Project');
+    }
 }

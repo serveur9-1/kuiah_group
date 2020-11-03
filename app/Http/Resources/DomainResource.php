@@ -20,6 +20,7 @@ class DomainResource extends JsonResource
             'name_fr' => $this->name_fr,
             'name_en' => $this->name_en,
             'img_url' => asset("public/domains/$this->img"),
+            "projects" => ProjectResource::collection($this->toProjects),
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
         ];

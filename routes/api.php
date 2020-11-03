@@ -46,9 +46,12 @@ Route::group(['prefix' => 'v1'], function () {
 
         Route::resource('countries', \v1\CountryController::class);
         Route::resource('industries',\v1\IndustryController::class);
-        Route::resource('domains',\v1\DomainController::class);
         Route::resource('partners',\v1\PartnerController::class);
         Route::resource('stades',\v1\StadeController::class);
+
+        //Domains
+        Route::resource('domains',\v1\DomainController::class);
+        Route::get('domains/resource/filter','v1\DomainController@filter');
 
         //Auth
         Route::post('users/login', ['uses' => 'v1\AuthController@login']);
