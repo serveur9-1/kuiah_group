@@ -82,7 +82,16 @@ class UserController extends Controller
 
             }
         } else {
-            $prj = $prj->where("is_investor", true);
+
+            if($request->filled("investor"))
+            {
+                $prj = $prj->whereHas('toInvestor', function ($query) {
+                    $query->where("is_investor", filter_var($this->r->get("investor"), FILTER_VALIDATE_BOOLEAN));
+                });
+
+            } else {
+                $prj = $prj->where("is_investor", true);
+            }
         }
 
         if(filter_var($request->get("paginate"), FILTER_VALIDATE_BOOLEAN))
