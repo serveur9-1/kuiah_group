@@ -6,7 +6,7 @@
                     <!-- Logo -->
                     <div id="logo">
                         <h1>
-                            <router-link to="/dashboard">
+                            <router-link to="/">
                                 <img src="images/logo.jpeg" alt="kuiah group" class="logo" />
                             </router-link>
                         </h1>
@@ -27,7 +27,7 @@
                                 </router-link>
                             </li>
                             <li>
-                                <router-link to="/login">
+                                <router-link :to="{name: 'login'}">
                                     <i class="fa fa-sign-out"></i> Se deconnecter
                                 </router-link>
                             </li>

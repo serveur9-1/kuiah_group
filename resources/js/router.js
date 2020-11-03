@@ -48,10 +48,6 @@ const routes = [
     },
     {
         path: '/',
-        component: Dashboard
-    },
-    {
-        path: '/dashboard',
         name: 'dashboard',
         component: Dashboard
     },
