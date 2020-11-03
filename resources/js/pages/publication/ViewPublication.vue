@@ -47,6 +47,24 @@
 							<dd><p>{{ project.country }} </p></dd>
 						</div>
 
+                        <!-- Email -->
+						<div class="form">
+							<h5> <strong>Montant total</strong></h5>
+							<dd><p>{{ project.total_amount_format }}</p></dd>
+						</div>
+
+						<!-- Title -->
+						<div class="form">
+							<h5> <strong>Montant minimum</strong></h5>
+							<dd><p>{{ project.min_amount_format }} </p></dd>
+						</div>
+
+                        <!-- Title -->
+						<div class="form">
+							<h5> <strong>Montant assuré</strong></h5>
+							<dd><p>{{ project.amount_insured_format }} </p></dd>
+						</div>
+
 						<div class="form">
 							<div class="select">
 								<h5><strong>Domaine</strong></h5>
@@ -67,6 +85,11 @@
 						<div class="form">
 							<h5><strong>sommaire exécutif</strong></h5>
 							<dd><p>{{ project.executive_summary }} </p></dd>
+						</div>
+                        <!-- Tags -->
+						<div class="form">
+							<h5><strong>Description de l'équipe</strong></h5>
+							<dd><p>{{ project.team_description }} </p></dd>
 						</div>
 					</div>
 
@@ -219,6 +242,7 @@
         components: {TitlebarComponent},
         data: function () {
             return {
+                props: ['vue projet'],
                 project: {},
                 id : "",
                 errors: '',

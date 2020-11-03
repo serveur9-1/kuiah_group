@@ -8,9 +8,9 @@
         <div class="row">
 			<!-- Table-->
 			<div class="col-lg-12 col-md-12">
-				<div class="notification notice">
-					Your resume can be viewed, edited or removed below.
-				</div>
+				<div class="notification notice" v-if="deleteSuccessful">
+                        suppression effectué avec succès.
+                    </div>
 				<div class="dashboard-list-box margin-top-30">
 					<div class="dashboard-list-box-content">
 
@@ -23,38 +23,19 @@
                                     <th style="width: 20%;"> Contact</th>
 									<th style="width: 10%;">Actions</th>
 								</tr>
-								<!-- Item #1 -->
-								<tr>
-									<td>Front End Web Developer</td>
-									<td>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-										 Suscipit architecto, ut, veniam mollitia voluptates ad vitae sunt quae ipsa
-										  sed tempora dolores iusto eveniet praesentium corporis quibusdam veritatis 
-									</td>
-									<td class="centered">2,000$</td>
-                                    <td>+225 48 99 01 50</td>
-									<td class="action">
-										<router-link to="/realstates/View">
-                                           <i class="fa  fa-eye"></i>Voir
-                                        </router-link>
-										<a href="#" class="delete"><i class="fa fa-remove"></i>Supprimer</a>
-									</td>
-								</tr>
 
 								<!-- Item #1 -->
-								<tr>
-									<td>Front End Web Developer</td>
-									<td>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-										 Suscipit architecto, ut, veniam mollitia voluptates ad vitae sunt quae ipsa
-										  sed tempora dolores iusto eveniet praesentium corporis quibusdam veritatis 
-									</td>
-									<td class="centered">2,000$</td>
-                                    <td>+225 48 99 01 50</td>
+								<tr v-for="realstate in realstates" :key="realstate.id">
+									<td>{{ realstate.title}}</td>
+									<td>{{ realstate.description}}</td>
+									<td class="centered">{{ realstate.price_format}}</td>
+                                    <td>{{ realstate.contact}}</td>
 									<td class="action">
-										<router-link to="/realstates/View">
-                                           <i class="fa  fa-eye"></i>Voir
+                                        <router-link :to="{name: 'viewRealstates', params: { id: realstate.id }}">
+                                            <i class="fa  fa-eye"></i>Voir
                                         </router-link>
-										<a href="#" class="delete"><i class="fa fa-remove"></i>Supprimer</a>
-									</td>
+                                        <a href ="#" class="delete" v-bind:class="{ 'is-loading' : isDeleting(realstate.id) }" @click="deleteRealstate(realstate.id)"><i class="fa fa-remove"></i>Supprimer</a>
+                                    </td>
 								</tr>
 							</table>
 					</div>
@@ -68,22 +49,51 @@
 </template>
 
 <script>
+    import axios from 'axios'
+    import { API_BASE_URL } from '../src/config'
     import TitlebarComponent from "../../components/layouts/TitlebarComponent";
     export default {
         name: "Dashboard",
         components: {TitlebarComponent},
         data: function () {
             return {
-                message: "Mounted",
+                realstates: {},
+                isLoading : true,
+                deleteSuccessful: false
+
             }
         },
         mounted() {
             this.onMounted()
         },
+
         methods: {
             onMounted: function () {
-                console.log(this.message)
+                axios.get(API_BASE_URL+"/real_estates").then((data) => {
+                    this.realstates = data.data;
+                    this.isLoading = false;
+                    // console.log(response.data);
+                });
+            },
+
+            isDeleting(id) {
+                let index = this.realstates.findIndex(realstate => realstate.id === id)
+                return this.realstates[index].isDeleting
+            },
+            async deleteRealstate(id) {
+                let index = this.realstates.findIndex(realstate => realstate.id === id)
+                Vue.set(this.realstates[index], 'isDeleting', true)
+
+                if(confirm("Voulez vous vraiment supprimer ce bien immobilier ?")){
+
+                    await axios.delete(API_BASE_URL + '/realstates/' + id)
+                    this.realstates.splice(index, 1)
+                    this.deleteSuccessful=true
+
+                }
+
             }
+
         }
     }
 </script>

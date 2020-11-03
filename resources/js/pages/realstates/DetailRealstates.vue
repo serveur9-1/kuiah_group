@@ -29,12 +29,12 @@
                                 <h3 class="title mb-3">Titre : {{ realstate.title}}</h3>
                                 <p class="price-detail-wrap">
                                     <span class="price h3 text-warning">
-                                        <span class="num">Prix : {{ realstate.price}}</span>
+                                        <span class="num">Prix : {{ realstate.price_format}}</span>
                                     </span>
                                 </p> <!-- price-detail-wrap .// -->
                                 <dl class="item-property">
                                 <dt><strong>Description</strong></dt>
-                                <dd><p>{{ realstate.description}} </p></dd>
+                                <dd><p class="mr-3"> {{ realstate.description}} </p></dd>
                                 </dl>
 
                                 <dl class="param param-feature">

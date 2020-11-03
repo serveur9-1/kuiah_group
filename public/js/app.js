@@ -4011,6 +4011,84 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -5645,6 +5723,29 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -5655,6 +5756,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
+      props: ['vue projet'],
       project: {},
       id: "",
       errors: '',
@@ -5903,26 +6005,18 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _components_layouts_TitlebarComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../components/layouts/TitlebarComponent */ "./resources/js/components/layouts/TitlebarComponent.vue");
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _src_config__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../src/config */ "./resources/js/pages/src/config.js");
+/* harmony import */ var _components_layouts_TitlebarComponent__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/layouts/TitlebarComponent */ "./resources/js/components/layouts/TitlebarComponent.vue");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 //
 //
 //
@@ -5974,14 +6068,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Dashboard",
   components: {
-    TitlebarComponent: _components_layouts_TitlebarComponent__WEBPACK_IMPORTED_MODULE_0__["default"]
+    TitlebarComponent: _components_layouts_TitlebarComponent__WEBPACK_IMPORTED_MODULE_3__["default"]
   },
   data: function data() {
     return {
-      message: "Mounted"
+      realstates: {},
+      isLoading: true,
+      deleteSuccessful: false
     };
   },
   mounted: function mounted() {
@@ -5989,7 +6087,53 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     onMounted: function onMounted() {
-      console.log(this.message);
+      var _this = this;
+
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(_src_config__WEBPACK_IMPORTED_MODULE_2__["API_BASE_URL"] + "/real_estates").then(function (data) {
+        _this.realstates = data.data;
+        _this.isLoading = false; // console.log(response.data);
+      });
+    },
+    isDeleting: function isDeleting(id) {
+      var index = this.realstates.findIndex(function (realstate) {
+        return realstate.id === id;
+      });
+      return this.realstates[index].isDeleting;
+    },
+    deleteRealstate: function deleteRealstate(id) {
+      var _this2 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        var index;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                index = _this2.realstates.findIndex(function (realstate) {
+                  return realstate.id === id;
+                });
+                Vue.set(_this2.realstates[index], 'isDeleting', true);
+
+                if (!confirm("Voulez vous vraiment supprimer ce bien immobilier ?")) {
+                  _context.next = 7;
+                  break;
+                }
+
+                _context.next = 5;
+                return axios__WEBPACK_IMPORTED_MODULE_1___default.a["delete"](_src_config__WEBPACK_IMPORTED_MODULE_2__["API_BASE_URL"] + '/realstates/' + id);
+
+              case 5:
+                _this2.realstates.splice(index, 1);
+
+                _this2.deleteSuccessful = true;
+
+              case 7:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }))();
     }
   }
 });
@@ -46986,79 +47130,173 @@ var render = function() {
             _c("h4", { staticClass: "gray" }, [_vm._v("Investisseur")]),
             _vm._v(" "),
             _c("div", { staticClass: "dashboard-list-box-static" }, [
-              _c("div", { staticClass: "my-profile" }, [
-                _c("label", [_vm._v("Nom")]),
-                _vm._v(" "),
-                _c("dd", [
-                  _c("p", [_vm._v(_vm._s(_vm.investor.firstname) + " ")])
-                ]),
-                _vm._v(" "),
-                _c("label", [_vm._v("Prénom")]),
-                _vm._v(" "),
-                _c("dd", [
-                  _c("p", [_vm._v(_vm._s(_vm.investor.lastname) + " ")])
-                ]),
-                _vm._v(" "),
-                _c("label", [_vm._v("Email")]),
-                _vm._v(" "),
-                _c("dd", [_c("p", [_vm._v(_vm._s(_vm.investor.email) + " ")])]),
-                _vm._v(" "),
-                _c("label", [_vm._v("Date de création")]),
-                _vm._v(" "),
-                _c("dd", [
-                  _c("p", [_vm._v(_vm._s(_vm.investor.created_at) + " ")])
-                ]),
-                _vm._v(" "),
-                _c("label", [_vm._v("Téléphone (Mobile)")]),
-                _vm._v(" "),
-                _c("dd", [
-                  _c("p", [
-                    _vm._v(_vm._s(_vm.investor.extension.p_number) + " ")
+              _c("div", { staticClass: "submit-page col-md-12" }, [
+                _c("div", { staticClass: "form col-md-6" }, [
+                  _c("div", { staticClass: "select" }, [
+                    _vm._m(0),
+                    _vm._v(" "),
+                    _c("dd", [
+                      _c("p", [_vm._v(_vm._s(_vm.investor.firstname) + " ")])
+                    ])
                   ])
                 ]),
                 _vm._v(" "),
-                _c("label", [_vm._v("Téléphone (Fixe)")]),
-                _vm._v(" "),
-                _c("dd", [
-                  _c("p", [_vm._v(_vm._s(_vm.investor.extension.f_number))])
-                ]),
-                _vm._v(" "),
-                _c("label", [_vm._v("Biographie")]),
-                _vm._v(" "),
-                _c("dd", [
-                  _c("p", [
-                    _vm._v(_vm._s(_vm.investor.extension.biography) + " ")
+                _c("div", { staticClass: "form col-md-6" }, [
+                  _c("div", { staticClass: "select" }, [
+                    _vm._m(1),
+                    _vm._v(" "),
+                    _c("dd", [
+                      _c("p", [_vm._v(_vm._s(_vm.investor.lastname) + " ")])
+                    ])
                   ])
                 ]),
                 _vm._v(" "),
-                _c("label", [_vm._v("Investissement Minimal")]),
-                _vm._v(" "),
-                _c("dd", [
-                  _c("p", [_vm._v(_vm._s(_vm.investor.extension.min))])
+                _c("div", { staticClass: "form col-md-6" }, [
+                  _c("div", { staticClass: "select" }, [
+                    _vm._m(2),
+                    _vm._v(" "),
+                    _c("dd", [
+                      _c("p", [_vm._v(_vm._s(_vm.investor.email) + " ")])
+                    ])
+                  ])
                 ]),
                 _vm._v(" "),
-                _c("label", [_vm._v("Investissement Maximal")]),
-                _vm._v(" "),
-                _c("dd", [
-                  _c("p", [_vm._v(_vm._s(_vm.investor.extension.max) + " ")])
+                _c("div", { staticClass: "form col-md-6" }, [
+                  _c("div", { staticClass: "select" }, [
+                    _vm._m(3),
+                    _vm._v(" "),
+                    _c("dd", [
+                      _c("p", [_vm._v(_vm._s(_vm.investor.created_at) + " ")])
+                    ])
+                  ])
                 ]),
                 _vm._v(" "),
-                _vm._m(0),
-                _vm._v(" "),
-                _c("dd", [
-                  _c("p", [_vm._v(_vm._s(_vm.investor.extension.twitter))])
+                _c("div", { staticClass: "form col-md-6" }, [
+                  _c("div", { staticClass: "select" }, [
+                    _vm._m(4),
+                    _vm._v(" "),
+                    _c("dd", [
+                      _c("p", [
+                        _vm._v(_vm._s(_vm.investor.extension.p_number) + " ")
+                      ])
+                    ])
+                  ])
                 ]),
                 _vm._v(" "),
-                _vm._m(1),
-                _vm._v(" "),
-                _c("dd", [
-                  _c("p", [_vm._v(_vm._s(_vm.investor.extension.facebook))])
+                _c("div", { staticClass: "form col-md-6" }, [
+                  _c("div", { staticClass: "select" }, [
+                    _vm._m(5),
+                    _vm._v(" "),
+                    _c("dd", [
+                      _c("p", [
+                        _vm._v(_vm._s(_vm.investor.extension.f_number) + " ")
+                      ])
+                    ])
+                  ])
                 ]),
                 _vm._v(" "),
-                _vm._m(2),
+                _c("div", { staticClass: "form col-md-6" }, [
+                  _c("div", { staticClass: "select" }, [
+                    _vm._m(6),
+                    _vm._v(" "),
+                    _c("dd", [
+                      _c("p", [_vm._v(_vm._s(_vm.investor.extension.min))])
+                    ])
+                  ])
+                ]),
                 _vm._v(" "),
-                _c("dd", [
-                  _c("p", [_vm._v(_vm._s(_vm.investor.extension.linkedin))])
+                _c("div", { staticClass: "form col-md-6" }, [
+                  _c("div", { staticClass: "select" }, [
+                    _vm._m(7),
+                    _vm._v(" "),
+                    _c("dd", [
+                      _c("p", [
+                        _vm._v(_vm._s(_vm.investor.extension.max) + " ")
+                      ])
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form col-md-6" }, [
+                  _c("div", { staticClass: "select" }, [
+                    _vm._m(8),
+                    _vm._v(" "),
+                    _c("dd", [
+                      _c("p", [_vm._v(_vm._s(_vm.investor.extension.country))])
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form col-md-6" }, [
+                  _c("div", { staticClass: "select" }, [
+                    _vm._m(9),
+                    _vm._v(" "),
+                    _c("dd", [
+                      _c("p", [_vm._v(_vm._s(_vm.investor.extension.city))])
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form col-md-6" }, [
+                  _c("div", { staticClass: "select" }, [
+                    _vm._m(10),
+                    _vm._v(" "),
+                    _c("dd", [
+                      _c("p", [_vm._v(_vm._s(_vm.investor.extension.domain))])
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form col-md-6" }, [
+                  _c("div", { staticClass: "select" }, [
+                    _vm._m(11),
+                    _vm._v(" "),
+                    _c("dd", [
+                      _c("p", [_vm._v(_vm._s(_vm.investor.extension.role))])
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form col-md-6" }, [
+                  _c("div", { staticClass: "select" }, [
+                    _vm._m(12),
+                    _vm._v(" "),
+                    _c("dd", [
+                      _c("p", [_vm._v(_vm._s(_vm.investor.extension.twitter))])
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form col-md-6" }, [
+                  _c("div", { staticClass: "select" }, [
+                    _vm._m(13),
+                    _vm._v(" "),
+                    _c("dd", [
+                      _c("p", [_vm._v(_vm._s(_vm.investor.extension.facebook))])
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form col-md-6" }, [
+                  _c("div", { staticClass: "select" }, [
+                    _vm._m(14),
+                    _vm._v(" "),
+                    _c("dd", [
+                      _c("p", [_vm._v(_vm._s(_vm.investor.extension.linkedin))])
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form col-md-12" }, [
+                  _c("div", { staticClass: "select" }, [
+                    _vm._m(15),
+                    _vm._v(" "),
+                    _c("dd", [
+                      _c("p", [
+                        _vm._v(_vm._s(_vm.investor.extension.biography) + " ")
+                      ])
+                    ])
+                  ])
                 ])
               ])
             ]),
@@ -47079,7 +47317,7 @@ var render = function() {
                   "table",
                   { staticClass: "manage-table resumes responsive-table" },
                   [
-                    _vm._m(3),
+                    _vm._m(16),
                     _vm._v(" "),
                     _vm._l(_vm.investor.real_estates, function(realstate) {
                       return _c("tr", { key: realstate.id }, [
@@ -47088,7 +47326,7 @@ var render = function() {
                         _c("td", [_vm._v(_vm._s(realstate.description))]),
                         _vm._v(" "),
                         _c("td", { staticClass: "centered" }, [
-                          _vm._v(_vm._s(realstate.price))
+                          _vm._v(_vm._s(realstate.price_format))
                         ]),
                         _vm._v(" "),
                         _c(
@@ -47168,39 +47406,108 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("label", [
-      _c("i", { staticClass: "fa fa-twitter" }),
-      _vm._v(" Twitter")
-    ])
+    return _c("h5", [_c("strong", [_vm._v("Nom")])])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("label", [
-      _c("i", { staticClass: "fa fa-facebook-square" }),
-      _vm._v(" Facebook")
-    ])
+    return _c("h5", [_c("strong", [_vm._v("Prénom")])])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("label", [
-      _c("i", { staticClass: "fa fa-linkedin" }),
-      _vm._v("Linkedin")
-    ])
+    return _c("h5", [_c("strong", [_vm._v("Email")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h5", [_c("strong", [_vm._v("Date de création")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h5", [_c("strong", [_vm._v("Téléphone (Mobile)")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h5", [_c("strong", [_vm._v("Téléphone (Fixe)")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h5", [_c("strong", [_vm._v("Investissement Minimal")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h5", [_c("strong", [_vm._v("Investissement Maximal")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h5", [_c("strong", [_vm._v("Pays")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h5", [_c("strong", [_vm._v("Ville")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h5", [_c("strong", [_vm._v("Domaine d'activité")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h5", [_c("strong", [_vm._v("Poste")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h5", [_c("strong", [_vm._v("Twitter")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h5", [_c("strong", [_vm._v("Facebook")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h5", [_c("strong", [_vm._v("Linkedin")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h5", [_c("strong", [_vm._v("Biographie")])])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("tr", [
-      _c("th", { staticStyle: { width: "30%" } }, [_vm._v("Titre")]),
+      _c("th", { staticStyle: { width: "35%" } }, [_vm._v("Titre")]),
       _vm._v(" "),
-      _c("th", { staticStyle: { width: "45%" } }, [_vm._v(" Description")]),
+      _c("th", { staticStyle: { width: "35%" } }, [_vm._v(" Description")]),
       _vm._v(" "),
-      _c("th", { staticStyle: { width: "15%" } }, [_vm._v(" Prix")]),
+      _c("th", { staticStyle: { width: "20%" } }, [_vm._v(" Prix")]),
       _vm._v(" "),
       _c("th", { staticStyle: { width: "10%" } }, [_vm._v("Actions")])
     ])
@@ -48979,8 +49286,36 @@ var render = function() {
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "form" }, [
+                  _vm._m(4),
+                  _vm._v(" "),
+                  _c("dd", [
+                    _c("p", [_vm._v(_vm._s(_vm.project.total_amount_format))])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form" }, [
+                  _vm._m(5),
+                  _vm._v(" "),
+                  _c("dd", [
+                    _c("p", [
+                      _vm._v(_vm._s(_vm.project.min_amount_format) + " ")
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form" }, [
+                  _vm._m(6),
+                  _vm._v(" "),
+                  _c("dd", [
+                    _c("p", [
+                      _vm._v(_vm._s(_vm.project.amount_insured_format) + " ")
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form" }, [
                   _c("div", { staticClass: "select" }, [
-                    _vm._m(4),
+                    _vm._m(7),
                     _vm._v(" "),
                     _c("dd", [
                       _c("p", [_vm._v(_vm._s(_vm.project.domain) + " ")])
@@ -48989,7 +49324,7 @@ var render = function() {
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "form" }, [
-                  _vm._m(5),
+                  _vm._m(8),
                   _vm._v(" "),
                   _c("dd", [
                     _c("p", [_vm._v(_vm._s(_vm.project.investor_role) + " ")])
@@ -48997,17 +49332,27 @@ var render = function() {
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "form" }, [
-                  _vm._m(6),
+                  _vm._m(9),
                   _vm._v(" "),
                   _c("dd", [_c("p", [_vm._v(_vm._s(_vm.project.stade) + " ")])])
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "form" }, [
-                  _vm._m(7),
+                  _vm._m(10),
                   _vm._v(" "),
                   _c("dd", [
                     _c("p", [
                       _vm._v(_vm._s(_vm.project.executive_summary) + " ")
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form" }, [
+                  _vm._m(11),
+                  _vm._v(" "),
+                  _c("dd", [
+                    _c("p", [
+                      _vm._v(_vm._s(_vm.project.team_description) + " ")
                     ])
                   ])
                 ])
@@ -49020,13 +49365,13 @@ var render = function() {
             _vm._v(" "),
             _c("div", { staticClass: "dashboard-list-box-content" }, [
               _c("div", { staticClass: "submit-page" }, [
-                _vm._m(8),
+                _vm._m(12),
                 _vm._v(" "),
                 _c(
                   "div",
                   { staticClass: "form", staticStyle: { width: "100%" } },
                   [
-                    _vm._m(9),
+                    _vm._m(13),
                     _vm._v(" "),
                     _c("dd", [
                       _c("p", [_vm._v(_vm._s(_vm.project.market) + " ")])
@@ -49038,7 +49383,7 @@ var render = function() {
                   "div",
                   { staticClass: "form", staticStyle: { width: "100%" } },
                   [
-                    _vm._m(10),
+                    _vm._m(14),
                     _vm._v(" "),
                     _c("dd", [
                       _c("p", [_vm._v(_vm._s(_vm.project.offer) + " ")])
@@ -49050,7 +49395,7 @@ var render = function() {
                   "div",
                   { staticClass: "form", staticStyle: { width: "100%" } },
                   [
-                    _vm._m(11),
+                    _vm._m(15),
                     _vm._v(" "),
                     _c("dd", [
                       _c("p", [_vm._v(_vm._s(_vm.project.Objective) + " ")])
@@ -49062,7 +49407,7 @@ var render = function() {
                   "div",
                   { staticClass: "form", staticStyle: { width: "100%" } },
                   [
-                    _vm._m(12),
+                    _vm._m(16),
                     _vm._v(" "),
                     _c(
                       "dd",
@@ -49093,7 +49438,7 @@ var render = function() {
                 "table",
                 { staticClass: "manage-table resumes responsive-table" },
                 [
-                  _vm._m(13),
+                  _vm._m(17),
                   _vm._v(" "),
                   _vm._l(_vm.project.financial_data, function(financial) {
                     return _c("tr", { key: financial.id }, [
@@ -49118,9 +49463,9 @@ var render = function() {
             _c("div", { staticClass: "dashboard-list-box-content" }, [
               _c("div", { staticClass: "submit-page" }, [
                 _c("div", { staticClass: "form" }, [
-                  _vm._m(14),
+                  _vm._m(18),
                   _vm._v(" "),
-                  _vm._m(15),
+                  _vm._m(19),
                   _vm._v(
                     "\n                            " +
                       _vm._s(_vm.project.business_plan_doc) +
@@ -49129,9 +49474,9 @@ var render = function() {
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "form" }, [
-                  _vm._m(16),
+                  _vm._m(20),
                   _vm._v(" "),
-                  _vm._m(17),
+                  _vm._m(21),
                   _vm._v(
                     "\n                            " +
                       _vm._s(_vm.project.financial_data_doc) +
@@ -49140,9 +49485,9 @@ var render = function() {
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "form" }, [
-                  _vm._m(18),
+                  _vm._m(22),
                   _vm._v(" "),
-                  _vm._m(19),
+                  _vm._m(23),
                   _vm._v(
                     "\n                            " +
                       _vm._s(_vm.project.executive_summary_doc) +
@@ -49150,7 +49495,7 @@ var render = function() {
                   )
                 ]),
                 _vm._v(" "),
-                _vm._m(20)
+                _vm._m(24)
               ])
             ])
           ]),
@@ -49293,6 +49638,24 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
+    return _c("h5", [_c("strong", [_vm._v("Montant total")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h5", [_c("strong", [_vm._v("Montant minimum")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h5", [_c("strong", [_vm._v("Montant assuré")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
     return _c("h5", [_c("strong", [_vm._v("Domaine")])])
   },
   function() {
@@ -49312,6 +49675,12 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("h5", [_c("strong", [_vm._v("sommaire exécutif")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h5", [_c("strong", [_vm._v("Description de l'équipe")])])
   },
   function() {
     var _vm = this
@@ -49689,7 +50058,7 @@ var render = function() {
                 _c("p", { staticClass: "price-detail-wrap" }, [
                   _c("span", { staticClass: "price h3 text-warning" }, [
                     _c("span", { staticClass: "num" }, [
-                      _vm._v("Prix : " + _vm._s(_vm.realstate.price))
+                      _vm._v("Prix : " + _vm._s(_vm.realstate.price_format))
                     ])
                   ])
                 ]),
@@ -49698,7 +50067,9 @@ var render = function() {
                   _vm._m(1),
                   _vm._v(" "),
                   _c("dd", [
-                    _c("p", [_vm._v(_vm._s(_vm.realstate.description) + " ")])
+                    _c("p", { staticClass: "mr-3" }, [
+                      _vm._v(" " + _vm._s(_vm.realstate.description) + " ")
+                    ])
                   ])
                 ]),
                 _vm._v(" "),
@@ -49806,11 +50177,13 @@ var render = function() {
       _vm._v(" "),
       _c("div", { staticClass: "row" }, [
         _c("div", { staticClass: "col-lg-12 col-md-12" }, [
-          _c("div", { staticClass: "notification notice" }, [
-            _vm._v(
-              "\n\t\t\t\t\tYour resume can be viewed, edited or removed below.\n\t\t\t\t"
-            )
-          ]),
+          _vm.deleteSuccessful
+            ? _c("div", { staticClass: "notification notice" }, [
+                _vm._v(
+                  "\n                        suppression effectué avec succès.\n                    "
+                )
+              ])
+            : _vm._e(),
           _vm._v(" "),
           _c("div", { staticClass: "dashboard-list-box margin-top-30" }, [
             _c("div", { staticClass: "dashboard-list-box-content" }, [
@@ -49820,74 +50193,66 @@ var render = function() {
                 [
                   _vm._m(0),
                   _vm._v(" "),
-                  _c("tr", [
-                    _c("td", [_vm._v("Front End Web Developer")]),
-                    _vm._v(" "),
-                    _c("td", [
-                      _vm._v(
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit.\n\t\t\t\t\t\t\t\t\t\t Suscipit architecto, ut, veniam mollitia voluptates ad vitae sunt quae ipsa\n\t\t\t\t\t\t\t\t\t\t  sed tempora dolores iusto eveniet praesentium corporis quibusdam veritatis \n\t\t\t\t\t\t\t\t\t"
+                  _vm._l(_vm.realstates, function(realstate) {
+                    return _c("tr", { key: realstate.id }, [
+                      _c("td", [_vm._v(_vm._s(realstate.title))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(realstate.description))]),
+                      _vm._v(" "),
+                      _c("td", { staticClass: "centered" }, [
+                        _vm._v(_vm._s(realstate.price_format))
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(realstate.contact))]),
+                      _vm._v(" "),
+                      _c(
+                        "td",
+                        { staticClass: "action" },
+                        [
+                          _c(
+                            "router-link",
+                            {
+                              attrs: {
+                                to: {
+                                  name: "viewRealstates",
+                                  params: { id: realstate.id }
+                                }
+                              }
+                            },
+                            [
+                              _c("i", { staticClass: "fa  fa-eye" }),
+                              _vm._v(
+                                "Voir\n                                        "
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "a",
+                            {
+                              staticClass: "delete",
+                              class: {
+                                "is-loading": _vm.isDeleting(realstate.id)
+                              },
+                              attrs: { href: "#" },
+                              on: {
+                                click: function($event) {
+                                  return _vm.deleteRealstate(realstate.id)
+                                }
+                              }
+                            },
+                            [
+                              _c("i", { staticClass: "fa fa-remove" }),
+                              _vm._v("Supprimer")
+                            ]
+                          )
+                        ],
+                        1
                       )
-                    ]),
-                    _vm._v(" "),
-                    _c("td", { staticClass: "centered" }, [_vm._v("2,000$")]),
-                    _vm._v(" "),
-                    _c("td", [_vm._v("+225 48 99 01 50")]),
-                    _vm._v(" "),
-                    _c(
-                      "td",
-                      { staticClass: "action" },
-                      [
-                        _c(
-                          "router-link",
-                          { attrs: { to: "/realstates/View" } },
-                          [
-                            _c("i", { staticClass: "fa  fa-eye" }),
-                            _vm._v(
-                              "Voir\n                                        "
-                            )
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _vm._m(1)
-                      ],
-                      1
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("tr", [
-                    _c("td", [_vm._v("Front End Web Developer")]),
-                    _vm._v(" "),
-                    _c("td", [
-                      _vm._v(
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit.\n\t\t\t\t\t\t\t\t\t\t Suscipit architecto, ut, veniam mollitia voluptates ad vitae sunt quae ipsa\n\t\t\t\t\t\t\t\t\t\t  sed tempora dolores iusto eveniet praesentium corporis quibusdam veritatis \n\t\t\t\t\t\t\t\t\t"
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("td", { staticClass: "centered" }, [_vm._v("2,000$")]),
-                    _vm._v(" "),
-                    _c("td", [_vm._v("+225 48 99 01 50")]),
-                    _vm._v(" "),
-                    _c(
-                      "td",
-                      { staticClass: "action" },
-                      [
-                        _c(
-                          "router-link",
-                          { attrs: { to: "/realstates/View" } },
-                          [
-                            _c("i", { staticClass: "fa  fa-eye" }),
-                            _vm._v(
-                              "Voir\n                                        "
-                            )
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _vm._m(2)
-                      ],
-                      1
-                    )
-                  ])
-                ]
+                    ])
+                  })
+                ],
+                2
               )
             ])
           ])
@@ -49912,24 +50277,6 @@ var staticRenderFns = [
       _c("th", { staticStyle: { width: "20%" } }, [_vm._v(" Contact")]),
       _vm._v(" "),
       _c("th", { staticStyle: { width: "10%" } }, [_vm._v("Actions")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("a", { staticClass: "delete", attrs: { href: "#" } }, [
-      _c("i", { staticClass: "fa fa-remove" }),
-      _vm._v("Supprimer")
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("a", { staticClass: "delete", attrs: { href: "#" } }, [
-      _c("i", { staticClass: "fa fa-remove" }),
-      _vm._v("Supprimer")
     ])
   }
 ]
