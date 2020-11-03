@@ -144,8 +144,8 @@
 								</tr>
 								<tr v-for="financial in project.financial_data" :key="financial.id">
 									<td>{{ financial.year}}</td>
-									<td>{{ financial.turnover}}</td>
-									<td class="centered">{{ financial.profit}}</td>
+									<td>{{ financial.turnover_format}}</td>
+									<td class="centered">{{ financial.profit_format}}</td>
 								</tr>
 							</table>
 					</div>

@@ -58,14 +58,14 @@
                             <div class="form col-md-6">
                                 <div class="select">
                                     <h5><strong>Investissement Minimal</strong></h5>
-                                    <dd><p>{{ investor.extension.min}}</p></dd>
+                                    <dd><p>{{ investor.extension.min_format}}</p></dd>
                                 </div>
                             </div>
 
                             <div class="form col-md-6">
                                 <div class="select">
                                     <h5><strong>Investissement Maximal</strong></h5>
-							        <dd><p>{{ investor.extension.max}} </p></dd>
+							        <dd><p>{{ investor.extension.max_format}} </p></dd>
                                 </div>
                             </div>
 
