@@ -27,7 +27,24 @@ class Investor extends Model
         "user_id",
     ];
 
+    protected $appends = ['min_format', 'max_format'];
+
+    public function getMinFormatAttribute()
+    {
+        return number_format($this->min, 2, '.', ',')." €";
+    }
+
+    public function getMaxFormatAttribute()
+    {
+        return number_format($this->max, 2, '.', ',')." €";
+    }
+
     public function toInterestedProjects()
+    {
+        return $this->belongsToMany('App\Project');
+    }
+
+    public function toProjects()
     {
         return $this->belongsToMany('App\Project');
     }

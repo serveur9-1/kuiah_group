@@ -74,7 +74,7 @@ class ProjectController extends Controller
                         "domain_id"
                     );
 
-                    $prj = $prj->orWhereIn("domain_id", $ids);
+                    if(count($ids) > 0) $prj = $prj->orWhereIn("domain_id", $ids);
                 }
             }
         }
