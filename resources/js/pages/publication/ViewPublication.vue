@@ -104,9 +104,7 @@
 						<!-- Company Name -->
 						<div class="form" style="width: 100%;">
 							<h5><strong>Description</strong> </h5>
-							<dd><p>Here goes description consectetur adipisicing elit, sed do eiusmod
-                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                quis nostrud exercitation ullamco </p></dd>
+							<dd><p>{{ project.company_description }}</p></dd>
 						</div>
 
 						<!-- Website -->
@@ -120,7 +118,7 @@
 						</div>
 						<div class="form" style="width: 100%;">
 							<h5><strong>Objectif</strong></h5>
-							<dd><p>{{ project.Objective }} </p></dd>
+							<dd><p>{{ project.objective }} </p></dd>
 						</div>
                         <div class="form" style="width: 100%;">
 							<h5><strong>Tags</strong></h5>

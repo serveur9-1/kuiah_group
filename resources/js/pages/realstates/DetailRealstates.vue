@@ -18,9 +18,8 @@
                                     </div> <!-- slider-nav.// -->
                             </article> <!-- gallery-wrap .end// -->
                             <article class="gallery-wrap" v-else>
-                                    <div class="img-big-wrap" style="padding-left:10%">
+                                    <div class="img-big-wrap" style="padding-left:20%;padding-top:20%">
                                          <div ><i style="font-size:200px;margin:auto" class="fa  fa-file"></i></div>
-                                         <h2 style="margin:auto"> Aucune image</h2>
                                     </div>
                             </article>
                         </aside>

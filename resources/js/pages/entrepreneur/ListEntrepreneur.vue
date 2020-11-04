@@ -32,7 +32,7 @@
 
                                     <!-- Item #1 -->
                                     <tr v-for="entrepreneur in entrepreneurs" :key="entrepreneur.id">
-                                        <template v-if="entrepreneur.is_archived == 0 && entrepreneur.is_first_activation == 0 && entrepreneur.extension.is_investor == 0">
+                                        <template v-if="entrepreneur.is_archived == 0 && entrepreneur.is_first_activation == 0">
                                             <td>{{ entrepreneur.firstname }}</td>
                                             <td>{{ entrepreneur.lastname }}</td>
                                             <td class="centered">{{ entrepreneur.email }}</td>

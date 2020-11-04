@@ -25,7 +25,6 @@
     },
     "dependencies": {
         "moment": "^2.29.1",
-        "vform": "^1.0.1",
         "vue-native-notification": "^1.1.1",
         "vue-router": "^3.4.7",
         "vue-sweetalert2": "^4.0.1",

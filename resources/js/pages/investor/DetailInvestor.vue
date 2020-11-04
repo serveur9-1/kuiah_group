@@ -129,35 +129,64 @@
                             </div>
 						</div>
 					</div>
-                    <div class="dashboard-list-box margin-top-0">
-                        <h4 class="gray">Biens immobiliers</h4>
-                        <div class="notification notice" v-if="deleteSuccessful">
-                            Status modifié avec succès.
-                        </div>
-                        <div class="dashboard-list-box-static">
-
-                                <table class="manage-table resumes responsive-table">
-                                    <tr>
-                                        <th style="width: 35%;">Titre</th>
-                                        <th style="width: 35%;"> Description</th>
-                                        <th style="width: 20%;"> Prix</th>
-                                        <th style="width: 10%;">Actions</th>
-                                    </tr>
-                                    <tr  v-for="realstate in investor.real_estates" :key="realstate.id">
-                                        <td>{{ realstate.title}}</td>
-                                        <td>{{ realstate.description}}</td>
-                                        <td class="centered">{{ realstate.price_format}}</td>
-                                        <td class="action">
-                                            <router-link :to="{name: 'viewRealstates', params: { id: realstate.id }}">
-                                            <i class="fa  fa-eye"></i>Voir
-                                            </router-link>
-                                            <a href="#" v-if="realstate.is_actived " @click="stateInvestor(realstate.id)" class="delete" ><i class="fa fa-remove"></i>désactiver</a>
-                                            <a href="#" v-else @click="stateInvestor(realstate.id)" class="success" ><i class="fa fa-check"></i>activer</a>
-                                        </td>
-                                    </tr>
-                                </table>
-                        </div>
+                    <div class="dashboard-list-box margin-top-30">
+					<h4 class="gray">projets</h4>
+                    <div class="notification notice" v-if="deleteSuccessful">
+                        Status modifié avec succès.
                     </div>
+					<div class="dashboard-list-box-static">
+							<table class="manage-table resumes responsive-table">
+								<tr>
+									<th style="width: 30%;">Titre</th>
+									<th style="width: 45%;"> Description</th>
+									<th style="width: 15%;"> Besoin total</th>
+									<th style="width: 10%;">Actions</th>
+								</tr>
+								<tr v-for="project in investor.projects" :key="project.id">
+									<td>{{ project.title}}</td>
+									<td>{{ project.company_description}}
+									</td>
+									<td class="centered">{{ project.total_amount}}</td>
+									<td class="action">
+										<router-link :to="{name: 'viewPublication', params: { id: project.id }}">
+                                           <i class="fa  fa-eye"></i>Voir
+                                        </router-link>
+										<a href="#" v-if="project.is_actived " @click="stateProject(project.id)" class="delete" ><i class="fa fa-remove"></i>désactiver</a>
+                                            <a href="#" v-else @click="stateProject(project.id)" class="success" ><i class="fa fa-check"></i>activer</a>
+									</td>
+								</tr>
+							</table>
+					</div>
+				</div>
+                <div class="dashboard-list-box margin-top-30">
+                    <h4 class="gray">Biens immobiliers</h4>
+                    <div class="notification notice" v-if="deleteSuccessful1">
+                        Status modifié avec succès.
+                    </div>
+                    <div class="dashboard-list-box-static">
+
+                            <table class="manage-table resumes responsive-table">
+                                <tr>
+                                    <th style="width: 35%;">Titre</th>
+                                    <th style="width: 35%;"> Description</th>
+                                    <th style="width: 20%;"> Prix</th>
+                                    <th style="width: 10%;">Actions</th>
+                                </tr>
+                                <tr  v-for="realstate in investor.real_estates" :key="realstate.id">
+                                    <td>{{ realstate.title}}</td>
+                                    <td>{{ realstate.description}}</td>
+                                    <td class="centered">{{ realstate.price_format}}</td>
+                                    <td class="action">
+                                        <router-link :to="{name: 'viewRealstates', params: { id: realstate.id }}">
+                                        <i class="fa  fa-eye"></i>Voir
+                                        </router-link>
+                                        <a href="#" v-if="realstate.is_actived " @click="stateRealstate(realstate.id)" class="delete" ><i class="fa fa-remove"></i>désactiver</a>
+                                        <a href="#" v-else @click="stateRealstate(realstate.id)" class="success" ><i class="fa fa-check"></i>activer</a>
+                                    </td>
+                                </tr>
+                            </table>
+                    </div>
+                </div>
 				</div>
 			</div>
 		</div>
@@ -182,6 +211,7 @@
                 errors: '',
                 isLoading: false,
                 deleteSuccessful: false,
+                deleteSuccessful1: false,
 
             }
         },
@@ -196,10 +226,16 @@
                     this.investor = response.data;
                 });
             },
-            stateInvestor(id) {
+            stateProject(id) {
+
+                axios.post(API_BASE_URL + '/projects/'+id+'/status')
+                this.deleteSuccessful=true
+
+            },
+            stateRealstate(id) {
 
                 axios.post(API_BASE_URL + '/real_estates/'+id+'/status')
-                this.deleteSuccessful=true
+                this.deleteSuccessful1=true
 
             }
         }
