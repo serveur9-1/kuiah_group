@@ -7388,7 +7388,7 @@ header.dashboard-header { height: auto; min-height: 90px; }
 
 /* Navigation Scrolling */
 .dashboard-nav-inner {
-	height: 100%;
+	height: 80vh;
 	width: 277px;
 	overflow-y: scroll;
 	position: relative;
@@ -7400,8 +7400,9 @@ header.dashboard-header { height: auto; min-height: 90px; }
 
 .dashboard-nav-inner {
     max-height: 900px;
-    width: calc(100% + 17px);
-    overflow-y: scroll;
+    width: calc(100vh + 17px);
+    overflow-y : scroll;
+    overflow-x : hidden;
     position: relative;
     display: block;
     padding: 10px 0 25px 0;
@@ -7410,7 +7411,7 @@ header.dashboard-header { height: auto; min-height: 90px; }
 @media (max-width: 991px) {
 	.dashboard-nav-inner {
 	    max-height: 900px;
-	    width: calc(100% + 18px);
+	    width: calc(100vh + 18px);
 	}
 }
 /* Navigation Scrolling - End */
