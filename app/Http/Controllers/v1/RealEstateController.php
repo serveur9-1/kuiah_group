@@ -65,7 +65,7 @@ class RealEstateController extends Controller
 
         $request->name = "sande";
         $request->email = "francksande@live.ca";
-        
+
         return new waitAdsValidate($request);
 
         // return response()->json($new, 200);
@@ -109,15 +109,22 @@ class RealEstateController extends Controller
         $selected->update([
             'is_actived' => !$selected->is_actived
         ]);
-        
-        $selected->is_fr = $request->is_fr; 
+
+        if($selected->is_first_activation)
+        {
+            $selected->update([
+                'is_first_activation' => false
+            ]);
+        }
+
+        $selected->is_fr = $request->is_fr;
 
         $selected->name = "sande";
-        $selected->email = "francksande@live.ca"; 
+        $selected->email = "francksande@live.ca";
 
         // new RealEstateResource($selected)
 
         return new enableOrDisableProject($selected);
-        
+
     }
 }

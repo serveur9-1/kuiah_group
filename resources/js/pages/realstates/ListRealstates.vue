@@ -26,16 +26,18 @@
 
 								<!-- Item #1 -->
 								<tr v-for="realstate in realstates" :key="realstate.id">
-									<td>{{ realstate.title}}</td>
-									<td>{{ realstate.description}}</td>
-									<td class="centered">{{ realstate.price_format}}</td>
-                                    <td>{{ realstate.contact}}</td>
-									<td class="action">
-                                        <router-link :to="{name: 'viewRealstates', params: { id: realstate.id }}">
-                                            <i class="fa  fa-eye"></i>Voir
-                                        </router-link>
-                                        <a href ="#" class="delete" v-bind:class="{ 'is-loading' : isDeleting(realstate.id) }" @click="deleteRealstate(realstate.id)"><i class="fa fa-remove"></i>Supprimer</a>
-                                    </td>
+                                    <template v-if="realstate.is_first_activation == 0">
+                                        <td>{{ realstate.title}}</td>
+                                        <td>{{ realstate.description}}</td>
+                                        <td class="centered">{{ realstate.price_format}}</td>
+                                        <td>{{ realstate.contact}}</td>
+                                        <td class="action">
+                                            <router-link :to="{name: 'viewRealstates', params: { id: realstate.id }}">
+                                                <i class="fa  fa-eye"></i>Voir
+                                            </router-link>
+                                            <a href ="#" class="delete" v-bind:class="{ 'is-loading' : isDeleting(realstate.id) }" @click="deleteRealstate(realstate.id)"><i class="fa fa-remove"></i>Supprimer</a>
+                                        </td>
+                                    </template>
 								</tr>
 							</table>
 					</div>

@@ -8,56 +8,37 @@
         <div class="row">
 			<!-- Table-->
 			<div class="col-lg-12 col-md-12">
-				<div class="notification notice">
-					Your resume can be viewed, edited or removed below.
-				</div>
+				<div class="notification notice" v-if="deleteSuccessful">
+                    suppression effectué avec succès.
+                </div>
 				<div class="dashboard-list-box margin-top-30">
 					<div class="dashboard-list-box-content">
 
 						<!-- Table -->
 							<table class="manage-table resumes responsive-table">
-
 								<tr>
-									
-									<th style="width: 30%;">Titre</th>
-									<th style="width: 45%;"> Description</th>
-									<th style="width: 15%;"> Min-Max</th>
+									<th style="width: 15%;">Titre</th>
+									<th style="width: 40%;"> Description</th>
+									<th style="width: 15%;"> Montant total</th>
+                                    <th style="width: 20%;"> Domaine</th>
 									<th style="width: 10%;">Actions</th>
 								</tr>
 
 								<!-- Item #1 -->
-								<tr>
-									<td>Front End Web Developer</td>
-									<td>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-										 Suscipit architecto, ut, veniam mollitia voluptates ad vitae sunt quae ipsa
-										  sed tempora dolores iusto eveniet praesentium corporis quibusdam veritatis 
-									</td>
-									<td class="centered">1,000 - 2,000$</td>
-									<td class="action">
-										<router-link to="/publication/waiting/View">
-                                           <i class="fa  fa-eye"></i>Voir
-                                        </router-link>
-										<a href="#" class="delete"><i class="fa fa-remove"></i>Supprimer</a>
-									</td>
+								<tr v-for="project in projects" :key="project.id">
+                                    <template v-if="project.is_first_activation">
+                                        <td>{{ project.title}}</td>
+                                        <td>{{ project.company_description}}</td>
+                                        <td class="centered">{{ project.total_amount_format}}</td>
+                                        <td>{{ project.domain}}</td>
+                                        <td class="action">
+                                            <router-link :to="{name: 'newPublication', params: { id: project.id }}">
+                                                <i class="fa  fa-eye"></i>Voir
+                                            </router-link>
+                                            <a href ="#" class="delete" v-bind:class="{ 'is-loading' : isDeleting(project.id) }" @click="deleteProject(project.id)"><i class="fa fa-remove"></i>Supprimer</a>
+                                        </td>
+                                    </template>
 								</tr>
-
-								<!-- Item #1 -->
-								<tr>
-									
-									<td>Logo Designer</td>
-									<td>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-										Suscipit architecto, ut, veniam mollitia voluptates ad vitae sunt quae ipsa
-										 sed tempora dolores iusto eveniet praesentium corporis quibusdam veritatis 
-								   </td>
-								   <td class="centered">1,000 - 2,000$</td>
-									<td class="action">
-										<router-link to="/publication/waiting/View">
-                                           <i class="fa  fa-eye"></i>Voir
-                                        </router-link>
-										<a href="#" class="delete"><i class="fa fa-remove"></i>Supprimer</a>
-									</td>
-								</tr>	
-
 							</table>
 					</div>
 				</div>
@@ -70,22 +51,51 @@
 </template>
 
 <script>
+    import axios from 'axios'
+    import { API_BASE_URL } from '../src/config'
     import TitlebarComponent from "../../components/layouts/TitlebarComponent";
     export default {
         name: "Dashboard",
         components: {TitlebarComponent},
         data: function () {
             return {
-                message: "Mounted",
+                projects: {},
+                isLoading : true,
+                deleteSuccessful: false
+
             }
         },
         mounted() {
             this.onMounted()
         },
+
         methods: {
             onMounted: function () {
-                console.log(this.message)
+                axios.get(API_BASE_URL+"/projects").then((data) => {
+                    this.projects = data.data;
+                    this.isLoading = false;
+                    // console.log(response.data);
+                });
+            },
+
+            isDeleting(id) {
+                let index = this.projects.findIndex(project => project.id === id)
+                return this.projects[index].isDeleting
+            },
+            async deleteProject(id) {
+                let index = this.projects.findIndex(project => project.id === id)
+                Vue.set(this.projects[index], 'isDeleting', true)
+
+                if(confirm("Voulez vous vraiment supprimer ce projet ?")){
+                    console.log('id',id)
+                    await axios.delete(API_BASE_URL + '/projects/' + id)
+                    this.projects.splice(index, 1)
+                    this.deleteSuccessful=true
+
+                }
+
             }
+
         }
     }
 </script>

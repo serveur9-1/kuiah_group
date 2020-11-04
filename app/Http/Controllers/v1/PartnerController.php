@@ -56,16 +56,6 @@ class PartnerController extends Controller
     }
 
 
-    public function update($id, Request $request)
-    {
-        $old = $this->instance->newQuery()->findOrFail($id);
-
-        $old->update($request->all());
-
-        return response()->json($old, 200);
-    }
-
-
     public function destroy($id)
     {
         $selected = $this->instance->newQuery()->findOrFail($id);

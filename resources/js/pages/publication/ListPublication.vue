@@ -9,8 +9,8 @@
 			<!-- Table-->
 			<div class="col-lg-12 col-md-12">
 				<div class="notification notice" v-if="deleteSuccessful">
-                        suppression effectué avec succès.
-                    </div>
+                    suppression effectué avec succès.
+                </div>
 				<div class="dashboard-list-box margin-top-30">
 					<div class="dashboard-list-box-content">
 
@@ -26,16 +26,18 @@
 
 								<!-- Item #1 -->
 								<tr v-for="project in projects" :key="project.id">
-									<td>{{ project.title}}</td>
-									<td>{{ project.company_description}}</td>
-									<td class="centered">{{ project.total_amount_format}}</td>
-                                    <td>{{ project.domain}}</td>
-									<td class="action">
-                                        <router-link :to="{name: 'viewPublication', params: { id: project.id }}">
-                                            <i class="fa  fa-eye"></i>Voir
-                                        </router-link>
-                                        <a href ="#" class="delete" v-bind:class="{ 'is-loading' : isDeleting(project.id) }" @click="deleteProject(project.id)"><i class="fa fa-remove"></i>Supprimer</a>
-                                    </td>
+                                    <template v-if="project.is_first_activation == 0">
+                                        <td>{{ project.title}}</td>
+                                        <td>{{ project.company_description}}</td>
+                                        <td class="centered">{{ project.total_amount_format}}</td>
+                                        <td>{{ project.domain}}</td>
+                                        <td class="action">
+                                            <router-link :to="{name: 'viewPublication', params: { id: project.id }}">
+                                                <i class="fa  fa-eye"></i>Voir
+                                            </router-link>
+                                            <a href ="#" class="delete" v-bind:class="{ 'is-loading' : isDeleting(project.id) }" @click="deleteProject(project.id)"><i class="fa fa-remove"></i>Supprimer</a>
+                                        </td>
+                                    </template>
 								</tr>
 							</table>
 					</div>
@@ -85,7 +87,7 @@
                 Vue.set(this.projects[index], 'isDeleting', true)
 
                 if(confirm("Voulez vous vraiment supprimer ce projet ?")){
-
+                    console.log('id',id)
                     await axios.delete(API_BASE_URL + '/projects/' + id)
                     this.projects.splice(index, 1)
                     this.deleteSuccessful=true

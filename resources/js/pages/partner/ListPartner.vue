@@ -34,9 +34,6 @@
                                         <td>{{ partner.name }}</td>
                                         <td>{{ partner.created_at}}</td>
                                         <td class="action">
-                                            <router-link :to="{name: 'editPartner', params: { id: partner.id }}">
-                                            <i class="fa  fa-edit"></i>Modifier
-                                            </router-link>
                                             <a href ="#" class="delete" v-bind:class="{ 'is-loading' : isDeleting(partner.id) }" @click="deletePartner(partner.id)"><i class="fa fa-remove"></i>Supprimer</a>
                                         </td>
                                     </tr>

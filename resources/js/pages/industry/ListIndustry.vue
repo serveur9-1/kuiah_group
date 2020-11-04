@@ -34,6 +34,9 @@
                                         <td>{{ industry.name_en }}</td>
                                         <td>{{ industry.created_at}}</td>
                                         <td class="action">
+                                            <router-link :to="{name: 'listDomain', params: { id: industry.id }}">
+                                                <i class="fa  fa-eye"></i>Voir domaines
+                                            </router-link>
                                             <router-link :to="{name: 'editIndustry', params: { id: industry.id }}">
                                             <i class="fa  fa-edit"></i>Modifier
                                             </router-link>

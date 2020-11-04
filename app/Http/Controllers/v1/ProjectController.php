@@ -395,6 +395,13 @@ class ProjectController extends Controller
             'is_actived' => !$selected->is_actived
         ]);
 
+        if($selected->is_first_activation)
+        {
+            $selected->update([
+                'is_first_activation' => false
+            ]);
+        }
+
         $selected->is_fr = $request->is_fr;
 
         $selected->name = "sande";

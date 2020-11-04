@@ -84,7 +84,7 @@ class DomainController extends Controller
 
         if ($files = $request->file('img')) {
 
-            $data = $this->__save->save(true,"domains", "img", "domain_$request->id",$request);
+            $data = $this->__save->save(true,"domains", "img", $request->get("name_fr"),$request);
             // $data[0] return 1st item of array which verify if there are many files (true if an array)
             $new = $this->instance->newQuery()->create([
                 "name_fr" => $request->get("name_fr"),

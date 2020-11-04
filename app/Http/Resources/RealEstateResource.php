@@ -29,6 +29,7 @@ class RealEstateResource extends JsonResource
             'email' => $this->email,
             'is_actived' => $this->is_actived,
             'is_archived' => $this->is_archived,
+            "is_first_activation" => $this->is_first_activation,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
             'user' => $this->toUser,
