@@ -7,9 +7,12 @@
         <!-- Content -->
         <div class="row">
 			<!-- Table-->
-			<div class="col-lg-12 col-md-12">
+			<div class="col-lg-12 col-md-12"  style="margin-bottom:50px">
 				<div class="notification notice" v-if="deleteSuccessful">
-                    suppression effectué avec succès.
+                    Suppression effectué avec succès.
+                </div>
+                <div class="notification notice" v-if="confirmeSuccessful">
+                    Confirmation effectué avec succès.
                 </div>
 				<div class="dashboard-list-box margin-top-30">
 					<div class="dashboard-list-box-content">
@@ -26,12 +29,15 @@
 
 								<!-- Item #1 -->
 								<tr v-for="project in projects" :key="project.id">
-                                    <template v-if="project.is_first_activation">
+                                    <template v-if="project.is_first_activation && project.is_archived == 0">
                                         <td>{{ project.title}}</td>
                                         <td>{{ project.company_description}}</td>
                                         <td class="centered">{{ project.total_amount_format}}</td>
                                         <td>{{ project.domain}}</td>
                                         <td class="action">
+                                            <a href="#" v-bind:class="{ 'is-loading' : isConfirmed(project.id) }" @click="confirmeProject(project.id)">
+                                                <i class="fa fa-check"></i>Confirmer
+                                            </a>
                                             <router-link :to="{name: 'newPublication', params: { id: project.id }}">
                                                 <i class="fa  fa-eye"></i>Voir
                                             </router-link>
@@ -61,7 +67,8 @@
             return {
                 projects: {},
                 isLoading : true,
-                deleteSuccessful: false
+                deleteSuccessful: false,
+                confirmeSuccessful: false
 
             }
         },
@@ -91,6 +98,23 @@
                     await axios.delete(API_BASE_URL + '/projects/' + id)
                     this.projects.splice(index, 1)
                     this.deleteSuccessful=true
+
+                }
+
+            },
+            isConfirmed(id) {
+                let index = this.projects.findIndex(project => project.id === id)
+                return this.projects[index].isConfirmed
+            },
+            async confirmeProject(id) {
+                let index = this.projects.findIndex(project => project.id === id)
+                Vue.set(this.projects[index], 'isConfirmed', true)
+
+                if(confirm("Voulez vous vraiment confirmer ce projet ?")){
+                    console.log('id',id)
+                    await axios.post(API_BASE_URL + '/projects/' + id+'/status')
+                    this.projects.splice(index, 1)
+                    this.confirmeSuccessful=true
 
                 }
 

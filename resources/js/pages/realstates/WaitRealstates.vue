@@ -7,10 +7,13 @@
         <!-- Content -->
         <div class="row">
 			<!-- Table-->
-			<div class="col-lg-12 col-md-12">
+			<div class="col-lg-12 col-md-12" style="margin-bottom:50px">
 				<div class="notification notice" v-if="deleteSuccessful">
-                        suppression effectué avec succès.
-                    </div>
+                    suppression effectué avec succès.
+                </div>
+                <div class="notification notice" v-if="confirmeSuccessful">
+                    Confirmation effectué avec succès.
+                </div>
 				<div class="dashboard-list-box margin-top-30">
 					<div class="dashboard-list-box-content">
 
@@ -26,12 +29,15 @@
 
 								<!-- Item #1 -->
 								<tr v-for="realstate in realstates" :key="realstate.id">
-                                    <template v-if="realstate.is_first_activation == 1">
+                                    <template v-if="realstate.is_first_activation == 1 && realstate.is_archived == 0">
                                         <td>{{ realstate.title}}</td>
                                         <td>{{ realstate.description}}</td>
                                         <td class="centered">{{ realstate.price_format}}</td>
                                         <td>{{ realstate.contact}}</td>
                                         <td class="action">
+                                            <a href="#" v-bind:class="{ 'is-loading' : isConfirmed(realstate.id) }" @click="confirmeRealstate(realstate.id)">
+                                                <i class="fa fa-check"></i>Confirmer
+                                            </a>
                                             <router-link :to="{name: 'newRealstates', params: { id: realstate.id }}">
                                                 <i class="fa  fa-eye"></i>Voir
                                             </router-link>
@@ -61,7 +67,8 @@
             return {
                 realstates: {},
                 isLoading : true,
-                deleteSuccessful: false
+                deleteSuccessful: false,
+                confirmeSuccessful: false
 
             }
         },
@@ -88,9 +95,26 @@
 
                 if(confirm("Voulez vous vraiment supprimer ce bien immobilier ?")){
 
-                    await axios.delete(API_BASE_URL + '/realstates/' + id)
+                    await axios.delete(API_BASE_URL + '/real_estates/' + id)
                     this.realstates.splice(index, 1)
                     this.deleteSuccessful=true
+
+                }
+
+            },
+            isConfirmed(id) {
+                let index = this.realstates.findIndex(realstate => realstate.id === id)
+                return this.realstates[index].isConfirmed
+            },
+            async confirmeRealstate(id) {
+                let index = this.realstates.findIndex(realstate => realstate.id === id)
+                Vue.set(this.realstates[index], 'isConfirmed', true)
+
+                if(confirm("Voulez vous vraiment confirmer ce bien immobilier ?")){
+                    console.log('id',id)
+                    await axios.post(API_BASE_URL + '/real_estates/' + id+'/status')
+                    this.realstates.splice(index, 1)
+                    this.confirmeSuccessful=true
 
                 }
 

@@ -17,7 +17,7 @@
 		</div>
         <div class="row">
 			<!-- Table-->
-			<div class="col-lg-12 col-md-12">
+			<div class="col-lg-12 col-md-12"  style="margin-bottom:50px">
 
 				<div class="dashboard-list-box margin-top-0">
 					<h4>La société</h4>

@@ -49,6 +49,10 @@ Route::group(['prefix' => 'v1'], function () {
         Route::resource('partners',\v1\PartnerController::class);
         Route::resource('stades',\v1\StadeController::class);
 
+        //Testimonials
+        Route::resource('testimonials',\v1\TestimonialController::class);
+        Route::post('testimonials/{testimonial}/status', 'v1\TestimonialController@switchStatus')->where('testimonial','[0-9]+');
+
         //Domains
         Route::resource('domains',\v1\DomainController::class);
         Route::get('domains/resource/filter','v1\DomainController@filter');

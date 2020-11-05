@@ -13,7 +13,7 @@
                 <router-link :to="{name: 'addDomain', params: { id: id}}" class="button margin-top-30" style="float:right; margin-bottom:15px;">
                      <i class="fa  fa-plus"></i>Ajouter un domaine
                 </router-link>
-                <div class="col-lg-12 col-md-12">
+                <div class="col-lg-12 col-md-12" style="margin-bottom:50px">
                     <div class="notification notice" v-if="deleteSuccessful">
                         suppression effectué avec succès.
                     </div>

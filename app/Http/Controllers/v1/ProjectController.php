@@ -33,6 +33,8 @@ class ProjectController extends Controller
                 'index',
                 'show',
                 'filtered',
+                'destroy',
+                'switchStatus'
             ]
         ]);
 
@@ -375,7 +377,8 @@ class ProjectController extends Controller
 
     public function destroy($id)
     {
-        $selected = $this->instance->newQuery()->find($id);
+
+        $selected = $this->instance->newQuery()->findOrFail($id);
 
         $selected->update([
             'is_archived' => true
@@ -395,6 +398,10 @@ class ProjectController extends Controller
             'is_actived' => !$selected->is_actived
         ]);
 
+        // new UserResource($selected)
+
+        // Send mail
+
         if($selected->is_first_activation)
         {
             $selected->update([
@@ -407,9 +414,9 @@ class ProjectController extends Controller
         $selected->name = "sande";
         $selected->email = "francksande@live.ca";
 
-        //return response()->json(new ProjectResource($selected),200);
+        // new ProjectResource($selected);
 
-        return new enableOrDisableProject($selected);
+        return new ProjectResource($selected);
 
     }
 

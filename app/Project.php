@@ -32,6 +32,7 @@ class Project extends Model
         "is_actived",
         "is_archived",
         "has_drafted",
+        "is_first_activation",
         "user_id",
         "country_id",
         "domain_id",

@@ -93,7 +93,7 @@ class RealEstateController extends Controller
 
     public function destroy($id)
     {
-        $selected = $this->instance->newQuery()->find($id);
+        $selected = $this->instance->newQuery()->findOrFail($id);
 
         $selected->update([
             'is_archived' => true

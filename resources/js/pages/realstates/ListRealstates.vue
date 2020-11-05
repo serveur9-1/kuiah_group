@@ -7,7 +7,7 @@
         <!-- Content -->
         <div class="row">
 			<!-- Table-->
-			<div class="col-lg-12 col-md-12">
+			<div class="col-lg-12 col-md-12"  style="margin-bottom:50px">
 				<div class="notification notice" v-if="deleteSuccessful">
                         suppression effectué avec succès.
                     </div>
@@ -26,7 +26,7 @@
 
 								<!-- Item #1 -->
 								<tr v-for="realstate in realstates" :key="realstate.id">
-                                    <template v-if="realstate.is_first_activation == 0">
+                                    <template v-if="realstate.is_first_activation == 0 && realstate.is_archived == 0">
                                         <td>{{ realstate.title}}</td>
                                         <td>{{ realstate.description}}</td>
                                         <td class="centered">{{ realstate.price_format}}</td>
@@ -88,7 +88,7 @@
 
                 if(confirm("Voulez vous vraiment supprimer ce bien immobilier ?")){
 
-                    await axios.delete(API_BASE_URL + '/realstates/' + id)
+                    await axios.delete(API_BASE_URL + '/real_estates/' + id)
                     this.realstates.splice(index, 1)
                     this.deleteSuccessful=true
 

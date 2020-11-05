@@ -16,6 +16,7 @@ class RealEstate extends Model
         "email",
         "is_actived",
         "is_archived",
+        "is_first_activation",
         "user_id",
     ];
 

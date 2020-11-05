@@ -9,43 +9,84 @@
 			<div class="col-lg-12 col-md-12">
 				<div class="dashboard-list-box margin-top-0">
 					<h4 class="gray">Entrepreneur</h4>
-					<div class="dashboard-list-box-static">
+					<div class="">
 						<!-- Avatar -->
 						<!-- Details -->
-						<div class="my-profile">
-							<label>Nom</label>
-							<dd><p>{{ entrepreneur.firstname }} </p></dd>
+						<div class="submit-page col-md-12" style="background-color:white">
+                            <div class="form col-md-6">
+                                <div class="select">
+                                    <h5><strong>Nom</strong></h5>
+							        <dd><p>{{ entrepreneur.firstname }} </p></dd>
+                                </div>
+                            </div>
 
-							<label>Prénom</label>
-							<dd><p>{{ entrepreneur.lastname }} </p></dd>
+                            <div class="form col-md-6">
+                                <div class="select">
+                                    <h5><strong>Prénoms</strong></h5>
+							        <dd><p>{{ entrepreneur.lastname }} </p></dd>
+                                </div>
+                            </div>
 
-							<label>Email</label>
-							<dd><p>{{ entrepreneur.email }} </p></dd>
+                            <div class="form col-md-6">
+                                <div class="select">
+                                    <h5><strong>E-mail</strong></h5>
+							        <dd><p>{{ entrepreneur.email }} </p></dd>
+                                </div>
+                            </div>
 
-                            <label>Date de création</label>
-							<dd><p>{{ entrepreneur.created_at }} </p></dd>
+                            <div class="form col-md-6">
+                                <div class="select">
+                                    <h5><strong>Date de création</strong></h5>
+							        <dd><p>{{ entrepreneur.created_at }} </p></dd>
+                                </div>
+                            </div>
 
-							<label>Téléphone (Mobile)</label>
-							<dd><p>{{ entrepreneur.extension.p_number }} </p></dd>
+                            <div class="form col-md-6">
+                                <div class="select">
+                                    <h5><strong>Téléphone (Mobile)</strong></h5>
+							        <dd><p>{{ entrepreneur.extension.p_number }} </p></dd>
+                                </div>
+                            </div>
 
-							<label>Téléphone (Fixe)</label>
-							<dd><p>{{ entrepreneur.extension.f_number}}</p></dd>
+                            <div class="form col-md-6">
+                                <div class="select">
+                                    <h5><strong>Téléphone (Fixe)</strong></h5>
+							        <dd><p>{{ entrepreneur.extension.f_number}}</p></dd>
+                                </div>
+                            </div>
 
-							<label>Biographie</label>
-							<dd><p>{{ entrepreneur.extension.biography}} </p></dd>
+                            <div class="form col-md-6">
+                                <div class="select">
+                                    <h5><strong>Biographie</strong></h5>
+							        <dd><p>{{ entrepreneur.extension.biography}} </p></dd>
+                                </div>
+                            </div>
 
-							<label><i class="fa fa-twitter"></i> Twitter</label>
-							<dd><p>{{ entrepreneur.extension.twitter}}</p></dd>
+                            <div class="form col-md-6">
+                                <div class="select">
+                                    <h5><strong>Twitter</strong></h5>
+							        <dd><p>{{ entrepreneur.extension.twitter}}</p></dd>
+                                </div>
+                            </div>
 
-							<label><i class="fa fa-facebook-square"></i> Facebook</label>
-							<dd><p>{{ entrepreneur.extension.facebook}}</p></dd>
+                            <div class="form col-md-6">
+                                <div class="select">
+                                    <h5><strong>Facebook</strong></h5>
+							        <dd><p>{{ entrepreneur.extension.facebook}}</p></dd>
+                                </div>
+                            </div>
 
-							<label><i class="fa fa-linkedin"></i>Linkedin</label>
-								<dd><p>{{ entrepreneur.extension.linkedin}}</p></dd>
+                            <div class="form col-md-6">
+                                <div class="select">
+                                    <h5><strong>Linkedin</strong></h5>
+							        <dd><p>{{ entrepreneur.extension.linkedin}}</p></dd>
+                                </div>
+                            </div>
+
 						</div>
 					</div>
 				</div>
-				<div class="dashboard-list-box margin-top-30">
+				<div class="dashboard-list-box margin-top-30" v-if="entrepreneur.projects[0]">
 					<h4 class="gray">projets</h4>
                     <div class="notification notice" v-if="deleteSuccessful">
                         Status modifié avec succès.
@@ -74,7 +115,7 @@
 							</table>
 					</div>
 				</div>
-                <div class="dashboard-list-box margin-top-30">
+                <div class="dashboard-list-box margin-top-30" v-if="entrepreneur.real_estates[0]">
                     <h4 class="gray">Biens immobiliers</h4>
                     <div class="notification notice" v-if="deleteSuccessful1">
                         Status modifié avec succès.

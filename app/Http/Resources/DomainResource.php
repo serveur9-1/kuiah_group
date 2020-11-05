@@ -22,8 +22,8 @@ class DomainResource extends JsonResource
             'industry' => $this->industry_id,
             'img_url' => asset("public/domains/$this->img"),
             "projects" => ProjectResource::collection($this->toProjects),
-            'created_at' => $this->created_at,
-            'updated_at' => $this->updated_at,
+            'created_at' => $this->created_at->format('d-m-Y'),
+            'updated_at' => $this->updated_at->format('d-m-Y'),
         ];
     }
 }

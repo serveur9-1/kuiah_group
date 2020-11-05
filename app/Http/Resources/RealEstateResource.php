@@ -30,8 +30,8 @@ class RealEstateResource extends JsonResource
             'is_actived' => $this->is_actived,
             'is_archived' => $this->is_archived,
             "is_first_activation" => $this->is_first_activation,
-            'created_at' => $this->created_at,
-            'updated_at' => $this->updated_at,
+            'created_at' => $this->created_at->format('d-m-Y'),
+            'updated_at' => $this->updated_at->format('d-m-Y'),
             'user' => $this->toUser,
             'medias' => $this->toMedias
         ];

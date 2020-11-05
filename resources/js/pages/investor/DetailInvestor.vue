@@ -9,10 +9,10 @@
 			<div class="col-lg-12 col-md-12">
 				<div class="dashboard-list-box margin-top-0">
 					<h4 class="gray">Investisseur</h4>
-					<div class="dashboard-list-box-static">
+					<div class="">
 						<!-- Avatar -->
 						<!-- Details -->
-						<div class="submit-page col-md-12">
+						<div class="submit-page col-md-12"  style="background-color:white">
                             <div class="form col-md-6">
                                 <div class="select">
                                     <h5><strong>Nom</strong></h5>
@@ -90,14 +90,12 @@
                                 </div>
                             </div>
 
-
                             <div class="form col-md-6">
                                 <div class="select">
                                     <h5><strong>Poste</strong></h5>
 								    <dd><p>{{ investor.extension.role}}</p></dd>
                                 </div>
                             </div>
-
 
                             <div class="form col-md-6">
                                 <div class="select">
@@ -112,7 +110,6 @@
 							        <dd><p>{{ investor.extension.facebook}}</p></dd>
                                 </div>
                             </div>
-
 
                             <div class="form col-md-6">
                                 <div class="select">
@@ -129,36 +126,37 @@
                             </div>
 						</div>
 					</div>
-                    <div class="dashboard-list-box margin-top-30">
-					<h4 class="gray">projets</h4>
-                    <div class="notification notice" v-if="deleteSuccessful">
-                        Status modifié avec succès.
-                    </div>
-					<div class="dashboard-list-box-static">
-							<table class="manage-table resumes responsive-table">
-								<tr>
-									<th style="width: 30%;">Titre</th>
-									<th style="width: 45%;"> Description</th>
-									<th style="width: 15%;"> Besoin total</th>
-									<th style="width: 10%;">Actions</th>
-								</tr>
-								<tr v-for="project in investor.projects" :key="project.id">
-									<td>{{ project.title}}</td>
-									<td>{{ project.company_description}}
-									</td>
-									<td class="centered">{{ project.total_amount}}</td>
-									<td class="action">
-										<router-link :to="{name: 'viewPublication', params: { id: project.id }}">
-                                           <i class="fa  fa-eye"></i>Voir
-                                        </router-link>
-										<a href="#" v-if="project.is_actived " @click="stateProject(project.id)" class="delete" ><i class="fa fa-remove"></i>désactiver</a>
-                                            <a href="#" v-else @click="stateProject(project.id)" class="success" ><i class="fa fa-check"></i>activer</a>
-									</td>
-								</tr>
-							</table>
-					</div>
 				</div>
-                <div class="dashboard-list-box margin-top-30">
+                <div class="dashboard-list-box margin-top-30"  v-if="investor.projects[0]">
+                        <h4 class="gray">projets</h4>
+                        <div class="notification notice" v-if="deleteSuccessful">
+                            Status modifié avec succès.
+                        </div>
+                        <div class="dashboard-list-box-static">
+                                <table class="manage-table resumes responsive-table">
+                                    <tr>
+                                        <th style="width: 30%;">Titre</th>
+                                        <th style="width: 45%;"> Description</th>
+                                        <th style="width: 15%;"> Besoin total</th>
+                                        <th style="width: 10%;">Actions</th>
+                                    </tr>
+                                    <tr v-for="project in investor.projects" :key="project.id">
+                                        <td>{{ project.title}}</td>
+                                        <td>{{ project.company_description}}
+                                        </td>
+                                        <td class="centered">{{ project.total_amount}}</td>
+                                        <td class="action">
+                                            <router-link :to="{name: 'viewPublication', params: { id: project.id }}">
+                                            <i class="fa  fa-eye"></i>Voir
+                                            </router-link>
+                                            <a href="#" v-if="project.is_actived " @click="stateProject(project.id)" class="delete" ><i class="fa fa-remove"></i>désactiver</a>
+                                                <a href="#" v-else @click="stateProject(project.id)" class="success" ><i class="fa fa-check"></i>activer</a>
+                                        </td>
+                                    </tr>
+                                </table>
+                        </div>
+                </div>
+                <div class="dashboard-list-box margin-top-30" v-if="investor.real_estates[0]">
                     <h4 class="gray">Biens immobiliers</h4>
                     <div class="notification notice" v-if="deleteSuccessful1">
                         Status modifié avec succès.
@@ -187,7 +185,6 @@
                             </table>
                     </div>
                 </div>
-				</div>
 			</div>
 		</div>
 

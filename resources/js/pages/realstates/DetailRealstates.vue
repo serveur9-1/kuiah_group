@@ -5,7 +5,7 @@
         <TitlebarComponent/>
             <div class="container">
                 <div class="card">
-                    <div class="row">
+                    <div class="row" style="margin-bottom:50px">
                         <aside class="col-sm-5 border-right">
                             <article class="gallery-wrap" v-if="realstate.medias[0]">
                                     <div class="img-big-wrap">

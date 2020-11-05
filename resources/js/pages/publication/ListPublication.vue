@@ -7,7 +7,7 @@
         <!-- Content -->
         <div class="row">
 			<!-- Table-->
-			<div class="col-lg-12 col-md-12">
+			<div class="col-lg-12 col-md-12"  style="margin-bottom:50px">
 				<div class="notification notice" v-if="deleteSuccessful">
                     suppression effectué avec succès.
                 </div>
