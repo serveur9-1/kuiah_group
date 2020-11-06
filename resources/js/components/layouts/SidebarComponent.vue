@@ -1,7 +1,7 @@
 <template>
     <div>
         <!-- Responsive Navigation Trigger -->
-        <a href="#" class="dashboard-responsive-nav-trigger"><i class="fa fa-reorder"></i> Dashboard Navigation</a>
+        <a href="#" class="dashboard-responsive-nav-trigger"><i class="fa fa-reorder"></i> Tableau de board</a>
 
         <div class="dashboard-nav">
             <div class="dashboard-nav-inner">
