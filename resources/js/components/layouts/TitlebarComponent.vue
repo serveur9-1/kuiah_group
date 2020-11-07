@@ -2,7 +2,7 @@
     <div id="titlebar">
         <div class="row">
             <div class="col-md-12">
-                <h2>My Profile</h2>
+                <h2>Dashboard</h2>
             </div>
         </div>
     </div>

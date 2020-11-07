@@ -8,7 +8,7 @@
 <!-- Basic Page Needs
 ================================================== -->
 <meta charset="utf-8">
-<title>Work Scout</title>
+<title>Kuiah finance</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <link rel="stylesheet" href="{{asset('/css/style.css')}}">
 <link rel="stylesheet" href="{{asset('/dashboard-2.html')}}">

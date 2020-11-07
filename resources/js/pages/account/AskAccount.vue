@@ -10,7 +10,7 @@
             </div>
             <div v-else>
                 <!-- Table-->
-                <div class="col-lg-12 col-md-12">
+                <div class="col-lg-12 col-md-12" style="margin-bottom:50px">
                     <div class="notification notice" v-if="deleteSuccessful">
                         Modification effectuée avec succès.
                     </div>
@@ -24,6 +24,7 @@
                                         <th style="width: 10%;">Nom</th>
                                         <th style="width: 30%;">Prénom</th>
                                         <th style="width: 20%;">Email</th>
+                                        <th style="width: 20%;">Type</th>
                                         <th style="width: 15%;">Date de demande</th>
                                         <th style="width: 10%;">Actions</th>
                                     </tr>
@@ -34,6 +35,10 @@
                                             <td>{{ account.firstname }}</td>
                                             <td>{{ account.lastname }}</td>
                                             <td class="centered">{{ account.email }}</td>
+                                            <td class="centered">
+                                                <span class="badge2" v-if="account.extension.is_investor">Investisseur</span>
+                                                <span class="badge1" v-else>Entrépreneur</span>
+                                            </td>
                                             <td>{{ account.created_at }}</td>
                                             <td class="action">
                                                 <a href="#" v-bind:class="{ 'is-loading' : isDeleting(account.id) }" @click="deleteAccount(account.id)">
@@ -106,4 +111,20 @@
 
 <style scoped>
 
+.badge1 {
+    display: inline-block;
+    padding: .3em; /* em unit */
+    border-radius: 5%;
+    text-align: center;
+    background: #1779ba;
+    color: #fefefe;
+}
+.badge2 {
+    display: inline-block;
+    padding: .3em; /* em unit */
+    border-radius: 5%;
+    text-align: center;
+    background: #4CAF50;
+    color: #fefefe;
+}
 </style>

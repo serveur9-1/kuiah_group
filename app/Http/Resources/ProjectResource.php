@@ -45,6 +45,7 @@ class ProjectResource extends JsonResource
             "is_actived" => $this->is_actived,
             "is_archived" => $this->is_archived,
             "has_drafted" => $this->has_drafted,
+            "is_first_activation" => $this->is_first_activation,
             "user" => new UserResource($this->toUser),
             "country" => new CountryResource($this->toCountry),
             "domain" => new DomainResource($this->toDomain),
@@ -55,8 +56,8 @@ class ProjectResource extends JsonResource
             "teams" => $this->toTeams,
             "medias" => $this->toOtherDocs,
             "documents" => $this->toDocuments,
-            "created_at" => $this->created_at,
-            "updated_at" => $this->updated_at,
+            "created_at" => $this->created_at->format('d-m-Y'),
+            "updated_at" => $this->updated_at->format('d-m-Y'),
         ];
     }
 }

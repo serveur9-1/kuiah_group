@@ -11,7 +11,7 @@
             </div>
             <div v-else>
                 <!-- Table-->
-                <div class="col-lg-12 col-md-12">
+                <div class="col-lg-12 col-md-12" style="margin-bottom:50px">
                     <div class="notification notice" v-if="deleteSuccessful">
                         suppression effectué avec succès.
                     </div>
@@ -30,13 +30,10 @@
 
                                     <!-- Item #1 -->
                                     <tr v-for="partner in partners" :key="partner.id">
-                                        <td>{{ partner.img }}</td>
+                                        <td> <div style="width: 80px;"><img :src="partner.img_url" alt=""></div></td>
                                         <td>{{ partner.name }}</td>
                                         <td>{{ partner.created_at}}</td>
                                         <td class="action">
-                                            <router-link :to="{name: 'editPartner', params: { id: partner.id }}">
-                                            <i class="fa  fa-edit"></i>Modifier
-                                            </router-link>
                                             <a href ="#" class="delete" v-bind:class="{ 'is-loading' : isDeleting(partner.id) }" @click="deletePartner(partner.id)"><i class="fa fa-remove"></i>Supprimer</a>
                                         </td>
                                     </tr>

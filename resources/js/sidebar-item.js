@@ -50,7 +50,7 @@ const items = [
                 "path": "/account/ask",
                 "child": []
             },
-            
+
         ]
     },
     {
@@ -67,20 +67,6 @@ const items = [
                     {
                         "title": "Ajouter une industrie",
                         "path": "/industry/add"
-                    },
-                ]
-            },
-            {
-                "item_parent": "Domaines",
-                "path": "/domain/list",
-                "child": [
-                    {
-                        "title": "Liste des domaines",
-                        "path": "/domain/list"
-                    },
-                    {
-                        "title": "Ajouter un domaine",
-                        "path": "/domain/add"
                     },
                 ]
             },

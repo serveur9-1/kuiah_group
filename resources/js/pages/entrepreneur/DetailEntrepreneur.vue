@@ -9,82 +9,141 @@
 			<div class="col-lg-12 col-md-12">
 				<div class="dashboard-list-box margin-top-0">
 					<h4 class="gray">Entrepreneur</h4>
-					<div class="dashboard-list-box-static">
+					<div class="">
 						<!-- Avatar -->
 						<!-- Details -->
-						<div class="my-profile">
-							<label>Nom</label>
-							<dd><p>{{ entrepreneur.firstname }} </p></dd>
+						<div class="submit-page col-md-12" style="background-color:white">
+                            <div class="form col-md-6">
+                                <div class="select">
+                                    <h5><strong>Nom</strong></h5>
+							        <dd><p>{{ entrepreneur.firstname }} </p></dd>
+                                </div>
+                            </div>
 
-							<label>Prénom</label>
-							<dd><p>{{ entrepreneur.lastname }} </p></dd>
+                            <div class="form col-md-6">
+                                <div class="select">
+                                    <h5><strong>Prénoms</strong></h5>
+							        <dd><p>{{ entrepreneur.lastname }} </p></dd>
+                                </div>
+                            </div>
 
-							<label>Email</label>
-							<dd><p>{{ entrepreneur.email }} </p></dd>
+                            <div class="form col-md-6">
+                                <div class="select">
+                                    <h5><strong>E-mail</strong></h5>
+							        <dd><p>{{ entrepreneur.email }} </p></dd>
+                                </div>
+                            </div>
 
-                            <label>Date de création</label>
-							<dd><p>{{ entrepreneur.created_at }} </p></dd>
+                            <div class="form col-md-6">
+                                <div class="select">
+                                    <h5><strong>Date de création</strong></h5>
+							        <dd><p>{{ entrepreneur.created_at }} </p></dd>
+                                </div>
+                            </div>
 
-							<label>Téléphone (Mobile)</label>
-							<dd><p>Here goes description consectetur </p></dd>
+                            <div class="form col-md-6">
+                                <div class="select">
+                                    <h5><strong>Téléphone (Mobile)</strong></h5>
+							        <dd><p>{{ entrepreneur.extension.p_number }} </p></dd>
+                                </div>
+                            </div>
 
-							<label>Téléphone (Fixe)</label>
-							<dd><p>Here goes description consectetur </p></dd>
+                            <div class="form col-md-6">
+                                <div class="select">
+                                    <h5><strong>Téléphone (Fixe)</strong></h5>
+							        <dd><p>{{ entrepreneur.extension.f_number}}</p></dd>
+                                </div>
+                            </div>
 
-							<label>Biographie</label>
-							<dd><p>Here goes description consectetur adipisicing elit, sed do eiusmod
-                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                quis nostrud exercitation ullamco </p></dd>
-							<label><i class="fa fa-twitter"></i> Twitter</label>
-							<dd><p>https://www.twitter.com/</p></dd>
+                            <div class="form col-md-6">
+                                <div class="select">
+                                    <h5><strong>Biographie</strong></h5>
+							        <dd><p>{{ entrepreneur.extension.biography}} </p></dd>
+                                </div>
+                            </div>
 
-							<label><i class="fa fa-facebook-square"></i> Facebook</label>
-							<dd><p>https://www.twitter.com/</p></dd>
+                            <div class="form col-md-6">
+                                <div class="select">
+                                    <h5><strong>Twitter</strong></h5>
+							        <dd><p>{{ entrepreneur.extension.twitter}}</p></dd>
+                                </div>
+                            </div>
 
-							<label><i class="fa fa-linkedin"></i>Linkedin</label>
-								<dd><p>https://www.twitter.com/</p></dd>
+                            <div class="form col-md-6">
+                                <div class="select">
+                                    <h5><strong>Facebook</strong></h5>
+							        <dd><p>{{ entrepreneur.extension.facebook}}</p></dd>
+                                </div>
+                            </div>
+
+                            <div class="form col-md-6">
+                                <div class="select">
+                                    <h5><strong>Linkedin</strong></h5>
+							        <dd><p>{{ entrepreneur.extension.linkedin}}</p></dd>
+                                </div>
+                            </div>
+
 						</div>
 					</div>
 				</div>
-				<div class="dashboard-list-box margin-top-0">
-					<h4 class="gray">Mes projets</h4>
+				<div class="dashboard-list-box margin-top-30" v-if="entrepreneur.projects[0]">
+					<h4 class="gray">projets</h4>
+                    <div class="notification notice" v-if="deleteSuccessful">
+                        Status modifié avec succès.
+                    </div>
 					<div class="dashboard-list-box-static">
 							<table class="manage-table resumes responsive-table">
 								<tr>
 									<th style="width: 30%;">Titre</th>
 									<th style="width: 45%;"> Description</th>
-									<th style="width: 15%;"> Min-Max</th>
+									<th style="width: 15%;"> Besoin total</th>
 									<th style="width: 10%;">Actions</th>
 								</tr>
-								<tr>
-									<td>Front End Web Developer</td>
-									<td>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-										 Suscipit architecto, ut, veniam mollitia voluptates ad vitae sunt quae ipsa
-										  sed tempora dolores iusto eveniet praesentium corporis quibusdam veritatis
+								<tr v-for="project in entrepreneur.projects" :key="project.id">
+									<td>{{ project.title}}</td>
+									<td>{{ project.company_description}}
 									</td>
-									<td class="centered">1,000 - 2,000$</td>
+									<td class="centered">{{ project.total_amount}}</td>
 									<td class="action">
-										<router-link to="/publication/View">
+										<router-link :to="{name: 'viewPublication', params: { id: project.id }}">
                                            <i class="fa  fa-eye"></i>Voir
                                         </router-link>
-										<a href="#" class="delete"><i class="fa fa-remove"></i>Supprimer</a>
-									</td>
-								</tr>
-								<tr>
-									<td>Logo Designer</td>
-									<td>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-										Suscipit architecto, ut, veniam mollitia voluptates ad vitae sunt quae ipsa
-										 sed tempora dolores iusto eveniet praesentium corporis quibusdam veritatis
-								   </td>
-								   <td class="centered">1,000 - 2,000$</td>
-									<td class="action">
-										<a href="#"><i class="fa  fa-eye"></i>Voir</a>
-										<a href="#" class="delete"><i class="fa fa-remove"></i>Supprimer</a>
+										<a href="#" v-if="project.is_actived " @click="stateProject(project.id)" class="delete" ><i class="fa fa-remove"></i>désactiver</a>
+                                            <a href="#" v-else @click="stateProject(project.id)" class="success" ><i class="fa fa-check"></i>activer</a>
 									</td>
 								</tr>
 							</table>
 					</div>
 				</div>
+                <div class="dashboard-list-box margin-top-30" v-if="entrepreneur.real_estates[0]">
+                    <h4 class="gray">Biens immobiliers</h4>
+                    <div class="notification notice" v-if="deleteSuccessful1">
+                        Status modifié avec succès.
+                    </div>
+                    <div class="dashboard-list-box-static">
+
+                            <table class="manage-table resumes responsive-table">
+                                <tr>
+                                    <th style="width: 35%;">Titre</th>
+                                    <th style="width: 35%;"> Description</th>
+                                    <th style="width: 20%;"> Prix</th>
+                                    <th style="width: 10%;">Actions</th>
+                                </tr>
+                                <tr  v-for="realstate in entrepreneur.real_estates" :key="realstate.id">
+                                    <td>{{ realstate.title}}</td>
+                                    <td>{{ realstate.description}}</td>
+                                    <td class="centered">{{ realstate.price_format}}</td>
+                                    <td class="action">
+                                        <router-link :to="{name: 'viewRealstates', params: { id: realstate.id }}">
+                                        <i class="fa  fa-eye"></i>Voir
+                                        </router-link>
+                                        <a href="#" v-if="realstate.is_actived " @click="stateRealstate(realstate.id)" class="delete" ><i class="fa fa-remove"></i>désactiver</a>
+                                        <a href="#" v-else @click="stateRealstate(realstate.id)" class="success" ><i class="fa fa-check"></i>activer</a>
+                                    </td>
+                                </tr>
+                            </table>
+                    </div>
+                </div>
 			</div>
 		</div>
     </div>
@@ -105,6 +164,8 @@
                 id : "",
                 errors: '',
                 isLoading: false,
+                deleteSuccessful: false,
+                deleteSuccessful1: false,
 
             }
         },
@@ -119,6 +180,18 @@
                     this.entrepreneur = response.data;
                 });
             },
+            stateProject(id) {
+
+                axios.post(API_BASE_URL + '/projects/'+id+'/status')
+                this.deleteSuccessful=true
+
+            },
+            stateRealstate(id) {
+
+                axios.post(API_BASE_URL + '/real_estates/'+id+'/status')
+                this.deleteSuccessful1=true
+
+            }
         }
     }
 </script>

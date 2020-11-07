@@ -15,30 +15,26 @@
 				<div class="dashboard-list-box margin-top-0">
 					<h4>Ajouter un partenaire</h4>
 					<div class="dashboard-list-box-content">
-                        <form>
+                        <form @submit="formSubmit" enctype="multipart/form-data">
 
                             <div class="submit-page">
                                 <!-- Email -->
                                 <div class="form">
                                     <h5>Nom du partenaire</h5>
-                                    <input class="search-field" name="name" type="text" v-model="form.name"/>
+                                    <input class="search-field" type="text" v-model="name"/>
                                 </div>
 
                                 <div class="form" style="display:inline-block">
                                     <h5>Logo</h5>
-                                    <div  v-if="!isUpload">
-                                        <label class="upload-btn">
-                                            <input type="file" @change='uploadPhoto' name="img" />
+                                    <div>
+                                        <label class="upload-btn" width="10" height="10">
+                                            <input type="file" v-on:change="onImageChange" />
                                             <i class="fa fa-upload"></i> Parcourir
+                                            <img v-bind:src="imagePreview" width="40" height="10" v-show="showPreview"/>
                                         </label>
-                                        <span class="fake-input">Aucun fichier</span>
-                                    </div>
-                                    <div v-else>
-                                        <button @click="removePhoto()" style="background-color:red; float:right">X</button>
-                                        <img :src="getPhoto()"/>
                                     </div>
                                 </div>
-                                <button type="submit" @click.prevent="SubmitPhoto" class="button margin-top-30 margin-bottom-30">Enregistrer</button>
+                                <button type="submit" class="button margin-top-30 margin-bottom-30">Enregistrer</button>
                             </div>
                         </form>
 
@@ -62,13 +58,12 @@
         data: function () {
             return {
                 message: "Mounted",
-                isUpload : false,
-                form: new Form({
-                    name : '',
-                    img: ''
-                }),
                 savingSuccessful:false,
-                isLoading: false
+                isLoading: false,
+                name: '',
+                img: '',
+                imagePreview: null,
+                showPreview: false,
             }
         },
         mounted() {
@@ -78,43 +73,47 @@
             onMounted: function () {
                 console.log(this.message)
             },
-            uploadPhoto(e){
-                let file = e.target.files[0];
-                let reader = new FileReader();
+            onImageChange(e){
 
-                if(file['size'] < 2111775)
-                {
-                    reader.onloadend = (file) => {
-                     //console.log('RESULT', reader.result)
-                     this.form.img = reader.result;
-                    }
-                     reader.readAsDataURL(file);
-                     this.isUpload = true;
-                }else{
-                    alert('File size can not be bigger than 2 MB')
+                this.img = e.target.files[0];
+                let reader  = new FileReader();
+                reader.addEventListener("load", function () {
+                    this.showPreview = true;
+                    this.imagePreview = reader.result;
+                }.bind(this), false);
+
+                reader.readAsDataURL( this.img );
+            },
+            formSubmit(e) {
+
+                e.preventDefault();
+
+                let currentObj = this;
+
+                const config = {
+
+                    headers: { 'content-type': 'multipart/form-data' }
                 }
-            },
-            //For getting Instant Uploaded Photo
-            getPhoto(){
-               let img = (this.form.img.length > 100) ? this.form.img : "img/profile/"+ this.form.img;
-                return img;
-            },
-            //Insert Photo
-            SubmitPhoto(){
-            console.log(this.form)
-            this.form.post(API_BASE_URL + '/partners/')
-               .then(()=>{
 
-                   console.log("success.....")
-               })
-               .catch(()=>{
-                  console.log("Error.....")
-               })
+                let formData = new FormData();
 
-            },
-            removePhoto(){
-               this.img = '';
-            },
+                formData.append("name", this.name);
+                formData.append("img", this.img);
+
+                axios.post(API_BASE_URL + '/partners/', formData, config)
+                .then(function (response) {
+                    currentObj.success = response.data.success;
+                    currentObj.savingSuccessful = true;
+                    currentObj.name = '';
+                    currentObj.img = '';
+                    currentObj.imagePreview = ''
+                })
+
+                .catch(function (error) {
+                    currentObj.output = error;
+                });
+
+            }
         }
     }
 </script>

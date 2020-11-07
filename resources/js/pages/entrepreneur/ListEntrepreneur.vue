@@ -11,10 +11,11 @@
             </div>
             <div v-else>
                 <!-- Table-->
-                <div class="col-lg-12 col-md-12">
+                <div class="col-lg-12 col-md-12" style="margin-bottom:50px">
                     <div class="notification notice" v-if="deleteSuccessful">
                         suppression effectué avec succès.
                     </div>
+
                     <div class="dashboard-list-box margin-top-30">
                         <div class="dashboard-list-box-content">
 

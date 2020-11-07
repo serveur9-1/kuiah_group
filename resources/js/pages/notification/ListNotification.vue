@@ -7,7 +7,7 @@
         <!-- Content -->
      <div class="container">
 	    <!-- Recent Jobs -->
-        <div class="col-md-12">
+        <div class="col-md-12" style="margin-bottom:50px">
             <div class="padding-right">
                 <div class="listings-container">
                     <!-- Listing -->
@@ -40,7 +40,7 @@
                 </div>
                 <div class="clearfix"></div>
             </div>
-        </div> 
+        </div>
     </div>
 </div>
     <!-- Content / End -->

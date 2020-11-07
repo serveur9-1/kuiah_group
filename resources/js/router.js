@@ -72,11 +72,13 @@ const routes = [
         component : Waitpublication
     },
     {
-        path: '/publication/View',
+        path: '/publication/View:id',
+        name: 'viewPublication',
         component : ViewPublication
     },
     {
-        path: '/publication/waiting/View',
+        path: '/publication/waiting/View/:id',
+        name: 'newPublication',
         component : NewPublication
     },
     {
@@ -85,7 +87,7 @@ const routes = [
         component : ListInvestor
     },
     {
-        path: '/investor/View',
+        path: '/investor/View/:id',
         name: 'investorView',
         component : DetailInvestor
     },
@@ -95,7 +97,7 @@ const routes = [
         component : ListEntrepreneur
     },
     {
-        path: '/entrepreneur/View',
+        path: '/entrepreneur/View/:id',
         name: 'entrepreneurView',
         component : DetailEntrepreneur
     },
@@ -115,22 +117,22 @@ const routes = [
         component : AddIndustry
     },
     {
-        path: '/industry/edit',
+        path: '/industry/edit/:id',
         name: 'editIndustry',
         component : EditIndustry
     },
     {
-        path: '/domain/list',
+        path: '/domain/list/:id',
         name: 'listDomain',
         component : ListDomain
     },
     {
-        path: '/domain/add',
+        path: '/domain/add/:id',
         name: 'addDomain',
         component : AddDomain
     },
     {
-        path: '/domain/edit',
+        path: '/domain/edit/:id',
         name: 'editDomain',
         component : EditDomain
     },
@@ -145,7 +147,7 @@ const routes = [
         component : AddCountry
     },
     {
-        path: '/country/edit',
+        path: '/country/edit/:id',
         name : 'editCountry',
         component : EditCountry
     },
@@ -160,7 +162,7 @@ const routes = [
         component : AddLevel
     },
     {
-        path: '/level/edit',
+        path: '/level/edit/:id',
         name: 'editLevel',
         component : EditLevel
     },
@@ -175,7 +177,7 @@ const routes = [
         component : AddPartner
     },
     {
-        path: '/partner/edit',
+        path: '/partner/edit/:id',
         name: 'editPartner',
         component : EditPartner
     },
@@ -189,11 +191,13 @@ const routes = [
         component : WaitRealstates
     },
     {
-        path: '/realstates/View',
+        path: '/realstates/View/:id',
+        name: 'viewRealstates',
         component : DetailRealstates
     },
     {
-        path: '/realstates/waiting/View',
+        path: '/realstates/waiting/View/:id',
+        name: 'newRealstates',
         component : NewRealstates
     },
     {

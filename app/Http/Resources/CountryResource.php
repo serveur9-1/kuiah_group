@@ -19,8 +19,8 @@ class CountryResource extends JsonResource
             'name' => $request->get('is_fr')?  $this->name_fr :  $this->name_en,
             'name_fr' => $this->name_fr,
             'name_en' => $this->name_en,
-            'created_at' => $this->created_at,
-            'updated_at' => $this->updated_at,
+            'created_at' => $this->created_at->format('d-m-Y'),
+            'updated_at' => $this->updated_at->format('d-m-Y'),
         ];
     }
 }

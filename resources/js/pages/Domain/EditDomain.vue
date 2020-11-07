@@ -8,26 +8,38 @@
         <div class="row">
 			<!-- Table-->
 			<div class="col-lg-12 col-md-12">
+                <div class="notification notice" v-if="updateSuccessful">
+                    Modification effectuée avec succès.
+                </div>
 				<div class="dashboard-list-box margin-top-0">
-					<h4>Modifier le domaine</h4>
-					<div class="dashboard-list-box-content">
+					<h4>Modifier l'industrie</h4>
 
-					<div class="submit-page">
 
-						<!-- Email -->
-						<div class="form">
-							<h5>Nom du domaine (Fr)</h5>
-							<input class="search-field" type="text" value=""/>
-						</div>
+                    <div class="dashboard-list-box-content">
+                        <form @submit.prevent="updateDomain">
 
-						<!-- Email -->
-						<div class="form">
-							<h5>Nom du domain(En)</h5>
-							<input class="search-field" type="text" value=""/>
-						</div>
-                        <a href="#" class="button margin-top-30 margin-bottom-20 ">Enregistrer</a>
-					</div>
+                            <div class="submit-page">
+                                <!-- Email -->
+                                <div class="form">
+                                    <h5>Domaine (Fr)</h5>
+                                    <input class="search-field" type="text" v-model="domain.name_fr" />
+                                </div>
 
+                                <!-- Email -->
+                                <div class="form">
+                                    <h5>Domaine (En)</h5>
+                                    <input class="search-field" type="text" v-model="domain.name_en" />
+                                </div>
+
+                                <!-- Email -->
+                                <div class="form">
+                                    <h5>Industrie</h5>
+                                    <img v-bind:src="domain.img_url" width="40" height="10"/>
+                                </div>
+
+                                <button type="submit" class="button margin-top-30 margin-top-20">Modifier</button>
+                            </div>
+                        </form>
 					</div>
 				</div>
 			</div>
@@ -39,6 +51,8 @@
 </template>
 
 <script>
+    import axios from 'axios'
+    import { API_BASE_URL } from '../src/config'
     import TitlebarComponent from "../../components/layouts/TitlebarComponent";
     export default {
         name: "Dashboard",
@@ -46,6 +60,13 @@
         data: function () {
             return {
                 message: "Mounted",
+                domain: {},
+                id : "",
+                name_en: '',
+                name_fr: '',
+                isLoading: false,
+                updateSuccessful: false,
+
             }
         },
         mounted() {
@@ -53,7 +74,19 @@
         },
         methods: {
             onMounted: function () {
-                console.log(this.message)
+                let id = this.$router.currentRoute.params.id;
+                this.id=this.$route.params.id;
+                axios.get(API_BASE_URL+'/domains/'+this.id).then((response) => {
+                    this.domain = response.data;
+                    console.log(this.domain)
+                });
+            },
+
+           updateDomain() {
+                    axios.put(API_BASE_URL+`/domains/${this.id}`, this.domain)
+                    .then((response) => {
+                        this.updateSuccessful = true
+                    });
             }
         }
     }
