@@ -2179,6 +2179,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Dashboard",
@@ -55861,7 +55864,7 @@ var staticRenderFns = [
                   ),
                   _c(
                     "span",
-                    { staticStyle: { float: "right", "font-size": "20px" } },
+                    { staticStyle: { "font-size": "20px", float: "right" } },
                     [_vm._v("1.000.000.000 $")]
                   )
                 ])
@@ -55876,7 +55879,13 @@ var staticRenderFns = [
                   ),
                   _c(
                     "span",
-                    { staticStyle: { float: "right", "font-size": "20px" } },
+                    {
+                      staticStyle: {
+                        "padding-left": "60px",
+                        "font-size": "20px",
+                        float: "right"
+                      }
+                    },
                     [_vm._v("1.000.000.000")]
                   )
                 ])
@@ -55886,13 +55895,28 @@ var staticRenderFns = [
             _c("li", [
               _c("strong", [
                 _c("a", { attrs: { href: "#" } }, [
-                  _vm._v(
-                    "Nombre total de téléchargement de notre application "
-                  ),
+                  _vm._v("Nombre total d'Industries"),
                   _c(
                     "span",
-                    { staticStyle: { float: "right", "font-size": "20px" } },
+                    { staticStyle: { "font-size": "20px", float: "right" } },
                     [_vm._v("1.000.000.000")]
+                  )
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("li", [
+              _c("strong", [
+                _c("a", { attrs: { href: "#" } }, [
+                  _vm._v("le "),
+                  _c("span", { staticStyle: { color: "black" } }, [
+                    _vm._v("Transport")
+                  ]),
+                  _vm._v("  est l'Industries la plus populaires"),
+                  _c(
+                    "span",
+                    { staticStyle: { "font-size": "20px", float: "right" } },
+                    [_vm._v("100 projets investis")]
                   )
                 ])
               ])

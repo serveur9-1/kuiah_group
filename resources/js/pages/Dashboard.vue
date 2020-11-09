@@ -49,13 +49,16 @@
                     <h4>Statistiques</h4>
                     <ul>
                         <li>
-                             <strong><a href="#">Coût total des investissements réalisés sur la plateforme <span style="float:right; font-size:20px;">1.000.000.000 $</span> </a></strong>
+                             <strong><a href="#">Coût total des investissements réalisés sur la plateforme <span style=" font-size:20px; float:right;">1.000.000.000 $</span> </a></strong>
                         </li>
                         <li>
-                            <strong><a href="#">Nombre total de téléchargement de notre application <span style="float:right; font-size:20px;">1.000.000.000</span> </a></strong>
+                            <strong><a href="#">Nombre total de téléchargement de notre application <span style="padding-left:60px; font-size:20px; float:right;">1.000.000.000</span> </a></strong>
                         </li>
                         <li>
-                            <strong><a href="#">Nombre total de téléchargement de notre application <span style="float:right; font-size:20px;">1.000.000.000</span> </a></strong>
+                            <strong><a href="#">Nombre total d'Industries<span style=" font-size:20px;float:right;">1.000.000.000</span> </a></strong>
+                        </li>
+                         <li>
+                            <strong><a href="#">le <span style="color:black;">Transport</span>  est l'Industries la plus populaires<span style=" font-size:20px;float:right;">100 projets investis</span> </a></strong>
                         </li>
                     </ul>
                 </div>
