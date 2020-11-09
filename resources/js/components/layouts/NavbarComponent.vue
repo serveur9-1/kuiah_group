@@ -7,7 +7,7 @@
                     <div id="logo">
                         <h1>
                             <router-link to="/">
-                                <img src="images/logo.jpeg" alt="kuiah group" class="logo" />
+                                <img src="/images/logo.jpeg" alt="kuiah group" class="logo" />
                             </router-link>
                         </h1>
                     </div>
@@ -27,9 +27,9 @@
                                 </router-link>
                             </li>
                             <li>
-                                <router-link :to="{name: 'login'}">
+                                <a class="nav-link" href @click.prevent="logOut">
                                     <i class="fa fa-sign-out"></i> Se deconnecter
-                                </router-link>
+                                </a>
                             </li>
                         </ul>
                     </nav>
@@ -46,9 +46,19 @@
 </template>
 
 <script>
-    export default {
-        name: "NavbarComponent"
+export default {
+  computed: {
+    currentUser() {
+      return this.$store.state.auth.user;
+    },
+  },
+  methods: {
+    logOut() {
+      this.$store.dispatch('auth/logout');
+      this.$router.push('/login');
     }
+  }
+};
 </script>
 
 <style scoped>

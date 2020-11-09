@@ -10,7 +10,7 @@
             <!-- Profile -->
             <div class="col-lg-6 col-md-12">
                 <div class="dashboard-list-box margin-top-0">
-                    <h4 class="gray">Change Information</h4>
+                    <h4 class="gray">Change Information {{currentUser.access_token}}</h4>
                     <div class="dashboard-list-box-static">
 
                         <!-- Change Password -->
@@ -63,13 +63,16 @@
     export default {
         name: "Dashboard",
         components: {TitlebarComponent},
-        data: function () {
-            return {
-                message: "Mounted",
+        computed: {
+            currentUser() {
+                return this.$store.state.auth.user;
             }
         },
         mounted() {
-            this.onMounted()
+            if (!this.currentUser) {
+
+                this.$router.push('/login');
+            }
         },
         methods: {
             onMounted: function () {

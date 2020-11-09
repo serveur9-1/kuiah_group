@@ -36,12 +36,11 @@ import ListNotification from "./pages/notification/ListNotification";
 import ListTestimonial from "./pages/testimonial/ListTestimonial";
 import AddTestimonial from "./pages/testimonial/AddTestimonial";
 
-
-
-
 Vue.use(Router);
 
-const routes = [
+export const router = new Router({
+  mode: 'history',
+  routes: [
     {
         path: '*',
         component: NotFound
@@ -213,10 +212,19 @@ const routes = [
         path: '/testimonial/add',
         component : AddTestimonial
     },
-];
+  ]
+});
 
+router.beforeEach((to, from, next) => {
+  const publicPages = ['/login'];
+  const authRequired = !publicPages.includes(to.path);
+  const loggedIn = localStorage.getItem('user');
 
-export default new Router({
-    mode: 'history',
-    routes
-})
+  // trying to access a restricted page + not logged in
+  // redirect to login page
+  if (authRequired && !loggedIn) {
+    next('/login');
+  } else {
+    next();
+  }
+});
