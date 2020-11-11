@@ -32,13 +32,15 @@
                                 </div>
 
                                 <!-- Email -->
-                                <div class="form">
-                                    <h5>Industrie</h5>
-                                    <img v-bind:src="domain.img_url" width="40" height="10"/>
+                                <div class="form col-md-6">
+                                    <h5>Image</h5>
+                                    <img v-bind:src="domain.img_url" width="40" height="10" style="width:100px;height:100px"/>
                                 </div>
-
-                                <button type="submit" class="button margin-top-30 margin-top-20">Modifier</button>
+                                <div class="form col-md-6">
+                                    <button type="submit" class="button margin-top-30 margin-top-20">Modifier</button>
+                                </div>
                             </div>
+
                         </form>
 					</div>
 				</div>

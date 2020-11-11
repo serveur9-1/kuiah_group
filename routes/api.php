@@ -37,10 +37,6 @@ Route::group(['prefix' => 'v1'], function () {
         Route::get('projects/{project}/itnotinterestme', ['uses' => 'v1\ProjectController@itNotInterestMe'])->where('project','[0-9]+');
         Route::get('projects/{project}/athistep', ['uses' => 'v1\ProjectController@atThisStep'])->where('project','[0-9]+');
 
-        //User Private
-        Route::resource('users', \v1\UserController::class)->except(['store']);
-        Route::post('users/{user}/status', 'v1\UserController@switchStatus')->where('user','[0-9]+');
-        Route::post('users/domains/add', 'v1\UserController@addDomain');
 
         Route::resource('investors', \v1\InvestorController::class)->only(['store', 'update']);
 
@@ -48,6 +44,8 @@ Route::group(['prefix' => 'v1'], function () {
         Route::resource('industries',\v1\IndustryController::class);
         Route::resource('partners',\v1\PartnerController::class);
         Route::resource('stades',\v1\StadeController::class);
+
+        Route::resource('stats',\v1\StatsController::class);
 
         //Testimonials
         Route::resource('testimonials',\v1\TestimonialController::class);
@@ -61,8 +59,14 @@ Route::group(['prefix' => 'v1'], function () {
         Route::post('users/login', ['uses' => 'v1\AuthController@login']);
         Route::post('users/register', ['uses' => 'v1\AuthController@register']);
         Route::post('users/refreshtoken', 'v1\AuthController@refreshToken');
+        Route::post('users/oldPassword', 'v1\AuthController@oldPassword');
         Route::post('users/generatecode', 'v1\AuthController@generateResetPasswordCode');
         Route::post('users/checkresetcode', 'v1\AuthController@checkResetCode');
+
+        //User Private
+        Route::resource('users', \v1\UserController::class)->except(['store']);
+        Route::post('users/{user}/status', 'v1\UserController@switchStatus')->where('user','[0-9]+');
+        Route::post('users/domains/add', 'v1\UserController@addDomain');
 
 
         //Extra

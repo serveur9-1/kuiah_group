@@ -1,9 +1,9 @@
 <template>
     <div id="wrapper">
-        <NavbarComponent/>
+        <NavbarComponent v-if="currentUser"/>
 
         <div id="dashboard">
-            <SidebarComponent/>
+            <SidebarComponent v-if="currentUser"/>
             <router-view></router-view>
         </div>
 
@@ -15,8 +15,10 @@
     import NavbarComponent from "./layouts/NavbarComponent";
     export default {
         components: {NavbarComponent, SidebarComponent},
-        mounted() {
-            console.log('Component mounted.')
-        }
+        computed: {
+            currentUser() {
+                return this.$store.state.auth.user;
+            },
+        },
     }
 </script>
