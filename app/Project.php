@@ -39,6 +39,8 @@ class Project extends Model
         "stade_id",
     ];
 
+    protected $appends = ['progressbar'];
+
     public function toTags()
     {
         return $this->hasMany('App\Tag');
@@ -87,6 +89,16 @@ class Project extends Model
     public function toDocuments()
     {
         return $this->hasMany('App\Document');
+    }
+
+    public function getProgressbarAttribute()
+    {
+        if($this->total_amount && $this->amount_insured)
+        {
+            return intval((intval($this->amount_insured) * 100) / intval($this->total_amount));
+        } else {
+            return 0;
+        }
     }
 
 }

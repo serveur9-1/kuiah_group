@@ -96,7 +96,7 @@ class UserController extends Controller
 
         if(filter_var($request->get("paginate"), FILTER_VALIDATE_BOOLEAN))
         {
-            $prj = $prj->paginate($request->has("per") ?? 10);
+            $prj = $prj->paginate($request->get("per") ?? 10);
 
             return UserResource::collection($prj);
         }

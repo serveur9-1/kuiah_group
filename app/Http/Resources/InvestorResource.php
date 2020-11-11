@@ -38,7 +38,7 @@ class InvestorResource extends JsonResource
             "max_format" => $this->max_format,
             "created_at" => $this->created_at,
             "updated_at" => $this->updated_at,
-            "projects" => ProjectResource::collection($this->toProjects)
+            "interessed_projects" => ProjectResource::collection($this->toProjects)
         ];
     }
 }

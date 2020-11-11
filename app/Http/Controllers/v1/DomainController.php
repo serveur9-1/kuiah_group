@@ -21,10 +21,7 @@ class DomainController extends Controller
 
     public function index (Request $r)
     {
-        return response()->json(
-            DomainResource::collection($this->instance->newQuery()->get()),
-            200
-        );
+        return DomainResource::collection($this->instance->newQuery()->get());
     }
 
     //Filtered
@@ -32,14 +29,14 @@ class DomainController extends Controller
     {
         $prj = Domain::orderBy('created_at','desc');
 
-        if(count($prj->get()) <= 2*intval($request->get('per')))
+        if(count($prj->get()) <= 2*intval($request->get('per') ?? 10))
         {
             return DomainResource::collection($prj->paginate($request->get('per') ?? 10));
         }
 
         if($request->has('user_id') && $request->filled('user_id'))
         {
-            $user = User::where('id', $request->get("user_id"))->first();
+            $user = User::where('id', $request->get("user_id") ?? null)->first();
 
             if($user)
             {
@@ -62,6 +59,8 @@ class DomainController extends Controller
 
             return DomainResource::collection($prj->paginate($request->get('per') ?? 10));
         }
+
+        return DomainResource::collection($prj->paginate($request->get('per') ?? 10));
     }
 
     public function store(Request $request)

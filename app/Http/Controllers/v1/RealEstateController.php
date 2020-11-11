@@ -23,10 +23,7 @@ class RealEstateController extends Controller
 
     public function index (Request $r)
     {
-        return response()->json(
-            RealEstateResource::collection($this->instance->newQuery()->get()),
-            200
-        );
+        return RealEstateResource::collection($this->instance->newQuery()->paginate($r->get('per') ?? 10));
     }
 
     public function store(Request $request)

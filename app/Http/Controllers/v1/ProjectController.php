@@ -42,9 +42,9 @@ class ProjectController extends Controller
         $this->__save = $__save;
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        return response()->json(ProjectResource::collection($this->instance->newQuery()->get()),200);
+        return ProjectResource::collection($this->instance->newQuery()->paginate(2));
     }
 
     public function show($id)

@@ -7,6 +7,8 @@ use App\Http\Resources\CountryResource;
 use App\Http\Resources\UserResource;
 use App\Http\Resources\StadeResource;
 use App\Http\Resources\DomainResource;
+use App\Country;
+use App\Stade;
 
 class ProjectResource extends JsonResource
 {
@@ -18,6 +20,9 @@ class ProjectResource extends JsonResource
      */
     public function toArray($request)
     {
+        $LOGO = $this->logo ?? 'default.jpeg';
+        $BANNER = $this->logo ?? 'default.jpeg';
+
         return [
             "id" => $this->id,
             "title" => $this->title,
@@ -29,11 +34,12 @@ class ProjectResource extends JsonResource
             "min_amount_format" => number_format($this->min_amount, 2, '.', ',')." €",
             "amount_insured" => $this->amount_insured,
             "amount_insured_format" => number_format($this->amount_insured, 2, '.', ',')." €",
+            "progressbar" => $this->progressbar,
             "company_description" => $this->company_description,
             "team_description" => $this->team_description,
             "company_name" => $this->company_name,
-            "logo_url" => asset("public/projects/media/$this->logo_url"),
-            "banner" => asset("public/projects/media/$this->banner"),
+            "logo_url" => asset("public/projects/media/$LOGO"),
+            "banner" => asset("public/projects/media/$BANNER"),
             "market" => $this->market,
             "proof_or_progres" => $this->proof_or_progres,
             "business_plan_doc" => $this->business_plan_doc,
@@ -47,9 +53,9 @@ class ProjectResource extends JsonResource
             "has_drafted" => $this->has_drafted,
             "is_first_activation" => $this->is_first_activation,
             "user" => new UserResource($this->toUser),
-            "country" => new CountryResource($this->toCountry),
+            "country" => new CountryResource(Country::find($this->country_id)),
             "domain" => new DomainResource($this->toDomain),
-            "stade" => new StadeResource($this->toStade),
+            "stade" => new StadeResource(Stade::find($this->stade_id)),
             "investment_points" => $this->toInvestmentPoints,
             "financial_data" => $this->toFinancialDatas,
             "tags" => $this->toTags,
