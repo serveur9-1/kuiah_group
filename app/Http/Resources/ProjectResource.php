@@ -6,9 +6,10 @@ use Illuminate\Http\Resources\Json\JsonResource;
 use App\Http\Resources\CountryResource;
 use App\Http\Resources\UserResource;
 use App\Http\Resources\StadeResource;
-use App\Http\Resources\DomainResource;
+use App\Http\Resources\DomainSimpleResource;
 use App\Country;
 use App\Stade;
+use App\Domain;
 
 class ProjectResource extends JsonResource
 {
@@ -54,7 +55,7 @@ class ProjectResource extends JsonResource
             "is_first_activation" => $this->is_first_activation,
             "user" => new UserResource($this->toUser),
             "country" => new CountryResource(Country::find($this->country_id)),
-            "domain" => new DomainResource($this->toDomain),
+            "domain" => new DomainSimpleResource(Domain::find($this->domain_id)),
             "stade" => new StadeResource(Stade::find($this->stade_id)),
             "investment_points" => $this->toInvestmentPoints,
             "financial_data" => $this->toFinancialDatas,
