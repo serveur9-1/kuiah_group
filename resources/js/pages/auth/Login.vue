@@ -1,9 +1,16 @@
 <template>
-    <div class="dashboard-content">
+    <div class="dashboard-content" style="margin:auto !important;margin-top:0px !important">
+
 	<div class="my-account">
+        <!-- Logo -->
+        <div>
+            <h1 style="font-weight:bold; font-size:35px;">Se connecter</h1>
+        </div>
 		<div class="tabs-container">
+
 			<!-- Login -->
 			<div class="tab-content" id="tab1" style="display: none;">
+
 				<form method="post" class="login" @submit.prevent="login">
 					<p class="form-row form-row-wide">
 						<label for="username">E-mail:
@@ -25,13 +32,18 @@
                     <div
                         v-if="errors.has('password')"
                         class="alert alert-danger"
-                        role="alert"
-                    >Password is required!</div>
-					<p class="form-row">
+                        role="alert" >Password is required!
+                    </div>
+                    <p class="form-row " :disabled="loading" v-if="loading">
+                        <span v-show="loading" class="spinner-border spinner-border-sm"></span>
+						<input type="submit" class="button border fw margin-top-10" disabled value="loading ..." />
+					</p>
+					<p class="form-row " :disabled="loading" v-else>
+                        <span v-show="loading" class="spinner-border spinner-border-sm"></span>
 						<input type="submit" class="button border fw margin-top-10" name="login" value="Login" />
 					</p>
-                    <div class="form-group">
-                        <div v-if="message" class="alert alert-danger" role="alert">Vos identifiants sont incorrects</div>
+                    <div class="notification notice" v-if="message">
+                        Vos identifiants sont incorrects
                     </div>
 				</form>
 			</div>
@@ -68,6 +80,7 @@ export default {
       this.loading = true;
       this.$validator.validateAll().then(isValid => {
         if (!isValid) {
+          location.reload();
           this.loading = false;
           return;
         }
@@ -75,7 +88,7 @@ export default {
         if (this.user.email && this.user.password) {
           this.$store.dispatch('auth/login', this.user).then(
             () => {
-              this.$router.push('/');
+              this.$router.push('/',location.reload());
             },
             error => {
               this.loading = false;
@@ -93,5 +106,19 @@ export default {
 </script>
 
 <style scoped>
+    .loader1 {
+    border: 2px solid #f3f3f3; /* Light grey */
+    border-top: 2px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 5px;
+    height: 5px;
+    margin:auto;
+    padding:auto;
+    animation: spin 2s linear infinite;
+  }
 
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
 </style>

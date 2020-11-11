@@ -39,7 +39,7 @@
                                             <router-link :to="{name: 'editDomain', params: { id: domain.id }}">
                                             <i class="fa  fa-edit"></i>Modifier
                                             </router-link>
-                                            <a href ="#" class="delete" ><i class="fa fa-remove"></i>Supprimer</a>
+                                            <a v-bind:class="{ 'is-loading' : isDeleting(domain.id) }" @click="deleteDomain(domain.id)" class="delete" href="#" ><i class="fa fa-remove"></i>Supprimer</a>
                                         </td>
                                     </tr>
 
@@ -86,23 +86,23 @@
                 });
             },
 
-            // isDeleting(id) {
-            //     let index = this.industries.findIndex(industry => industry.id === id)
-            //     return this.industries[index].isDeleting
-            // },
-            // async deleteDomain(id) {
-            //     let index = this.industries.findIndex(industry => industry.id === id)
-            //     Vue.set(this.industries[index], 'isDeleting', true)
+            isDeleting(id) {
+                let index = this.industries.domains.findIndex(domain => domain.id === id)
+                return this.industries.domains[index].isDeleting
+            },
+            async deleteDomain(id) {
+                let index = this.industries.domains.findIndex(domain => domain.id === id)
+                Vue.set(this.industries.domains[index], 'isDeleting', true)
 
-            //     if(confirm("Voulez vous vraiment supprimer ce domain?")){
+                if(confirm("Voulez vous vraiment supprimer ce domain?")){
 
-            //         await axios.delete(API_BASE_URL + '/domains/' + id)
-            //         this.industries.splice(index, 1)
-            //         this.deleteSuccessful=true
+                    await axios.delete(API_BASE_URL + '/domains/' + id)
+                    this.industries.domains.splice(index, 1)
+                    this.deleteSuccessful=true
 
-            //     }
+                }
 
-            // }
+            }
 
         }
     }
