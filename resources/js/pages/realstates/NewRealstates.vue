@@ -71,6 +71,7 @@
         data: function () {
             return {
                 realstate: {},
+                title: 'Nouveau bien immobilier' ,
                 id : "",
                 errors: '',
                 isLoading: false,

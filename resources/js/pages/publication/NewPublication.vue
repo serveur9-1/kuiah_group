@@ -2,12 +2,18 @@
     <div class="dashboard-content">
 
         <!-- Titlebar -->
-        <TitlebarComponent/>
+        <div id="titlebar">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 style="font-weight:bold">{{ title}}</h2>
+                </div>
+            </div>
+        </div>
 
         <!-- Content -->
 		<div class="row" style="margin-bottom:20px;">
 			<div class="col-md-4">
-			  <img src="https://store.playstation.com/store/api/chihiro/00_09_000/container/CA/fr/999/UP1415-CUSA03724_00-AV00000000000192/1601172562000/image?w=240&h=240&bg_color=000000&opacity=100&_version=00_09_000" :title="project.logo_url">
+			  <img :src="project.logo_url">
 		   </div>
 		    <div class="col-md-8">
 				<p>
@@ -242,6 +248,7 @@
         data: function () {
             return {
                 project: {},
+                title: "Nouveau projet" ,
                 id : "",
                 errors: '',
                 isLoading: false,

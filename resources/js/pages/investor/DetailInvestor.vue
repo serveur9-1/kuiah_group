@@ -2,7 +2,13 @@
     <div class="dashboard-content">
 
         <!-- Titlebar -->
-        <TitlebarComponent/>
+        <div id="titlebar">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 style="font-weight:bold">{{ title}}</h2>
+                </div>
+            </div>
+        </div>
         <!-- Content -->
         <div class="row">
 			<!-- Profile -->
@@ -129,9 +135,6 @@
 				</div>
                 <div class="dashboard-list-box margin-top-30"  v-if="investor.projects[0]">
                         <h4 class="gray">projets</h4>
-                        <div class="notification notice" v-if="deleteSuccessful">
-                            Status modifié avec succès.
-                        </div>
                         <div class="dashboard-list-box-static">
                                 <table class="manage-table resumes responsive-table">
                                     <tr>
@@ -158,9 +161,6 @@
                 </div>
                 <div class="dashboard-list-box margin-top-30" v-if="investor.real_estates[0]">
                     <h4 class="gray">Biens immobiliers</h4>
-                    <div class="notification notice" v-if="deleteSuccessful1">
-                        Status modifié avec succès.
-                    </div>
                     <div class="dashboard-list-box-static">
 
                             <table class="manage-table resumes responsive-table">
@@ -203,12 +203,11 @@
         data: function () {
             return {
                 message: "Mounted",
+                title: "Détail de l'investisseur" ,
                 investor: {},
                 id : "",
                 errors: '',
                 isLoading: false,
-                deleteSuccessful: false,
-                deleteSuccessful1: false,
 
             }
         },
@@ -226,13 +225,27 @@
             stateProject(id) {
 
                 axios.post(API_BASE_URL + '/projects/'+id+'/status')
-                this.deleteSuccessful=true
+
+                Vue.$toast.success('Statut du projet modifié avec succès.', {
+                    // override the global option
+                    type: "success",
+                    duration: 5000,
+                    position: 'top-right',
+                    dismissible: true
+                })
 
             },
             stateRealstate(id) {
 
                 axios.post(API_BASE_URL + '/real_estates/'+id+'/status')
-                this.deleteSuccessful1=true
+
+                Vue.$toast.success('Statut du bien immobilier modifié avec succès.', {
+                        // override the global option
+                        type: "success",
+                        duration: 5000,
+                        position: 'top-right',
+                        dismissible: true
+                    })
 
             }
         }

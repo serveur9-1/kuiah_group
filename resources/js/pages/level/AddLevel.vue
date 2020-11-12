@@ -2,15 +2,18 @@
     <div class="dashboard-content">
 
         <!-- Titlebar -->
-        <TitlebarComponent/>
+        <div id="titlebar">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 style="font-weight:bold">{{ title}}</h2>
+                </div>
+            </div>
+        </div>
 
         <!-- Content -->
         <div class="row">
 			<!-- Table-->
 			<div class="col-lg-12 col-md-12">
-                <div class="notification notice" v-if="savingSuccessful">
-                    Vous avez ajouté {{ name }} avec succès.
-                </div>
 				<div class="dashboard-list-box margin-top-0">
 					<h4>Ajouter un niveau</h4>
 					<div class="dashboard-list-box-content">
@@ -54,10 +57,10 @@
             return {
                 message: "Mounted",
                 name: '',
+                title : "Ajout de niveau" ,
                 name_en: '',
                 name_fr: '',
                 errors: '',
-                savingSuccessful:false,
                 isLoading: false
             }
         },
@@ -82,6 +85,13 @@
                         this.isLoading = false
                         this.savingSuccessful=true
                         this.$emit('completed', response.data.data)
+                        Vue.$toast.success('Vous avez crée '+this.name+' avec succès.', {
+                            // override the global option
+                            type: "success",
+                            duration: 5000,
+                            position: 'top-right',
+                            dismissible: true
+                        })
                     })
                     .catch(error => {
                         // handle authentication and validation errors here

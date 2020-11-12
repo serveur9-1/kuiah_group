@@ -2,15 +2,18 @@
     <div class="dashboard-content">
 
         <!-- Titlebar -->
-        <TitlebarComponent/>
+        <div id="titlebar">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 style="font-weight:bold">{{ title}}</h2>
+                </div>
+            </div>
+        </div>
 
         <!-- Content -->
         <div class="row">
 			<!-- Table-->
 			<div class="col-lg-12 col-md-12">
-                <div class="notification notice" v-if="updateSuccessful">
-                    Modification effectuée avec succès.
-                </div>
 				<div class="dashboard-list-box margin-top-0">
 					<h4>Modifier le  partenaire</h4>
                     <div class="dashboard-list-box-content">
@@ -54,11 +57,11 @@
         data: function () {
             return {
                 partner: {},
+                title: "Modification du partenaire" ,
                 id : "",
                 name: '',
                 errors: '',
                 isLoading: false,
-                updateSuccessful: false,
             }
         },
         mounted() {
@@ -70,14 +73,19 @@
                 this.id=this.$route.params.id;
                 axios.get(API_BASE_URL+'/partners/'+this.id).then((response) => {
                     this.partner = response.data;
-                    console.log('test',this.partner)
                 });
             },
 
            updateIndustry() {
                     axios.put(API_BASE_URL+`/partners/${this.id}`, this.partner)
                     .then((response) => {
-                        this.updateSuccessful = true
+                        Vue.$toast.success('Modification éffectuée avec succès.', {
+                            // override the global option
+                            type: "success",
+                            duration: 5000,
+                            position: 'top-right',
+                            dismissible: true
+                        })
                     });
             }
         }

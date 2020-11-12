@@ -2,7 +2,13 @@
 <div class="dashboard-content">
 
         <!-- Titlebar -->
-        <TitlebarComponent/>
+       <div id="titlebar">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 style="font-weight:bold">{{ title}}</h2>
+                </div>
+            </div>
+        </div>
 
         <!-- Content -->
      <div class="container">
@@ -54,6 +60,7 @@
         data: function () {
             return {
                 message: "Mounted",
+                title : "Notification" ,
             }
         },
         mounted() {

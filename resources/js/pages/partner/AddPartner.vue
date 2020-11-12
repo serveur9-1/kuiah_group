@@ -2,16 +2,19 @@
     <div class="dashboard-content">
 
         <!-- Titlebar -->
-        <TitlebarComponent/>
+        <div id="titlebar">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 style="font-weight:bold">{{ title}}</h2>
+                </div>
+            </div>
+        </div>
 
         <!-- Content -->
         <div class="row">
 
             <!-- Table-->
 			<div class="col-lg-12 col-md-12">
-                <div class="notification notice" v-if="savingSuccessful">
-                    Vous avez ajouté {{ name }} avec succès.
-                </div>
 				<div class="dashboard-list-box margin-top-0">
 					<h4>Ajouter un partenaire</h4>
 					<div class="dashboard-list-box-content">
@@ -58,9 +61,10 @@
         data: function () {
             return {
                 message: "Mounted",
-                savingSuccessful:false,
+                title: "Ajout de partenaire" ,
                 isLoading: false,
                 name: '',
+                name1: '',
                 img: '',
                 imagePreview: null,
                 showPreview: false,
@@ -103,10 +107,17 @@
                 axios.post(API_BASE_URL + '/partners/', formData, config)
                 .then(function (response) {
                     currentObj.success = response.data.success;
-                    currentObj.savingSuccessful = true;
+                    currentObj.name1 = currentObj.name;
                     currentObj.name = '';
                     currentObj.img = '';
                     currentObj.imagePreview = ''
+                    Vue.$toast.success('Vous avez crée '+currentObj.name1+' avec succès.', {
+                        // override the global option
+                        type: "success",
+                        duration: 5000,
+                        position: 'top-right',
+                        dismissible: true
+                    })
                 })
 
                 .catch(function (error) {

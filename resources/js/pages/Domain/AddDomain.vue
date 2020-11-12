@@ -2,15 +2,18 @@
     <div class="dashboard-content">
 
         <!-- Titlebar -->
-        <TitlebarComponent/>
+        <div id="titlebar">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 style="font-weight:bold">{{ title}}</h2>
+                </div>
+            </div>
+        </div>
 
         <!-- Content -->
         <div class="row">
 			<!-- Table-->
 			<div class="col-lg-12 col-md-12">
-                <div class="notification notice" v-if="savingSuccessful">
-                   Ajout éffectué avec succès.
-                </div>
 				<div class="dashboard-list-box margin-top-0">
 					<h4>Ajouter un domaine</h4>
 					<div class="dashboard-list-box-content">
@@ -61,6 +64,8 @@
                 industries: {},
                 isLoading : true,
                 savingSuccessful:false,
+                title : 'Ajout de domaine',
+                name: '',
                 name_fr: '',
                 name_en: '',
                 img: '',
@@ -111,11 +116,18 @@
                 axios.post(API_BASE_URL + '/domains/', formData, config)
                 .then(function (response) {
                     currentObj.success = response.data.success;
-                    currentObj.savingSuccessful = true;
+                    currentObj.name = currentObj.name_fr;
                     currentObj.name_fr = '';
                     currentObj.name_en = '';
                     currentObj.img = '';
                     currentObj.imagePreview = ''
+                    Vue.$toast.success('Vous avez crée '+currentObj.name+' avec succès.', {
+                        // override the global option
+                        type: "success",
+                        duration: 5000,
+                        position: 'top-right',
+                        dismissible: true
+                    })
                 })
 
                 .catch(function (error) {

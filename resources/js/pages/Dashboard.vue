@@ -4,7 +4,13 @@
     <div class="dashboard-content" v-else>
 
         <!-- Titlebar -->
-        <TitlebarComponent/>
+        <div id="titlebar">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 style="font-weight:bold">{{ title}}</h2>
+                </div>
+            </div>
+        </div>
 
         <!-- Content -->
         <div class="row">
@@ -81,11 +87,11 @@
         data: function () {
             return {
                 projects: {},
+                title: "Tableau de bord",
                 real_estates: {},
                 investors: {},
                 entrepreneurs: {},
                 isLoading : true,
-                deleteSuccessful: false
 
             }
         },
@@ -96,10 +102,10 @@
         methods: {
             onMounted: function () {
                 axios.get(API_BASE_URL+"/projects/").then((data) => {
-                    this.projects = data.data;
+                    this.projects = data.data.data;
                 });
                 axios.get(API_BASE_URL+"/real_estates/").then((data) => {
-                    this.real_estates = data.data;
+                    this.real_estates = data.data.data;
                 });
                 axios.get(API_BASE_URL+"/users?investor=true").then((data) => {
                     this.investors = data.data;

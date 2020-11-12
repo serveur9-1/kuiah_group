@@ -2,7 +2,13 @@
     <div class="dashboard-content">
 
         <!-- Titlebar -->
-        <TitlebarComponent/>
+        <div id="titlebar">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 style="font-weight:bold">{{ title}}</h2>
+                </div>
+            </div>
+        </div>
 
         <!-- Content -->
         <div class="row">
@@ -53,6 +59,7 @@
         data: function () {
             return {
                 message: "Mounted",
+                title : "Modification de niveau",
                 level: {},
                 id : "",
                 name: '',
@@ -60,7 +67,6 @@
                 name_fr: '',
                 errors: '',
                 isLoading: false,
-                updateSuccessful: false,
 
             }
         },
@@ -79,7 +85,13 @@
            updateLevel() {
                     axios.put(API_BASE_URL+`/stades/${this.id}`, this.level)
                     .then((response) => {
-                        this.updateSuccessful = true
+                       Vue.$toast.success('Modification éffectuée avec succès.', {
+                            // override the global option
+                            type: "success",
+                            duration: 5000,
+                            position: 'top-right',
+                            dismissible: true
+                        })
                     });
             }
         }

@@ -2,15 +2,18 @@
     <div class="dashboard-content">
 
         <!-- Titlebar -->
-        <TitlebarComponent/>
+        <div id="titlebar">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 style="font-weight:bold">{{ title}}</h2>
+                </div>
+            </div>
+        </div>
 
         <!-- Content -->
         <div class="row">
 			<!-- Table-->
 			<div class="col-lg-12 col-md-12">
-                <div class="notification notice" v-if="savingSuccessful">
-                    Vous avez ajouté {{ name }} avec succès.
-                </div>
 				<div class="dashboard-list-box margin-top-0">
 					<h4>Ajouter un pays</h4>
 					<div class="dashboard-list-box-content">
@@ -55,6 +58,7 @@
         data: function () {
             return {
                 message: "Mounted",
+                title : "Ajout de pays",
                 name: '',
                 name_en: '',
                 name_fr: '',
@@ -82,7 +86,13 @@
                         this.name_fr = ''
                         this.name_en = ''
                         this.isLoading = false
-                        this.savingSuccessful=true
+                        Vue.$toast.success('Vous avez crée '+this.name+' avec succès.', {
+                            // override the global option
+                            type: "success",
+                            duration: 5000,
+                            position: 'top-right',
+                            dismissible: true
+                        })
                         this.$emit('completed', response.data.data)
                     })
                     .catch(error => {

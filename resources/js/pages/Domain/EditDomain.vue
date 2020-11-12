@@ -2,15 +2,18 @@
     <div class="dashboard-content">
 
         <!-- Titlebar -->
-        <TitlebarComponent/>
+        <div id="titlebar">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 style="font-weight:bold">{{ title}}</h2>
+                </div>
+            </div>
+        </div>
 
         <!-- Content -->
         <div class="row">
 			<!-- Table-->
 			<div class="col-lg-12 col-md-12">
-                <div class="notification notice" v-if="updateSuccessful">
-                    Modification effectuée avec succès.
-                </div>
 				<div class="dashboard-list-box margin-top-0">
 					<h4>Modifier l'industrie</h4>
 
@@ -63,11 +66,11 @@
             return {
                 message: "Mounted",
                 domain: {},
+                title: 'Modification de domaine' ,
                 id : "",
                 name_en: '',
                 name_fr: '',
                 isLoading: false,
-                updateSuccessful: false,
 
             }
         },
@@ -80,14 +83,19 @@
                 this.id=this.$route.params.id;
                 axios.get(API_BASE_URL+'/domains/'+this.id).then((response) => {
                     this.domain = response.data;
-                    console.log(this.domain)
                 });
             },
 
            updateDomain() {
                     axios.put(API_BASE_URL+`/domains/${this.id}`, this.domain)
                     .then((response) => {
-                        this.updateSuccessful = true
+                        Vue.$toast.success('Modification éffectuée avec succès.', {
+                        // override the global option
+                        type: "success",
+                        duration: 5000,
+                        position: 'top-right',
+                        dismissible: true
+                    })
                     });
             }
         }

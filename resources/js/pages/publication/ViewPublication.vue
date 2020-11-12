@@ -2,12 +2,18 @@
     <div class="dashboard-content">
 
         <!-- Titlebar -->
-        <TitlebarComponent/>
+        <div id="titlebar">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 style="font-weight:bold">{{ title}}</h2>
+                </div>
+            </div>
+        </div>
 
         <!-- Content -->
 		<div class="row" style="margin-bottom:20px;">
 			<div class="col-md-4">
-			  <img :src="project.logo_url" :title="project.logo_url">
+			  <img :src="project.logo_url">
 		   </div>
 		    <div class="col-md-8">
 				<p>
@@ -44,7 +50,7 @@
 						<!-- Job Type -->
 						<div class="form">
 							<h5><strong>Localisation de l'entreprise</strong></h5>
-							<dd><p>{{ project.country }} </p></dd>
+							<dd><p>{{ project.country.name }} </p></dd>
 						</div>
 
                         <!-- Email -->
@@ -68,7 +74,7 @@
 						<div class="form">
 							<div class="select">
 								<h5><strong>Domaine</strong></h5>
-								<dd><p>{{ project.domain }} </p></dd>
+								<dd><p>{{ project.domain.name }} </p></dd>
 							</div>
 						</div>
 						<div class="form">
@@ -78,7 +84,7 @@
 
 						<div class="form">
 							<h5><strong>Stade de développement</strong></h5>
-							<dd><p>{{ project.stade }} </p></dd>
+							<dd><p>{{ project.stade.name }} </p></dd>
 						</div>
 
 						<!-- Tags -->
@@ -103,8 +109,8 @@
 
 						<!-- Company Name -->
 						<div class="form" style="width: 100%;">
-							<h5><strong>Description</strong> </h5>
-							<dd><p>{{ project.company_description }}</p></dd>
+							<h5><strong>Description du projet</strong> </h5>
+							<dd><p>{{ project.executive_summary }}</p></dd>
 						</div>
 
 						<!-- Website -->
@@ -158,32 +164,29 @@
 						<!-- Company Name -->
 						<div class="form">
 							<h5>Business plan<span>(optional)</span></h5>
-							<a href="/images/myw3schoolsimage.jpg" download>
+							<a :href="project.business_plan_doc" download>
 								<label class="upload-btn">
 							    <i class="fa fa-upload"></i>Télécharger
 							   </label>
                             </a>
-                            {{ project.business_plan_doc }}
 						</div>
 
 						<!-- Website -->
 						<div class="form">
 							<h5>Données financières<span>(optional)</span></h5>
-							<a href="/images/myw3schoolsimage.jpg" download>
+							<a :href="project.financial_data_doc" download>
 								<label class="upload-btn">
 							    <i class="fa fa-upload"></i>Télécharger
 							   </label>
                             </a>
-                            {{ project.financial_data_doc }}
 						</div>
 						<div class="form">
 							<h5>Sommaire exécutif<span>(optional)</span></h5>
-							<a href="/images/myw3schoolsimage.jpg" download>
+							<a :href="project.executive_summary_doc" download>
 								<label class="upload-btn">
 							    <i class="fa fa-upload"></i>Télécharger
 							   </label>
                             </a>
-                            {{ project.executive_summary_doc }}
 						</div>
 						<div class="form">
 							<h5>Diaporama<span>(optional)</span></h5>
@@ -241,6 +244,7 @@
         data: function () {
             return {
                 props: ['vue projet'],
+                title: "Détail du projet" ,
                 project: {},
                 id : "",
                 errors: '',

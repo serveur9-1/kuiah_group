@@ -1,8 +1,14 @@
 <template>
     <div class="dashboard-content">
 
-        <!-- Titlebar -->
-        <TitlebarComponent/>
+            <!-- Titlebar -->
+            <div id="titlebar">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 style="font-weight:bold">{{ title}}</h2>
+                    </div>
+                </div>
+            </div>
             <div class="container">
                 <div class="card">
                     <div class="row" style="margin-bottom:50px">
@@ -71,6 +77,7 @@
         data: function () {
             return {
                 realstate: {},
+                title: "Détail du bien immobilier" ,
                 id : "",
                 errors: '',
                 isLoading: false,

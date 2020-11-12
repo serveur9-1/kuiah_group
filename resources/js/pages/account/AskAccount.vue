@@ -2,7 +2,13 @@
     <div class="dashboard-content">
 
         <!-- Titlebar -->
-        <TitlebarComponent/>
+        <div id="titlebar">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 style="font-weight:bold">{{ title}}</h2>
+                </div>
+            </div>
+        </div>
         <!-- Content -->
         <div class="row">
 
@@ -11,14 +17,14 @@
             <div v-else>
                 <!-- Table-->
                 <div class="col-lg-12 col-md-12" style="margin-bottom:50px">
-                    <div class="notification notice" v-if="deleteSuccessful">
-                        Confirmation effectuée avec succès.
+                    <div class="col-md-6" style="float:left; bottom:20px">
+                        <input type="text" id="myInput"  onkeyup="myFunction()" placeholder="Recherche">
                     </div>
                     <div class="dashboard-list-box margin-top-30">
                         <div class="dashboard-list-box-content">
 
                             <!-- Table -->
-                                <table class="manage-table resumes responsive-table">
+                                <table class="manage-table resumes responsive-table" id="myTable">
 
                                     <tr>
                                         <th style="width: 10%;">Nom</th>
@@ -69,6 +75,7 @@
         data: function () {
             return {
                 accounts: {},
+                title : 'Compte en attente de validation',
                 isLoading : true,
                 deleteSuccessful: false
 
@@ -99,7 +106,13 @@
 
                     await axios.post(API_BASE_URL + '/users/'+id+'/status')
                     this.accounts.splice(index, 1)
-                    this.deleteSuccessful=true
+                    Vue.$toast.success('Confirmation éffectuée avec succès.', {
+                        // override the global option
+                        type: "success",
+                        duration: 5000,
+                        position: 'top-right',
+                        dismissible: true
+                    })
 
                 }
 

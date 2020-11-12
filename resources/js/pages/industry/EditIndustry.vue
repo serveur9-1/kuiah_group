@@ -2,15 +2,18 @@
     <div class="dashboard-content">
 
         <!-- Titlebar -->
-        <TitlebarComponent/>
+        <div id="titlebar">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 style="font-weight:bold">{{ title}}</h2>
+                </div>
+            </div>
+        </div>
 
         <!-- Content -->
         <div class="row">
 			<!-- Table-->
 			<div class="col-lg-12 col-md-12">
-                <div class="notification notice" v-if="updateSuccessful">
-                    Modification effectuée avec succès.
-                </div>
 				<div class="dashboard-list-box margin-top-0">
 					<h4>Modifier l'industrie</h4>
 
@@ -53,6 +56,7 @@
         data: function () {
             return {
                 message: "Mounted",
+                title : "Modification d'industrie" ,
                 industry: {},
                 id : "",
                 name: '',
@@ -60,7 +64,6 @@
                 name_fr: '',
                 errors: '',
                 isLoading: false,
-                updateSuccessful: false,
 
             }
         },
@@ -77,10 +80,16 @@
             },
 
            updateIndustry() {
-                    axios.put(API_BASE_URL+`/industries/${this.id}`, this.industry)
-                    .then((response) => {
-                        this.updateSuccessful = true
-                    });
+                axios.put(API_BASE_URL+`/industries/${this.id}`, this.industry)
+                .then((response) => {
+                    Vue.$toast.success('Modification éffectuée avec succès.', {
+                        // override the global option
+                        type: "success",
+                        duration: 5000,
+                        position: 'top-right',
+                        dismissible: true
+                    })
+                });
             }
         }
     }

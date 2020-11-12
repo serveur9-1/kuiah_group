@@ -2,7 +2,13 @@
     <div class="dashboard-content">
 
         <!-- Titlebar -->
-        <TitlebarComponent/>
+        <div id="titlebar">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 style="font-weight:bold">{{ title}}</h2>
+                </div>
+            </div>
+        </div>
         <!-- Content -->
         <div class="row">
 			<!-- Profile -->
@@ -162,6 +168,7 @@
                 message: "Mounted",
                 entrepreneur: {},
                 id : "",
+                title: "Détail de l'entrepreneur" ,
                 errors: '',
                 isLoading: false,
                 deleteSuccessful: false,
@@ -183,13 +190,27 @@
             stateProject(id) {
 
                 axios.post(API_BASE_URL + '/projects/'+id+'/status')
-                this.deleteSuccessful=true
+
+                Vue.$toast.success('Statut du projet modifié avec succès.', {
+                        // override the global option
+                        type: "success",
+                        duration: 5000,
+                        position: 'top-right',
+                        dismissible: true
+                    })
 
             },
             stateRealstate(id) {
 
                 axios.post(API_BASE_URL + '/real_estates/'+id+'/status')
-                this.deleteSuccessful1=true
+
+                Vue.$toast.success('Statut du bien immobilier modifié avec succès.', {
+                        // override the global option
+                        type: "success",
+                        duration: 5000,
+                        position: 'top-right',
+                        dismissible: true
+                    })
 
             }
         }
