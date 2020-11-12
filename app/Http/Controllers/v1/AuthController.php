@@ -244,8 +244,9 @@ class AuthController extends Controller
                 'scope' => '*',
             ],
         ]);
-
-        $result = json_decode((string) $response->getBody(), true);
+        $info = $response->getBody();
+        $result = json_decode((string) $info, true);
+        $result["user_id"] = auth()->user()->id;
         return response()->json($result, $this->successStatus);
     }
 }

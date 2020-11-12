@@ -4,7 +4,9 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 use App\Http\Resources\CountryResource;
+use App\Http\Resources\UserSimpleResource;
 use App\Country;
+use App\User;
 
 
 class RealEstateResource extends JsonResource
@@ -32,7 +34,7 @@ class RealEstateResource extends JsonResource
             "is_first_activation" => $this->is_first_activation,
             'created_at' => $this->created_at->format('d-m-Y'),
             'updated_at' => $this->updated_at->format('d-m-Y'),
-            'user' => $this->toUser,
+            'user' => new UserSimpleResource(User::find($this->user_id)),
             'medias' => $this->toMedias
         ];
     }
