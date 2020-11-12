@@ -2,27 +2,35 @@
     <div class="dashboard-content">
 
         <!-- Titlebar -->
-        <TitlebarComponent/>
-
-
+        <div id="titlebar">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 style="font-weight:bold">{{ title}}</h2>
+                </div>
+            </div>
+        </div>
         <!-- Content -->
         <div class="row">
             <!-- Profile -->
             <div class="col-lg-6 col-md-12">
                 <div class="dashboard-list-box margin-top-0">
-                    <h4 class="gray">Change Information </h4>
+                    <h4 class="gray">Change Information</h4>
                     <div class="dashboard-list-box-static">
+                        <form @submit.prevent="updateInfo">
+                            <!-- Change Password -->
+                            <div class="my-profile">
+                                <label class="margin-top-0">Nom</label>
+                                <input type="text"  v-model="users.firstname">
 
-                        <!-- Change Password -->
-                        <div class="my-profile">
-                            <label class="margin-top-0">Fullname</label>
-                            <input type="text">
+                                <label class="margin-top-0">Prénoms</label>
+                                <input type="text"  v-model="users.lastname">
 
-                            <label>New E-mail</label>
-                            <input type="email">
+                                <label>E-mail</label>
+                                <input type="email"  v-model="users.email">
 
-                            <button class="button margin-top-15">Save Information</button>
-                        </div>
+                                <button class="button margin-top-15" type="submit">Enregistrer</button>
+                            </div>
+                        </form>
 
                     </div>
                 </div>
@@ -30,9 +38,6 @@
 
             <!-- Change Password -->
             <div class="col-lg-6 col-md-12">
-                <div class="notification notice" v-if="savingSuccessful">
-                    Modification éffectué avec succès.
-                </div>
                 <div class="dashboard-list-box margin-top-0">
                     <h4 class="gray">Change Password</h4>
                     <div class="dashboard-list-box-static">
@@ -42,20 +47,14 @@
                             <div class="my-profile">
                                 <label class="margin-top-0">Current Password</label>
                                 <input type="password" v-model="old_password">
-                                <span class="notification" v-if="message">
-                                    Mot de passe incorrect
-                                </span>
 
-                                <label>New Password</label>
+                                <label>Mot de passe</label>
                                 <input type="password" v-model="password">
 
-                                <label>Confirm New Password</label>
+                                <label>Rétapez le mot de passe</label>
                                 <input type="password" v-model="password_confirmation   ">
 
-                                <button class="button margin-top-15" type="submit">Change Password</button>
-                            </div>
-                            <div class="notification notice" v-if="message">
-                                Mot de passe incorrect
+                                <button class="button margin-top-15" type="submit">Changer mot de passe</button>
                             </div>
                         </form>
 
@@ -78,12 +77,13 @@
         components: {TitlebarComponent},
         data: function () {
             return {
+                users: {},
+                title : 'Modification du compte',
                 message: '',
+                id : '',
                 old_password: '',
                 password: '',
                 password_confirmation: '',
-                errors: '',
-                savingSuccessful:false,
                 isLoading: false
             }
         },
@@ -94,28 +94,54 @@
         },
         mounted() {
             if (!this.currentUser) {
-
                 location.reload();
+            }
+            else{
+                this.id = this.$store.state.auth.user.user_id;
+                axios.get(API_BASE_URL+'/users/'+this.id).then((response) => {
+                    this.users = response.data;
+                });
             }
         },
         methods: {
             onMounted: function () {
                 console.log(this.message)
             },
+
+            updateInfo() {
+                this.id = this.$store.state.auth.user.user_id;
+                axios.put(API_BASE_URL+`/users/${this.id}`, this.users)
+                .then((response) => {
+                    Vue.$toast.success('Modification éffectuée avec succès.', {
+                        // override the global option
+                        type: "success",
+                        duration: 5000,
+                        position: 'top-right',
+                        dismissible: true
+                     })
+                });
+            },
+
             onSubmit() {
             this.isLoading = true
             this.oldPassword()
             },
             async oldPassword() {
 
-                await axios.post(API_BASE_URL + '/users/oldPassword', this.$data)
+                await axios.post(API_BASE_URL + `/users/oldPassword/${this.id}`, this.$data)
                     .then(response => {
                         this.old_password = ''
                         this.password = ''
                         this.password_confirmation = ''
                         this.isLoading = false
-                        this.savingSuccessful=true
                         this.$emit('completed', response.data.data)
+                        Vue.$toast.success('Mot de passe modifié avec succès.', {
+                            // override the global option
+                            type: "success",
+                            duration: 5000,
+                            position: 'top-right',
+                            dismissible: true
+                        })
                     })
                     .catch(error => {
                     this.loading = false;
@@ -123,6 +149,13 @@
                         (error.response && error.response.data && error.response.data.message) ||
                         error.message ||
                         error.toString();
+                        Vue.$toast.error('Mot de passe incorrect.', {
+                            // override the global option
+                            type: "error",
+                            duration: 5000,
+                            position: 'top-right',
+                            dismissible: true
+                        })
 
                     })
             }

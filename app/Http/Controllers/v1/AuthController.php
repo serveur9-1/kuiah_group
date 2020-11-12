@@ -143,9 +143,6 @@ class AuthController extends Controller
 
         if($user)
         {
-            if(bcrypt($request->get('old_password')) == $user->password){
-
-            }
             $user->update([
                 "password" => bcrypt($request->get('password')),
                 "password_reset_code" => null,
@@ -160,7 +157,7 @@ class AuthController extends Controller
     }
 
     //old password
-    public function oldPassword(Request $request)
+    public function oldPassword($id, Request $request)
     {
         $validator = Validator::make($request->all(), [
             'old_password' => 'required',
@@ -171,18 +168,22 @@ class AuthController extends Controller
             return response()->json(['error' => $validator->errors()], 401);
         }
 
-        $user = User::where('email', $request->user()->email)->first();
+        $user = User::where('id', $id)->first();
 
         if($user)
         {
-            if(bcrypt($request->get('old_password')) == $user->password){
+            if(Auth::attempt(['email' => $user->email, 'password' => $request->get('old_password')])){
 
+                $user->update([
+                    "password" => bcrypt($request->get('password')),
+                ]);
+
+                return response()->json(["message" => "Password updated"], 200);
+            }else{
+
+                return response()->json(['error'=>"Old password incorrect"], 401);
             }
-            $user->update([
-                "password" => bcrypt($request->get('password')),
-            ]);
 
-            return response()->json(["message" => "Password updated"], 200);
 
         } else {
             return response()->json(['error'=>"User does not exist"], 401);

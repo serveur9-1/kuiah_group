@@ -54,6 +54,14 @@
             <!-- Recent Activity -->
             <div class="col-lg-12 col-md-12">
                 <div class="dashboard-list-box margin-top-20">
+                    <chartjs-bar></chartjs-bar>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <!-- Recent Activity -->
+            <div class="col-lg-12 col-md-12">
+                <div class="dashboard-list-box margin-top-20">
                     <h4>Statistiques</h4>
                     <ul>
                         <li>
@@ -86,11 +94,11 @@
         components: {TitlebarComponent},
         data: function () {
             return {
-                projects: {},
+                projects: '',
                 title: "Tableau de bord",
-                real_estates: {},
-                investors: {},
-                entrepreneurs: {},
+                real_estates: '',
+                investors: '',
+                entrepreneurs: '',
                 isLoading : true,
 
             }

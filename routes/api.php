@@ -59,7 +59,7 @@ Route::group(['prefix' => 'v1'], function () {
         Route::post('users/login', ['uses' => 'v1\AuthController@login']);
         Route::post('users/register', ['uses' => 'v1\AuthController@register']);
         Route::post('users/refreshtoken', 'v1\AuthController@refreshToken');
-        Route::post('users/oldPassword', 'v1\AuthController@oldPassword');
+        Route::post('users/oldPassword/{user}', 'v1\AuthController@oldPassword');
         Route::post('users/generatecode', 'v1\AuthController@generateResetPasswordCode');
         Route::post('users/checkresetcode', 'v1\AuthController@checkResetCode');
 

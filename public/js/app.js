@@ -2196,6 +2196,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -2206,11 +2214,11 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      projects: {},
+      projects: '',
       title: "Tableau de bord",
-      real_estates: {},
-      investors: {},
-      entrepreneurs: {},
+      real_estates: '',
+      investors: '',
+      entrepreneurs: '',
       isLoading: true
     };
   },
@@ -2800,7 +2808,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
 
 
 
@@ -2811,12 +2818,13 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   },
   data: function data() {
     return {
+      users: {},
+      title: 'Modification du compte',
       message: '',
+      id: '',
       old_password: '',
       password: '',
       password_confirmation: '',
-      errors: '',
-      savingSuccessful: false,
       isLoading: false
     };
   },
@@ -2826,20 +2834,39 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     }
   },
   mounted: function mounted() {
+    var _this = this;
+
     if (!this.currentUser) {
       location.reload();
+    } else {
+      this.id = this.$store.state.auth.user.user_id;
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(_src_config__WEBPACK_IMPORTED_MODULE_2__["API_BASE_URL"] + '/users/' + this.id).then(function (response) {
+        _this.users = response.data;
+      });
     }
   },
   methods: {
     onMounted: function onMounted() {
       console.log(this.message);
     },
+    updateInfo: function updateInfo() {
+      this.id = this.$store.state.auth.user.user_id;
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.put(_src_config__WEBPACK_IMPORTED_MODULE_2__["API_BASE_URL"] + "/users/".concat(this.id), this.users).then(function (response) {
+        Vue.$toast.success('Modification éffectuée avec succès.', {
+          // override the global option
+          type: "success",
+          duration: 5000,
+          position: 'top-right',
+          dismissible: true
+        });
+      });
+    },
     onSubmit: function onSubmit() {
       this.isLoading = true;
       this.oldPassword();
     },
     oldPassword: function oldPassword() {
-      var _this = this;
+      var _this2 = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
@@ -2847,17 +2874,31 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post(_src_config__WEBPACK_IMPORTED_MODULE_2__["API_BASE_URL"] + '/users/oldPassword', _this.$data).then(function (response) {
-                  _this.old_password = '';
-                  _this.password = '';
-                  _this.password_confirmation = '';
-                  _this.isLoading = false;
-                  _this.savingSuccessful = true;
+                return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post(_src_config__WEBPACK_IMPORTED_MODULE_2__["API_BASE_URL"] + "/users/oldPassword/".concat(_this2.id), _this2.$data).then(function (response) {
+                  _this2.old_password = '';
+                  _this2.password = '';
+                  _this2.password_confirmation = '';
+                  _this2.isLoading = false;
 
-                  _this.$emit('completed', response.data.data);
+                  _this2.$emit('completed', response.data.data);
+
+                  Vue.$toast.success('Mot de passe modifié avec succès.', {
+                    // override the global option
+                    type: "success",
+                    duration: 5000,
+                    position: 'top-right',
+                    dismissible: true
+                  });
                 })["catch"](function (error) {
-                  _this.loading = false;
-                  _this.message = error.response && error.response.data && error.response.data.message || error.message || error.toString();
+                  _this2.loading = false;
+                  _this2.message = error.response && error.response.data && error.response.data.message || error.message || error.toString();
+                  Vue.$toast.error('Mot de passe incorrect.', {
+                    // override the global option
+                    type: "error",
+                    duration: 5000,
+                    position: 'top-right',
+                    dismissible: true
+                  });
                 });
 
               case 2:
@@ -6798,6 +6839,9 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
+//
+//
+//
 //
 //
 //
@@ -56284,15 +56328,20 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { attrs: { id: "titlebar" } }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12" }, [
-        _c("h2", [_vm._v(_vm._s(_vm.title))])
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { attrs: { id: "titlebar" } }, [
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-md-12" }, [_c("h2", [_vm._v("test")])])
       ])
     ])
-  ])
-}
-var staticRenderFns = []
+  }
+]
 render._withStripped = true
 
 
@@ -56382,6 +56431,17 @@ var render = function() {
               _vm._v(" "),
               _vm._m(3)
             ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-lg-12 col-md-12" }, [
+            _c(
+              "div",
+              { staticClass: "dashboard-list-box margin-top-20" },
+              [_c("chartjs-bar")],
+              1
+            )
           ])
         ]),
         _vm._v(" "),
@@ -57051,174 +57111,227 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "dashboard-content" },
-    [
-      _c("TitlebarComponent"),
-      _vm._v(" "),
+  return _c("div", { staticClass: "dashboard-content" }, [
+    _c("div", { attrs: { id: "titlebar" } }, [
       _c("div", { staticClass: "row" }, [
-        _vm._m(0),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-lg-6 col-md-12" }, [
-          _vm.savingSuccessful
-            ? _c("div", { staticClass: "notification notice" }, [
-                _vm._v(
-                  "\n                Modification éffectué avec succès.\n            "
-                )
-              ])
-            : _vm._e(),
-          _vm._v(" "),
-          _c("div", { staticClass: "dashboard-list-box margin-top-0" }, [
-            _c("h4", { staticClass: "gray" }, [_vm._v("Change Password")]),
-            _vm._v(" "),
-            _c("div", { staticClass: "dashboard-list-box-static" }, [
-              _c(
-                "form",
-                {
-                  on: {
-                    submit: function($event) {
-                      $event.preventDefault()
-                      return _vm.oldPassword($event)
-                    }
-                  }
-                },
-                [
-                  _c("div", { staticClass: "my-profile" }, [
-                    _c("label", { staticClass: "margin-top-0" }, [
-                      _vm._v("Current Password")
-                    ]),
-                    _vm._v(" "),
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.old_password,
-                          expression: "old_password"
-                        }
-                      ],
-                      attrs: { type: "password" },
-                      domProps: { value: _vm.old_password },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.old_password = $event.target.value
-                        }
-                      }
-                    }),
-                    _vm._v(" "),
-                    _vm.message
-                      ? _c("span", { staticClass: "notification" }, [
-                          _vm._v(
-                            "\n                                Mot de passe incorrect\n                            "
-                          )
-                        ])
-                      : _vm._e(),
-                    _vm._v(" "),
-                    _c("label", [_vm._v("New Password")]),
-                    _vm._v(" "),
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.password,
-                          expression: "password"
-                        }
-                      ],
-                      attrs: { type: "password" },
-                      domProps: { value: _vm.password },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.password = $event.target.value
-                        }
-                      }
-                    }),
-                    _vm._v(" "),
-                    _c("label", [_vm._v("Confirm New Password")]),
-                    _vm._v(" "),
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.password_confirmation,
-                          expression: "password_confirmation   "
-                        }
-                      ],
-                      attrs: { type: "password" },
-                      domProps: { value: _vm.password_confirmation },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.password_confirmation = $event.target.value
-                        }
-                      }
-                    }),
-                    _vm._v(" "),
-                    _c(
-                      "button",
-                      {
-                        staticClass: "button margin-top-15",
-                        attrs: { type: "submit" }
-                      },
-                      [_vm._v("Change Password")]
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _vm.message
-                    ? _c("div", { staticClass: "notification notice" }, [
-                        _vm._v(
-                          "\n                            Mot de passe incorrect\n                        "
-                        )
-                      ])
-                    : _vm._e()
-                ]
-              )
-            ])
+        _c("div", { staticClass: "col-md-12" }, [
+          _c("h2", { staticStyle: { "font-weight": "bold" } }, [
+            _vm._v(_vm._s(_vm.title))
           ])
         ])
       ])
-    ],
-    1
-  )
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-lg-6 col-md-12" }, [
-      _c("div", { staticClass: "dashboard-list-box margin-top-0" }, [
-        _c("h4", { staticClass: "gray" }, [_vm._v("Change Information ")]),
-        _vm._v(" "),
-        _c("div", { staticClass: "dashboard-list-box-static" }, [
-          _c("div", { staticClass: "my-profile" }, [
-            _c("label", { staticClass: "margin-top-0" }, [_vm._v("Fullname")]),
-            _vm._v(" "),
-            _c("input", { attrs: { type: "text" } }),
-            _vm._v(" "),
-            _c("label", [_vm._v("New E-mail")]),
-            _vm._v(" "),
-            _c("input", { attrs: { type: "email" } }),
-            _vm._v(" "),
-            _c("button", { staticClass: "button margin-top-15" }, [
-              _vm._v("Save Information")
-            ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-lg-6 col-md-12" }, [
+        _c("div", { staticClass: "dashboard-list-box margin-top-0" }, [
+          _c("h4", { staticClass: "gray" }, [_vm._v("Change Information")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "dashboard-list-box-static" }, [
+            _c(
+              "form",
+              {
+                on: {
+                  submit: function($event) {
+                    $event.preventDefault()
+                    return _vm.updateInfo($event)
+                  }
+                }
+              },
+              [
+                _c("div", { staticClass: "my-profile" }, [
+                  _c("label", { staticClass: "margin-top-0" }, [_vm._v("Nom")]),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.users.firstname,
+                        expression: "users.firstname"
+                      }
+                    ],
+                    attrs: { type: "text" },
+                    domProps: { value: _vm.users.firstname },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.users, "firstname", $event.target.value)
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("label", { staticClass: "margin-top-0" }, [
+                    _vm._v("Prénoms")
+                  ]),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.users.lastname,
+                        expression: "users.lastname"
+                      }
+                    ],
+                    attrs: { type: "text" },
+                    domProps: { value: _vm.users.lastname },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.users, "lastname", $event.target.value)
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("label", [_vm._v("E-mail")]),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.users.email,
+                        expression: "users.email"
+                      }
+                    ],
+                    attrs: { type: "email" },
+                    domProps: { value: _vm.users.email },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.users, "email", $event.target.value)
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "button margin-top-15",
+                      attrs: { type: "submit" }
+                    },
+                    [_vm._v("Enregistrer")]
+                  )
+                ])
+              ]
+            )
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-lg-6 col-md-12" }, [
+        _c("div", { staticClass: "dashboard-list-box margin-top-0" }, [
+          _c("h4", { staticClass: "gray" }, [_vm._v("Change Password")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "dashboard-list-box-static" }, [
+            _c(
+              "form",
+              {
+                on: {
+                  submit: function($event) {
+                    $event.preventDefault()
+                    return _vm.oldPassword($event)
+                  }
+                }
+              },
+              [
+                _c("div", { staticClass: "my-profile" }, [
+                  _c("label", { staticClass: "margin-top-0" }, [
+                    _vm._v("Current Password")
+                  ]),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.old_password,
+                        expression: "old_password"
+                      }
+                    ],
+                    attrs: { type: "password" },
+                    domProps: { value: _vm.old_password },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.old_password = $event.target.value
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("label", [_vm._v("Mot de passe")]),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.password,
+                        expression: "password"
+                      }
+                    ],
+                    attrs: { type: "password" },
+                    domProps: { value: _vm.password },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.password = $event.target.value
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("label", [_vm._v("Rétapez le mot de passe")]),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.password_confirmation,
+                        expression: "password_confirmation   "
+                      }
+                    ],
+                    attrs: { type: "password" },
+                    domProps: { value: _vm.password_confirmation },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.password_confirmation = $event.target.value
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "button margin-top-15",
+                      attrs: { type: "submit" }
+                    },
+                    [_vm._v("Changer mot de passe")]
+                  )
+                ])
+              ]
+            )
           ])
         ])
       ])
     ])
-  }
-]
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -62579,13 +62692,18 @@ var render = function() {
           staticStyle: { "margin-bottom": "50px" }
         },
         [
+          _vm._m(0),
+          _vm._v(" "),
           _c("div", { staticClass: "dashboard-list-box margin-top-30" }, [
             _c("div", { staticClass: "dashboard-list-box-content" }, [
               _c(
                 "table",
-                { staticClass: "manage-table resumes responsive-table" },
+                {
+                  staticClass: "manage-table resumes responsive-table",
+                  attrs: { id: "myTable" }
+                },
                 [
-                  _vm._m(0),
+                  _vm._m(1),
                   _vm._v(" "),
                   _vm._l(_vm.realstates, function(realstate) {
                     return _c(
@@ -62670,6 +62788,28 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass: "col-md-6",
+        staticStyle: { float: "left", bottom: "20px", left: "0px" }
+      },
+      [
+        _c("input", {
+          attrs: {
+            type: "text",
+            id: "myInput",
+            onkeyup: "myFunction()",
+            placeholder: "Recherche"
+          }
+        })
+      ]
+    )
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement

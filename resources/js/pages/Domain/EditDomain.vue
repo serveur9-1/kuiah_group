@@ -87,16 +87,16 @@
             },
 
            updateDomain() {
-                    axios.put(API_BASE_URL+`/domains/${this.id}`, this.domain)
-                    .then((response) => {
-                        Vue.$toast.success('Modification éffectuée avec succès.', {
+                axios.put(API_BASE_URL+`/domains/${this.id}`, this.domain)
+                .then((response) => {
+                    Vue.$toast.success('Modification éffectuée avec succès.', {
                         // override the global option
                         type: "success",
                         duration: 5000,
                         position: 'top-right',
                         dismissible: true
-                    })
-                    });
+                     })
+                });
             }
         }
     }
