@@ -9,12 +9,14 @@
 ================================================== -->
 <meta charset="utf-8">
 <title>Kuiah finance</title>
+<link rel="icon" href="{{asset('images/logo.jpeg')}}">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <link rel="stylesheet" href="{{asset('/css/style.css')}}">
 <link rel="stylesheet" href="{{asset('/dashboard-2.html')}}">
 <link rel="stylesheet" href="{{asset('/css/colors.css')}}">
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
 <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+
 </head>
 
 <body>
