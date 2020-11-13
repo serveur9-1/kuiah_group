@@ -63,12 +63,6 @@ Route::group(['prefix' => 'v1'], function () {
         Route::post('users/generatecode', 'v1\AuthController@generateResetPasswordCode');
         Route::post('users/checkresetcode', 'v1\AuthController@checkResetCode');
 
-        //User Private
-        Route::resource('users', \v1\UserController::class)->except(['store']);
-        Route::post('users/{user}/status', 'v1\UserController@switchStatus')->where('user','[0-9]+');
-        Route::post('users/domains/add', 'v1\UserController@addDomain');
-
-
         //Extra
         Route::get('/unauthorized', 'v1\AuthController@unauthorized');
 
@@ -79,10 +73,11 @@ Route::group(['prefix' => 'v1'], function () {
             Route::post('users/logout', ['uses' => 'v1\AuthController@logout']);
             Route::post('users/updatePassword', 'v1\AuthController@updatePassword');
 
-            //User Private
-            // Route::resource('users', \v1\UserController::class)->except(['store']);
-            // Route::post('users/{user}/status', 'v1\UserController@switchStatus')->where('user','[0-9]+');
-            // Route::post('users/domains/add', 'v1\UserController@addDomain');
+            // User Private
+            Route::resource('users', \v1\UserController::class)->except(['store']);
+            Route::post('users/{user}/status', 'v1\UserController@switchStatus')->where('user','[0-9]+');
+            Route::post('users/domains/add', 'v1\UserController@addDomain');
+            Route::post('users/updateProfil', 'v1\UserController@uploadProfilePicture');
 
         });
 

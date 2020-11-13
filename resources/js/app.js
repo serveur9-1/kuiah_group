@@ -5,6 +5,8 @@ import Vuex from 'vuex';
 import { router } from './router';
 import VueToast from 'vue-toast-notification';
 import 'vue-toast-notification/dist/theme-sugar.css';
+import { Bar } from 'vue-chartjs'
+
 
 
 
@@ -29,5 +31,6 @@ const app = new Vue({
     el: '#app-vue',
     router,
     store,
+    Bar,
 
 });
