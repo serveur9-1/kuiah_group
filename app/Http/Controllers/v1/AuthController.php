@@ -18,7 +18,6 @@ class AuthController extends Controller
     public $successStatus = 200;
 
     public function login(Request $request) {
-
         $user = User::where('email', $request->get('email'))->first();
 
         if($user)
@@ -104,10 +103,22 @@ class AuthController extends Controller
     //Verify reset password code
     public function checkResetCode(Request $request)
     {
+        $validator = Validator::make($request->all(), [
+            'password_reset_code' => 'required|min:5|max:5',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json(['error' => $validator->errors()], 401);
+        }
+
         $user = User::where('password_reset_code', $request->get('password_reset_code'))->first();
 
         if($user)
         {
+
+            //New password
+            $new_pwd = Str::random(5);
+
             //Code expire in 15min
             if($user->password_reset_code_created < now()->toDateTimeString())
             {
@@ -116,10 +127,22 @@ class AuthController extends Controller
 
             $user->update([
                 "password_reset_code" => null,
-                "password_reset_code_created" => null
+                "password_reset_code_created" => null,
+                "password" => bcrypt($new_pwd)
             ]);
 
-            return response()->json(['message' => 'Code is validate'], 200);
+            //Send mail within new password
+
+            $request->email = $user->email;
+            $request->password = $new_pwd;
+
+            //login regenerate token
+            if (Auth::attempt(['email' => $user->email, 'password' => $new_pwd])) {
+                $oClient = OClient::where('password_client', 1)->first();
+                return $this->getTokenAndRefreshToken($oClient, $user->email, $new_pwd);
+            } else {
+                return response()->json(['error' => "An error occured"], 401);
+            }
 
         } else {
             return response()->json(['error' => "Code does not exist"], 401);
