@@ -18,7 +18,7 @@
             <!-- Item -->
             <div class="col-lg-3 col-md-6">
                 <div class="dashboard-stat color-1">
-                    <div class="dashboard-stat-content"><h4 class="counter">{{ projects.length}}</h4> <span>Projets publiés</span></div>
+                    <div class="dashboard-stat-content"><h4 class="counter">{{ projects.length}}</h4> <span>Projets</span></div>
                     <div class="dashboard-stat-icon"><i class="ln ln-icon-File-Link"></i></div>
                 </div>
             </div>
@@ -26,7 +26,7 @@
             <!-- Item -->
             <div class="col-lg-3 col-md-6">
                 <div class="dashboard-stat color-2">
-                    <div class="dashboard-stat-content"><h4 class="counter">{{ real_estates.length}}</h4> <span>Biens immobiliers publiés</span></div>
+                    <div class="dashboard-stat-content"><h4 class="counter">{{ real_estates.length}}</h4> <span>Biens immobiliers</span></div>
                     <div class="dashboard-stat-icon"><i class="ln ln-icon-Bar-Chart"></i></div>
                 </div>
             </div>
@@ -62,7 +62,7 @@
             <!-- Recent Activity -->
             <div class="col-lg-12 col-md-12">
                 <div class="dashboard-list-box margin-top-20">
-                    <h4>Statistiques</h4>
+                    <!-- <h4>Statistiques</h4>
                     <ul>
                         <li>
                              <strong><a href="#">Coût total des investissements réalisés sur la plateforme <span style=" font-size:20px; float:right;">1.000.000.000 $</span> </a></strong>
@@ -76,7 +76,14 @@
                          <li>
                             <strong><a href="#">le <span style="color:black;">Transport</span>  est l'Industries la plus populaires<span style=" font-size:20px;float:right;">100 projets investis</span> </a></strong>
                         </li>
-                    </ul>
+                    </ul> -->
+
+                    <chart-line
+                        :chartdata = "chartData"
+                    />
+                    <chart-bar
+                        :chartdata = "chartData"
+                    />
                 </div>
             </div>
         </div>
@@ -89,9 +96,11 @@
     import axios from 'axios'
     import { API_BASE_URL } from './src/config';
     import TitlebarComponent from "../components/layouts/TitlebarComponent";
+    import ChartLine from "../components/ChartLine";
+    import ChartBar from "../components/ChartBar";
     export default {
         name: "Dashboard",
-        components: {TitlebarComponent},
+        components: {TitlebarComponent, ChartLine, ChartBar},
         data: function () {
             return {
                 projects: '',
@@ -100,6 +109,20 @@
                 investors: '',
                 entrepreneurs: '',
                 isLoading : true,
+                chartData: {
+                    labels: ['janvier','mars'],
+                    datasets: [
+                        {
+                            label: 'Projets',
+                            backgroundColor: '#f87979',
+                            data: [20,21]
+                        }, {
+                            label: 'Bien immo',
+                            backgroundColor: '#78f979',
+                            data: [23,24]
+                        }
+                    ]
+                },
 
             }
         },
@@ -120,8 +143,10 @@
                 });
                 axios.get(API_BASE_URL+"/users?investor=false").then((data) => {
                     this.entrepreneurs = data.data;
+                    this.chartData.labels.push(this.entrepreneurs )
+                    this.isLoading=false;
                 });
-                this.isLoading = false;
+
             },
         }
     }

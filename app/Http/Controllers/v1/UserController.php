@@ -4,6 +4,7 @@ namespace App\Http\Controllers\v1;
 use App\Http\Resources\UserResource;
 use App\User;
 use App\Domain;
+use App\Shared\SaveFiles;
 use App\Http\Controllers\Controller;
 use App\Mail\WelcomeToYou;
 use Illuminate\Http\Request;
@@ -37,9 +38,18 @@ class UserController extends Controller
 
      }
 
-    public function __construct(User $user)
+    public function __construct(User $user, SaveFiles $__save)
     {
         $this->instance = $user;
+        $this->__save = $__save;
+
+        //Apply middleware
+        $this->middleware('auth:api', [
+            'except' => [
+                'index',
+                'show',
+            ]
+        ]);
     }
 
     /*
@@ -163,7 +173,32 @@ class UserController extends Controller
 
     public function uploadProfilePicture(Request $request)
     {
+        $validator = Validator::make($request->all(),
+            [
+                'profil' => 'required|max:2048',
+            ]
+        );
 
+        if ($validator->fails()) {
+            return response()->json(['error'=>$validator->errors()], 401);
+        }
+
+        if ($files = $request->file('profil')) {
+
+            $data = $this->__save->save(true,"profiles", "profil", $request->get("profil"), $request);
+            // $data[0] return 1st item of array which verify if there are many files (true if an array)
+            $id = auth()->user()->id;
+            $old = $this->instance->newQuery()->findOrFail($id);
+
+            $old->update($request->all());
+
+            return response()->json([
+                "success" => true,
+                "message" => "File successfully uploaded",
+                "profil" => asset($data[1])
+            ]);
+
+        }
     }
 
     //My domains

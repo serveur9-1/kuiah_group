@@ -10,10 +10,6 @@ import DataTable from 'laravel-vue-datatable';
 
 
 
-
-
-
-
 window.Vue = require('vue');
 import VueNativeNotification from 'vue-native-notification';
 Vue.use(VueNativeNotification, {
@@ -35,5 +31,4 @@ const app = new Vue({
     el: '#app-vue',
     router,
     store,
-
 });
