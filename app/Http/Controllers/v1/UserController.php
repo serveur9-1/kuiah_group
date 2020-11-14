@@ -179,10 +179,10 @@ class UserController extends Controller
 
             $data = $this->__save->save(true,"profiles", "profil", $request->get("profil"), $request);
             // $data[0] return 1st item of array which verify if there are many files (true if an array)
-            $new = $this->instance->newQuery()->create([
+            $id = auth()->user()->id;
+            $old = $this->instance->newQuery()->findOrFail($id);
 
-                "img" => $data[2],
-            ]);
+            $old->update($request->all());
 
             return response()->json([
                 "success" => true,
