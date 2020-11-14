@@ -78,10 +78,12 @@
                         </li>
                     </ul> -->
 
-                    <line-chart
-                    v-if="loaded"
-                    :chartdata="chartdata"
-                    :options="options"/>
+                    <chart-line
+                        :chartdata = "chartData"
+                    />
+                    <chart-bar
+                        :chartdata = "chartData"
+                    />
                 </div>
             </div>
         </div>
@@ -94,9 +96,11 @@
     import axios from 'axios'
     import { API_BASE_URL } from './src/config';
     import TitlebarComponent from "../components/layouts/TitlebarComponent";
+    import ChartLine from "../components/ChartLine";
+    import ChartBar from "../components/ChartBar";
     export default {
         name: "Dashboard",
-        components: {TitlebarComponent},
+        components: {TitlebarComponent, ChartLine, ChartBar},
         data: function () {
             return {
                 projects: '',
@@ -105,6 +109,20 @@
                 investors: '',
                 entrepreneurs: '',
                 isLoading : true,
+                chartData: {
+                    labels: [2015, 2016],
+                    datasets: [
+                        {
+                            label: 'Projets',
+                            backgroundColor: '#f87979',
+                            data: [120, 205]
+                        }, {
+                            label: 'Bien immo',
+                            backgroundColor: '#78f979',
+                            data: [340, 612]
+                        }
+                    ]
+                },
 
             }
         },
