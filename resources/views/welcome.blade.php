@@ -23,6 +23,7 @@
 
 <div id="app-vue">
     <wrapper-component></wrapper-component>
+    <datatable-component></datatable-component> 
 </div>
 <!-- Scripts
 ================================================== -->

@@ -5,6 +5,10 @@ import Vuex from 'vuex';
 import { router } from './router';
 import VueToast from 'vue-toast-notification';
 import 'vue-toast-notification/dist/theme-sugar.css';
+import DataTable from 'laravel-vue-datatable';
+
+
+
 
 
 
@@ -20,6 +24,8 @@ Vue.use(VueToast);
 
 Vue.use(VeeValidate);
 Vue.use(Vuex);
+Vue.use(DataTable);
+
 
 
 
