@@ -20,6 +20,7 @@ class UserSimpleResource extends JsonResource
             'lastname' => $this->lastname,
             'email' => $this->email,
             'profil' => $this->profil,
+            'extension' => $this->toInvestor
         ];
     }
 }
