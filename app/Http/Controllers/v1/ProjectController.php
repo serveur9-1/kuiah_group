@@ -429,6 +429,15 @@ class ProjectController extends Controller
         {
             $investor = Investor::where('user_id', $request->user()->id)->first();
             $investor->toInterestedProjects()->sync($project);
+
+            //Add to investor friends
+            $request->user()->add_friend($project->toUser->id);
+            //Notify here
+
+            //Add to business friends
+            $project->toUser->add_friend($request->user()->id);
+            //Notify here
+
             return response()->json(["message" => "Added to interesting projects"],200);
         }
     }
@@ -441,6 +450,15 @@ class ProjectController extends Controller
         {
             $investor = Investor::where('user_id', $request->user()->id)->first();
             $investor->toInterestedProjects()->detach($project);
+
+            //Remove to investor friends
+            $request->user()->remove_friend($project->toUser->id);
+            //Notify here
+
+            //Remove to business friends
+            $project->toUser->remove_friend($request->user()->id);
+            //Notify here
+
             return response()->json(["message" => "Removed to interesting projects"],200);
         }
     }
