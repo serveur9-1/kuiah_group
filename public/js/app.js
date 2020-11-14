@@ -2276,15 +2276,15 @@ __webpack_require__.r(__webpack_exports__);
       entrepreneurs: '',
       isLoading: true,
       chartData: {
-        labels: [2015, 2016],
+        labels: ['janvier', 'mars'],
         datasets: [{
           label: 'Projets',
           backgroundColor: '#f87979',
-          data: [120, 205]
+          data: [20, 21]
         }, {
           label: 'Bien immo',
           backgroundColor: '#78f979',
-          data: [340, 612]
+          data: [23, 24]
         }]
       }
     };
@@ -2307,6 +2307,9 @@ __webpack_require__.r(__webpack_exports__);
       });
       axios__WEBPACK_IMPORTED_MODULE_0___default.a.get(_src_config__WEBPACK_IMPORTED_MODULE_1__["API_BASE_URL"] + "/users?investor=false").then(function (data) {
         _this.entrepreneurs = data.data;
+
+        _this.chartData.labels.push(_this.entrepreneurs);
+
         _this.isLoading = false;
       });
     }
@@ -2994,8 +2997,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _src_config__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../src/config */ "./resources/js/pages/src/config.js");
-/* harmony import */ var _components_layouts_TitlebarComponent__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/layouts/TitlebarComponent */ "./resources/js/components/layouts/TitlebarComponent.vue");
+/* harmony import */ var _services_auth_header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/auth-header */ "./resources/js/services/auth-header.js");
+/* harmony import */ var _src_config__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../src/config */ "./resources/js/pages/src/config.js");
+/* harmony import */ var _components_layouts_TitlebarComponent__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../components/layouts/TitlebarComponent */ "./resources/js/components/layouts/TitlebarComponent.vue");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -3072,10 +3076,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Dashboard",
   components: {
-    TitlebarComponent: _components_layouts_TitlebarComponent__WEBPACK_IMPORTED_MODULE_3__["default"]
+    TitlebarComponent: _components_layouts_TitlebarComponent__WEBPACK_IMPORTED_MODULE_4__["default"]
   },
   data: function data() {
     return {
@@ -3092,7 +3097,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     onMounted: function onMounted() {
       var _this = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(_src_config__WEBPACK_IMPORTED_MODULE_2__["API_BASE_URL"] + "/users/").then(function (data) {
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(_src_config__WEBPACK_IMPORTED_MODULE_3__["API_BASE_URL"] + "/users/").then(function (data) {
         _this.accounts = data.data;
         _this.isLoading = false; // console.log(response.data);
       });
@@ -3123,7 +3128,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 }
 
                 _context.next = 5;
-                return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post(_src_config__WEBPACK_IMPORTED_MODULE_2__["API_BASE_URL"] + '/users/' + id + '/status');
+                return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post(_src_config__WEBPACK_IMPORTED_MODULE_3__["API_BASE_URL"] + '/users/' + id + '/status');
 
               case 5:
                 _this2.accounts.splice(index, 1);
@@ -121552,6 +121557,31 @@ router.beforeEach(function (to, from, next) {
 
 /***/ }),
 
+/***/ "./resources/js/services/auth-header.js":
+/*!**********************************************!*\
+  !*** ./resources/js/services/auth-header.js ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return authHeader; });
+function authHeader() {
+  var user = JSON.parse(localStorage.getItem('user'));
+
+  if (user && user.access_token) {
+    return {
+      Authorization: 'Bearer ' + user.access_token
+    }; // for Spring Boot back-end
+    // return { 'x-access-token': user.accessToken };       // for Node.js Express back-end
+  } else {
+    return {};
+  }
+}
+
+/***/ }),
+
 /***/ "./resources/js/services/auth.service.js":
 /*!***********************************************!*\
   !*** ./resources/js/services/auth.service.js ***!
@@ -121805,7 +121835,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/yves/workspace/kuiah_group/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/serveur/Bureau/kuiah_group/resources/js/app.js */"./resources/js/app.js");
 
 
 /***/ })

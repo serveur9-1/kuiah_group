@@ -67,6 +67,7 @@
 
 <script>
     import axios from 'axios'
+    import authHeader from '../../services/auth-header';
     import { API_BASE_URL } from '../src/config'
     import TitlebarComponent from "../../components/layouts/TitlebarComponent";
     export default {

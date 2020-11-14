@@ -110,16 +110,16 @@
                 entrepreneurs: '',
                 isLoading : true,
                 chartData: {
-                    labels: [2015, 2016],
+                    labels: ['janvier','mars'],
                     datasets: [
                         {
                             label: 'Projets',
                             backgroundColor: '#f87979',
-                            data: [120, 205]
+                            data: [20,21]
                         }, {
                             label: 'Bien immo',
                             backgroundColor: '#78f979',
-                            data: [340, 612]
+                            data: [23,24]
                         }
                     ]
                 },
@@ -143,7 +143,8 @@
                 });
                 axios.get(API_BASE_URL+"/users?investor=false").then((data) => {
                     this.entrepreneurs = data.data;
-                    this.isLoading = false;
+                    this.chartData.labels.push(this.entrepreneurs )
+                    this.isLoading=false;
                 });
 
             },

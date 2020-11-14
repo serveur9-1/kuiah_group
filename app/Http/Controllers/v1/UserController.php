@@ -42,6 +42,14 @@ class UserController extends Controller
     {
         $this->instance = $user;
         $this->__save = $__save;
+
+        //Apply middleware
+        $this->middleware('auth:api', [
+            'except' => [
+                'index',
+                'show',
+            ]
+        ]);
     }
 
     /*
