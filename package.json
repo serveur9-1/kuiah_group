@@ -27,6 +27,7 @@
         "@kugatsu/vuenotification": "^1.1.4",
         "chart.js": "^2.9.4",
         "gsap": "^3.5.1",
+        "laravel-vue-datatable": "^0.6.0",
         "moment": "^2.29.1",
         "vee-validate": "^2.2.15",
         "vue-chartjs": "^3.5.1",
@@ -34,6 +35,7 @@
         "vue-router": "^3.4.7",
         "vue-sweetalert2": "^4.0.1",
         "vue-toast-notification": "^0.6.0",
+        "vuejs-datatable": "^2.0.0-alpha.7",
         "vuex": "^3.5.1"
     }
 }
