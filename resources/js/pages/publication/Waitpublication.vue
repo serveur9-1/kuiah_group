@@ -14,20 +14,24 @@
         <div class="row">
 			<!-- Table-->
 			<div class="col-lg-12 col-md-12"  style="margin-bottom:50px">
-				<div class="col-md-6" style="float:left; bottom:20px; left:0px">
-                    <input type="text" id="myInput"  onkeyup="myFunction()" placeholder="Recherche">
-                </div>
 				<div class="dashboard-list-box margin-top-30">
 					<div class="dashboard-list-box-content">
 
 						<!-- Table -->
 							<table class="manage-table resumes responsive-table" id="myTable">
-								<tr>
-									<th style="width: 15%;">Titre</th>
-									<th style="width: 40%;"> Description</th>
-									<th style="width: 15%;"> Montant total</th>
-                                    <th style="width: 20%;"> Domaine</th>
-									<th style="width: 10%;">Actions</th>
+								 <tr>
+                                         <th colspan="5">
+                                             <div  style="float:right;  left:0px">
+                                          <input type="text" id="myInput"  onkeyup="myFunction()" placeholder="Recherche">
+                                        </div>
+                                        </th>
+                                    </tr>
+                                <tr>
+									<th style="width: 15%;background: #7b7272;">Titre</th>
+									<th style="width: 40%;background: #7b7272;"> Description</th>
+									<th style="width: 15%;background: #7b7272;"> Montant total</th>
+                                    <th style="width: 20%;background: #7b7272;"> Domaine</th>
+									<th style="width: 10%;background: #7b7272;">Actions</th>
 								</tr>
 
 								<!-- Item #1 -->

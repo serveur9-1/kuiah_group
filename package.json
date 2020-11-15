@@ -28,6 +28,7 @@
         "chart.js": "^2.9.4",
         "gsap": "^3.5.1",
         "laravel-vue-datatable": "^0.6.0",
+        "laravel-vue-pagination": "^2.3.1",
         "moment": "^2.29.1",
         "vee-validate": "^2.2.15",
         "vue-chartjs": "^3.5.1",

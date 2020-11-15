@@ -18,20 +18,24 @@
             <div v-else>
                 <!-- Table-->
                 <div class="col-lg-12 col-md-12" style="margin-bottom:50px">
-                    <div class="col-md-6" style="float:left; bottom:20px; left:0px">
-                        <input type="text" id="myInput"  onkeyup="myFunction()" placeholder="Recherche">
-                    </div>
                     <div class="dashboard-list-box margin-top-30">
                         <div class="dashboard-list-box-content">
 
                             <!-- Table -->
                                 <table class="manage-table resumes responsive-table" id="myTable">
 
+                                     <tr>
+                                         <th colspan="4">
+                                             <div  style="float:right;  left:0px">
+                                          <input type="text" id="myInput"  onkeyup="myFunction()" placeholder="Recherche">
+                                        </div>
+                                        </th>
+                                    </tr>
                                     <tr>
-                                        <th>Logo</th>
-                                        <th>Nom </th>
-                                        <th> Date de l'ajout</th>
-                                        <th>Actions</th>
+                                        <th style="background: #7b7272;">Logo</th>
+                                        <th style="background: #7b7272;">Nom du partenaire</th>
+                                        <th style="background: #7b7272;"> Date de l'ajout</th>
+                                        <th style="background: #7b7272;">Actions</th>
                                     </tr>
 
                                     <!-- Item #1 -->

@@ -16,9 +16,6 @@
             </div>
             <div v-else>
                 <div class="col-lg-12 col-md-12" style="margin-bottom:50px">
-                     <div class="col-md-6" style="float:left; bottom:20px; left:0px">
-                        <input type="text" id="myInput"  onkeyup="myFunction()" placeholder="Recherche">
-                    </div>
                     <div class="col-md-4" style="float:right; bottom:25px;">
                         <router-link  :to="{name: 'addDomain', params: { id: id}}" class="button col-md-12" style="float:right; margin-bottom:15px;">
                             <i class="fa  fa-plus"></i>Ajouter un domaine
@@ -28,12 +25,18 @@
                         <div class="dashboard-list-box-content">
                             <!-- Table -->
                                 <table class="manage-table resumes responsive-table" id="myTable">
-
-                                    <tr style="text-align:center">
-                                        <th>Nom du domaine (Fr)</th>
-                                        <th>Nom du domaine (En)</th>
-                                        <th> Date de l'ajout</th>
-                                        <th>Actions</th>
+                                    <tr>
+                                         <th colspan="4">
+                                             <div  style="float:right;  left:0px">
+                                          <input type="text" id="myInput"  onkeyup="myFunction()" placeholder="Recherche">
+                                        </div>
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th style="background: #7b7272;">Nom du domaine(Fr)</th>
+                                        <th style="background: #7b7272;">Nom du domaine (En)</th>
+                                        <th style="background: #7b7272;"> Date de l'ajout</th>
+                                        <th style="background: #7b7272;">Actions</th>
                                     </tr>
 
                                     <!-- Item #1 -->

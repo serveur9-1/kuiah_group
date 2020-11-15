@@ -10,6 +10,7 @@ import DataTable from 'laravel-vue-datatable';
 
 
 
+
 window.Vue = require('vue');
 import VueNativeNotification from 'vue-native-notification';
 Vue.use(VueNativeNotification, {
@@ -26,6 +27,7 @@ Vue.use(DataTable);
 
 
 Vue.component('wrapper-component', require('./components/WrapperComponent.vue').default);
+Vue.component('pagination', require('laravel-vue-pagination'));
 
 const app = new Vue({
     el: '#app-vue',
