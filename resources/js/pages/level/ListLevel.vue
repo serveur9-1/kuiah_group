@@ -17,9 +17,6 @@
             <div v-else>
                 <!-- Table-->
                 <div class="col-lg-12 col-md-12" style="margin-bottom:50px">
-                    <div class="col-md-6" style="float:left; bottom:20px; left:0px">
-                        <input type="text" id="myInput"  onkeyup="myFunction()" placeholder="Recherche">
-                    </div>
                     <div class="dashboard-list-box margin-top-30">
                         <div class="dashboard-list-box-content">
 
@@ -27,11 +24,17 @@
                                 <table class="manage-table resumes responsive-table" id="myTable">
 
                                     <tr>
-
-                                        <th>Nom du level (Fr)</th>
-                                        <th>Nom du level (En)</th>
-                                        <th> Date de l'ajout</th>
-                                        <th>Actions</th>
+                                         <th colspan="4">
+                                             <div  style="float:right;  left:0px">
+                                          <input type="text" id="myInput"  onkeyup="myFunction()" placeholder="Recherche">
+                                        </div>
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th style="background: #7b7272;">Nom du Niveau(Fr)</th>
+                                        <th style="background: #7b7272;">Nom du Niveau (En)</th>
+                                        <th style="background: #7b7272;"> Date de l'ajout</th>
+                                        <th style="background: #7b7272;">Actions</th>
                                     </tr>
 
                                     <!-- Item #1 -->
