@@ -50,40 +50,18 @@
             </div>
 
         </div>
+
         <div class="row">
             <!-- Recent Activity -->
             <div class="col-lg-12 col-md-12">
                 <div class="dashboard-list-box margin-top-20">
-                    <chartjs-bar></chartjs-bar>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <!-- Recent Activity -->
-            <div class="col-lg-12 col-md-12">
-                <div class="dashboard-list-box margin-top-20">
-                    <!-- <h4>Statistiques</h4>
-                    <ul>
-                        <li>
-                             <strong><a href="#">Coût total des investissements réalisés sur la plateforme <span style=" font-size:20px; float:right;">1.000.000.000 $</span> </a></strong>
-                        </li>
-                        <li>
-                            <strong><a href="#">Nombre total de téléchargement de notre application <span style="padding-left:60px; font-size:20px; float:right;">1.000.000.000</span> </a></strong>
-                        </li>
-                        <li>
-                            <strong><a href="#">Nombre total d'Industries<span style=" font-size:20px;float:right;">1.000.000.000</span> </a></strong>
-                        </li>
-                         <li>
-                            <strong><a href="#">le <span style="color:black;">Transport</span>  est l'Industries la plus populaires<span style=" font-size:20px;float:right;">100 projets investis</span> </a></strong>
-                        </li>
-                    </ul> -->
 
                     <chart-line
                         :chartdata = "chartData"
                     />
-                    <chart-bar
+                    <!-- <chart-bar
                         :chartdata = "chartData"
-                    />
+                    /> -->
                 </div>
             </div>
         </div>
@@ -108,18 +86,16 @@
                 real_estates: '',
                 investors: '',
                 entrepreneurs: '',
+                domains: '',
                 isLoading : true,
                 chartData: {
-                    labels: ['janvier','mars'],
+                    labels: [],
                     datasets: [
                         {
                             label: 'Projets',
+                            height:'150px',
                             backgroundColor: '#f87979',
-                            data: [20,21]
-                        }, {
-                            label: 'Bien immo',
-                            backgroundColor: '#78f979',
-                            data: [23,24]
+                            data: []
                         }
                     ]
                 },
@@ -143,7 +119,14 @@
                 });
                 axios.get(API_BASE_URL+"/users?investor=false").then((data) => {
                     this.entrepreneurs = data.data;
-                    this.chartData.labels.push(this.entrepreneurs )
+                });
+
+                axios.get(API_BASE_URL+"/domains").then((data) => {
+                    this.domains = data.data;
+                    this.domains.data.forEach(element => {
+                        this.chartData.labels.push(element.name );
+                        this.chartData.datasets[0].data.push(element.projects.length );
+                    });
                     this.isLoading=false;
                 });
 

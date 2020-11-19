@@ -36,7 +36,7 @@
                                         <td>{{ project.title}}</td>
                                         <td>{{ project.company_description}}</td>
                                         <td class="centered">{{ project.total_amount_format}}</td>
-                                        <td>{{ project.domain}}</td>
+                                        <td>{{ project.domain.name}}</td>
                                         <td class="action">
                                             <a href="#" v-bind:class="{ 'is-loading' : isConfirmed(project.id) }" @click="confirmeProject(project.id)">
                                                 <i class="fa fa-check"></i>Confirmer
