@@ -219,7 +219,7 @@ class AuthController extends Controller
         $oClient = OClient::where('password_client', 1)->first();
 
         $http = new Client([
-            'base_uri' => 'http://kuiah-finance.herokuapp.com/',
+            'base_uri' => 'http://localhost:8001',
             'defaults' => [
                 'exceptions' => false
             ]
@@ -253,7 +253,7 @@ class AuthController extends Controller
     public function getTokenAndRefreshToken(OClient $oClient, $email, $password) {
         $oClient = OClient::where('password_client', 1)->first();
         $http = new Client([
-            'base_uri' => 'http://kuiah-finance.herokuapp.com/',
+            'base_uri' => 'http://localhost:8001',
             'defaults' => [
                 'exceptions' => false
             ]
