@@ -1,1 +1,1 @@
-export const API_BASE_URL = 'https://kuiah-finance.herokuapp.com/';
+export const API_BASE_URL = 'http://kuiah-finance.herokuapp.com/';
