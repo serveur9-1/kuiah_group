@@ -1,9 +1,9 @@
 <template>
     <div id="wrapper">
-        <NavbarComponent v-if="currentUser"/>
+        <NavbarComponent/>
 
         <div id="dashboard">
-            <SidebarComponent v-if="currentUser"/>
+            <SidebarComponent/>
             <router-view></router-view>
         </div>
 
