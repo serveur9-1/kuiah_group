@@ -20,19 +20,21 @@ class AuthController extends Controller
     public function login(Request $request) {
         $user = User::where('email', $request->get('email'))->first();
 
-        if($user)
-        {
-            if (Auth::attempt(['email' => $request->get('email'), 'password' => $request->get('password')])) {
-                $oClient = OClient::where('password_client', 1)->first();
-                return $this->getTokenAndRefreshToken($oClient, $request->get('email'), $request->get('password'));
-            }
-            else {
-                return response()->json(['error'=>'Password missmatch'], 401);
-            }
+        // if($user)
+        // {
+        //     if (Auth::attempt(['email' => $request->get('email'), 'password' => $request->get('password')])) {
+        //         $oClient = OClient::where('password_client', 1)->first();
+        //         return $this->getTokenAndRefreshToken($oClient, $request->get('email'), $request->get('password'));
+        //     }
+        //     else {
+        //         return response()->json(['error'=>'Password missmatch'], 401);
+        //     }
 
-        } else {
-            return response()->json(['error'=>"User does not exist"], 401);
-        }
+        // } else {
+        //     return response()->json(['error'=>"User does not exist"], 401);
+        // }
+
+        return response()->json(['yes'=>$user], 200);
     }
 
     public function register(Request $request) {
