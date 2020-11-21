@@ -219,7 +219,7 @@ class AuthController extends Controller
         $oClient = OClient::where('password_client', 1)->first();
 
         $http = new Client([
-            'base_uri' => 'http://kuiah-finance.herokuapp.com/',
+            'base_uri' => 'http://kuiah-finance.herokuapp.com',
             'defaults' => [
                 'exceptions' => false
             ]
@@ -252,26 +252,25 @@ class AuthController extends Controller
 
     public function getTokenAndRefreshToken(OClient $oClient, $email, $password) {
         $oClient = OClient::where('password_client', 1)->first();
-        // $http = new Client([
-        //     'base_uri' => 'http://kuiah-finance.herokuapp.com/',
-        //     'defaults' => [
-        //         'exceptions' => false
-        //     ]
-        // ]);
-
-        // $response = $http->request('POST', '/oauth/token', [
-        //     'form_params' => [
-        //         'grant_type' => 'password',
-        //         'client_id' => $oClient->id,
-        //         'client_secret' => $oClient->secret,
-        //         'username' => $email,
-        //         'password' => $password,
-        //         'scope' => '*',
-        //     ],
-        // ]);
-        // $info = $response->getBody();
-        // $result = json_decode((string) $info, true);
-        // $result["user_id"] = auth()->user()->id;
-        return response()->json($oClient,$email, $password);
+        $http = new Client([
+            'base_uri' => 'http://kuiah-finance.herokuapp.com',
+            'defaults' => [
+                'exceptions' => false
+            ]
+        ]);
+        $response = $http->request('POST', '/oauth/token', [
+            'form_params' => [
+                'grant_type' => 'password',
+                'client_id' => $oClient->id,
+                'client_secret' => $oClient->secret,
+                'username' => $email,
+                'password' => $password,
+                'scope' => '*',
+            ],
+        ]);
+        $info = $response->getBody();
+        $result = json_decode((string) $info, true);
+        $result["user_id"] = auth()->user()->id;
+        return response()->json($result, $this->successStatus);
     }
 }
