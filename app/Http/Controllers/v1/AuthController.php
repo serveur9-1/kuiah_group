@@ -20,21 +20,19 @@ class AuthController extends Controller
     public function login(Request $request) {
         $user = User::where('email', $request->get('email'))->first();
 
-        // if($user)
-        // {
-        //     if (Auth::attempt(['email' => $request->get('email'), 'password' => $request->get('password')])) {
-        //         $oClient = OClient::where('password_client', 1)->first();
-        //         return $this->getTokenAndRefreshToken($oClient, $request->get('email'), $request->get('password'));
-        //     }
-        //     else {
-        //         return response()->json(['error'=>'Password missmatch'], 401);
-        //     }
+        if($user)
+        {
+            if (Auth::attempt(['email' => $request->get('email'), 'password' => $request->get('password')])) {
+                $oClient = OClient::where('password_client', 1)->first();
+                return $this->getTokenAndRefreshToken($oClient, $request->get('email'), $request->get('password'));
+            }
+            else {
+                return response()->json(['error'=>'Password missmatch'], 401);
+            }
 
-        // } else {
-        //     return response()->json(['error'=>"User does not exist"], 401);
-        // }
-
-        return response()->json(['yes'=>$user], 200);
+        } else {
+            return response()->json(['error'=>"User does not exist"], 401);
+        }
     }
 
     public function register(Request $request) {
@@ -254,25 +252,26 @@ class AuthController extends Controller
 
     public function getTokenAndRefreshToken(OClient $oClient, $email, $password) {
         $oClient = OClient::where('password_client', 1)->first();
-        $http = new Client([
-            'base_uri' => 'http://kuiah-finance.herokuapp.com/',
-            'defaults' => [
-                'exceptions' => false
-            ]
-        ]);
-        $response = $http->request('POST', '/oauth/token', [
-            'form_params' => [
-                'grant_type' => 'password',
-                'client_id' => $oClient->id,
-                'client_secret' => $oClient->secret,
-                'username' => $email,
-                'password' => $password,
-                'scope' => '*',
-            ],
-        ]);
-        $info = $response->getBody();
-        $result = json_decode((string) $info, true);
-        $result["user_id"] = auth()->user()->id;
-        return response()->json($result, $this->successStatus);
+        // $http = new Client([
+        //     'base_uri' => 'http://kuiah-finance.herokuapp.com/',
+        //     'defaults' => [
+        //         'exceptions' => false
+        //     ]
+        // ]);
+
+        // $response = $http->request('POST', '/oauth/token', [
+        //     'form_params' => [
+        //         'grant_type' => 'password',
+        //         'client_id' => $oClient->id,
+        //         'client_secret' => $oClient->secret,
+        //         'username' => $email,
+        //         'password' => $password,
+        //         'scope' => '*',
+        //     ],
+        // ]);
+        // $info = $response->getBody();
+        // $result = json_decode((string) $info, true);
+        // $result["user_id"] = auth()->user()->id;
+        return response()->json($oClient,$email, $password);
     }
 }
