@@ -17,15 +17,18 @@
             <div v-else>
                 <!-- Table-->
                 <div class="col-lg-12 col-md-12" style="margin-bottom:50px">
-                    <div class="col-md-6" style="float:left; bottom:20px">
-                        <input type="text" id="myInput"  onkeyup="myFunction()" placeholder="Recherche">
-                    </div>
                     <div class="dashboard-list-box margin-top-30">
                         <div class="dashboard-list-box-content">
 
                             <!-- Table -->
                                 <table class="manage-table resumes responsive-table" id="myTable">
-
+                                     <tr>
+                                         <th colspan="5">
+                                             <div  style="float:right;  left:0px">
+                                          <input type="text" id="myInput"  onkeyup="myFunction()" placeholder="Recherche">
+                                        </div>
+                                        </th>
+                                    </tr>
                                     <tr>
                                         <th style="width: 10%;">Nom</th>
                                         <th style="width: 30%;">Prénom</th>
