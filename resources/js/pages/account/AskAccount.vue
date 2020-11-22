@@ -23,7 +23,7 @@
                             <!-- Table -->
                                 <table class="manage-table resumes responsive-table" id="myTable">
                                      <tr>
-                                         <th colspan="5">
+                                         <th colspan="6">
                                              <div  style="float:right;  left:0px">
                                           <input type="text" id="myInput"  onkeyup="myFunction()" placeholder="Recherche">
                                         </div>
