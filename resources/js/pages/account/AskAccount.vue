@@ -30,12 +30,12 @@
                                         </th>
                                     </tr>
                                     <tr>
-                                        <th style="width: 10%;">Nom</th>
-                                        <th style="width: 30%;">Prénom</th>
-                                        <th style="width: 20%;">Email</th>
-                                        <th style="width: 20%;">Type</th>
-                                        <th style="width: 15%;">Date de demande</th>
-                                        <th style="width: 10%;">Actions</th>
+                                        <th style="width: 10%;background: #7b7272;">Nom</th>
+                                        <th style="width: 30%;background: #7b7272;">Prénom</th>
+                                        <th style="width: 20%;background: #7b7272;">Email</th>
+                                        <th style="width: 20%;background: #7b7272;">Type</th>
+                                        <th style="width: 15%;background: #7b7272;">Date de demande</th>
+                                        <th style="width: 10%;background: #7b7272;">Actions</th>
                                     </tr>
 
                                     <!-- Item #1 -->
