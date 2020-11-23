@@ -113,7 +113,7 @@
                 formData.append("img", this.img);
                 formData.append("industry_id", this.id);
 
-                axios.post(API_BASE_URL + '/domains/', formData, config)
+                axios.post(API_BASE_URL + '/domains', formData, config)
                 .then(function (response) {
                     currentObj.success = response.data.success;
                     currentObj.name = currentObj.name_fr;
