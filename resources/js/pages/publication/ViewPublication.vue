@@ -17,7 +17,7 @@
 		   </div>
            <div class="col-md-4" v-else>
 			    <div class="img-big-wrap" style="padding-left:20%;">
-                    <div ><i style="font-size:80px;margin:auto" class="fa  fa-file"></i></div>
+                    <div ><i style="font-size:70px;margin:auto" class="fa  fa-file"></i></div>
                 </div>
 		   </div>
 
