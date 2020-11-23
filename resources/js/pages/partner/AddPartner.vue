@@ -103,8 +103,7 @@
 
                 formData.append("name", this.name);
                 formData.append("img", this.img);
-                console.log(this.img);
-                axios.post(API_BASE_URL + '/partners/', formData, config)
+                axios.post(API_BASE_URL + '/partners', formData, config)
                 .then(function (response) {
                     currentObj.success = response.data.success;
                     currentObj.name1 = currentObj.name;
