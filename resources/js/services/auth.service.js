@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost/api/v1/users/login';
+const API_URL = 'http://kuiah-finance.herokuapp.com/api/v1/users/login';
 
 class AuthService {
   login(user) {
