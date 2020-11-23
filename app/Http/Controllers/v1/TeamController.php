@@ -17,6 +17,11 @@ class TeamController extends Controller
     {
         $selected = $this->instance->newQuery()->findOrFail($id);
         $selected->delete();
-        return response()->json(null,200);
+
+        return response()->json([
+            "success" => true,
+            "message" => "Deleted successfully",
+        ],200);
+        
     }
 }

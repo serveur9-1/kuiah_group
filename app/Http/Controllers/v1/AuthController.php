@@ -50,12 +50,15 @@ class AuthController extends Controller
         $password = $request->password;
         $input = $request->all();
         $input['password'] = bcrypt($input['password']);
+        $input['process_type_is_investor'] = $input['is_investor'];
         $user = User::create($input);
-        $oClient = OClient::where('password_client', 1)->first();
 
         //return new waitAccountValidate($request);
 
-        return $this->getTokenAndRefreshToken($oClient, $user->email, $password);
+        if (Auth::attempt(['email' => $user->email, 'password' => $request->get('password')])) {
+            $oClient = OClient::where('password_client', 1)->first();
+            return $this->getTokenAndRefreshToken($oClient, $user->email, $request->get('password'));
+        }
     }
 
     public function logout (Request $request) {
@@ -271,6 +274,8 @@ class AuthController extends Controller
         $info = $response->getBody();
         $result = json_decode((string) $info, true);
         $result["user_id"] = auth()->user()->id;
+        $result["is_investor"] = auth()->user()->is_investor;
+        $result["process_type_is_investor"] = auth()->user()->process_type_is_investor;
         return response()->json($result, $this->successStatus);
     }
 }

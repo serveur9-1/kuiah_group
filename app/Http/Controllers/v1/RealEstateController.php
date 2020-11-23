@@ -44,9 +44,11 @@ class RealEstateController extends Controller
             return response()->json(['error'=>$validator->errors()], 401);
         }
 
-        $new = $this->instance->newQuery()->create($request->all());
+        $new = null;
 
         if ($files = $request->file('medias')) {
+
+            $new = $this->instance->newQuery()->create($request->all());
 
             $data = $this->__save->save(true,"realestates", "medias",  "realestate_$new->id", $request);
             // $data[0] return 1st item of array which verify if there are many files (true if an array)
@@ -58,14 +60,16 @@ class RealEstateController extends Controller
                     "real_estate_id" => $new->id,
                 ]);
             }
+        } else {
+            return response()->json(['error'=>'Medias are not files'], 401);
         }
 
         $request->name = "sande";
         $request->email = "francksande@live.ca";
 
-        return new waitAdsValidate($request);
+        //return new waitAdsValidate($request);
 
-        // return response()->json($new, 200);
+        return response()->json('Real estate added successfully', 200);
     }
 
     public function show($id, Request $req)
