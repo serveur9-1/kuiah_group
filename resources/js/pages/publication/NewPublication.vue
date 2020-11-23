@@ -51,7 +51,7 @@
 						<!-- Job Type -->
 						<div class="form">
 							<h5><strong>Localisation de l'entreprise</strong></h5>
-							<dd><p>{{ project.country }} </p></dd>
+							<dd><p>{{ project.country.name }} </p></dd>
 						</div>
 
                         <!-- Email -->
@@ -75,7 +75,7 @@
 						<div class="form">
 							<div class="select">
 								<h5><strong>Domaine</strong></h5>
-								<dd><p>{{ project.domain }} </p></dd>
+								<dd><p>{{ project.domain.name }} </p></dd>
 							</div>
 						</div>
 						<div class="form">
@@ -85,7 +85,7 @@
 
 						<div class="form">
 							<h5><strong>Stade de développement</strong></h5>
-							<dd><p>{{ project.stade }} </p></dd>
+							<dd><p>{{ project.stade.name }} </p></dd>
 						</div>
 
 						<!-- Tags -->
