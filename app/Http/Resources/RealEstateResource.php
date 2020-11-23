@@ -25,7 +25,7 @@ class RealEstateResource extends JsonResource
             'description' => $this->description,
             'price' => $this->price,
             'price_format' => number_format($this->price, 2, '.', ',')." €",
-            'country' => new CountryResource($this->toCountry),
+            'country' => new CountryResource(Country::find($this->country_id)),
             'location' => $this->location,
             'contact' => $this->contact,
             'email' => $this->email,

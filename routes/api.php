@@ -25,6 +25,7 @@ Route::group(['prefix' => 'v1'], function () {
 
         Route::get('/users/mail/test', 'v1\UserController@testMail');
 
+        Route::resource('teams',\v1\TeamController::class)->only(['destroy']);
         Route::resource('real_estates',\v1\RealEstateController::class);
         Route::post('real_estates/{real_estate}/status', 'v1\RealEstateController@switchStatus')->where('real_estate','[0-9]+');
 

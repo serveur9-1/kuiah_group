@@ -29,12 +29,8 @@ class ProjectController extends Controller
 
         //Apply middleware
         $this->middleware('auth:api', [
-            'except' => [
-                'index',
-                'show',
-                'filtered',
-                'destroy',
-                'switchStatus'
+            'only' => [
+                // 'show',
             ]
         ]);
 
@@ -44,7 +40,7 @@ class ProjectController extends Controller
 
     public function index(Request $request)
     {
-        return ProjectResource::collection($this->instance->newQuery()->paginate(2));
+        return ProjectResource::collection($this->instance->newQuery()->paginate(10));
     }
 
     public function show($id)
@@ -128,9 +124,9 @@ class ProjectController extends Controller
         $request->name = "sande";
         $request->email = "francksande@live.ca";
 
-        return new waitAdsValidate($request);
+        // return new waitAdsValidate($request);
 
-        // return response()->json($new,200);
+        return response()->json($new,200);
     }
 
 
@@ -187,8 +183,9 @@ class ProjectController extends Controller
             //Update or create financial_data table
             if(is_array($request->get('financial_data')))
             {
-                foreach ($request->get('financial_data') as $item)
+                foreach ($request->get('financial_data') as $it)
                 {
+                    $item = json_decode($it, true);
                     //Update or create current investment if exist nor
                     if(isset($item['year']) && isset($item['turnover']) && isset($item['profit']))
                     {
@@ -212,8 +209,11 @@ class ProjectController extends Controller
             //Update tags table
             if(is_array($request->get('tags')))
             {
-                foreach ($request->get('tags') as $item)
+                
+                foreach ($request->get('tags') as $it)
                 {
+                    $item = json_decode($it, true);
+
                     //Update or create current investment if exist nor
                     if(isset($item))
                     {
@@ -236,31 +236,35 @@ class ProjectController extends Controller
         if($request->get('step') == 3)
         {
             $old->update($request->all());
+            $pic = null;
 
             //Update or create investment_points table
             if(is_array($request->get('teams')))
             {
+
+                //Upload profile picture
+                if ($files = $request->file("teamPictures")) {
+                    $pic = $this->__save->save(true, "projects/teams", "teamPictures", "team_pic_$old->id". now(), $request);
+                }
+
                 //dd($request->all());
-                foreach ($request->get('teams') as $item)
+                foreach ($request->get('teams') as $key => $ite)
                 {
-                    //Upload profile picture
-                    /*if ($request->file('docs')) {
-                        $docs = $this->__save->save(true, "projects/teams", "picture", "team_pic_$old->id", $request);
-                    }*/
+                    $item = json_decode($ite, true);
 
                     //Update or create current teams if exist nor
                     if(isset($item['name']) && isset($item['role']))
                     {
+
                         Team::updateOrCreate(
                             [
                                 'project_id' => $old->id,
-                                'name' => $item['name'],
-                                "role" => $item['role']
+                                'id' => $item['team_id'],
                             ],
                             [
                                 'name' => $item['name'],
                                 "role" => $item['role'],
-                                "picture" => $item['picture'] ?? null,
+                                "picture" => $pic[$key+1] ?? null,
                                 "link_linkedin" => $item['link_linkedin'] ?? null,
                                 "biography" => $item['biography'] ?? null,
                             ]
@@ -272,25 +276,21 @@ class ProjectController extends Controller
             }
         }
 
+        $logo = null;
+        $cover = null;
+
         if($request->get('step') == 4)
         {
             try {
-                $old->update($request->all());
 
                 if ($request->file('logo')) {
 
                     $logo = $this->__save->save(true,"projects/media", "logo", "logo_$old->id", $request);
                     // $data[0] return 1st item of array which verify if there are many files (true if an array)
                     //Update logo
-                    OtherDoc::updateOrCreate(
-                        [
-                            'project_id' => $old->id,
-                            'title' => $logo[2]
-                        ],
-                        [
-                            'title' => $logo[2],
-                        ]
-                    );
+                    $old->update([
+                        "logo" => $logo[2],
+                    ]);
                 }
 
                 if ($request->file('cover')) {
@@ -298,16 +298,9 @@ class ProjectController extends Controller
                     $cover = $this->__save->save(true,"projects/media", "cover", "cover_$old->id" ,$request);
                     // $data[0] return 1st item of array which verify if there are many files (true if an array)
 
-                    //Update Cover
-                    OtherDoc::updateOrCreate(
-                        [
-                            'project_id' => $old->id,
-                            'title' => $cover[2]
-                        ],
-                        [
-                            'title' => $cover[2],
-                        ]
-                    );
+                    $old->update([
+                        "banner" => $cover[2],
+                    ]);
 
                 }
 
@@ -325,12 +318,11 @@ class ProjectController extends Controller
         {
             try {
 
-                if ($request->file('docs')) {
-                    $docs = $this->__save->save(true,"projects/documents", "docs", "doc_project_$old->id", $request);
+                if ($request->file('documents')) {
+                    $docs = $this->__save->save(true,"projects/documents", "documents", "doc_project_$old->id", $request);
                     // $data[0] return 1st item of array which verify if there are many files (true if an array)
                     //Update logo
                     if($docs[0]){
-
                         for($i = 1; $i < count($docs); $i++)
                         {
                             Document::updateOrCreate(
@@ -346,14 +338,14 @@ class ProjectController extends Controller
 
                         return response()->json([
                             "success" => true,
-                            "message" => "Logo and Cover are successfully uploaded",
+                            "message" => "Documents are successfully uploaded",
                         ],200);
                     }
                 } else {
                     return response()->json([
-                        "success" => true,
-                        "message" => "An problem occured",
-                    ],200);
+                        "success" => false,
+                        "message" => "Documents are not files",
+                    ],401);
                 }
 
             } catch (Exception $exception) {

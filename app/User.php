@@ -24,6 +24,7 @@ class User extends Authenticatable
         'is_first_activation',
         'password_reset_code',
         'password_reset_code_created',
+        'is_investor',
     ];
 
 

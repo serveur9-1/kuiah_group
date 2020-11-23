@@ -16,4 +16,13 @@ class Team extends Model
         "biography",
         "project_id",
     ];
+
+    protected $appends = ['picture_url'];
+
+    public function getPictureUrlAttribute()
+    {
+        $PIC = $this->picture ?? 'default.jpg';
+
+        return asset("public/projects/teams/$PIC");
+    }
 }

@@ -22,7 +22,7 @@ class ProjectResource extends JsonResource
     public function toArray($request)
     {
         $LOGO = $this->logo ?? 'default.jpeg';
-        $BANNER = $this->logo ?? 'default.jpeg';
+        $BANNER = $this->banner ?? 'default.jpeg';
 
         return [
             "id" => $this->id,
@@ -63,8 +63,10 @@ class ProjectResource extends JsonResource
             "teams" => $this->toTeams,
             "medias" => $this->toOtherDocs,
             "documents" => $this->toDocuments,
-            "created_at" => $this->created_at->format('d-m-Y'),
-            "updated_at" => $this->updated_at->format('d-m-Y'),
+            "created_at" => $this->created_at,
+            "created_at_format" => $this->created_at->format('d-m-Y'),
+            "updated_at" => $this->updated_at,
+            "updated_at_format" => $this->updated_at->format('d-m-Y'),
         ];
     }
 }
