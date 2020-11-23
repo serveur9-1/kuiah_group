@@ -12,7 +12,7 @@
 
         <!-- Content -->
 		<div class="row" style="margin-bottom:20px;">
-			<div class="col-md-4" v-if="project.logo_url">
+			<div class="col-md-4" v-if="project.logo_url != NULL">
 			  <img :src="project.logo_url">
 		   </div>
            <div class="col-md-4" v-else>
