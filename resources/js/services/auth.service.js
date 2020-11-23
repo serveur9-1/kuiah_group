@@ -1,15 +1,14 @@
 import axios from 'axios';
 
-const API_URL = 'http://kuiah-finance.herokuapp.com/api/v1/users/login';
+const API_URL = 'http://localhost/api/v1/users/login';
 
 class AuthService {
   login(user) {
     console.log(user.email)
-    console.log(user.password)
     return axios
       .post(API_URL, {
         email: user.email,
-        password: user.password,
+        password: user.password
       })
       .then(response => {
         if (response.data.access_token) {
