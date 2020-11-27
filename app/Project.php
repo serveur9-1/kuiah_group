@@ -37,6 +37,7 @@ class Project extends Model
         "country_id",
         "domain_id",
         "stade_id",
+        "is_deleted"
     ];
 
     protected $appends = ['progressbar'];
@@ -48,22 +49,22 @@ class Project extends Model
 
     public function toUser()
     {
-        return $this->belongsTo('App\User');
+        return $this->belongsTo('App\User', 'user_id');
     }
 
     public function toCountry()
     {
-        return $this->belongsTo('App\Country');
+        return $this->belongsTo('App\Country', 'country_id');
     }
 
     public function toDomain()
     {
-        return $this->belongsTo('App\Domain');
+        return $this->belongsTo('App\Domain', 'domain_id');
     }
 
     public function toStade()
     {
-        return $this->belongsTo('App\Stade');
+        return $this->belongsTo('App\Stade', 'stade_id');
     }
 
     public function toInvestmentPoints()
