@@ -97,7 +97,7 @@ class RealEstateController extends Controller
         $selected = $this->instance->newQuery()->findOrFail($id);
 
         $selected->update([
-            'is_archived' => true
+            'is_deleted' => true
         ]);
 
         return response()->json(new RealEstateResource($selected),200);
@@ -106,6 +106,8 @@ class RealEstateController extends Controller
     public function switchStatus($id, Request $request)
     {
         $selected = $this->instance->newQuery()->findOrFail($id);
+
+        $state = $selected->is_actived ? 'locked' : 'actived';
 
         $selected->update([
             'is_actived' => !$selected->is_actived
@@ -123,9 +125,31 @@ class RealEstateController extends Controller
         $selected->name = "sande";
         $selected->email = "francksande@live.ca";
 
-        // new RealEstateResource($selected)
+        //return new enableOrDisableProject($selected);
 
-        return new enableOrDisableProject($selected);
+        return response()->json("Real estate has been ".$state. " successfully", 200);
 
+    }
+
+    //When user archives or actives his project.
+
+    public function archiveRealEstate($id, Request $request)
+    {
+        $selected = $this->instance->newQuery()->findOrFail($id);
+
+        $selected->update([
+            'is_archived' => !$selected->is_archived
+        ]);
+
+        $status = !$selected->is_archived? 'actived' : 'archived';
+
+        // Send mail
+
+        $selected->is_fr = $request->is_fr;
+
+        $selected->name = "sande";
+        $selected->email = "francksande@live.ca";
+
+        return response()->json(["message" => "Real estate has been $status"],200);
     }
 }

@@ -27,6 +27,7 @@ Route::group(['prefix' => 'v1'], function () {
         Route::resource('teams',\v1\TeamController::class)->only(['destroy']);
         Route::resource('real_estates',\v1\RealEstateController::class);
         Route::post('real_estates/{real_estate}/status', 'v1\RealEstateController@switchStatus')->where('real_estate','[0-9]+');
+        Route::post('real_estates/{real_estate}/archive', 'v1\RealEstateController@archiveRealEstate')->where('real_estate','[0-9]+');
 
         //Middleware applied in Controller
         Route::post('projects/{project}/status', 'v1\ProjectController@switchStatus')->where('project','[0-9]+');

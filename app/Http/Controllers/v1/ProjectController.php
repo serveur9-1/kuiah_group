@@ -436,7 +436,7 @@ class ProjectController extends Controller
         $selected->name = "sande";
         $selected->email = "francksande@live.ca";
 
-        return response()->json(["message" => "Project is $status"],200);
+        return response()->json(["message" => "Project has been $status"],200);
 
     }
 
