@@ -470,21 +470,16 @@ class ProjectController extends Controller
             {
                 $investor->toInterestedProjects()->attach($project, ["interesting_project_step_id" => $firstStep->id]);
 
-                //Add to investor friends
-                $request->user()->add_friend($project->toUser->id);
+                $request->user()->add_friend($project->toUser->id); //Networking
                 //Notify here
 
-                //Add to interested project friends
-                $project->toUser->add_friend($request->user()->id);
-                //Notify here
-
-                return response()->json(["message" => "Added to interesting projects"],200);
+                return response()->json(["message" => "Added from interesting projects"],200);
 
             } else {
 
                 $investor->toInterestedProjects()->detach($project);
 
-                return response()->json(["message" => "Removed to interesting projects"],200);
+                return response()->json(["message" => "Removed from interesting projects"],200);
             }
         }
     }

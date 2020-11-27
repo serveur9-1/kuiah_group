@@ -75,9 +75,11 @@ class User extends Authenticatable implements MustVerifyEmail
     public function add_friend($friend_id)
     {
         $this->friends()->sync($friend_id);   // add friend
+
         $friend = User::find($friend_id);       // find your friend, and...
-        $friend->friends()->attach($this->id);  // add yourself, too
+        $friend->friends()->sync($this->id);  // add yourself, too
     }
+    
     public function remove_friend($friend_id)
     {
         $this->friends()->detach($friend_id);   // remove friend
