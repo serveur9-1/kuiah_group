@@ -100,7 +100,7 @@ class RealEstateController extends Controller
             'is_deleted' => true
         ]);
 
-        return response()->json(new RealEstateResource($selected),200);
+        return response()->json("Real estate has been deleted successfully", 200);
     }
 
     public function switchStatus($id, Request $request)
