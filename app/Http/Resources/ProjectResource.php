@@ -4,7 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 use App\Http\Resources\CountryResource;
-use App\Http\Resources\UserResource;
+use App\Http\Resources\UserSimpleResource;
 use App\Http\Resources\StadeResource;
 use App\Http\Resources\DomainSimpleResource;
 use App\Country;
@@ -53,10 +53,10 @@ class ProjectResource extends JsonResource
             "is_archived" => $this->is_archived,
             "has_drafted" => $this->has_drafted,
             "is_first_activation" => $this->is_first_activation,
-            "user" => new UserResource($this->toUser),
-            "country" => new CountryResource(Country::find($this->country_id)),
-            "domain" => new DomainSimpleResource(Domain::find($this->domain_id)),
-            "stade" => new StadeResource(Stade::find($this->stade_id)),
+            "user" => new UserSimpleResource($this->toUser),
+            "country" => new CountryResource($this->toCountry),
+            "domain" => new DomainSimpleResource($this->toDomain),
+            "stade" => new StadeResource($this->toStade),
             "investment_points" => $this->toInvestmentPoints,
             "financial_data" => $this->toFinancialDatas,
             "tags" => $this->toTags,
@@ -67,6 +67,9 @@ class ProjectResource extends JsonResource
             "created_at_format" => $this->created_at->format('d-m-Y'),
             "updated_at" => $this->updated_at,
             "updated_at_format" => $this->updated_at->format('d-m-Y'),
+            'interesting_project_step_id' => $this->whenPivotLoaded('investor_project', function () {
+                return $this->pivot->interesting_project_step_id;
+            }),
         ];
     }
 }

@@ -7,7 +7,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Passport\HasApiTokens;
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
     use Notifiable, HasApiTokens;
 
@@ -75,9 +75,11 @@ class User extends Authenticatable
     public function add_friend($friend_id)
     {
         $this->friends()->sync($friend_id);   // add friend
+
         $friend = User::find($friend_id);       // find your friend, and...
-        $friend->friends()->attach($this->id);  // add yourself, too
+        $friend->friends()->sync($this->id);  // add yourself, too
     }
+    
     public function remove_friend($friend_id)
     {
         $this->friends()->detach($friend_id);   // remove friend

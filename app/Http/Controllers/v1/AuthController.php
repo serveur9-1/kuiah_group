@@ -10,6 +10,7 @@ use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Passport\Client as OClient;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Password;
 
 use App\Mail\waitAccountValidate;
 
@@ -81,26 +82,54 @@ class AuthController extends Controller
 
         if($user)
         {
-            $rand = Str::random(5);
+            // $rand = Str::random(5);
 
-            //Code expire in 15min
-            $expire = now()->addMinute(15);
+            // //Code expire in 15min
+            // $expire = now()->addMinute(15);
 
-            $user->update([
-                "password_reset_code" => $rand,
-                "password_reset_code_created" => $expire
-            ]);
+            // $user->update([
+            //     "password_reset_code" => $rand,
+            //     "password_reset_code_created" => $expire
+            // ]);
 
-            //Send mail with params @email, @rand, @expire f
+            // //Send mail with params @email, @rand, @expire f
+
+            // return response()->json([
+            //     'code' => $rand,
+            //     "expire_in" => $expire
+            // ], 200);
+
+            Password::sendResetLink(["email" => $request->get('email')]);
 
             return response()->json([
-                'code' => $rand,
-                "expire_in" => $expire
+                "message" => 'Reset password link sent on your email',
+                "status" => 200
             ], 200);
 
         } else {
             return response()->json(['error'=>"User does not exist"], 401);
         }
+    }
+
+    public function reset() {
+        $credentials = request()->validate([
+            'email' => 'required|email',
+            'token' => 'required|string',
+            'password' => 'required|confirmed'
+        ]);
+
+        $reset_password_status = Password::reset($credentials, function ($user, $password) {
+            $user->password = bcrypt($password);
+            $user->save();
+        });
+
+        if ($reset_password_status == Password::INVALID_TOKEN) {
+            // return response()->json(["msg" => "Invalid token provided"], 400);
+            return redirect()->route("password.failure")->with("msg", "Invalid token provided");
+        }
+
+        //return response()->json(["msg" => "Password has been successfully changed"]);
+        return redirect()->route("password.success")->with("msg", "Password has been successfully changed");
     }
 
     //Verify reset password code

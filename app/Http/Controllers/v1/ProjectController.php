@@ -13,12 +13,14 @@ use App\Investor;
 use App\Document;
 use App\Http\Controllers\Controller;
 use App\User;
+use App\InterestingProjectStep;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Shared\SaveFiles;
 use App\Mail\enableOrDisableProject;
 use App\Mail\waitAdsValidate;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Str;
 
 
 
@@ -373,10 +375,10 @@ class ProjectController extends Controller
         $selected = $this->instance->newQuery()->findOrFail($id);
 
         $selected->update([
-            'is_archived' => true
+            'is_deleted' => true
         ]);
 
-        return response()->json(new ProjectResource($selected),200);
+        return response()->json(["message" => "Project is deleted"],200);
     }
 
 
@@ -413,58 +415,98 @@ class ProjectController extends Controller
     }
 
 
+    //When user archives or actives his project.
+
+    public function archiveProject($id, Request $request)
+    {
+        $selected = $this->instance->newQuery()->findOrFail($id);
+
+        $selected->update([
+            'is_archived' => !$selected->is_archived
+        ]);
+
+        $status = !$selected->is_archived? 'actived' : 'archived';
+
+        // new UserResource($selected)
+
+        // Send mail
+
+        $selected->is_fr = $request->is_fr;
+
+        $selected->name = "sande";
+        $selected->email = "francksande@live.ca";
+
+        return response()->json(["message" => "Project has been $status"],200);
+
+    }
+
+
     //Add a project to my interessing projects
     public function itInterestMe($id, Request $request)
     {
-        $project = $this->instance->newQuery()->findOrFail($id);
-        if($request->user())
+        $project = Project::find($id);
+
+        if(!$project)
         {
-            $investor = Investor::where('user_id', $request->user()->id)->first();
-            $investor->toInterestedProjects()->sync($project);
-
-            //Add to investor friends
-            $request->user()->add_friend($project->toUser->id);
-            //Notify here
-
-            //Add to business friends
-            $project->toUser->add_friend($request->user()->id);
-            //Notify here
-
-            return response()->json(["message" => "Added to interesting projects"],200);
+            return response()->json(["message" => "Project not found"],401);
         }
-    }
 
-    //Remove a project to my interessing projects
-    public function itNotInterestMe($id, Request $request)
-    {
-        $project = $this->instance->newQuery()->findOrFail($id);
         if($request->user())
         {
             $investor = Investor::where('user_id', $request->user()->id)->first();
-            $investor->toInterestedProjects()->detach($project);
 
-            //Remove to investor friends
-            $request->user()->remove_friend($project->toUser->id);
-            //Notify here
+            if(!$request->has("interestMe"))
+            {
+                return response()->json(["message" => "interestMe @boolean is required"],401);
+            }
 
-            //Remove to business friends
-            $project->toUser->remove_friend($request->user()->id);
-            //Notify here
+            $firstStep = InterestingProjectStep::first();
+            if(!$firstStep)
+            {
+                return response()->json(["message" => "interesting project steps are empty"],401);
+            }
 
-            return response()->json(["message" => "Removed to interesting projects"],200);
+            if($request->get("interestMe"))
+            {
+                $investor->toInterestedProjects()->attach($project, ["interesting_project_step_id" => $firstStep->id]);
+
+                $request->user()->add_friend($project->toUser->id); //Networking
+                //Notify here
+
+                return response()->json(["message" => "Added from interesting projects"],200);
+
+            } else {
+
+                $investor->toInterestedProjects()->detach($project);
+
+                return response()->json(["message" => "Removed from interesting projects"],200);
+            }
         }
     }
 
     //Change project looking step for investor (for example study documents ...)
-    public function atThisStep($id, Request $request)
+    public function changeStep($id, Request $request)
     {
+        if(!$request->has("interesting_project_step_id"))
+        {
+            return response()->json(["message" => "interesting_project_step_id is required"],401);
+        }
+
+        $stepInfo = InterestingProjectStep::find($request->get("interesting_project_step_id"));
+
+        if(!$stepInfo)
+        {
+            return response()->json(["message" => "Step not found"],401);
+        }
+
         $project = $this->instance->newQuery()->findOrFail($id);
 
         if($request->user())
         {
             $investor = Investor::where('user_id', $request->user()->id)->first();
-
+            $investor->toInterestedProjects()->updateExistingPivot($project, ["interesting_project_step_id" => $request->get("interesting_project_step_id")]);
             //Notify project owner
+            return response()->json(["message" => "At this step: ". Str::lower($stepInfo->name_fr)],200);
         }
     }
 

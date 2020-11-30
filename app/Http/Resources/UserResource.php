@@ -27,7 +27,6 @@ class UserResource extends JsonResource
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
             'extension' => new InvestorResource($this->toInvestor),
-            'interessed_domains' => DomainSimpleResource::collection($this->toDomains),
             'real_estates' => RealEstateResource::collection($this->toRealEstate),
             'projects' => ProjectResource::collection($this->toProject),
             'friends' => UserSimpleResource::collection($this->friends)

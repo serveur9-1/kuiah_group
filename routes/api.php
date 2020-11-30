@@ -18,7 +18,6 @@ use Illuminate\Support\Facades\Route;
 /*Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });*/
-
 Route::group(['prefix' => 'v1'], function () {
 
     Route::group(['middleware' => ['json.response']], function () {
@@ -28,15 +27,16 @@ Route::group(['prefix' => 'v1'], function () {
         Route::resource('teams',\v1\TeamController::class)->only(['destroy']);
         Route::resource('real_estates',\v1\RealEstateController::class);
         Route::post('real_estates/{real_estate}/status', 'v1\RealEstateController@switchStatus')->where('real_estate','[0-9]+');
+        Route::post('real_estates/{real_estate}/archive', 'v1\RealEstateController@archiveRealEstate')->where('real_estate','[0-9]+');
 
         //Middleware applied in Controller
         Route::post('projects/{project}/status', 'v1\ProjectController@switchStatus')->where('project','[0-9]+');
+        Route::post('projects/{project}/archive', 'v1\ProjectController@archiveProject')->where('project','[0-9]+');
         Route::post('projects/{project}/publish', 'v1\ProjectController@publish')->where('project','[0-9]+');
         Route::get('projects/filter', ['uses' => 'v1\ProjectController@filtered']);
         Route::resource('projects',\v1\ProjectController::class)->except(['update']);
-        Route::get('projects/{project}/itinterestme', ['uses' => 'v1\ProjectController@itInterestMe'])->where('project','[0-9]+');
-        Route::get('projects/{project}/itnotinterestme', ['uses' => 'v1\ProjectController@itNotInterestMe'])->where('project','[0-9]+');
-        Route::get('projects/{project}/athistep', ['uses' => 'v1\ProjectController@atThisStep'])->where('project','[0-9]+');
+        
+        Route::resource('project_steps', \v1\InterestingProjectStepController::class)->only(['index']);
 
 
         Route::resource('investors', \v1\InvestorController::class)->only(['store', 'update']);
@@ -76,6 +76,10 @@ Route::group(['prefix' => 'v1'], function () {
 
         //Private routes
         Route::middleware('auth:api')->group(function () {
+
+            //Project
+            Route::post('projects/{project}/changestep', ['uses' => 'v1\ProjectController@changeStep'])->where('project','[0-9]+');
+            Route::post('projects/{project}/itinterestmeornot', ['uses' => 'v1\ProjectController@itInterestMe'])->where('project','[0-9]+');
 
             //Auth private
             Route::post('users/logout', ['uses' => 'v1\AuthController@logout']);

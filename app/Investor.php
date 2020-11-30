@@ -41,11 +41,6 @@ class Investor extends Model
 
     public function toInterestedProjects()
     {
-        return $this->belongsToMany('App\Project');
-    }
-
-    public function toProjects()
-    {
-        return $this->belongsToMany('App\Project');
+        return $this->belongsToMany('App\Project')->withPivot("interesting_project_step_id");
     }
 }
