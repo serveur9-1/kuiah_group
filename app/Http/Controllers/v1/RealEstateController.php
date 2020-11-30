@@ -23,7 +23,7 @@ class RealEstateController extends Controller
 
     public function index (Request $r)
     {
-        return RealEstateResource::collection($this->instance->newQuery()->paginate($r->get('per') ?? 10));
+        return RealEstateResource::collection($this->instance->newQuery()->where("is_deleted", false)->paginate($r->get('per') ?? 10));
     }
 
     public function store(Request $request)
@@ -69,7 +69,7 @@ class RealEstateController extends Controller
 
         //return new waitAdsValidate($request);
 
-        return response()->json('Real estate added successfully', 200);
+        return response()->json(["message" => 'Real estate added successfully'], 200);
     }
 
     public function show($id, Request $req)
@@ -100,7 +100,7 @@ class RealEstateController extends Controller
             'is_deleted' => true
         ]);
 
-        return response()->json("Real estate has been deleted successfully", 200);
+        return response()->json(["message" => "Real estate has been deleted successfully"], 200);
     }
 
     public function switchStatus($id, Request $request)
@@ -127,7 +127,7 @@ class RealEstateController extends Controller
 
         //return new enableOrDisableProject($selected);
 
-        return response()->json("Real estate has been ".$state. " successfully", 200);
+        return response()->json(["message" => "Real estate has been $state successfully"], 200);
 
     }
 

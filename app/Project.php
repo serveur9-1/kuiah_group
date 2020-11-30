@@ -3,6 +3,8 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
+
 
 class Project extends Model
 {
@@ -90,6 +92,11 @@ class Project extends Model
     public function toDocuments()
     {
         return $this->hasMany('App\Document');
+    }
+
+    public function itInterestMe()
+    {
+        return $this->belongsToMany('App\Investor')->where('user_id', Auth::guard("api")->user()->id ?? null);
     }
 
     public function getProgressbarAttribute()

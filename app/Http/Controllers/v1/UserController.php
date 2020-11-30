@@ -33,7 +33,7 @@ class UserController extends Controller
         //Mail::send(new WelcomeToYou($request));
 
         //send salutation
-         return new waitAdsValidate($request);
+        return new waitAdsValidate($request);
 
 
      }
@@ -48,6 +48,7 @@ class UserController extends Controller
             'except' => [
                 'index',
                 'show',
+                'testMail'
             ]
         ]);
     }
@@ -128,7 +129,7 @@ class UserController extends Controller
 
         $selected->update($request->all());
 
-        return response()->json(new UserResource($selected), 200);
+        return response()->json(['message' => 'Updated successfully'], 200);
     }
 
     public function destroy($id)
@@ -196,7 +197,7 @@ class UserController extends Controller
                 "success" => true,
                 "message" => "File successfully uploaded",
                 "profil" => asset($data[1])
-            ]);
+            ],200);
 
         }
     }
