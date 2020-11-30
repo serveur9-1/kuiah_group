@@ -25,6 +25,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'password_reset_code',
         'password_reset_code_created',
         'is_investor',
+        'is_register_process_completed',
     ];
 
 
@@ -53,12 +54,12 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function toRealEstate()
     {
-        return $this->hasMany('App\RealEstate');
+        return $this->hasMany('App\RealEstate')->where("is_deleted", false);
     }
 
     public function toProject()
     {
-        return $this->hasMany('App\Project');
+        return $this->hasMany('App\Project')->where("is_deleted", false);
     }
 
     public function toDomains()
@@ -74,12 +75,15 @@ class User extends Authenticatable implements MustVerifyEmail
     }
     public function add_friend($friend_id)
     {
-        $this->friends()->sync($friend_id);   // add friend
-
-        $friend = User::find($friend_id);       // find your friend, and...
-        $friend->friends()->sync($this->id);  // add yourself, too
+        $f = $this->friends;
+        if(count($f->where("id",$friend_id)) < 1)
+        {
+            $this->friends()->attach($friend_id);   // add friend
+            $friend = User::find($friend_id);       // find your friend, and...
+            $friend->friends()->attach($this->id);  // add yourself, too
+        }
     }
-    
+
     public function remove_friend($friend_id)
     {
         $this->friends()->detach($friend_id);   // remove friend

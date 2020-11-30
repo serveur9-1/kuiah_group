@@ -37,7 +37,10 @@ class InvestorController extends Controller
         }
 
         $user = $this->user->newQuery()->find($request->get("user_id"));
-        $this->user->newQuery()->update(["process_type_is_investor" => false ]);
+
+        $this->user->newQuery()->update([
+            "is_register_process_completed" => true
+        ]);
 
         $new = $this->instance->newQuery()->create($request->all());
 
@@ -54,10 +57,15 @@ class InvestorController extends Controller
 
     public function update($id, Request $request)
     {
-        $selected = $this->instance->newQuery()->findOrFail($id);
+        $user = User::find($id);
+        if(!$user) return response()->json(["error" => "User not find"], 401); 
+        $selected = $this->instance->newQuery()->where("user_id",$id);
 
-        $selected->update($request->all());
+        if(!$selected) return response()->json(["error" => "Not a business angel"], 401); 
 
-        return response()->json($selected, 200);
+        $r = $request->except('is_fr');
+        $selected->update($r);
+
+        return response()->json(["message" => "Updated successfully"], 200);
     }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\v1;
 
 use App\Http\Controllers\Controller;
 use App\User;
+use App\Investor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use GuzzleHttp\Client;
@@ -42,6 +43,7 @@ class AuthController extends Controller
             'lastname' => 'required',
             'email' => 'required|email|unique:users',
             'password' => 'required',
+            'is_investor' => 'required',
         ]);
 
         if ($validator->fails()) {
@@ -49,10 +51,18 @@ class AuthController extends Controller
         }
 
         $password = $request->password;
-        $input = $request->all();
+        $input = $request->except('is_fr');
         $input['password'] = bcrypt($input['password']);
-        $input['process_type_is_investor'] = $input['is_investor'];
-        $user = User::create($input);
+        $input['process_type_is_investor'] = (boolean) $input['is_investor'];
+        $input['is_register_process_completed'] = (boolean) !$input['is_investor'];
+
+        $user = User::create($input); // create user
+
+        // All users are an investor (empty or not)
+        if(!$input['is_investor']) Investor::create([
+            "is_investor" => false,
+            "user_id" => $user->id
+        ]);
 
         //return new waitAccountValidate($request);
 
@@ -304,7 +314,8 @@ class AuthController extends Controller
         $result = json_decode((string) $info, true);
         $result["user_id"] = auth()->user()->id;
         $result["is_investor"] = auth()->user()->is_investor;
-        $result["process_type_is_investor"] = auth()->user()->process_type_is_investor;
+        $result["process_type_is_investor"] = auth()->user()->process_type_is_investor;	
+        $result["is_register_process_completed"] = auth()->user()->is_register_process_completed;	
         return response()->json($result, $this->successStatus);
     }
 }

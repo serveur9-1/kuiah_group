@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Resources\Json\JsonResource;
 use App\Http\Resources\CountryResource;
 use App\Http\Resources\UserSimpleResource;
@@ -10,6 +11,7 @@ use App\Http\Resources\DomainSimpleResource;
 use App\Country;
 use App\Stade;
 use App\Domain;
+
 
 class ProjectResource extends JsonResource
 {
@@ -23,6 +25,7 @@ class ProjectResource extends JsonResource
     {
         $LOGO = $this->logo ?? 'default.jpeg';
         $BANNER = $this->banner ?? 'default.jpeg';
+        $user_id = Auth::guard("api")->user()->id ?? null;
 
         return [
             "id" => $this->id,
@@ -70,6 +73,8 @@ class ProjectResource extends JsonResource
             'interesting_project_step_id' => $this->whenPivotLoaded('investor_project', function () {
                 return $this->pivot->interesting_project_step_id;
             }),
+            "it_interest_me" => count($this->itInterestMe) > 0,
+            "im_owner" => $this->toUser->id == $user_id,
         ];
     }
 }

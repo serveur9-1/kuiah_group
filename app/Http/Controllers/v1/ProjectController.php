@@ -357,7 +357,7 @@ class ProjectController extends Controller
 
     }
 
-    //When user publish her project #Lorsqu'un utilisateur publish son projet.
+    //When user publish his project #Lorsqu'un utilisateur publish son projet.
     public function publish($id)
     {
         $selected = $this->instance->newQuery()->find($id);
@@ -366,7 +366,9 @@ class ProjectController extends Controller
             'has_drafted' => false
         ]);
 
-        return response()->json(new ProjectResource($selected),200);
+        //Notify admin here
+
+        return response()->json(["message" => "Project has been publish. After verification it'll be showing"],200);
     }
 
     public function destroy($id)
@@ -394,7 +396,7 @@ class ProjectController extends Controller
 
         // new UserResource($selected)
 
-        // Send mail
+        // notify user that actived or disable and other that new publication
 
         if($selected->is_first_activation)
         {
@@ -426,10 +428,6 @@ class ProjectController extends Controller
         ]);
 
         $status = !$selected->is_archived? 'actived' : 'archived';
-
-        // new UserResource($selected)
-
-        // Send mail
 
         $selected->is_fr = $request->is_fr;
 
@@ -471,7 +469,7 @@ class ProjectController extends Controller
                 $investor->toInterestedProjects()->attach($project, ["interesting_project_step_id" => $firstStep->id]);
 
                 $request->user()->add_friend($project->toUser->id); //Networking
-                //Notify here
+                //Notify owner here
 
                 return response()->json(["message" => "Added from interesting projects"],200);
 
