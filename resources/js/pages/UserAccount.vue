@@ -72,6 +72,7 @@
     import axios from 'axios'
     import { API_BASE_URL } from './src/config'
     import TitlebarComponent from "./../components/layouts/TitlebarComponent";
+    import authHeader from '../services/auth-header';
     export default {
         name: "Dashboard",
         components: {TitlebarComponent},
@@ -98,7 +99,7 @@
             }
             else{
                 this.id = this.$store.state.auth.user.user_id;
-                axios.get(API_BASE_URL+'/users/'+this.id).then((response) => {
+                axios.get(API_BASE_URL+'/users/'+this.id, { headers: authHeader() }).then((response) => {
                     this.users = response.data;
                 });
             }
@@ -110,7 +111,7 @@
 
             updateInfo() {
                 this.id = this.$store.state.auth.user.user_id;
-                axios.put(API_BASE_URL+`/users/${this.id}`, this.users)
+                axios.put(API_BASE_URL+`/users/${this.id}`, this.users, { headers: authHeader() })
                 .then((response) => {
                     Vue.$toast.success('Modification éffectuée avec succès.', {
                         // override the global option
@@ -128,7 +129,7 @@
             },
             async oldPassword() {
 
-                await axios.post(API_BASE_URL + `/users/oldPassword/${this.id}`, this.$data)
+                await axios.post(API_BASE_URL + `/users/oldPassword/${this.id}`, this.$data, { headers: authHeader() })
                     .then(response => {
                         this.old_password = ''
                         this.password = ''

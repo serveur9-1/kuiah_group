@@ -91,7 +91,7 @@
 
         methods: {
             onMounted: function () {
-                axios.get(API_BASE_URL+"/users/").then((data) => {
+                axios.get(API_BASE_URL+"/users/", { headers: authHeader() }).then((data) => {
                     this.accounts = data.data;
                     this.isLoading = false;
                     // console.log(response.data);
@@ -108,7 +108,7 @@
 
                 if(confirm("Voulez vous vraiment confirmer ce compte ?")){
 
-                    await axios.post(API_BASE_URL + '/users/'+id+'/status')
+                    await axios.post(API_BASE_URL + '/users/'+id+'/status', { headers: authHeader() })
                     this.accounts.splice(index, 1)
                     Vue.$toast.success('Confirmation éffectuée avec succès.', {
                         // override the global option

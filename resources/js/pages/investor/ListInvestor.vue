@@ -70,6 +70,7 @@
     import axios from 'axios'
     import { API_BASE_URL } from '../src/config'
     import TitlebarComponent from "../../components/layouts/TitlebarComponent";
+    import authHeader from '../../services/auth-header';
     export default {
         name: "Dashboard",
         components: {TitlebarComponent},
@@ -87,7 +88,7 @@
 
         methods: {
             onMounted: function () {
-                axios.get(API_BASE_URL+"/users?investor=true").then((data) => {
+                axios.get(API_BASE_URL+"/users?investor=true", { headers: authHeader() }).then((data) => {
                     this.investors = data.data;
                     this.isLoading = false;
                     // console.log(response.data);
@@ -104,7 +105,7 @@
 
                 if(confirm("Voulez vous vraiment supprimer cet investisseur?")){
 
-                    await axios.delete(API_BASE_URL + '/users/' + id)
+                    await axios.delete(API_BASE_URL + '/users/' + id, { headers: authHeader() })
                     this.investors.splice(index, 1)
 
                     Vue.$toast.success('Suppression éffectuée avec succès.', {

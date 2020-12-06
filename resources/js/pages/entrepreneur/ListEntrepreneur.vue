@@ -84,6 +84,9 @@
 
         methods: {
             onMounted: function () {
+                let user = JSON.parse(localStorage.getItem('user'));
+                axios.defaults.headers.common['Authorization'] = `Bearer ${user.access_token}`;
+                axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
                 axios.get(API_BASE_URL+"/users?investor=false").then((data) => {
                     this.entrepreneurs = data.data;
                     this.isLoading = false;

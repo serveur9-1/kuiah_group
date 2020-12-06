@@ -77,6 +77,7 @@
     import TitlebarComponent from "../components/layouts/TitlebarComponent";
     import ChartLine from "../components/ChartLine";
     import ChartBar from "../components/ChartBar";
+    import authHeader from '../services/auth-header';
     export default {
         name: "Dashboard",
         components: {TitlebarComponent, ChartLine, ChartBar},
@@ -116,10 +117,10 @@
                 axios.get(API_BASE_URL+"/real_estates/").then((data) => {
                     this.real_estates = data.data.data;
                 });
-                axios.get(API_BASE_URL+"/users?investor=true").then((data) => {
+                axios.get(API_BASE_URL+"/users?investor=true", { headers: authHeader() }).then((data) => {
                     this.investors = data.data;
                 });
-                axios.get(API_BASE_URL+"/users?investor=false").then((data) => {
+                axios.get(API_BASE_URL+"/users?investor=false", { headers: authHeader() }).then((data) => {
                     this.entrepreneurs = data.data;
                 });
 
