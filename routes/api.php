@@ -36,7 +36,7 @@ Route::group(['prefix' => 'v1'], function () {
         Route::post('projects/{project}/publish', 'v1\ProjectController@publish')->where('project','[0-9]+');
         Route::get('projects/filter', ['uses' => 'v1\ProjectController@filtered']);
         Route::resource('projects',\v1\ProjectController::class)->except(['update']);
-        
+
         Route::resource('project_steps', \v1\InterestingProjectStepController::class)->only(['index']);
 
 
@@ -57,10 +57,10 @@ Route::group(['prefix' => 'v1'], function () {
         Route::resource('domains',\v1\DomainController::class);
         Route::get('domains/resource/filter','v1\DomainController@filter');
 
-        Route::resource('users', \v1\UserController::class)->except(['store']);
-        Route::post('users/{user}/status', 'v1\UserController@switchStatus')->where('user','[0-9]+');
-        Route::post('users/domains/add', 'v1\UserController@addDomain');
-        Route::post('users/updateProfil', 'v1\UserController@uploadProfilePicture');
+        // Route::resource('users', \v1\UserController::class)->except(['store']);
+        // Route::post('users/{user}/status', 'v1\UserController@switchStatus')->where('user','[0-9]+');
+        // Route::post('users/domains/add', 'v1\UserController@addDomain');
+        // Route::post('users/updateProfil', 'v1\UserController@uploadProfilePicture');
 
         //Auth
         Route::post('users/login', ['uses' => 'v1\AuthController@login']);
@@ -87,10 +87,10 @@ Route::group(['prefix' => 'v1'], function () {
             Route::post('users/updatePassword', 'v1\AuthController@updatePassword');
 
             // User Private
-            // Route::resource('users', \v1\UserController::class)->except(['store']);
-            // Route::post('users/{user}/status', 'v1\UserController@switchStatus')->where('user','[0-9]+');
-            // Route::post('users/domains/add', 'v1\UserController@addDomain');
-            // Route::post('users/updateProfil', 'v1\UserController@uploadProfilePicture');
+            Route::resource('users', \v1\UserController::class)->except(['store']);
+            Route::post('users/{user}/status', 'v1\UserController@switchStatus')->where('user','[0-9]+');
+            Route::post('users/domains/add', 'v1\UserController@addDomain');
+            Route::post('users/updateProfil', 'v1\UserController@uploadProfilePicture');
 
         });
 

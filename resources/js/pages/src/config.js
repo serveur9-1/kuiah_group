@@ -1,1 +1,1 @@
-export const API_BASE_URL = 'http://kuiah-finance.herokuapp.com/api/v1';
+export const API_BASE_URL = 'http://localhost:8000/api/v1';

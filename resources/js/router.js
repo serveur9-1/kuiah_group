@@ -35,6 +35,7 @@ import Login from "./pages/auth/Login";
 import ListNotification from "./pages/notification/ListNotification";
 import ListTestimonial from "./pages/testimonial/ListTestimonial";
 import AddTestimonial from "./pages/testimonial/AddTestimonial";
+import forgetPassword from "./pages/auth/ForgetPassword.vue";
 
 Vue.use(Router);
 
@@ -59,6 +60,11 @@ export const router = new Router({
         path: '/login',
         name: 'login',
         component: Login
+    },
+    {
+        path: '/forget_password',
+        name: 'forget',
+        component: forgetPassword
     },
     {
         path: '/publication/list',
@@ -215,16 +221,16 @@ export const router = new Router({
   ]
 });
 
-// router.beforeEach((to, from, next) => {
-//   const publicPages = ['/login'];
-//   const authRequired = !publicPages.includes(to.path);
-//   const loggedIn = localStorage.getItem('user');
+router.beforeEach((to, from, next) => {
+  const publicPages = ['/login','/forget_password'];
+  const authRequired = !publicPages.includes(to.path);
+  const loggedIn = localStorage.getItem('user');
 
-//   // trying to access a restricted page + not logged in
-//   // redirect to login page
-//   if (authRequired && !loggedIn) {
-//     next('/login');
-//   } else {
-//     next();
-//   }
-// });
+  // trying to access a restricted page + not logged in
+  // redirect to login page
+  if (authRequired && !loggedIn) {
+    next('/login');
+  } else {
+    next();
+  }
+});

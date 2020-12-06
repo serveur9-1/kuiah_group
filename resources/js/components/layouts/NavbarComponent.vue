@@ -22,7 +22,7 @@
                                 </router-link>
                             </li>
                             <li>
-                                <router-link to="#">
+                                <router-link to="/account">
                                     <!-- /account -->
                                     <i class="fa fa-user"></i> Mon compte
                                 </router-link>

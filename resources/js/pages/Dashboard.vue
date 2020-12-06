@@ -58,6 +58,7 @@
 
                     <chart-line
                         :chartdata = "chartData"
+                        :height="150"
                     />
                     <!-- <chart-bar
                         :chartdata = "chartData"
@@ -90,10 +91,11 @@
                 isLoading : true,
                 chartData: {
                     labels: [],
+                    height:100,
                     datasets: [
                         {
                             label: 'Projets',
-                            height:'150px',
+                            height:'100px',
                             backgroundColor: '#f87979',
                             data: []
                         }

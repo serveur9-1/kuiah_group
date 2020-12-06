@@ -9,7 +9,7 @@
 		<div class="tabs-container">
 
 			<!-- Login -->
-			<div class="tab-content" id="tab1" style="display: none;">
+			<div class="tab-content">
 
 				<form method="post" class="login" @submit.prevent="login">
 					<p class="form-row form-row-wide">
@@ -45,6 +45,13 @@
                     <div class="notification notice" v-if="message">
                         Vos identifiants sont incorrects
                     </div>
+
+					<p class="lost_password">
+                        <router-link :to="{name: 'forget'}">
+                            Mot de passe oublié ?
+                        </router-link>
+					</p>
+
 				</form>
 			</div>
 		</div>

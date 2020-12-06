@@ -261,7 +261,7 @@ class AuthController extends Controller
         $oClient = OClient::where('password_client', 1)->first();
 
         $http = new Client([
-            'base_uri' => 'http://kuiah-finance.herokuapp.com',
+            'base_uri' => 'http://localhost:8001',
             'defaults' => [
                 'exceptions' => false
             ]
@@ -295,7 +295,7 @@ class AuthController extends Controller
     public function getTokenAndRefreshToken(OClient $oClient, $email, $password) {
         $oClient = OClient::where('password_client', 1)->first();
         $http = new Client([
-            'base_uri' => 'http://kuiah-finance.herokuapp.com',
+            'base_uri' => 'http://localhost:8001',
             'defaults' => [
                 'exceptions' => false
             ]
@@ -314,8 +314,8 @@ class AuthController extends Controller
         $result = json_decode((string) $info, true);
         $result["user_id"] = auth()->user()->id;
         $result["is_investor"] = auth()->user()->is_investor;
-        $result["process_type_is_investor"] = auth()->user()->process_type_is_investor;	
-        $result["is_register_process_completed"] = auth()->user()->is_register_process_completed;	
+        $result["process_type_is_investor"] = auth()->user()->process_type_is_investor;
+        $result["is_register_process_completed"] = auth()->user()->is_register_process_completed;
         return response()->json($result, $this->successStatus);
     }
 }
