@@ -19,6 +19,11 @@ class Domain extends Model
     {
         return $this->hasMany('App\Project');
     }
+
+    public function toIndustry()
+    {
+        return $this->belongsTo('App\Industry', 'industry_id');
+    }
     
 
 }

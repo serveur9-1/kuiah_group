@@ -29,6 +29,7 @@ class UserResource extends JsonResource
             'extension' => new InvestorResource($this->toInvestor),
             'real_estates' => RealEstateResource::collection($this->toRealEstate),
             'projects' => ProjectResource::collection($this->toProject),
+            'domains' => DomainSimpleResource::collection($this->toDomains),
             'friends' => UserSimpleResource::collection($this->friends)
         ];
     }

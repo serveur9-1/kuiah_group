@@ -109,4 +109,10 @@ class Project extends Model
         }
     }
 
+    public function getImOwnerAttribute()
+    {
+        $user_id = Auth::guard("api")->user()->id ?? null;
+        return $this->toUser->id == $user_id;
+    }
+
 }

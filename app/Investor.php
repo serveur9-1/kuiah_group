@@ -31,12 +31,12 @@ class Investor extends Model
 
     public function getMinFormatAttribute()
     {
-        return number_format($this->min, 2, '.', ',')." €";
+        return number_format($this->min, 0, '.', ',')." €";
     }
 
     public function getMaxFormatAttribute()
     {
-        return number_format($this->max, 2, '.', ',')." €";
+        return number_format($this->max, 0, '.', ',')." €";
     }
 
     public function toInterestedProjects()

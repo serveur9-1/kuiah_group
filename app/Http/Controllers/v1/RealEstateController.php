@@ -28,48 +28,92 @@ class RealEstateController extends Controller
 
     public function store(Request $request)
     {
-
-        $validator = Validator::make($request->all(),
-            [
-                "title"=> 'required',
-                "description" => 'required',
-                "price" => 'required',
-                "country_id" => 'required',
-                "user_id" => 'required',
-                "medias" => "required",
-            ]
-        );
-
-        if ($validator->fails()) {
-            return response()->json(['error'=>$validator->errors()], 401);
-        }
-
+        $action = "created";
         $new = null;
 
-        if ($files = $request->file('medias')) {
+        if($request->get("step") == 1 && !$request->get("update")){
+            $validator = Validator::make($request->all(),
+                [
+                    "title"=> 'required',
+                    "description" => 'required',
+                    "price" => 'required',
+                    "country_id" => 'required',
+                    "user_id" => 'required',
+                ]
+            );
+
+            if ($validator->fails()) {
+                return response()->json(['error'=>$validator->errors()], 401);
+            }
 
             $new = $this->instance->newQuery()->create($request->all());
 
-            $data = $this->__save->save(true,"realestates", "medias",  "realestate_$new->id", $request);
-            // $data[0] return 1st item of array which verify if there are many files (true if an array)
-
-            for ($i = 1; $i < count($data); $i++)
-            {
-                Media::create([
-                    "name" => $data[$i],
-                    "real_estate_id" => $new->id,
-                ]);
-            }
-        } else {
-            return response()->json(['error'=>'Medias are not files'], 401);
         }
+
+        if($request->get("step") == 1 && $request->get("update")){
+            $validator = Validator::make($request->all(),
+                [
+                    "title"=> 'required',
+                    "description" => 'required',
+                    "price" => 'required',
+                    "country_id" => 'required',
+                    "user_id" => 'required',
+                ]
+            );
+
+            if ($validator->fails()) {
+                return response()->json(['error'=>$validator->errors()], 401);
+            }
+
+            $input = $request->except(["is_fr", "step", "update"]);
+            $new = $this->instance->newQuery()->update($input);
+
+        }
+
+        // $validator = Validator::make($request->all(),
+        //     [
+        //         "title"=> 'required',
+        //         "description" => 'required',
+        //         "price" => 'required',
+        //         "country_id" => 'required',
+        //         "user_id" => 'required',
+        //         "medias" => "required",
+        //     ]
+        // );
+
+        // if ($validator->fails()) {
+        //     return response()->json(['error'=>$validator->errors()], 401);
+        // }
+
+        // $new = null;
+
+        // if ($files = $request->file('medias')) {
+
+        //     $new = $this->instance->newQuery()->create($request->all());
+
+        //     $data = $this->__save->save(true,"realestates", "medias",  "realestate_$new->id", $request);
+        //     // $data[0] return 1st item of array which verify if there are many files (true if an array)
+
+        //     for ($i = 1; $i < count($data); $i++)
+        //     {
+        //         Media::create([
+        //             "name" => $data[$i],
+        //             "real_estate_id" => $new->id,
+        //         ]);
+        //     }
+        // } else {
+        //     return response()->json(['error'=>'Medias are not files'], 401);
+        // }
 
         $request->name = "sande";
         $request->email = "francksande@live.ca";
 
         //return new waitAdsValidate($request);
 
-        return response()->json(["message" => 'Real estate added successfully'], 200);
+        return response()->json([
+            "message" => "Real estate $action successfully",
+            "data" => $new
+        ], 200);
     }
 
     public function show($id, Request $req)

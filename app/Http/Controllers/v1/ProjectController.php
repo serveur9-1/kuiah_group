@@ -232,49 +232,86 @@ class ProjectController extends Controller
                 }
             }
 
-            return response()->json($old, 200);
+            return response()->json([
+                "message" => "Updated successfully",
+                "data" => $request->all()
+            ], 200);
         }
 
         if($request->get('step') == 3)
-        {
+        {            
             $old->update($request->all());
             $pic = null;
 
             //Update or create investment_points table
-            if(is_array($request->get('teams')))
+            if($request->get('team'))
             {
 
+                $validator = Validator::make($request->all(), [
+                    'teamPicture' => "file|max:3072", // 3 MB
+                ]);
+
+                if ($validator->fails()) {
+                    return response()->json(['error'=> $validator->errors()], 401);
+                }
                 //Upload profile picture
-                if ($files = $request->file("teamPictures")) {
-                    $pic = $this->__save->save(true, "projects/teams", "teamPictures", "team_pic_$old->id". now(), $request);
+                if ($files = $request->file("teamPicture")) {
+                    $pic = $this->__save->save(true, "projects/teams", "teamPicture", "team_pic_$old->id". now(), $request);
                 }
 
-                //dd($request->all());
-                foreach ($request->get('teams') as $key => $ite)
+                $item = json_decode($request->get('team'), true);
+
+                //Update or create current teams if exist nor
+                if(isset($item['name'])  || isset($item['role']))
                 {
-                    $item = json_decode($ite, true);
+                    $fields = [];
 
-                    //Update or create current teams if exist nor
-                    if(isset($item['name']) && isset($item['role']))
-                    {
+                    if($pic == null){
+                        $fields = [
+                            'name' => $item['name'],
+                            "role" => $item['role'],
+                            "link_linkedin" => $item['link_linkedin'] ?? null,
+                            "biography" => $item['biography'] ?? null,
+                        ];
+                    } else {
+                        $fields = [
+                            'name' => $item['name'],
+                            "role" => $item['role'],
+                            "picture" => $pic["meta_data"]["name"],
+                            "link_linkedin" => $item['link_linkedin'] ?? null,
+                            "biography" => $item['biography'] ?? null,
+                        ];
+                    }
 
+                    $action = "created";
+                    // Update or New (if not exists team_id)
+                    if(isset($item['team_id'])){
                         Team::updateOrCreate(
                             [
                                 'project_id' => $old->id,
                                 'id' => $item['team_id'],
                             ],
-                            [
-                                'name' => $item['name'],
-                                "role" => $item['role'],
-                                "picture" => $pic[$key+1] ?? null,
-                                "link_linkedin" => $item['link_linkedin'] ?? null,
-                                "biography" => $item['biography'] ?? null,
-                            ]
+                            $fields
                         );
+                        $action = "updated";
+                        $fields["id"] = $item['team_id'];
                     } else {
-                        return response()->json(['error'=>'name and role are required'], 401);
+                        $fields["project_id"] = $old->id;
+                        $n = Team::create($fields);
+                        $n["project_id"] = $old->id;
+                        $fields = $n;
                     }
+
+                } else {
+                    return response()->json(['error'=>'name and role are required'], 401);
                 }
+
+                return response()->json([
+                    "success" => true,
+                    "message" => "team is successfully $action",
+                    "data" => $fields
+                ], 200);
+
             }
         }
 
@@ -283,16 +320,26 @@ class ProjectController extends Controller
 
         if($request->get('step') == 4)
         {
-            try {
+            $type = "";
 
+            try {
+                $validator = Validator::make($request->all(), [
+                    'logo' => "file|max:3072", // 3 MB
+                    'cover' => "file|max:3072", // 3 MB
+                ]);
+
+                if ($validator->fails()) {
+                    return response()->json(['error'=> $validator->errors()], 401);
+                }
                 if ($request->file('logo')) {
 
                     $logo = $this->__save->save(true,"projects/media", "logo", "logo_$old->id", $request);
                     // $data[0] return 1st item of array which verify if there are many files (true if an array)
                     //Update logo
                     $old->update([
-                        "logo" => $logo[2],
+                        "logo" => $logo["meta_data"]["name"],
                     ]);
+                    $type = "logo";
                 }
 
                 if ($request->file('cover')) {
@@ -301,14 +348,14 @@ class ProjectController extends Controller
                     // $data[0] return 1st item of array which verify if there are many files (true if an array)
 
                     $old->update([
-                        "banner" => $cover[2],
+                        "banner" => $cover["meta_data"]["name"],
                     ]);
-
+                    $type = $type." cover";
                 }
 
                 return response()->json([
                     "success" => true,
-                    "message" => "Logo and Cover are successfully uploaded",
+                    "message" => "$type successfully uploaded",
                 ],200);
 
             } catch (Exception $exception) {
@@ -320,41 +367,79 @@ class ProjectController extends Controller
         {
             try {
 
+                $SIZE = 1024*10;
+
+                $validator = Validator::make($request->all(), [
+                    'documents[]' => "file|mimes:doc,pdf,docx,zip,xlxs|max:$SIZE", // 10 MB
+                ]);
+
+                if ($validator->fails()) {
+                    return response()->json(['error'=> $validator->errors()], 401);
+                }
+                
                 if ($request->file('documents')) {
-                    $docs = $this->__save->save(true,"projects/documents", "documents", "doc_project_$old->id", $request);
+                    $docs = $this->__save->save(true,"projects/documents", "documents", "doc_project_$old->id-". now(), $request);
                     // $data[0] return 1st item of array which verify if there are many files (true if an array)
                     //Update logo
-                    if($docs[0]){
-                        for($i = 1; $i < count($docs); $i++)
+
+                    if($docs["is_array"]){
+                        for($i = 0; $i < count($docs["meta_data"]); $i++)
                         {
                             Document::updateOrCreate(
                                 [
                                     'project_id' => $old->id,
-                                    'title' => $docs[$i]
+                                    'title' => $docs["meta_data"][$i]["name"]
                                 ],
                                 [
-                                    'title' => $docs[$i],
+                                    'title' => $docs["meta_data"][$i]["name"],
+                                    "original_name" => $docs["meta_data"][$i]["originalName"],
+                                    "extension" => $docs["meta_data"][$i]["extension"],
+                                    "size" => $docs["meta_data"][$i]["size"],
                                 ]
                             );
                         }
 
+                        $docs["meta_data"][0]["project_id"] = $old->id;
+                        $docs["meta_data"][0]["title"] = $docs["meta_data"][0]["name"];
+                        $docs["meta_data"][0]["original_name"] = $docs["meta_data"][0]["originalName"];
+                        $docs["meta_data"][0]["size"] = $docs["meta_data"][0]["size"];
+
                         return response()->json([
                             "success" => true,
                             "message" => "Documents are successfully uploaded",
-                        ],200);
+                            "data" => $docs
+                        ], 200);
                     }
                 } else {
                     return response()->json([
                         "success" => false,
                         "message" => "Documents are not files",
-                    ],401);
+                    ], 401);
                 }
 
             } catch (Exception $exception) {
-                return response()->json($exception->getMessage(),$exception->getCode());
+                return response()->json($exception->getMessage(), $exception->getCode());
             }
         }
 
+    }
+
+    public function removeDocument($project_id, $doc_id, Request $request)
+    {
+        $doc = Document::find($doc_id);
+        $proj = Project::find($project_id);
+
+        if(!$doc) return response()->json(['error'=> "Document not found"], 401);
+        if(!$proj) return response()->json(['error'=> "Project not found"], 401);
+
+        if(!$proj->im_owner) return response()->json(['error'=> "Access denied"], 403);
+
+        //Delete file
+        $this->__save->remove("projects/documents", $doc->title);
+
+        $doc->delete();
+
+        return response()->json(['message'=> "Document removed successfully"], 200);
     }
 
     //When user publish his project #Lorsqu'un utilisateur publish son projet.

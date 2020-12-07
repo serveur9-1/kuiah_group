@@ -19,12 +19,12 @@ class FinancialData extends Model
 
     public function getTurnoverFormatAttribute()
     {
-        return number_format($this->turnover, 2, '.', ',')." €";
+        return number_format($this->turnover, 0, '.', ',')." €";
     }
 
     public function getProfitFormatAttribute()
     {
-        return number_format($this->profit, 2, '.', ',')." €";
+        return number_format($this->profit, 0, '.', ',')." €";
     }
 
 }

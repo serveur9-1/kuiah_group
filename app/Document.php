@@ -8,6 +8,9 @@ class Document extends Model
 {
     protected $fillable = [
         'title',
-        'project_id'
+        'project_id',
+        "original_name",
+        "extension",
+        "size",
     ];
 }
