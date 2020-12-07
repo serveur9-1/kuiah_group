@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\v1;
 use App\Http\Resources\UserResource;
+use App\Notifications\UserStatusUpdated;
 use App\User;
 use App\Domain;
 use App\Shared\SaveFiles;
@@ -165,8 +166,8 @@ class UserController extends Controller
         }
 
         $selected->is_fr = $request->is_fr;
-
-        return new enableOrDisableAccount($selected);
+        $selected->notify(new UserStatusUpdated());  // Notification::send($users, new InvoicePaid($invoice)); ==> use Illuminate\Notifications\Notification;
+        // return new enableOrDisableAccount($selected);
 
     }
 
