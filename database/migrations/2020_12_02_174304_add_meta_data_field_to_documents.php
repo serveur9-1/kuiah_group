@@ -14,9 +14,9 @@ class AddMetaDataFieldToDocuments extends Migration
     public function up()
     {
         Schema::table('documents', function (Blueprint $table) {
-            $table->string("size")->nullable()->after("title");
+            $table->bigInteger("size")->nullable()->after("title");
             $table->string("extension")->nullable()->after("title");
-            $table->int("original_name")->nullable()->after("title");
+            $table->string("original_name")->nullable()->after("title");
         });
     }
 

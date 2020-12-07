@@ -165,45 +165,18 @@
 					<h4>Documents</h4>
 					<div class="dashboard-list-box-content">
 
-					<div class="submit-page">
-
-						<!-- Company Name -->
-						<div class="form">
-							<h5>Business plan<span>(optional)</span></h5>
-							<a :href="project.business_plan_doc" download>
-								<label class="upload-btn">
-							    <i class="fa fa-upload"></i>Télécharger
-							   </label>
-                            </a>
-						</div>
-
-						<!-- Website -->
-						<div class="form">
-							<h5>Données financières<span>(optional)</span></h5>
-							<a :href="project.financial_data_doc" download>
-								<label class="upload-btn">
-							    <i class="fa fa-upload"></i>Télécharger
-							   </label>
-                            </a>
-						</div>
-						<div class="form">
-							<h5>Sommaire exécutif<span>(optional)</span></h5>
-							<a :href="project.executive_summary_doc" download>
-								<label class="upload-btn">
-							    <i class="fa fa-upload"></i>Télécharger
-							   </label>
-                            </a>
-						</div>
-						<div class="form">
-							<h5>Diaporama<span>(optional)</span></h5>
-							 <a href="/images/myw3schoolsimage.jpg" download>
-								<label class="upload-btn">
-							    <i class="fa fa-upload"></i>Télécharger
-							   </label>
-                            </a>
-						</div>
-	 				</div>
-					</div>
+                        <div class="submit-page">
+                            <!-- Company Name -->
+                            <div class="form" v-for=" doc in project.documents" :key="doc.id">
+                                <h5>{{ doc.original_name}}<span>(optional)</span></h5>
+                                <a :href="doc.original_name" download>
+                                    <label class="upload-btn">
+                                    <i class="fa fa-upload"></i>Télécharger
+                                </label>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
 				</div>
 				<div class="dashboard-list-box margin-top-30">
 					<h4>Equipe</h4>
