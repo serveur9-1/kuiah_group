@@ -23,17 +23,17 @@ Vue.use(VeeValidate);
 Vue.use(Vuex);
 Vue.use(DataTable);
 
-axios.interceptors.response.use(undefined, function (error) {
-    if (error) {
-      const originalRequest = error.config;
-      if (error.response.status === 401 && !originalRequest._retry) {
+// axios.interceptors.response.use(undefined, function (error) {
+//     if (error) {
+//       const originalRequest = error.config;
+//       if (error.response.status === 401 && !originalRequest._retry) {
 
-          originalRequest._retry = true;
-          store.dispatch('auth/logout')
-          return router.push('/login')
-      }
-    }
-  });
+//           originalRequest._retry = true;
+//           store.dispatch('auth/logout')
+//           return router.push('/login')
+//       }
+//     }
+//   });
 
 
 

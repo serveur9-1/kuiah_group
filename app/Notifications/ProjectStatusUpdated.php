@@ -2,13 +2,12 @@
 
 namespace App\Notifications;
 
-use App\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
-class UserStatusUpdated extends Notification
+class ProjectStatusUpdated extends Notification
 {
     use Queueable;
 
@@ -17,8 +16,6 @@ class UserStatusUpdated extends Notification
      *
      * @return void
      */
-
-    private $data;
     public function __construct()
     {
 
@@ -32,7 +29,7 @@ class UserStatusUpdated extends Notification
      */
     public function via($notifiable)
     {
-        return ['mail']; // database, broadcast
+        return ['mail'];
     }
 
     /**
@@ -43,9 +40,8 @@ class UserStatusUpdated extends Notification
      */
     public function toMail($notifiable)
     {
-
         return (new MailMessage)->view(
-            ['emails.enableOrDisableAccount.enableOrDisableAccount_fr'],
+            ['emails.projects.enableOrDisableProject_fr'],
             ['invoice' => $this->invoice]
         );
     }
@@ -56,24 +52,10 @@ class UserStatusUpdated extends Notification
      * @param  mixed  $notifiable
      * @return array
      */
-
-    /*public function toArray($notifiable)
+    public function toArray($notifiable)
     {
         return [
             //
         ];
-    }*/
-
-    /*public function toBroadcast($notifiable)
-    {
-        return new BroadcastMessage([
-            'invoice_id' => $this->invoice->id,
-            'amount' => $this->invoice->amount,
-        ]);
-    }*/
-
-    /*public function broadcastType()
-    {
-        return 'broadcast.message';
-    }*/
+    }
 }

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\v1;
 
+use App\Notifications\ProjectStatusUpdated;
+
 use App\Http\Resources\ProjectResource;
 use App\InvestmentPoint;
 use App\Project;
@@ -16,6 +18,7 @@ use App\User;
 use App\InterestingProjectStep;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Mail;
 use App\Shared\SaveFiles;
 use App\Mail\enableOrDisableProject;
 use App\Mail\waitAdsValidate;
@@ -211,7 +214,7 @@ class ProjectController extends Controller
             //Update tags table
             if(is_array($request->get('tags')))
             {
-                
+
                 foreach ($request->get('tags') as $it)
                 {
                     $item = json_decode($it, true);
@@ -239,7 +242,7 @@ class ProjectController extends Controller
         }
 
         if($request->get('step') == 3)
-        {            
+        {
             $old->update($request->all());
             $pic = null;
 
@@ -376,7 +379,7 @@ class ProjectController extends Controller
                 if ($validator->fails()) {
                     return response()->json(['error'=> $validator->errors()], 401);
                 }
-                
+
                 if ($request->file('documents')) {
                     $docs = $this->__save->save(true,"projects/documents", "documents", "doc_project_$old->id-". now(), $request);
                     // $data[0] return 1st item of array which verify if there are many files (true if an array)
@@ -479,6 +482,7 @@ class ProjectController extends Controller
             'is_actived' => !$selected->is_actived
         ]);
 
+        $selected->notify(new ProjectStatusUpdated());
         // new UserResource($selected)
 
         // notify user that actived or disable and other that new publication
@@ -494,6 +498,8 @@ class ProjectController extends Controller
 
         $selected->name = "sande";
         $selected->email = "francksande@live.ca";
+
+
 
         // new ProjectResource($selected);
 
